@@ -502,9 +502,9 @@
     height: 3px;
     background: var(--season-color, var(--oliva));
   }
-  /* Estación actual: primera + destacada */
+  /* Estación actual: primera + destacada (el orden lo maneja JS para
+     que las siguientes sigan el ciclo natural). */
   .cajon-season.is-current-season {
-    order: -1;
     border-color: var(--madera);
     background: var(--crema);
     box-shadow: 0 16px 36px -10px rgba(160,117,69,0.32);
@@ -1955,7 +1955,8 @@
     }));
   })();
 
-  // Detecta estación actual (hemisferio sur, Argentina) y la pone primera + destacada
+  // Detecta estación actual (hemisferio sur, Argentina), la destaca,
+  // y reordena las 4 cards para que sigan el ciclo natural desde la actual
   (function () {
     const SEASONS = {
       primavera: [9, 10, 11],
@@ -1963,11 +1964,18 @@
       otono:     [3, 4, 5],
       invierno:  [6, 7, 8]
     };
+    const CYCLE = ['primavera', 'verano', 'otono', 'invierno'];
     const month = new Date().getMonth() + 1;
     const current = Object.keys(SEASONS).find(s => SEASONS[s].includes(month));
     if (!current) return;
+    const startIdx = CYCLE.indexOf(current);
     document.querySelectorAll('.cajon-season').forEach(card => {
-      if (card.dataset.season === current) card.classList.add('is-current-season');
+      const season = card.dataset.season;
+      const cycleIdx = CYCLE.indexOf(season);
+      // Distancia desde la actual en el ciclo (0 = actual, 1 = siguiente, etc.)
+      const distance = (cycleIdx - startIdx + 4) % 4;
+      card.style.order = String(distance);
+      if (season === current) card.classList.add('is-current-season');
     });
   })();
 </script>
