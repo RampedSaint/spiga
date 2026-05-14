@@ -1,0 +1,1118 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Stagione · La estación, en tu mesa.</title>
+<meta name="description" content="Suscripción semanal de frutas y verduras premium, seleccionadas a mano. Entrega puerta a puerta en Nordelta, Villanueva, Tigre, Maschwitz, Escobar y Pilar." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="icon" type="image/svg+xml" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><circle cx="100" cy="100" r="95" fill="none" stroke="%232C3D2E" stroke-width="6"/><text x="100" y="148" text-anchor="middle" font-family="Georgia,serif" font-size="140" font-style="italic" fill="%232C3D2E">S</text></svg>' />
+
+<style>
+  :root {
+    --verde-bosque: #2C3D2E;
+    --bosque-profundo: #2A3F2C;
+    --crema: #F4EFE6;
+    --crema-soft: #EAE3D5;
+    --tinta: #1A1A18;
+    --oliva: #8A9476;
+    --oliva-soft: #B8BFA8;
+    --acento: #C9573A; /* tomate maduro - acento de verano (mayo es otoño en AR pero usamos verano para warmth) */
+    --acento-2: #E8C766;
+
+    /* Spacing */
+    --pad-x: clamp(20px, 5vw, 56px);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--crema);
+    color: var(--tinta);
+    font-family: "Fraunces", Georgia, serif;
+    font-optical-sizing: auto;
+    font-variation-settings: "SOFT" 30, "WONK" 0;
+    font-weight: 400;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* base */
+  .ui, .label, .num, button, input, select, code {
+    font-family: "Inter", system-ui, sans-serif;
+  }
+  .label {
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--verde-bosque);
+    font-weight: 500;
+  }
+  a { color: var(--verde-bosque); text-decoration: none; }
+  a.link { border-bottom: 1px solid currentColor; padding-bottom: 1px; }
+
+  /* ============ NAV ============ */
+  nav {
+    position: sticky;
+    top: 0;
+    background: rgba(244, 239, 230, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 100;
+    border-bottom: 1px solid rgba(138, 148, 118, 0.2);
+  }
+  .nav-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px var(--pad-x);
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  .nav-brand { display: flex; align-items: center; gap: 12px; }
+  .nav-brand svg { display: block; }
+  .nav-brand .word {
+    font-family: "Fraunces", serif;
+    font-variation-settings: "SOFT" 50, "opsz" 144;
+    font-size: 24px;
+    color: var(--verde-bosque);
+    letter-spacing: -0.015em;
+    line-height: 1;
+  }
+  .nav-links { display: flex; gap: 32px; align-items: center; }
+  .nav-links a {
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    color: var(--tinta);
+    font-weight: 400;
+  }
+  .nav-links a:not(.btn):hover { color: var(--verde-bosque); }
+  .btn,
+  a.btn,
+  .nav-links a.btn {
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    padding: 10px 18px;
+    border-radius: 999px;
+    border: 1px solid var(--verde-bosque);
+    background: var(--verde-bosque);
+    color: var(--crema);
+    cursor: pointer;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    transition: all 180ms ease;
+    display: inline-block;
+    text-decoration: none;
+  }
+  .btn:hover,
+  a.btn:hover,
+  .nav-links a.btn:hover { background: var(--bosque-profundo); color: var(--crema); transform: translateY(-1px); }
+  .btn.ghost { background: transparent; color: var(--verde-bosque); }
+  .btn.ghost:hover { background: var(--verde-bosque); color: var(--crema); }
+  .btn.large { font-size: 15px; padding: 14px 28px; }
+
+  @media (max-width: 720px) {
+    .nav-links a:not(.btn) { display: none; }
+  }
+
+  /* ============ HERO ============ */
+  .hero {
+    padding: 96px var(--pad-x) 120px;
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 64px;
+    align-items: center;
+    min-height: 80vh;
+  }
+  .hero-text .eyebrow {
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--oliva);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .hero-text .eyebrow::before {
+    content: "";
+    width: 28px;
+    height: 1px;
+    background: var(--oliva);
+  }
+  .hero-text h1 {
+    font-family: "Fraunces", serif;
+    font-variation-settings: "SOFT" 50, "opsz" 144;
+    font-weight: 400;
+    font-size: clamp(48px, 7vw, 96px);
+    line-height: 0.98;
+    color: var(--verde-bosque);
+    letter-spacing: -0.025em;
+    margin-bottom: 32px;
+  }
+  .hero-text h1 em {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--oliva);
+  }
+  .hero-text .lead {
+    font-family: "Fraunces", serif;
+    font-size: 22px;
+    line-height: 1.5;
+    color: var(--tinta);
+    max-width: 30ch;
+    margin-bottom: 40px;
+  }
+  .hero-cta { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+  .hero-cta .secondary {
+    font-family: "Fraunces", serif;
+    font-style: italic;
+    font-size: 16px;
+    color: var(--verde-bosque);
+    border-bottom: 1px solid var(--oliva-soft);
+    padding-bottom: 2px;
+  }
+
+  /* Hero illustration */
+  .hero-art {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    background: linear-gradient(180deg, #3A4D3C 0%, var(--verde-bosque) 60%, #1F2C20 100%);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 30px 60px -20px rgba(0,0,0,0.25);
+  }
+  .hero-art::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 30% 20%, rgba(244,239,230,0.10), transparent 50%),
+      radial-gradient(ellipse at 80% 90%, rgba(201,87,58,0.18), transparent 60%);
+  }
+  .hero-art-mono {
+    z-index: 2;
+    width: 60%;
+    max-width: 280px;
+  }
+  .hero-art-caption {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    right: 24px;
+    color: var(--oliva-soft);
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    z-index: 2;
+  }
+
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; padding-top: 64px; padding-bottom: 80px; gap: 48px; }
+    .hero-art { max-width: 380px; margin: 0 auto; width: 100%; }
+  }
+
+  /* ============ STRIP ============ */
+  .strip {
+    background: var(--verde-bosque);
+    color: var(--oliva-soft);
+    padding: 18px 0;
+    overflow: hidden;
+  }
+  .strip-inner {
+    display: flex;
+    gap: 48px;
+    white-space: nowrap;
+    animation: marquee 30s linear infinite;
+    font-family: "Fraunces", serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--crema);
+  }
+  .strip-inner span { display: inline-flex; align-items: center; gap: 48px; }
+  .strip-inner span::after { content: "·"; color: var(--oliva); font-style: normal; }
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* ============ SECTION COMMON ============ */
+  section.block {
+    padding: 120px var(--pad-x);
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  .block-head {
+    margin-bottom: 64px;
+    max-width: 720px;
+  }
+  .block-head .label { display: block; margin-bottom: 18px; }
+  .block-head h2 {
+    font-family: "Fraunces", serif;
+    font-variation-settings: "SOFT" 40, "opsz" 144;
+    font-weight: 400;
+    font-size: clamp(36px, 5vw, 60px);
+    color: var(--verde-bosque);
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+  }
+  .block-head h2 em { font-style: italic; color: var(--oliva); font-weight: 300; }
+  .block-head p {
+    font-family: "Fraunces", serif;
+    font-size: 19px;
+    color: var(--tinta);
+    margin-top: 20px;
+    max-width: 56ch;
+    line-height: 1.6;
+  }
+
+  /* ============ HOW ============ */
+  .how-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  .how-step {
+    border-top: 1px solid var(--oliva-soft);
+    padding-top: 28px;
+    position: relative;
+  }
+  .how-step .step-num {
+    font-family: "Fraunces", serif;
+    font-style: italic;
+    font-size: 64px;
+    color: var(--oliva-soft);
+    line-height: 1;
+    margin-bottom: 24px;
+  }
+  .how-step h3 {
+    font-family: "Fraunces", serif;
+    font-size: 28px;
+    color: var(--verde-bosque);
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+  .how-step p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--tinta);
+  }
+  @media (max-width: 800px) {
+    .how-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ============ ESTA SEMANA ============ */
+  .week {
+    background: var(--verde-bosque);
+    color: var(--crema);
+    padding: 120px var(--pad-x);
+    margin: 80px calc(50% - 50vw);
+    width: 100vw;
+    max-width: 100vw;
+  }
+  .week-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .week h2 {
+    font-family: "Fraunces", serif;
+    font-variation-settings: "SOFT" 40, "opsz" 144;
+    font-size: clamp(40px, 5vw, 64px);
+    line-height: 1.05;
+    color: var(--crema);
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+  }
+  .week h2 em { font-style: italic; color: var(--acento-2); font-weight: 300; }
+  .week .lead { font-family: "Fraunces", serif; font-size: 18px; line-height: 1.6; color: var(--oliva-soft); max-width: 40ch; }
+  .week-list {
+    list-style: none;
+    border-top: 1px solid rgba(244,239,230,0.18);
+  }
+  .week-list li {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: baseline;
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(244,239,230,0.18);
+  }
+  .week-list .name {
+    font-family: "Fraunces", serif;
+    font-size: 22px;
+    color: var(--crema);
+  }
+  .week-list .name em {
+    font-style: italic;
+    color: var(--oliva-soft);
+    font-size: 14px;
+    margin-left: 8px;
+  }
+  .week-list .badge {
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--acento-2);
+  }
+  .week-foot {
+    margin-top: 24px;
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    color: var(--oliva-soft);
+    letter-spacing: 0.06em;
+  }
+  @media (max-width: 900px) {
+    .week-inner { grid-template-columns: 1fr; gap: 48px; }
+  }
+
+  /* ============ PLANES ============ */
+  .plans-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .plan {
+    background: var(--crema);
+    border: 1px solid var(--oliva-soft);
+    padding: 40px 32px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 240ms ease, box-shadow 240ms ease;
+  }
+  .plan:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 48px -16px rgba(44,61,46,0.15);
+  }
+  .plan.featured {
+    background: var(--verde-bosque);
+    color: var(--crema);
+    border-color: var(--verde-bosque);
+    position: relative;
+  }
+  .plan.featured .label { color: var(--acento-2); }
+  .plan.featured h3,
+  .plan.featured .price { color: var(--crema); }
+  .plan.featured .plan-desc,
+  .plan.featured .plan-features li { color: var(--oliva-soft); }
+  .plan.featured .badge-feat {
+    position: absolute;
+    top: -12px;
+    right: 24px;
+    background: var(--acento);
+    color: var(--crema);
+    padding: 6px 12px;
+    font-family: "Inter", sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border-radius: 999px;
+  }
+  .plan h3 {
+    font-family: "Fraunces", serif;
+    font-style: italic;
+    font-size: 32px;
+    color: var(--verde-bosque);
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+  }
+  .plan .plan-desc {
+    font-family: "Fraunces", serif;
+    font-size: 15px;
+    color: var(--oliva);
+    margin-bottom: 24px;
+    line-height: 1.5;
+  }
+  .plan .price {
+    font-family: "Fraunces", serif;
+    font-size: 48px;
+    color: var(--verde-bosque);
+    margin-bottom: 4px;
+    letter-spacing: -0.02em;
+  }
+  .plan .price-meta {
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    color: var(--oliva);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+  }
+  .plan-features {
+    list-style: none;
+    margin-bottom: 32px;
+    flex: 1;
+  }
+  .plan-features li {
+    padding: 8px 0;
+    font-family: "Fraunces", serif;
+    font-size: 16px;
+    color: var(--tinta);
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+  }
+  .plan-features li::before {
+    content: "·";
+    color: var(--oliva);
+    font-size: 22px;
+    line-height: 1;
+  }
+  .plan .btn {
+    width: 100%;
+    text-align: center;
+  }
+  .plan.featured .btn {
+    background: var(--crema);
+    color: var(--verde-bosque);
+    border-color: var(--crema);
+  }
+  .plan.featured .btn:hover { background: var(--acento-2); border-color: var(--acento-2); color: var(--verde-bosque); }
+  @media (max-width: 900px) {
+    .plans-grid { grid-template-columns: 1fr; }
+  }
+  .plans-foot {
+    margin-top: 32px;
+    text-align: center;
+    font-family: "Fraunces", serif;
+    font-style: italic;
+    font-size: 16px;
+    color: var(--oliva);
+  }
+
+  /* ============ ZONAS ============ */
+  .zones-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .zone {
+    background: var(--crema);
+    border: 1px solid var(--oliva-soft);
+    padding: 40px;
+    border-radius: 4px;
+  }
+  .zone-day {
+    font-family: "Fraunces", serif;
+    font-style: italic;
+    font-size: 28px;
+    color: var(--verde-bosque);
+    margin-bottom: 6px;
+  }
+  .zone-date {
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--oliva);
+    margin-bottom: 24px;
+  }
+  .zone-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .zone-list .pill {
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    padding: 8px 14px;
+    background: var(--crema-soft);
+    color: var(--verde-bosque);
+    border-radius: 999px;
+    font-weight: 500;
+  }
+  .timeline {
+    margin-top: 48px;
+    border-top: 1px solid var(--oliva-soft);
+    padding-top: 32px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .tl-step h4 {
+    font-family: "Fraunces", serif;
+    font-size: 20px;
+    color: var(--verde-bosque);
+    margin-bottom: 6px;
+  }
+  .tl-step .day {
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--acento);
+    margin-bottom: 8px;
+  }
+  .tl-step p { font-size: 14px; color: var(--tinta); }
+  @media (max-width: 800px) {
+    .zones-grid, .timeline { grid-template-columns: 1fr; }
+  }
+
+  /* ============ MANIFIESTO ============ */
+  .manifest-block {
+    background: var(--crema-soft);
+    padding: 120px var(--pad-x);
+    margin: 80px calc(50% - 50vw);
+    width: 100vw;
+    max-width: 100vw;
+  }
+  .manifest-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .manifest-inner .label { display: inline-block; margin-bottom: 32px; }
+  .manifest-inner h2 {
+    font-family: "Fraunces", serif;
+    font-variation-settings: "SOFT" 60, "opsz" 144;
+    font-weight: 300;
+    font-size: clamp(32px, 4.2vw, 52px);
+    line-height: 1.25;
+    color: var(--verde-bosque);
+    letter-spacing: -0.012em;
+  }
+  .manifest-inner h2 em {
+    font-style: italic;
+    color: var(--oliva);
+  }
+  .manifest-inner .signature {
+    margin-top: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    color: var(--oliva);
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  .signature::before, .signature::after {
+    content: "";
+    width: 32px;
+    height: 1px;
+    background: var(--oliva);
+  }
+
+  /* ============ FAQ ============ */
+  .faq-list { border-top: 1px solid var(--oliva-soft); }
+  .faq-item {
+    border-bottom: 1px solid var(--oliva-soft);
+    padding: 24px 0;
+  }
+  .faq-q {
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Fraunces", serif;
+    font-size: 22px;
+    color: var(--verde-bosque);
+    padding-right: 16px;
+  }
+  .faq-q::-webkit-details-marker { display: none; }
+  .faq-q::after {
+    content: "+";
+    font-family: "Inter", sans-serif;
+    font-weight: 300;
+    font-size: 28px;
+    color: var(--oliva);
+    transition: transform 200ms ease;
+  }
+  details[open] .faq-q::after { content: "−"; transform: rotate(0deg); }
+  .faq-a {
+    font-family: "Fraunces", serif;
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--tinta);
+    padding: 16px 60px 8px 0;
+    max-width: 65ch;
+  }
+
+  /* ============ CTA FINAL ============ */
+  .cta-final {
+    background: var(--verde-bosque);
+    color: var(--crema);
+    padding: 120px var(--pad-x);
+    margin: 0 calc(50% - 50vw) 0;
+    width: 100vw;
+    max-width: 100vw;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-final::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 30%, rgba(232,199,102,0.12), transparent 50%),
+      radial-gradient(ellipse at 80% 70%, rgba(201,87,58,0.12), transparent 50%);
+  }
+  .cta-final-inner {
+    position: relative;
+    max-width: 720px;
+    margin: 0 auto;
+    z-index: 2;
+  }
+  .cta-final h2 {
+    font-family: "Fraunces", serif;
+    font-variation-settings: "SOFT" 50, "opsz" 144;
+    font-size: clamp(40px, 6vw, 80px);
+    line-height: 1;
+    color: var(--crema);
+    margin-bottom: 24px;
+    letter-spacing: -0.025em;
+  }
+  .cta-final h2 em { font-style: italic; color: var(--acento-2); font-weight: 300; }
+  .cta-final p {
+    font-family: "Fraunces", serif;
+    font-size: 20px;
+    color: var(--oliva-soft);
+    margin-bottom: 40px;
+    max-width: 50ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .cta-final .btn.large {
+    background: var(--acento-2);
+    color: var(--verde-bosque);
+    border-color: var(--acento-2);
+    font-weight: 500;
+  }
+  .cta-final .btn.large:hover {
+    background: var(--crema);
+    border-color: var(--crema);
+  }
+
+  /* ============ FOOTER ============ */
+  footer.foot {
+    background: var(--bosque-profundo);
+    color: var(--oliva-soft);
+    padding: 64px var(--pad-x) 32px;
+  }
+  .foot-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px;
+  }
+  .foot-brand .word {
+    font-family: "Fraunces", serif;
+    font-variation-settings: "SOFT" 50, "opsz" 144;
+    font-size: 36px;
+    color: var(--crema);
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+  }
+  .foot-brand .tag {
+    font-family: "Fraunces", serif;
+    font-style: italic;
+    font-size: 16px;
+    color: var(--oliva-soft);
+  }
+  .foot-col h5 {
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--acento-2);
+    margin-bottom: 18px;
+    font-weight: 500;
+  }
+  .foot-col ul { list-style: none; }
+  .foot-col li {
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    margin-bottom: 10px;
+    color: var(--oliva-soft);
+  }
+  .foot-col a { color: var(--oliva-soft); }
+  .foot-col a:hover { color: var(--crema); }
+  .foot-bottom {
+    max-width: 1280px;
+    margin: 48px auto 0;
+    border-top: 1px solid rgba(244,239,230,0.12);
+    padding-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    color: rgba(244,239,230,0.4);
+    letter-spacing: 0.08em;
+  }
+  @media (max-width: 800px) {
+    .foot-inner { grid-template-columns: 1fr 1fr; }
+    .foot-brand { grid-column: 1 / -1; }
+    .foot-bottom { flex-direction: column; gap: 12px; text-align: center; }
+  }
+
+  ::selection { background: var(--verde-bosque); color: var(--crema); }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav>
+  <div class="nav-inner">
+    <a href="#top" class="nav-brand">
+      <svg width="36" height="36" viewBox="0 0 200 200">
+        <circle cx="100" cy="100" r="95" fill="none" stroke="#2C3D2E" stroke-width="6" />
+        <text x="100" y="148" text-anchor="middle" font-family="Fraunces, serif" font-size="140" font-style="italic" fill="#2C3D2E">S</text>
+      </svg>
+      <span class="word">Stagione</span>
+    </a>
+    <div class="nav-links">
+      <a href="#como">Cómo funciona</a>
+      <a href="#semana">Esta semana</a>
+      <a href="#planes">Planes</a>
+      <a href="#zonas">Zonas</a>
+      <a href="#suscribite" class="btn">Suscribite</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="hero-text">
+    <div class="eyebrow">Suscripción semanal · zona norte</div>
+    <h1>La estación, <em>en tu mesa.</em></h1>
+    <p class="lead">Cada semana, lo mejor de la huerta seleccionado a mano por nosotros y entregado en tu casa. Sin góndolas, sin bolsas, sin pensar.</p>
+    <div class="hero-cta">
+      <a href="#planes" class="btn large">Ver planes</a>
+      <a href="#como" class="secondary">¿Cómo funciona? →</a>
+    </div>
+  </div>
+  <div class="hero-art">
+    <svg class="hero-art-mono" viewBox="0 0 200 200">
+      <circle cx="100" cy="100" r="95" fill="none" stroke="#F4EFE6" stroke-width="1.5" />
+      <circle cx="100" cy="100" r="86" fill="none" stroke="#F4EFE6" stroke-width="0.5" />
+      <text x="100" y="138" text-anchor="middle" font-family="Fraunces, serif" font-size="120" font-style="italic" fill="#F4EFE6">S</text>
+      <defs>
+        <path id="topArc" d="M 30,100 A 70,70 0 0 1 170,100" fill="none" />
+        <path id="botArc" d="M 30,100 A 70,70 0 0 0 170,100" fill="none" />
+      </defs>
+      <text font-family="Inter, sans-serif" font-size="9" letter-spacing="3" fill="#F4EFE6">
+        <textPath href="#topArc" startOffset="50%" text-anchor="middle">FRESCHEZZA · CURATA</textPath>
+      </text>
+      <text font-family="Inter, sans-serif" font-size="9" letter-spacing="3" fill="#F4EFE6">
+        <textPath href="#botArc" startOffset="50%" text-anchor="middle">DAL 2026 · STAGIONE</textPath>
+      </text>
+    </svg>
+    <div class="hero-art-caption">
+      <span>Stagione · Mayo</span>
+      <span>Buenos Aires</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STRIP ============ -->
+<div class="strip">
+  <div class="strip-inner">
+    <span>Lo mejor de cada estación</span>
+    <span>Seleccionado a mano</span>
+    <span>Entregado puerta a puerta</span>
+    <span>Sin pensar, sin moverte</span>
+    <span>Lo mejor de cada estación</span>
+    <span>Seleccionado a mano</span>
+    <span>Entregado puerta a puerta</span>
+    <span>Sin pensar, sin moverte</span>
+  </div>
+</div>
+
+<!-- ============ CÓMO FUNCIONA ============ -->
+<section class="block" id="como">
+  <div class="block-head">
+    <span class="label">Cómo funciona</span>
+    <h2>Tres pasos. <em>Y vos sin moverte.</em></h2>
+    <p>Una suscripción mensual te garantiza un cajón curado cada semana. Vos elegís el plan; nosotros nos encargamos de todo lo demás.</p>
+  </div>
+  <div class="how-grid">
+    <div class="how-step">
+      <div class="step-num">01</div>
+      <h3>Suscribite.</h3>
+      <p>Elegí el cajón que mejor le va a tu familia. Pagás por mes con Mercado Pago, transferencia o tarjeta. Cancelás cuando quieras.</p>
+    </div>
+    <div class="how-step">
+      <div class="step-num">02</div>
+      <h3>Curamos.</h3>
+      <p>Cada lunes nuestro equipo recorre los mejores productores y selecciona a mano lo más fresco, lo más sabroso, lo más maduro en su punto justo.</p>
+    </div>
+    <div class="how-step">
+      <div class="step-num">03</div>
+      <h3>Recibilo en casa.</h3>
+      <p>Miércoles o jueves —según tu zona— el cajón llega a tu puerta. Abrís y cocinás. Eso es todo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ESTA SEMANA ============ -->
+<section class="week" id="semana">
+  <div class="week-inner">
+    <div>
+      <span class="label" style="color: var(--acento-2);">Selezione della settimana</span>
+      <h2 style="margin-top: 16px;">Esta semana, <em>en el cajón.</em></h2>
+      <p class="lead">Una mirada al cajón curado de esta semana. Cada cajón es distinto, porque la estación también lo es.</p>
+      <div class="week-foot">Mayo · semana 3 · 2026</div>
+    </div>
+    <ul class="week-list">
+      <li>
+        <span class="name">Tomate perita <em>maduro en planta</em></span>
+        <span class="badge">de estación</span>
+      </li>
+      <li>
+        <span class="name">Pera williams <em>punto justo</em></span>
+        <span class="badge">primera</span>
+      </li>
+      <li>
+        <span class="name">Rúcula salvaje <em>de huerta</em></span>
+        <span class="badge">de estación</span>
+      </li>
+      <li>
+        <span class="name">Brócoli baby <em>cosecha lunes</em></span>
+        <span class="badge">de estación</span>
+      </li>
+      <li>
+        <span class="name">Limón sutil <em>orgánico</em></span>
+        <span class="badge">selección</span>
+      </li>
+      <li>
+        <span class="name">Albahaca fresca <em>genovesa</em></span>
+        <span class="badge">huerta propia</span>
+      </li>
+      <li>
+        <span class="name">Manzana red <em>cosecha tardía</em></span>
+        <span class="badge">de estación</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ PLANES ============ -->
+<section class="block" id="planes">
+  <div class="block-head">
+    <span class="label">Planes</span>
+    <h2>Elegí tu cajón. <em>Cancelás cuando quieras.</em></h2>
+    <p>Tres tamaños pensados para distintas familias. El precio es por mes e incluye cuatro entregas semanales puerta a puerta.</p>
+  </div>
+  <div class="plans-grid">
+    <div class="plan">
+      <span class="label">Esencial</span>
+      <h3>Picolo</h3>
+      <p class="plan-desc">Para 1 o 2 personas. Lo justo para una semana de cocina ligera.</p>
+      <div class="price">$ —</div>
+      <div class="price-meta">Por mes · 4 entregas</div>
+      <ul class="plan-features">
+        <li>5 a 7 variedades por semana</li>
+        <li>Mix de fruta y verdura de estación</li>
+        <li>Entrega puerta a puerta</li>
+        <li>Cancelás cuando quieras</li>
+      </ul>
+      <a href="#suscribite" class="btn">Empezar</a>
+    </div>
+
+    <div class="plan featured">
+      <span class="badge-feat">Más elegido</span>
+      <span class="label">Familiar</span>
+      <h3>Famiglia</h3>
+      <p class="plan-desc">Para 3 o 4 personas. La cocina entera de la semana resuelta.</p>
+      <div class="price">$ —</div>
+      <div class="price-meta">Por mes · 4 entregas</div>
+      <ul class="plan-features">
+        <li>9 a 12 variedades por semana</li>
+        <li>Mix de fruta y verdura de estación</li>
+        <li>Entrega puerta a puerta prioritaria</li>
+        <li>Acceso anticipado a productos especiales</li>
+        <li>Cancelás cuando quieras</li>
+      </ul>
+      <a href="#suscribite" class="btn">Empezar</a>
+    </div>
+
+    <div class="plan">
+      <span class="label">Generoso</span>
+      <h3>Abbondanza</h3>
+      <p class="plan-desc">Para 5+ personas o quien cocina mucho. Cantidad sin perder curaduría.</p>
+      <div class="price">$ —</div>
+      <div class="price-meta">Por mes · 4 entregas</div>
+      <ul class="plan-features">
+        <li>14 a 18 variedades por semana</li>
+        <li>Mix de fruta y verdura de estación</li>
+        <li>Entrega puerta a puerta prioritaria</li>
+        <li>Acceso anticipado a productos especiales</li>
+        <li>Hierbas frescas de huerta propia incluidas</li>
+        <li>Cancelás cuando quieras</li>
+      </ul>
+      <a href="#suscribite" class="btn">Empezar</a>
+    </div>
+  </div>
+  <div class="plans-foot">
+    Los precios se confirman al momento de suscribirte. Pago por Mercado Pago, transferencia o tarjeta de crédito.
+  </div>
+</section>
+
+<!-- ============ ZONAS ============ -->
+<section class="block" id="zonas">
+  <div class="block-head">
+    <span class="label">Zonas y entrega</span>
+    <h2>Llegamos a tu casa <em>todas las semanas.</em></h2>
+    <p>Operamos en zona norte de Buenos Aires. Cada zona tiene un día fijo de entrega para que sepas exactamente cuándo esperar tu cajón.</p>
+  </div>
+
+  <div class="zones-grid">
+    <div class="zone">
+      <div class="zone-day">Miércoles</div>
+      <div class="zone-date">Día de entrega</div>
+      <div class="zone-list">
+        <span class="pill">Nordelta</span>
+        <span class="pill">Villanueva</span>
+        <span class="pill">Tigre</span>
+      </div>
+    </div>
+    <div class="zone">
+      <div class="zone-day">Jueves</div>
+      <div class="zone-date">Día de entrega</div>
+      <div class="zone-list">
+        <span class="pill">Maschwitz</span>
+        <span class="pill">Escobar</span>
+        <span class="pill">Pilar</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="tl-step">
+      <div class="day">Lunes</div>
+      <h4>Tomamos pedidos.</h4>
+      <p>Nuestro equipo recorre los mejores productores de la zona y arma los cajones de la semana.</p>
+    </div>
+    <div class="tl-step">
+      <div class="day">Martes</div>
+      <h4>Curamos y armamos.</h4>
+      <p>Selección a mano, control de calidad pieza por pieza, armado del cajón con tu nombre.</p>
+    </div>
+    <div class="tl-step">
+      <div class="day">Mié · Jue</div>
+      <h4>Entregamos.</h4>
+      <p>Llega a tu puerta entre las 9 y las 13. Te avisamos por WhatsApp cuando va en camino.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MANIFIESTO ============ -->
+<section class="manifest-block">
+  <div class="manifest-inner">
+    <span class="label">Nuestro compromiso</span>
+    <h2>
+      Cada semana recorremos los mejores productores y elegimos a mano <em>lo más fresco, lo más sabroso, lo más maduro en su punto justo.</em>
+      <br/><br/>
+      Vos no perdés tiempo. Solo abrís el cajón y cocinás.
+    </h2>
+    <div class="signature">El equipo de Stagione</div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="block" id="faq">
+  <div class="block-head">
+    <span class="label">Preguntas frecuentes</span>
+    <h2>Todo lo que <em>quizás te estás preguntando.</em></h2>
+  </div>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary class="faq-q">¿Puedo elegir qué viene en el cajón?</summary>
+      <p class="faq-a">No. La curaduría es lo que hace a Stagione. Cada semana nuestro equipo elige lo mejor que ofrece la temporada. Si tenés alguna alergia o algo que no comés, lo dejás anotado al suscribirte y lo respetamos.</p>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">¿Qué pasa si me voy de viaje una semana?</summary>
+      <p class="faq-a">Pausás la entrega de esa semana avisando con 48 horas de anticipación. Esa entrega se acredita al mes siguiente. Tu suscripción no se interrumpe.</p>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">¿Cómo se pagan los planes?</summary>
+      <p class="faq-a">Por mes adelantado. Aceptamos Mercado Pago, transferencia bancaria y tarjeta de crédito. Te enviamos el comprobante por mail.</p>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">¿Puedo cancelar cuando quiera?</summary>
+      <p class="faq-a">Sí, sin compromiso de permanencia. Cancelás avisándonos antes del próximo ciclo mensual y listo.</p>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">¿De dónde viene la fruta y la verdura?</summary>
+      <p class="faq-a">Trabajamos con productores seleccionados de la región. Priorizamos productores chicos, agricultura cuidada y estacionalidad real. Si querés saber el origen específico de algo, te lo contamos.</p>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">¿Hay un mínimo de meses?</summary>
+      <p class="faq-a">No. La suscripción es mes a mes. Probás un mes y decidís.</p>
+    </details>
+  </div>
+</section>
+
+<!-- ============ CTA FINAL ============ -->
+<section class="cta-final" id="suscribite">
+  <div class="cta-final-inner">
+    <h2>Empezá <em>esta semana.</em></h2>
+    <p>Suscribite hoy y recibí tu primer cajón el próximo miércoles o jueves, según tu zona.</p>
+    <a href="https://wa.me/5491100000000?text=Hola%20Stagione%2C%20quiero%20suscribirme" class="btn large">Suscribirme por WhatsApp</a>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="foot">
+  <div class="foot-inner">
+    <div class="foot-brand">
+      <div class="word">Stagione</div>
+      <div class="tag">La estación, en tu mesa.</div>
+    </div>
+    <div class="foot-col">
+      <h5>Navegación</h5>
+      <ul>
+        <li><a href="#como">Cómo funciona</a></li>
+        <li><a href="#semana">Esta semana</a></li>
+        <li><a href="#planes">Planes</a></li>
+        <li><a href="#zonas">Zonas</a></li>
+        <li><a href="#faq">Preguntas</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>Contacto</h5>
+      <ul>
+        <li><a href="https://wa.me/5491100000000">WhatsApp</a></li>
+        <li><a href="mailto:hola@stagione.com.ar">hola@stagione.com.ar</a></li>
+        <li><a href="https://instagram.com/stagione.ar">@stagione.ar</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>Zonas</h5>
+      <ul>
+        <li>Nordelta · Villanueva</li>
+        <li>Tigre</li>
+        <li>Maschwitz · Escobar</li>
+        <li>Pilar</li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Stagione · Buenos Aires</span>
+    <span>Hecho con cuidado en zona norte</span>
+  </div>
+</footer>
+
+</body>
+</html>

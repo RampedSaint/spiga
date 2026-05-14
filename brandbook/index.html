@@ -1,0 +1,1317 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Stagione — Brandbook v1.0</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --verde-bosque: #2C3D2E;
+    --bosque-profundo: #2A3F2C;
+    --crema: #F4EFE6;
+    --crema-soft: #EAE3D5;
+    --tinta: #1A1A18;
+    --oliva: #8A9476;
+    --oliva-soft: #B8BFA8;
+
+    --primavera-1: #D9A4A4;
+    --primavera-2: #A3C49C;
+    --verano-1:    #C9573A;
+    --verano-2:    #E8C766;
+    --otono-1:     #B66A3D;
+    --otono-2:     #C99835;
+    --invierno-1:  #6B2D2D;
+    --invierno-2:  #2A3F2C;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--crema); color: var(--tinta); }
+  body {
+    font-family: "Fraunces", Georgia, serif;
+    font-optical-sizing: auto;
+    font-variation-settings: "SOFT" 30, "WONK" 0;
+    font-weight: 400;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .ui, .label, .caption, .num, button, code {
+    font-family: "Inter", system-ui, sans-serif;
+    font-feature-settings: "ss01" 1, "cv11" 1;
+  }
+
+  .label {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--verde-bosque);
+    font-weight: 500;
+  }
+
+  .num {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--oliva);
+    font-weight: 500;
+  }
+
+  a { color: var(--verde-bosque); }
+
+  /* ============ HERO ============ */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 48px 56px;
+    background: var(--crema);
+    border-bottom: 1px solid var(--oliva-soft);
+  }
+  .hero-top { display: flex; justify-content: space-between; align-items: flex-start; }
+  .hero-mark { display: flex; flex-direction: column; align-items: center; justify-content: center; flex: 1; }
+  .hero-mono { width: 180px; height: 180px; }
+  .hero-wordmark {
+    font-family: "Fraunces", serif;
+    font-variation-settings: "SOFT" 50, "WONK" 0, "opsz" 144;
+    font-weight: 400;
+    font-size: clamp(80px, 14vw, 200px);
+    color: var(--verde-bosque);
+    letter-spacing: -0.025em;
+    line-height: 0.95;
+    margin-top: 32px;
+  }
+  .hero-tagline {
+    font-family: "Fraunces", serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(20px, 2.4vw, 30px);
+    color: var(--verde-bosque);
+    margin-top: 18px;
+    text-align: center;
+  }
+  .hero-bottom { display: flex; justify-content: space-between; align-items: flex-end; }
+  .hero-meta { font-family: "Inter", sans-serif; font-size: 12px; color: var(--oliva); letter-spacing: 0.12em; text-transform: uppercase; }
+
+  /* ============ LAYOUT ============ */
+  section.chapter {
+    padding: 120px 56px;
+    border-bottom: 1px solid var(--oliva-soft);
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  .chapter-head {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 32px;
+    margin-bottom: 64px;
+    align-items: baseline;
+  }
+  .chapter-num {
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    color: var(--oliva);
+    text-transform: uppercase;
+    font-weight: 500;
+    padding-top: 14px;
+  }
+  .chapter-title {
+    font-family: "Fraunces", serif;
+    font-variation-settings: "SOFT" 40, "opsz" 144;
+    font-weight: 400;
+    font-size: clamp(36px, 5vw, 64px);
+    color: var(--verde-bosque);
+    letter-spacing: -0.015em;
+    line-height: 1.05;
+  }
+  .chapter-kicker {
+    font-family: "Fraunces", serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 18px;
+    color: var(--oliva);
+    margin-top: 16px;
+    max-width: 56ch;
+  }
+
+  .body-grid {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 32px;
+  }
+  .body-grid > .body { grid-column: 2; }
+  .body p {
+    font-size: 18px;
+    line-height: 1.65;
+    max-width: 65ch;
+    margin-bottom: 18px;
+  }
+  .body p.lead {
+    font-size: 22px;
+    line-height: 1.55;
+    color: var(--tinta);
+    max-width: 55ch;
+  }
+
+  hr.hair {
+    border: none;
+    border-top: 1px solid var(--oliva-soft);
+    margin: 64px 0;
+  }
+
+  /* ============ MANIFIESTO ============ */
+  .manifest {
+    font-family: "Fraunces", serif;
+    font-variation-settings: "SOFT" 60, "opsz" 144;
+    font-weight: 300;
+    font-size: clamp(28px, 3.4vw, 44px);
+    line-height: 1.25;
+    color: var(--verde-bosque);
+    letter-spacing: -0.012em;
+    max-width: 22ch;
+  }
+  .manifest em {
+    font-style: italic;
+    color: var(--oliva);
+    font-weight: 300;
+  }
+
+  /* ============ LOGO SYSTEM ============ */
+  .logo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 24px;
+  }
+  .logo-card {
+    background: var(--crema);
+    border: 1px solid var(--oliva-soft);
+    padding: 64px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 320px;
+    position: relative;
+  }
+  .logo-card.dark { background: var(--verde-bosque); border-color: var(--verde-bosque); color: var(--crema); }
+  .logo-card.dark .label { color: var(--oliva-soft); }
+  .logo-card .label { position: absolute; top: 16px; left: 16px; }
+
+  .wordmark-large {
+    font-family: "Fraunces", serif;
+    font-variation-settings: "SOFT" 50, "opsz" 144;
+    font-weight: 400;
+    font-size: 72px;
+    letter-spacing: -0.025em;
+    color: var(--verde-bosque);
+    line-height: 1;
+  }
+  .logo-card.dark .wordmark-large { color: var(--crema); }
+
+  .logo-clearspace {
+    background: var(--crema);
+    border: 1px solid var(--oliva-soft);
+    padding: 48px;
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+  .clearspace-vis {
+    position: relative;
+    padding: 80px;
+    background: repeating-linear-gradient(45deg, transparent 0 7px, rgba(138,148,118,0.12) 7px 8px);
+  }
+  .clearspace-vis svg { display: block; margin: 0 auto; background: var(--crema); padding: 16px; }
+
+  .lockup-row { display: flex; align-items: center; gap: 18px; }
+  .lockup-row .wordmark-large { font-size: 44px; }
+
+  /* ============ DON'TS ============ */
+  .donts {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-top: 24px;
+  }
+  .dont {
+    background: var(--crema);
+    border: 1px solid var(--oliva-soft);
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 16px;
+  }
+  .dont .label { position: absolute; bottom: 12px; left: 12px; color: #B65656; font-weight: 500; }
+  .dont .x {
+    position: absolute; top: 10px; right: 14px;
+    font-family: "Inter", sans-serif; color: #B65656; font-size: 22px; font-weight: 300;
+  }
+
+  /* ============ PALETA ============ */
+  .palette-base {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-top: 24px;
+  }
+  .swatch {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid transparent;
+  }
+  .swatch .chip {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+  .swatch .meta {
+    padding: 14px 4px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .swatch .name { font-family: "Fraunces", serif; font-size: 16px; color: var(--tinta); }
+  .swatch .hex { font-family: "Inter", sans-serif; font-size: 11px; letter-spacing: 0.12em; color: var(--oliva); text-transform: uppercase; }
+  .swatch .role { font-family: "Inter", sans-serif; font-size: 11px; color: var(--oliva); margin-top: 2px; }
+
+  .seasons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-top: 32px;
+  }
+  .season {
+    border: 1px solid var(--oliva-soft);
+    padding: 24px;
+    background: var(--crema);
+  }
+  .season-title {
+    font-family: "Fraunces", serif;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--verde-bosque);
+    margin-bottom: 16px;
+  }
+  .season-pair { display: flex; gap: 12px; margin-bottom: 16px; }
+  .season-pair .chip { width: 60px; height: 60px; }
+  .season-meta { font-family: "Inter", sans-serif; font-size: 11px; color: var(--oliva); letter-spacing: 0.06em; line-height: 1.6; }
+  .season-meta strong { color: var(--tinta); font-weight: 500; }
+
+  /* ============ TIPOGRAFÍA ============ */
+  .type-spec {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 40px;
+    padding: 48px 0;
+    border-bottom: 1px solid var(--oliva-soft);
+  }
+  .type-spec:last-child { border-bottom: none; }
+  .type-meta .label { display: block; margin-bottom: 8px; }
+  .type-meta .name {
+    font-family: "Fraunces", serif;
+    font-size: 28px;
+    color: var(--verde-bosque);
+    margin-bottom: 8px;
+  }
+  .type-meta .role-text { font-family: "Inter", sans-serif; font-size: 13px; color: var(--oliva); line-height: 1.6; }
+
+  .fr-display { font-family: "Fraunces", serif; font-variation-settings: "SOFT" 50, "opsz" 144; font-weight: 400; }
+  .fr-text    { font-family: "Fraunces", serif; font-variation-settings: "SOFT" 30, "opsz" 18; font-weight: 400; }
+  .inter      { font-family: "Inter", sans-serif; }
+
+  .type-sample-display {
+    font-size: 88px;
+    line-height: 0.95;
+    letter-spacing: -0.025em;
+    color: var(--verde-bosque);
+  }
+  .type-sample-quote {
+    font-size: 26px;
+    line-height: 1.4;
+    font-style: italic;
+    color: var(--tinta);
+    margin-top: 20px;
+    max-width: 28ch;
+  }
+  .type-scale-row { display: flex; gap: 24px; align-items: baseline; flex-wrap: wrap; margin-top: 16px; }
+  .type-scale-row span { color: var(--verde-bosque); }
+  .type-paragraph { font-size: 17px; line-height: 1.7; max-width: 60ch; color: var(--tinta); margin-top: 16px; }
+
+  .ui-sample { font-family: "Inter", sans-serif; }
+  .ui-sample .ui-l { font-size: 13px; color: var(--oliva); letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 4px; }
+  .ui-sample .ui-h { font-size: 28px; color: var(--tinta); font-weight: 500; letter-spacing: -0.01em; }
+  .ui-sample .ui-p { font-size: 14px; color: var(--tinta); margin-top: 12px; line-height: 1.55; max-width: 50ch; }
+  .ui-sample .ui-num { font-size: 56px; color: var(--verde-bosque); font-weight: 400; letter-spacing: -0.02em; margin-top: 16px; font-variant-numeric: tabular-nums; }
+
+  /* ============ TONO ============ */
+  .tone {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border: 1px solid var(--oliva-soft);
+    margin-top: 24px;
+  }
+  .tone-col { padding: 32px; }
+  .tone-col + .tone-col { border-left: 1px solid var(--oliva-soft); }
+  .tone-col h4 {
+    font-family: "Fraunces", serif;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--verde-bosque);
+    margin-bottom: 18px;
+  }
+  .tone-col.no h4 { color: #8A4A4A; }
+  .tone-col ul { list-style: none; }
+  .tone-col li {
+    font-family: "Fraunces", serif;
+    font-size: 16px;
+    line-height: 1.55;
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--oliva-soft);
+    color: var(--tinta);
+  }
+  .tone-col li:last-child { border-bottom: none; }
+  .tone-col .ex {
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    color: var(--oliva);
+    margin-top: 4px;
+    display: block;
+    letter-spacing: 0.02em;
+  }
+
+  /* ============ LÉXICO ============ */
+  .lex {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 24px;
+  }
+  .lex th {
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--oliva);
+    text-align: left;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--oliva-soft);
+    font-weight: 500;
+  }
+  .lex td {
+    font-family: "Fraunces", serif;
+    font-size: 17px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--oliva-soft);
+    color: var(--tinta);
+  }
+  .lex td.no { color: #A87474; text-decoration: line-through; }
+
+  /* ============ APLICACIONES ============ */
+  .apps-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 24px;
+    margin-top: 24px;
+  }
+
+  /* Cajón */
+  .app-cajon {
+    background: linear-gradient(180deg, #C8A47A 0%, #A88458 100%);
+    aspect-ratio: 4 / 3;
+    border-radius: 4px;
+    box-shadow:
+      inset 0 0 0 8px rgba(60, 35, 18, 0.12),
+      inset 0 0 0 1px rgba(0,0,0,0.2),
+      0 20px 40px rgba(0,0,0,0.06);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .app-cajon::before, .app-cajon::after {
+    content: "";
+    position: absolute;
+    background: rgba(60,35,18,0.18);
+  }
+  .app-cajon::before { top: 12%; left: 0; right: 0; height: 1px; }
+  .app-cajon::after  { bottom: 12%; left: 0; right: 0; height: 1px; }
+  .cajon-grain {
+    position: absolute; inset: 0;
+    background:
+      repeating-linear-gradient(90deg, transparent 0 12px, rgba(60,35,18,0.05) 12px 13px),
+      repeating-linear-gradient(0deg, transparent 0 60px, rgba(0,0,0,0.04) 60px 61px);
+    pointer-events: none;
+  }
+  .cajon-mono {
+    background: var(--verde-bosque);
+    color: var(--crema);
+    border-radius: 50%;
+    width: 110px;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.18);
+    z-index: 2;
+  }
+
+  /* Etiqueta kraft */
+  .app-stack { display: flex; flex-direction: column; gap: 24px; }
+
+  .app-etiqueta {
+    background: #D9C8A6;
+    padding: 24px 28px;
+    border-radius: 2px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    position: relative;
+    color: var(--tinta);
+  }
+  .app-etiqueta::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(45deg, transparent 0 4px, rgba(0,0,0,0.025) 4px 5px);
+    pointer-events: none;
+  }
+  .etiqueta-row1 {
+    font-family: "Inter", sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(26,26,24,0.6);
+  }
+  .etiqueta-row2 {
+    font-family: "Fraunces", serif;
+    font-style: italic;
+    font-size: 24px;
+    color: var(--tinta);
+    margin: 4px 0 14px;
+  }
+  .etiqueta-list {
+    font-family: "Fraunces", serif;
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--tinta);
+  }
+  .etiqueta-list span { display: block; }
+
+  /* WhatsApp */
+  .app-whatsapp {
+    background: #ECE5DD;
+    padding: 16px;
+    border-radius: 6px;
+  }
+  .wa-bubble {
+    background: #DCF8C6;
+    padding: 10px 12px;
+    border-radius: 8px;
+    max-width: 80%;
+    margin-left: auto;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    line-height: 1.45;
+    color: #1A1A18;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.06);
+  }
+  .wa-bubble .wa-time { display: block; font-size: 10px; color: rgba(0,0,0,0.5); text-align: right; margin-top: 4px; }
+
+  /* Instagram */
+  .app-instagram {
+    background: var(--verde-bosque);
+    aspect-ratio: 1 / 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 32px;
+    color: var(--crema);
+    position: relative;
+    overflow: hidden;
+  }
+  .app-instagram::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 30% 70%, rgba(244,239,230,0.06), transparent 60%);
+  }
+  .ig-top { font-family: "Inter", sans-serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--oliva-soft); }
+  .ig-headline {
+    font-family: "Fraunces", serif;
+    font-style: italic;
+    font-size: 32px;
+    line-height: 1.2;
+    color: var(--crema);
+    max-width: 18ch;
+    z-index: 2;
+  }
+  .ig-foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+  }
+  .ig-foot .label { color: var(--oliva-soft); }
+
+  /* Vehículo */
+  .app-vehiculo {
+    aspect-ratio: 16 / 7;
+    background: var(--verde-bosque);
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 0 48px;
+    color: var(--crema);
+    box-shadow: 0 24px 48px rgba(0,0,0,0.08);
+  }
+  .app-vehiculo::after {
+    content: "";
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(255,255,255,0.06) 0%, transparent 30%, transparent 70%, rgba(0,0,0,0.18) 100%);
+  }
+  .vehiculo-mark { display: flex; align-items: center; gap: 24px; z-index: 2; }
+  .vehiculo-mono {
+    background: var(--crema);
+    color: var(--verde-bosque);
+    border-radius: 50%;
+    width: 90px; height: 90px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .vehiculo-text { line-height: 1.1; }
+  .vehiculo-text .v-name { font-family: "Fraunces", serif; font-size: 56px; color: var(--crema); letter-spacing: -0.02em; }
+  .vehiculo-text .v-url { font-family: "Inter", sans-serif; font-size: 11px; color: var(--oliva-soft); letter-spacing: 0.22em; text-transform: uppercase; margin-top: 8px; }
+
+  .app-caption {
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--oliva);
+    margin-top: 14px;
+  }
+
+  /* ============ COLOFÓN ============ */
+  footer.colofon {
+    padding: 80px 56px 64px;
+    text-align: center;
+    color: var(--oliva);
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  footer .mark-small { display: flex; justify-content: center; margin-bottom: 24px; }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 900px) {
+    section.chapter { padding: 80px 24px; }
+    .hero { padding: 32px 24px; }
+    .chapter-head, .body-grid { grid-template-columns: 1fr; gap: 16px; }
+    .body-grid > .body { grid-column: 1; }
+    .logo-grid, .palette-base, .seasons, .donts, .apps-grid { grid-template-columns: 1fr 1fr !important; }
+    .donts { grid-template-columns: 1fr 1fr; }
+    .seasons, .apps-grid { grid-template-columns: 1fr; }
+    .type-spec { grid-template-columns: 1fr; }
+    .tone { grid-template-columns: 1fr; }
+    .tone-col + .tone-col { border-left: none; border-top: 1px solid var(--oliva-soft); }
+  }
+
+  /* selection */
+  ::selection { background: var(--verde-bosque); color: var(--crema); }
+</style>
+</head>
+<body>
+
+<!-- ============== HERO ============== -->
+<section class="hero">
+  <div class="hero-top">
+    <div class="hero-meta">Brandbook · v1.0</div>
+    <div class="hero-meta">Mayo 2026</div>
+  </div>
+
+  <div class="hero-mark">
+    <svg class="hero-mono" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-label="Stagione monogram">
+      <circle cx="100" cy="100" r="95" fill="none" stroke="#2C3D2E" stroke-width="1.2" />
+      <circle cx="100" cy="100" r="86" fill="none" stroke="#2C3D2E" stroke-width="0.5" />
+      <text x="100" y="138" text-anchor="middle"
+        font-family="Fraunces, serif"
+        font-size="120"
+        font-style="italic"
+        font-weight="400"
+        fill="#2C3D2E">S</text>
+      <!-- circular text -->
+      <defs>
+        <path id="topArc" d="M 30,100 A 70,70 0 0 1 170,100" fill="none" />
+        <path id="botArc" d="M 30,100 A 70,70 0 0 0 170,100" fill="none" />
+      </defs>
+      <text font-family="Inter, sans-serif" font-size="9" letter-spacing="3" fill="#2C3D2E">
+        <textPath href="#topArc" startOffset="50%" text-anchor="middle">FRESCHEZZA · CURATA</textPath>
+      </text>
+      <text font-family="Inter, sans-serif" font-size="9" letter-spacing="3" fill="#2C3D2E">
+        <textPath href="#botArc" startOffset="50%" text-anchor="middle">DAL 2026 · STAGIONE</textPath>
+      </text>
+    </svg>
+
+    <div class="hero-wordmark">Stagione</div>
+    <div class="hero-tagline">La estación, en tu mesa.</div>
+  </div>
+
+  <div class="hero-bottom">
+    <div class="hero-meta">Identidad de marca</div>
+    <div class="hero-meta">Buenos Aires · Zona Norte</div>
+  </div>
+</section>
+
+<!-- ============== 00 — MANIFIESTO ============== -->
+<section class="chapter">
+  <div class="chapter-head">
+    <div class="chapter-num">00 — Manifiesto</div>
+    <div>
+      <h2 class="chapter-title">Lo que somos.</h2>
+      <p class="chapter-kicker">Una marca empieza acá: por qué existe y qué le promete a quien la elige.</p>
+    </div>
+  </div>
+
+  <div class="body-grid">
+    <div class="body">
+      <p class="manifest">
+        Cada semana recorremos los mejores productores y elegimos a mano lo más fresco, lo más sabroso, <em>lo más maduro en su punto justo.</em>
+      </p>
+      <hr class="hair" />
+      <p class="lead">Vos no perdés tiempo en góndolas. No cargás bolsas. No comparás precios. Solo abrís el cajón y cocinás.</p>
+      <p>Eso es Stagione: la huerta más cuidada del país, llegando puntual a tu casa. Una sola cosa, hecha bien.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 01 — POSICIONAMIENTO ============== -->
+<section class="chapter">
+  <div class="chapter-head">
+    <div class="chapter-num">01 — Posicionamiento</div>
+    <div>
+      <h2 class="chapter-title">Conveniencia premium para familias.</h2>
+      <p class="chapter-kicker">No vendemos verduras. Vendemos delegación experta y tiempo recuperado.</p>
+    </div>
+  </div>
+
+  <div class="body-grid">
+    <div class="body">
+      <p class="lead">Nuestro cliente vive en zona norte, tiene poder adquisitivo, le importa comer bien — y le importa más su tiempo. No quiere ir al super, no quiere elegir entre seis variedades de tomate, no quiere cargar.</p>
+      <p>Le ofrecemos: una suscripción mensual, un cajón curado por semana, entrega puerta a puerta. Lo elegimos nosotros. Confiá.</p>
+
+      <hr class="hair" />
+
+      <table class="lex">
+        <thead>
+          <tr><th>Modelo</th><th>Operativa</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Suscripción mensual</td><td>Mercado Pago · transferencia · tarjeta</td></tr>
+          <tr><td>Cajón curado semanal</td><td>Pedido los lunes</td></tr>
+          <tr><td>Entrega puerta a puerta</td><td>Mié: Nordelta · Villanueva · Tigre</td></tr>
+          <tr><td></td><td>Jue: Maschwitz · Escobar · Pilar</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 02 — NOMBRE ============== -->
+<section class="chapter">
+  <div class="chapter-head">
+    <div class="chapter-num">02 — Nombre</div>
+    <div>
+      <h2 class="chapter-title">Stagione.</h2>
+      <p class="chapter-kicker">Italiano. Significa <em>estación, temporada</em>. El nombre hace el trabajo de marketing por sí solo.</p>
+    </div>
+  </div>
+
+  <div class="body-grid">
+    <div class="body">
+      <p>Nuestra promesa es traer lo mejor de cada estación, seleccionado para vos. El nombre dice exactamente eso, sin explicación. Y abre un sistema visual estacional rotativo (paleta, hero, claim) que renueva la marca cuatro veces al año.</p>
+
+      <hr class="hair" />
+
+      <div class="ui-sample">
+        <div class="ui-l">Pronunciación</div>
+        <div class="ui-h">stah-jó-ne</div>
+        <div class="ui-p">Acento en la segunda sílaba. La "g" se pronuncia como "j" suave, no como "g" dura. Cuando se escribe en redes/web, siempre <strong>Stagione</strong> con S mayúscula.</div>
+      </div>
+
+      <hr class="hair" />
+
+      <div class="ui-sample">
+        <div class="ui-l">Marca extendida (futuro)</div>
+        <div class="ui-h fr-text" style="font-family: Fraunces, serif; font-style: italic;">Stagione Cocina · Stagione Despensa · Stagione Vino</div>
+        <div class="ui-p">El nombre admite extensiones de línea sin romper la marca madre. Cada extensión usa la misma tipografía y monograma con el sub-nombre debajo, separado por una línea fina.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 03 — LOGO ============== -->
+<section class="chapter">
+  <div class="chapter-head">
+    <div class="chapter-num">03 — Sistema de logo</div>
+    <div>
+      <h2 class="chapter-title">Wordmark + monograma sello.</h2>
+      <p class="chapter-kicker">Dos piezas que trabajan juntas o por separado según escala y soporte.</p>
+    </div>
+  </div>
+
+  <div class="body-grid">
+    <div class="body">
+
+      <div class="logo-grid">
+        <div class="logo-card">
+          <span class="label">Wordmark</span>
+          <div class="wordmark-large">Stagione</div>
+        </div>
+        <div class="logo-card dark">
+          <span class="label">Wordmark · negativo</span>
+          <div class="wordmark-large">Stagione</div>
+        </div>
+        <div class="logo-card">
+          <span class="label">Monograma · sello</span>
+          <svg width="170" height="170" viewBox="0 0 200 200">
+            <circle cx="100" cy="100" r="95" fill="none" stroke="#2C3D2E" stroke-width="1.2" />
+            <circle cx="100" cy="100" r="86" fill="none" stroke="#2C3D2E" stroke-width="0.5" />
+            <text x="100" y="138" text-anchor="middle" font-family="Fraunces, serif" font-size="120" font-style="italic" font-weight="400" fill="#2C3D2E">S</text>
+            <defs>
+              <path id="topArc2" d="M 30,100 A 70,70 0 0 1 170,100" fill="none" />
+              <path id="botArc2" d="M 30,100 A 70,70 0 0 0 170,100" fill="none" />
+            </defs>
+            <text font-family="Inter, sans-serif" font-size="9" letter-spacing="3" fill="#2C3D2E">
+              <textPath href="#topArc2" startOffset="50%" text-anchor="middle">FRESCHEZZA · CURATA</textPath>
+            </text>
+            <text font-family="Inter, sans-serif" font-size="9" letter-spacing="3" fill="#2C3D2E">
+              <textPath href="#botArc2" startOffset="50%" text-anchor="middle">DAL 2026 · STAGIONE</textPath>
+            </text>
+          </svg>
+        </div>
+        <div class="logo-card dark">
+          <span class="label">Monograma · negativo</span>
+          <svg width="170" height="170" viewBox="0 0 200 200">
+            <circle cx="100" cy="100" r="95" fill="none" stroke="#F4EFE6" stroke-width="1.2" />
+            <circle cx="100" cy="100" r="86" fill="none" stroke="#F4EFE6" stroke-width="0.5" />
+            <text x="100" y="138" text-anchor="middle" font-family="Fraunces, serif" font-size="120" font-style="italic" font-weight="400" fill="#F4EFE6">S</text>
+            <defs>
+              <path id="topArc3" d="M 30,100 A 70,70 0 0 1 170,100" fill="none" />
+              <path id="botArc3" d="M 30,100 A 70,70 0 0 0 170,100" fill="none" />
+            </defs>
+            <text font-family="Inter, sans-serif" font-size="9" letter-spacing="3" fill="#F4EFE6">
+              <textPath href="#topArc3" startOffset="50%" text-anchor="middle">FRESCHEZZA · CURATA</textPath>
+            </text>
+            <text font-family="Inter, sans-serif" font-size="9" letter-spacing="3" fill="#F4EFE6">
+              <textPath href="#botArc3" startOffset="50%" text-anchor="middle">DAL 2026 · STAGIONE</textPath>
+            </text>
+          </svg>
+        </div>
+      </div>
+
+      <hr class="hair" />
+
+      <div class="ui-sample">
+        <div class="ui-l">Lockup horizontal</div>
+      </div>
+      <div class="logo-card" style="margin-top: 16px;">
+        <div class="lockup-row">
+          <svg width="80" height="80" viewBox="0 0 200 200">
+            <circle cx="100" cy="100" r="95" fill="none" stroke="#2C3D2E" stroke-width="2" />
+            <text x="100" y="138" text-anchor="middle" font-family="Fraunces, serif" font-size="120" font-style="italic" font-weight="400" fill="#2C3D2E">S</text>
+          </svg>
+          <div class="wordmark-large">Stagione</div>
+        </div>
+      </div>
+
+      <hr class="hair" />
+
+      <div class="ui-sample">
+        <div class="ui-l">Espacio libre · clearspace</div>
+        <div class="ui-p">El espacio libre alrededor del monograma equivale al diámetro del círculo interno. Nada cruza esa zona — ni texto, ni borde, ni otro elemento.</div>
+      </div>
+      <div class="logo-clearspace">
+        <div class="clearspace-vis">
+          <svg width="120" height="120" viewBox="0 0 200 200">
+            <circle cx="100" cy="100" r="95" fill="none" stroke="#2C3D2E" stroke-width="1.5" />
+            <text x="100" y="138" text-anchor="middle" font-family="Fraunces, serif" font-size="120" font-style="italic" font-weight="400" fill="#2C3D2E">S</text>
+          </svg>
+        </div>
+        <div>
+          <div class="ui-l" style="margin-bottom: 8px;">Tamaño mínimo</div>
+          <div style="display: flex; gap: 32px; align-items: center;">
+            <svg width="40" height="40" viewBox="0 0 200 200">
+              <circle cx="100" cy="100" r="95" fill="none" stroke="#2C3D2E" stroke-width="3" />
+              <text x="100" y="138" text-anchor="middle" font-family="Fraunces, serif" font-size="120" font-style="italic" font-weight="400" fill="#2C3D2E">S</text>
+            </svg>
+            <div>
+              <div class="ui-l">Digital: 32px</div>
+              <div class="ui-l" style="margin-top: 4px;">Impreso: 12mm</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="hair" />
+
+      <div class="ui-sample">
+        <div class="ui-l">No hagas esto</div>
+        <div class="ui-p">El sistema es austero. Cualquier alteración rompe la marca.</div>
+      </div>
+      <div class="donts">
+        <div class="dont">
+          <span class="x">×</span>
+          <svg width="80" height="80" viewBox="0 0 200 200" style="transform: rotate(20deg);">
+            <circle cx="100" cy="100" r="95" fill="none" stroke="#2C3D2E" stroke-width="1.5" />
+            <text x="100" y="138" text-anchor="middle" font-family="Fraunces, serif" font-size="120" font-style="italic" font-weight="400" fill="#2C3D2E">S</text>
+          </svg>
+          <span class="label">No rotar</span>
+        </div>
+        <div class="dont">
+          <span class="x">×</span>
+          <svg width="120" height="60" viewBox="0 0 200 200" preserveAspectRatio="none">
+            <circle cx="100" cy="100" r="95" fill="none" stroke="#2C3D2E" stroke-width="1.5" />
+            <text x="100" y="138" text-anchor="middle" font-family="Fraunces, serif" font-size="120" font-style="italic" font-weight="400" fill="#2C3D2E">S</text>
+          </svg>
+          <span class="label">No estirar</span>
+        </div>
+        <div class="dont">
+          <span class="x">×</span>
+          <svg width="80" height="80" viewBox="0 0 200 200">
+            <circle cx="100" cy="100" r="95" fill="#C9573A" stroke="#C9573A" stroke-width="1.5" />
+            <text x="100" y="138" text-anchor="middle" font-family="Fraunces, serif" font-size="120" font-style="italic" font-weight="400" fill="#FF66CC">S</text>
+          </svg>
+          <span class="label">No recolorear fuera de paleta</span>
+        </div>
+        <div class="dont">
+          <span class="x">×</span>
+          <svg width="80" height="80" viewBox="0 0 200 200" style="filter: drop-shadow(0 4px 6px rgba(0,0,0,0.4));">
+            <circle cx="100" cy="100" r="95" fill="none" stroke="#2C3D2E" stroke-width="1.5" />
+            <text x="100" y="138" text-anchor="middle" font-family="Fraunces, serif" font-size="120" font-style="italic" font-weight="400" fill="#2C3D2E">S</text>
+          </svg>
+          <span class="label">No agregar sombras / efectos</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============== 04 — PALETA ============== -->
+<section class="chapter">
+  <div class="chapter-head">
+    <div class="chapter-num">04 — Paleta cromática</div>
+    <div>
+      <h2 class="chapter-title">Una base austera. Un acento estacional.</h2>
+      <p class="chapter-kicker">El sistema cromático tiene dos capas: lo que está siempre, y lo que cambia con la temporada.</p>
+    </div>
+  </div>
+
+  <div class="body-grid">
+    <div class="body">
+
+      <div class="ui-sample"><div class="ui-l">Permanente</div></div>
+      <div class="palette-base">
+        <div class="swatch">
+          <div class="chip" style="background: #2C3D2E;"></div>
+          <div class="meta">
+            <div class="name">Verde Bosque</div>
+            <div class="hex">#2C3D2E</div>
+            <div class="role">Primario · logo · titulares</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="chip" style="background: #F4EFE6;"></div>
+          <div class="meta">
+            <div class="name">Crema Lino</div>
+            <div class="hex">#F4EFE6</div>
+            <div class="role">Fondo principal</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="chip" style="background: #1A1A18;"></div>
+          <div class="meta">
+            <div class="name">Tinta</div>
+            <div class="hex">#1A1A18</div>
+            <div class="role">Texto largo · detalles</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="chip" style="background: #8A9476;"></div>
+          <div class="meta">
+            <div class="name">Oliva Polvo</div>
+            <div class="hex">#8A9476</div>
+            <div class="role">UI · líneas · captions</div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="hair" />
+
+      <div class="ui-sample">
+        <div class="ui-l">Acentos estacionales</div>
+        <div class="ui-p">Cada trimestre el sitio, las redes y la etiqueta del cajón usan el acento de su estación. Es el sistema más distintivo de la marca.</div>
+      </div>
+      <div class="seasons">
+        <div class="season">
+          <div class="season-title">Primavera</div>
+          <div class="season-pair">
+            <div class="chip" style="background: #D9A4A4;"></div>
+            <div class="chip" style="background: #A3C49C;"></div>
+          </div>
+          <div class="season-meta">
+            <strong>Rosa Brote</strong> &nbsp; #D9A4A4<br/>
+            <strong>Verde Tierno</strong> &nbsp; #A3C49C
+          </div>
+        </div>
+        <div class="season">
+          <div class="season-title">Verano</div>
+          <div class="season-pair">
+            <div class="chip" style="background: #C9573A;"></div>
+            <div class="chip" style="background: #E8C766;"></div>
+          </div>
+          <div class="season-meta">
+            <strong>Tomate Maduro</strong> &nbsp; #C9573A<br/>
+            <strong>Limón</strong> &nbsp; #E8C766
+          </div>
+        </div>
+        <div class="season">
+          <div class="season-title">Otoño</div>
+          <div class="season-pair">
+            <div class="chip" style="background: #B66A3D;"></div>
+            <div class="chip" style="background: #C99835;"></div>
+          </div>
+          <div class="season-meta">
+            <strong>Terracota</strong> &nbsp; #B66A3D<br/>
+            <strong>Mostaza</strong> &nbsp; #C99835
+          </div>
+        </div>
+        <div class="season">
+          <div class="season-title">Invierno</div>
+          <div class="season-pair">
+            <div class="chip" style="background: #6B2D2D;"></div>
+            <div class="chip" style="background: #2A3F2C;"></div>
+          </div>
+          <div class="season-meta">
+            <strong>Granate</strong> &nbsp; #6B2D2D<br/>
+            <strong>Bosque Profundo</strong> &nbsp; #2A3F2C
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============== 05 — TIPOGRAFÍA ============== -->
+<section class="chapter">
+  <div class="chapter-head">
+    <div class="chapter-num">05 — Tipografía</div>
+    <div>
+      <h2 class="chapter-title">Una serif con carácter. Una sans neutra.</h2>
+      <p class="chapter-kicker">Todo Google Fonts. Cero costo de licencia, fácil para el equipo y para terceros.</p>
+    </div>
+  </div>
+
+  <div class="body-grid">
+    <div class="body">
+
+      <div class="type-spec">
+        <div class="type-meta">
+          <span class="label">Display</span>
+          <div class="name fr-display">Fraunces</div>
+          <div class="role-text">Serif moderna con detalles tipográficos opcionales. Carácter sin perder elegancia. Soporta ejes "soft" y "wonky" para variar la voz.</div>
+        </div>
+        <div>
+          <div class="type-sample-display fr-display">Stagione</div>
+          <div class="type-sample-quote fr-text">"Cada semana, lo mejor de la estación, elegido a mano."</div>
+          <div class="type-scale-row fr-display">
+            <span style="font-size: 56px;">Aa</span>
+            <span style="font-size: 36px;">Aa</span>
+            <span style="font-size: 24px;">Aa</span>
+            <span style="font-size: 16px;">Aa</span>
+            <span style="font-size: 12px;">Aa</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="type-spec">
+        <div class="type-meta">
+          <span class="label">Texto largo</span>
+          <div class="name fr-text">Fraunces · texto</div>
+          <div class="role-text">La misma familia, con óptica de texto (opsz 14-18) y "soft" suave. Mantiene coherencia editorial.</div>
+        </div>
+        <div>
+          <p class="type-paragraph fr-text">Recorremos los mejores productores de la zona y elegimos a mano lo más fresco, lo más sabroso, lo más maduro en su punto justo. Cada cajón es distinto cada semana, porque la naturaleza también lo es. Eso es, exactamente, lo que vale la pena pagar.</p>
+        </div>
+      </div>
+
+      <div class="type-spec">
+        <div class="type-meta">
+          <span class="label">UI · etiquetas · números</span>
+          <div class="name inter">Inter</div>
+          <div class="role-text">Sans neutra, técnica, impecable. Para todo lo que es información, navegación, datos, números, micro-copy.</div>
+        </div>
+        <div class="ui-sample">
+          <div class="ui-l">Próxima entrega</div>
+          <div class="ui-h">Miércoles 22 de mayo</div>
+          <div class="ui-p">Tu cajón viaja entre las 9:00 y las 13:00. Recibirás un mensaje cuando esté en camino.</div>
+          <div class="ui-num">1 / 4</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============== 06 — TONO ============== -->
+<section class="chapter">
+  <div class="chapter-head">
+    <div class="chapter-num">06 — Tono de voz</div>
+    <div>
+      <h2 class="chapter-title">Cálido. Preciso. Sereno.</h2>
+      <p class="chapter-kicker">Hablamos como un buen sommelier de frutas: con conocimiento, sin alarde, con cariño.</p>
+    </div>
+  </div>
+
+  <div class="body-grid">
+    <div class="body">
+
+      <div class="tone">
+        <div class="tone-col">
+          <h4>Sí decimos</h4>
+          <ul>
+            <li>Tomate perita maduro en planta. <span class="ex">Específico, sensorial.</span></li>
+            <li>Esta semana llegan los primeros duraznos blancos. <span class="ex">Estacional, evento natural.</span></li>
+            <li>Elegidos a mano por nuestro equipo. <span class="ex">Curaduría humana visible.</span></li>
+            <li>Tu cajón viaja para tu casa. <span class="ex">Personal, doméstico.</span></li>
+            <li>Buona settimana. <span class="ex">Italiano sutil, cariño.</span></li>
+          </ul>
+        </div>
+        <div class="tone-col no">
+          <h4>No decimos</h4>
+          <ul>
+            <li>¡¡Imperdible!! Mega oferta de la semana 🍅🥕🥬 <span class="ex">Jerga supermercado.</span></li>
+            <li>El más fresco del mundo. <span class="ex">Promesa absoluta y vacía.</span></li>
+            <li>Combo familiar. <span class="ex">Lenguaje de descuento.</span></li>
+            <li>Rico tomate. <span class="ex">Adjetivo genérico, sin información.</span></li>
+            <li>SÚPER VENTA. <span class="ex">All caps. Urgencia falsa.</span></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============== 07 — LÉXICO ============== -->
+<section class="chapter">
+  <div class="chapter-head">
+    <div class="chapter-num">07 — Léxico</div>
+    <div>
+      <h2 class="chapter-title">Las palabras importan.</h2>
+      <p class="chapter-kicker">Convenciones de vocabulario que hacen consistente la marca a lo largo del tiempo y entre personas.</p>
+    </div>
+  </div>
+
+  <div class="body-grid">
+    <div class="body">
+
+      <table class="lex">
+        <thead>
+          <tr><th>Sí</th><th>No</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Estación · temporada</td><td class="no">Fecha</td></tr>
+          <tr><td>Cajón</td><td class="no">Caja · paquete</td></tr>
+          <tr><td>Selección · cosecha · curaduría</td><td class="no">Surtido · kit · combo</td></tr>
+          <tr><td>Productores · huerta</td><td class="no">Proveedores · mayorista</td></tr>
+          <tr><td>Punto justo · en su mejor momento</td><td class="no">Bien maduro · rico</td></tr>
+          <tr><td>Mesa · casa · cocina</td><td class="no">Domicilio · dirección</td></tr>
+          <tr><td>Suscripción · abono mensual</td><td class="no">Plan · membresía</td></tr>
+          <tr><td>Cliente · familia</td><td class="no">Usuario · comprador</td></tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============== 08 — APLICACIONES ============== -->
+<section class="chapter">
+  <div class="chapter-head">
+    <div class="chapter-num">08 — Aplicaciones</div>
+    <div>
+      <h2 class="chapter-title">Cómo se ve la marca en el mundo.</h2>
+      <p class="chapter-kicker">Mockups conceptuales. Cada pieza respeta el sistema y se siente parte de la misma familia.</p>
+    </div>
+  </div>
+
+  <div class="body-grid">
+    <div class="body">
+
+      <div class="apps-grid">
+        <div>
+          <div class="app-cajon">
+            <div class="cajon-grain"></div>
+            <div class="cajon-mono">
+              <svg width="84" height="84" viewBox="0 0 200 200">
+                <circle cx="100" cy="100" r="95" fill="none" stroke="#F4EFE6" stroke-width="2" />
+                <text x="100" y="138" text-anchor="middle" font-family="Fraunces, serif" font-size="120" font-style="italic" fill="#F4EFE6">S</text>
+              </svg>
+            </div>
+          </div>
+          <div class="app-caption">Cajón de madera reutilizable · sello a fuego o impreso</div>
+        </div>
+
+        <div class="app-stack">
+          <div>
+            <div class="app-etiqueta">
+              <div class="etiqueta-row1">Selezione della settimana</div>
+              <div class="etiqueta-row2">Mayo · semana 3</div>
+              <div class="etiqueta-list">
+                <span>· Tomate perita</span>
+                <span>· Rúcula salvaje</span>
+                <span>· Pera williams</span>
+                <span>· Brócoli baby</span>
+                <span>· Limón sutil</span>
+                <span>· Albahaca fresca</span>
+              </div>
+            </div>
+            <div class="app-caption">Etiqueta kraft · contenido manuscrito o caligráfico</div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="hair" />
+
+      <div class="apps-grid">
+        <div>
+          <div class="app-instagram">
+            <div class="ig-top">Stagione · post</div>
+            <div class="ig-headline">Empezó la temporada de duraznos blancos. Y ya están en su mejor momento.</div>
+            <div class="ig-foot">
+              <span class="label">@stagione.ar</span>
+              <svg width="36" height="36" viewBox="0 0 200 200">
+                <circle cx="100" cy="100" r="95" fill="none" stroke="#F4EFE6" stroke-width="3" />
+                <text x="100" y="138" text-anchor="middle" font-family="Fraunces, serif" font-size="120" font-style="italic" fill="#F4EFE6">S</text>
+              </svg>
+            </div>
+          </div>
+          <div class="app-caption">Instagram · feed editorial 1:1</div>
+        </div>
+
+        <div>
+          <div class="app-whatsapp">
+            <div class="wa-bubble">
+              Hola Santiago, el cajón de esta semana ya viaja para tu casa. Llega entre las 9 y las 13.
+              <br/><br/>¡Buena cocina! 🌿
+              <span class="wa-time">11:42</span>
+            </div>
+          </div>
+          <div class="app-caption">WhatsApp · confirmación de entrega</div>
+        </div>
+      </div>
+
+      <hr class="hair" />
+
+      <div>
+        <div class="app-vehiculo">
+          <div class="vehiculo-mark">
+            <div class="vehiculo-mono">
+              <svg width="64" height="64" viewBox="0 0 200 200">
+                <circle cx="100" cy="100" r="95" fill="none" stroke="#2C3D2E" stroke-width="3" />
+                <text x="100" y="138" text-anchor="middle" font-family="Fraunces, serif" font-size="120" font-style="italic" fill="#2C3D2E">S</text>
+              </svg>
+            </div>
+            <div class="vehiculo-text">
+              <div class="v-name">Stagione</div>
+              <div class="v-url">stagione.com.ar</div>
+            </div>
+          </div>
+        </div>
+        <div class="app-caption">Vehículo de entrega · lateral · verde bosque sólido</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============== 09 — PRINCIPIOS ============== -->
+<section class="chapter">
+  <div class="chapter-head">
+    <div class="chapter-num">09 — Principios</div>
+    <div>
+      <h2 class="chapter-title">Cinco reglas que nunca rompemos.</h2>
+      <p class="chapter-kicker">Cuando dudes, volvé acá.</p>
+    </div>
+  </div>
+
+  <div class="body-grid">
+    <div class="body">
+      <ol style="list-style: none; counter-reset: rule;">
+        <li style="counter-increment: rule; padding: 24px 0; border-bottom: 1px solid var(--oliva-soft); display: grid; grid-template-columns: 60px 1fr; gap: 24px; align-items: baseline;">
+          <span style="font-family: Inter, sans-serif; font-size: 13px; color: var(--oliva); letter-spacing: 0.2em;">01</span>
+          <div>
+            <div style="font-family: Fraunces, serif; font-size: 24px; color: var(--verde-bosque); margin-bottom: 6px;">Curaduría sobre cantidad.</div>
+            <div style="font-size: 16px; color: var(--tinta); max-width: 60ch;">Si entran solo cuatro variedades excelentes esta semana, mandamos cuatro. Nunca rellenamos para llenar el cajón.</div>
+          </div>
+        </li>
+        <li style="counter-increment: rule; padding: 24px 0; border-bottom: 1px solid var(--oliva-soft); display: grid; grid-template-columns: 60px 1fr; gap: 24px; align-items: baseline;">
+          <span style="font-family: Inter, sans-serif; font-size: 13px; color: var(--oliva); letter-spacing: 0.2em;">02</span>
+          <div>
+            <div style="font-family: Fraunces, serif; font-size: 24px; color: var(--verde-bosque); margin-bottom: 6px;">Estacionalidad real.</div>
+            <div style="font-size: 16px; color: var(--tinta); max-width: 60ch;">Lo que está en su momento. Si no es temporada de frutilla, no hay frutilla. Y lo decimos.</div>
+          </div>
+        </li>
+        <li style="counter-increment: rule; padding: 24px 0; border-bottom: 1px solid var(--oliva-soft); display: grid; grid-template-columns: 60px 1fr; gap: 24px; align-items: baseline;">
+          <span style="font-family: Inter, sans-serif; font-size: 13px; color: var(--oliva); letter-spacing: 0.2em;">03</span>
+          <div>
+            <div style="font-family: Fraunces, serif; font-size: 24px; color: var(--verde-bosque); margin-bottom: 6px;">Confianza, no urgencia.</div>
+            <div style="font-size: 16px; color: var(--tinta); max-width: 60ch;">No vendemos por miedo a perderse algo. La marca no grita, no descuenta agresivo, no presiona. Hace bien y se nota.</div>
+          </div>
+        </li>
+        <li style="counter-increment: rule; padding: 24px 0; border-bottom: 1px solid var(--oliva-soft); display: grid; grid-template-columns: 60px 1fr; gap: 24px; align-items: baseline;">
+          <span style="font-family: Inter, sans-serif; font-size: 13px; color: var(--oliva); letter-spacing: 0.2em;">04</span>
+          <div>
+            <div style="font-family: Fraunces, serif; font-size: 24px; color: var(--verde-bosque); margin-bottom: 6px;">Detalle artesanal.</div>
+            <div style="font-size: 16px; color: var(--tinta); max-width: 60ch;">Etiqueta a mano, papel real, lino, madera. Cada toque que el cliente ve y toca refuerza que esto está hecho con cuidado.</div>
+          </div>
+        </li>
+        <li style="counter-increment: rule; padding: 24px 0; display: grid; grid-template-columns: 60px 1fr; gap: 24px; align-items: baseline;">
+          <span style="font-family: Inter, sans-serif; font-size: 13px; color: var(--oliva); letter-spacing: 0.2em;">05</span>
+          <div>
+            <div style="font-family: Fraunces, serif; font-size: 24px; color: var(--verde-bosque); margin-bottom: 6px;">Una sola promesa.</div>
+            <div style="font-size: 16px; color: var(--tinta); max-width: 60ch;">Lo mejor de la estación, en tu casa, todas las semanas. Punto. La marca no diluye su foco con productos que rompan esa promesa.</div>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============== COLOFÓN ============== -->
+<footer class="colofon">
+  <div class="mark-small">
+    <svg width="44" height="44" viewBox="0 0 200 200">
+      <circle cx="100" cy="100" r="95" fill="none" stroke="#2C3D2E" stroke-width="3" />
+      <text x="100" y="138" text-anchor="middle" font-family="Fraunces, serif" font-size="120" font-style="italic" fill="#2C3D2E">S</text>
+    </svg>
+  </div>
+  Stagione · Brandbook v1.0 · Mayo 2026<br/><br/>
+  <span style="text-transform: none; letter-spacing: 0; font-style: italic; font-family: 'Fraunces', serif; font-size: 16px; color: var(--verde-bosque);">La estación, en tu mesa.</span>
+</footer>
+
+</body>
+</html>
