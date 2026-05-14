@@ -6,31 +6,40 @@
 <title>Bottega — Brandbook v1.0</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 <style>
   :root {
-    /* Primario oliva (antes verde bosque) */
-    --verde-bosque: #54613F;
-    --bosque-profundo: #3F4A30;
-    --crema: #F2EBDD;            /* Crema con más undertone madera */
-    --crema-soft: #E6DCC4;
-    --tinta: #1A1A18;
+    --oliva-profundo: #54613F;
+    --oliva-mas-oscuro: #3F4A30;
+    --oliva-texto: #6F7A5C;
     --oliva: #8A9476;
     --oliva-soft: #B8BFA8;
-
-    /* Tonos madera — nuevo eje */
+    --crema: #F2EBDD;
+    --crema-soft: #E6DCC4;
+    --tinta: #1A1A18;
     --madera: #A07545;
     --madera-suave: #C9A581;
-    --madera-oscuro: #5C3D1F;
 
-    --primavera-1: #D9A4A4;
-    --primavera-2: #A3C49C;
-    --verano-1:    #C9573A;
-    --verano-2:    #E8C766;
-    --otono-1:     #B66A3D;
-    --otono-2:     #C99835;
-    --invierno-1:  #6B2D2D;
-    --invierno-2:  #3F4A30;
+    --primavera-1: #D9A4A4;  --primavera-2: #A3C49C;
+    --verano-1:    #C9573A;  --verano-2:    #E8C766;
+    --otono-1:     #B66A3D;  --otono-2:     #C99835;
+    --invierno-1:  #A04646;  --invierno-2:  #3F4A30;
+
+    --verde-bosque: var(--oliva-profundo);
+    --bosque-profundo: var(--oliva-mas-oscuro);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--oliva-profundo);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -38,7 +47,7 @@
   body {
     font-family: "Fraunces", Georgia, serif;
     font-optical-sizing: auto;
-    font-variation-settings: "SOFT" 30, "WONK" 0;
+    font-variation-settings: "SOFT" 30;
     font-weight: 400;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
@@ -62,7 +71,7 @@
     font-size: 11px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--oliva);
+    color: var(--oliva-texto);
     font-weight: 500;
   }
 
@@ -83,7 +92,7 @@
   .hero-mono { width: 180px; height: 180px; }
   .hero-wordmark {
     font-family: "Fraunces", serif;
-    font-variation-settings: "SOFT" 50, "WONK" 0, "opsz" 144;
+    font-variation-settings: "SOFT" 50, "opsz" 144;
     font-weight: 400;
     font-size: clamp(80px, 14vw, 200px);
     color: var(--verde-bosque);
@@ -101,7 +110,7 @@
     text-align: center;
   }
   .hero-bottom { display: flex; justify-content: space-between; align-items: flex-end; }
-  .hero-meta { font-family: "Inter", sans-serif; font-size: 12px; color: var(--oliva); letter-spacing: 0.12em; text-transform: uppercase; }
+  .hero-meta { font-family: "Inter", sans-serif; font-size: 12px; color: var(--oliva-texto); letter-spacing: 0.12em; text-transform: uppercase; }
 
   /* ============ LAYOUT ============ */
   section.chapter {
@@ -121,7 +130,7 @@
     font-family: "Inter", sans-serif;
     font-size: 12px;
     letter-spacing: 0.2em;
-    color: var(--oliva);
+    color: var(--oliva-texto);
     text-transform: uppercase;
     font-weight: 500;
     padding-top: 14px;
@@ -140,7 +149,7 @@
     font-style: italic;
     font-weight: 300;
     font-size: 18px;
-    color: var(--oliva);
+    color: var(--oliva-texto);
     margin-top: 16px;
     max-width: 56ch;
   }
@@ -183,7 +192,7 @@
   }
   .manifest em {
     font-style: italic;
-    color: var(--oliva);
+    color: var(--oliva-texto);
     font-weight: 300;
   }
 
@@ -287,8 +296,8 @@
     gap: 4px;
   }
   .swatch .name { font-family: "Fraunces", serif; font-size: 16px; color: var(--tinta); }
-  .swatch .hex { font-family: "Inter", sans-serif; font-size: 11px; letter-spacing: 0.12em; color: var(--oliva); text-transform: uppercase; }
-  .swatch .role { font-family: "Inter", sans-serif; font-size: 11px; color: var(--oliva); margin-top: 2px; }
+  .swatch .hex { font-family: "Inter", sans-serif; font-size: 11px; letter-spacing: 0.12em; color: var(--oliva-texto); text-transform: uppercase; }
+  .swatch .role { font-family: "Inter", sans-serif; font-size: 11px; color: var(--oliva-texto); margin-top: 2px; }
 
   .seasons {
     display: grid;
@@ -310,7 +319,7 @@
   }
   .season-pair { display: flex; gap: 12px; margin-bottom: 16px; }
   .season-pair .chip { width: 60px; height: 60px; }
-  .season-meta { font-family: "Inter", sans-serif; font-size: 11px; color: var(--oliva); letter-spacing: 0.06em; line-height: 1.6; }
+  .season-meta { font-family: "Inter", sans-serif; font-size: 11px; color: var(--oliva-texto); letter-spacing: 0.06em; line-height: 1.6; }
   .season-meta strong { color: var(--tinta); font-weight: 500; }
 
   /* ============ TIPOGRAFÍA ============ */
@@ -329,7 +338,7 @@
     color: var(--verde-bosque);
     margin-bottom: 8px;
   }
-  .type-meta .role-text { font-family: "Inter", sans-serif; font-size: 13px; color: var(--oliva); line-height: 1.6; }
+  .type-meta .role-text { font-family: "Inter", sans-serif; font-size: 13px; color: var(--oliva-texto); line-height: 1.6; }
 
   .fr-display { font-family: "Fraunces", serif; font-variation-settings: "SOFT" 50, "opsz" 144; font-weight: 400; }
   .fr-text    { font-family: "Fraunces", serif; font-variation-settings: "SOFT" 30, "opsz" 18; font-weight: 400; }
@@ -354,7 +363,7 @@
   .type-paragraph { font-size: 17px; line-height: 1.7; max-width: 60ch; color: var(--tinta); margin-top: 16px; }
 
   .ui-sample { font-family: "Inter", sans-serif; }
-  .ui-sample .ui-l { font-size: 13px; color: var(--oliva); letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 4px; }
+  .ui-sample .ui-l { font-size: 13px; color: var(--oliva-texto); letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 4px; }
   .ui-sample .ui-h { font-size: 28px; color: var(--tinta); font-weight: 500; letter-spacing: -0.01em; }
   .ui-sample .ui-p { font-size: 14px; color: var(--tinta); margin-top: 12px; line-height: 1.55; max-width: 50ch; }
   .ui-sample .ui-num { font-size: 56px; color: var(--verde-bosque); font-weight: 400; letter-spacing: -0.02em; margin-top: 16px; font-variant-numeric: tabular-nums; }
@@ -390,7 +399,7 @@
   .tone-col .ex {
     font-family: "Inter", sans-serif;
     font-size: 12px;
-    color: var(--oliva);
+    color: var(--oliva-texto);
     margin-top: 4px;
     display: block;
     letter-spacing: 0.02em;
@@ -407,7 +416,7 @@
     font-size: 11px;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--oliva);
+    color: var(--oliva-texto);
     text-align: left;
     padding: 14px 0;
     border-bottom: 1px solid var(--oliva-soft);
@@ -603,7 +612,7 @@
     font-size: 11px;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--oliva);
+    color: var(--oliva-texto);
     margin-top: 14px;
   }
 
@@ -611,7 +620,7 @@
   footer.colofon {
     padding: 80px 56px 64px;
     text-align: center;
-    color: var(--oliva);
+    color: var(--oliva-texto);
     font-family: "Inter", sans-serif;
     font-size: 12px;
     letter-spacing: 0.18em;
@@ -652,8 +661,8 @@
       <circle cx="100" cy="100" r="86" fill="none" stroke="#54613F" stroke-width="0.5" />
       <text x="100" y="78" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-size="44" fill="#54613F">Bottega</text><text x="100" y="98" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" letter-spacing="2.5" fill="#54613F">DAL 2026</text><g stroke="#54613F" stroke-width="1.5" fill="none" stroke-linecap="round"><path d="M 50,130 Q 100,160 150,130"/></g><g fill="#54613F"><ellipse cx="58" cy="120" rx="9" ry="3.5" transform="rotate(-40 58 120)"/><ellipse cx="72" cy="135" rx="10" ry="3.5" transform="rotate(-25 72 135)"/><ellipse cx="90" cy="146" rx="10" ry="3.5" transform="rotate(-10 90 146)"/><ellipse cx="110" cy="146" rx="10" ry="3.5" transform="rotate(10 110 146)"/><ellipse cx="128" cy="135" rx="10" ry="3.5" transform="rotate(25 128 135)"/><ellipse cx="142" cy="120" rx="9" ry="3.5" transform="rotate(40 142 120)"/><circle cx="80" cy="128" r="3"/><circle cx="100" cy="138" r="3.5"/><circle cx="120" cy="128" r="3"/></g></svg>
 
-    <div class="hero-wordmark">Bottega</div>
-    <div class="hero-tagline">La estación, en tu mesa.</div>
+    <h1 class="hero-wordmark">Bottega</h1>
+    <p class="hero-tagline">La estación, en tu mesa.</p>
   </div>
 
   <div class="hero-bottom">
@@ -782,9 +791,9 @@
         <div class="logo-card dark">
           <span class="label">Monograma · negativo</span>
           <svg width="170" height="170" viewBox="0 0 200 200">
-            <circle cx="100" cy="100" r="95" fill="none" stroke="#F4EFE6" stroke-width="1.2" />
-            <circle cx="100" cy="100" r="86" fill="none" stroke="#F4EFE6" stroke-width="0.5" />
-            <text x="100" y="78" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-size="44" fill="#F4EFE6">Bottega</text><text x="100" y="98" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" letter-spacing="2.5" fill="#F4EFE6">DAL 2026</text><g stroke="#F4EFE6" stroke-width="1.5" fill="none" stroke-linecap="round"><path d="M 50,130 Q 100,160 150,130"/></g><g fill="#F4EFE6"><ellipse cx="58" cy="120" rx="9" ry="3.5" transform="rotate(-40 58 120)"/><ellipse cx="72" cy="135" rx="10" ry="3.5" transform="rotate(-25 72 135)"/><ellipse cx="90" cy="146" rx="10" ry="3.5" transform="rotate(-10 90 146)"/><ellipse cx="110" cy="146" rx="10" ry="3.5" transform="rotate(10 110 146)"/><ellipse cx="128" cy="135" rx="10" ry="3.5" transform="rotate(25 128 135)"/><ellipse cx="142" cy="120" rx="9" ry="3.5" transform="rotate(40 142 120)"/><circle cx="80" cy="128" r="3"/><circle cx="100" cy="138" r="3.5"/><circle cx="120" cy="128" r="3"/></g>
+            <circle cx="100" cy="100" r="95" fill="none" stroke="#F2EBDD" stroke-width="1.2" />
+            <circle cx="100" cy="100" r="86" fill="none" stroke="#F2EBDD" stroke-width="0.5" />
+            <text x="100" y="78" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-size="44" fill="#F2EBDD">Bottega</text><text x="100" y="98" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" letter-spacing="2.5" fill="#F2EBDD">DAL 2026</text><g stroke="#F2EBDD" stroke-width="1.5" fill="none" stroke-linecap="round"><path d="M 50,130 Q 100,160 150,130"/></g><g fill="#F2EBDD"><ellipse cx="58" cy="120" rx="9" ry="3.5" transform="rotate(-40 58 120)"/><ellipse cx="72" cy="135" rx="10" ry="3.5" transform="rotate(-25 72 135)"/><ellipse cx="90" cy="146" rx="10" ry="3.5" transform="rotate(-10 90 146)"/><ellipse cx="110" cy="146" rx="10" ry="3.5" transform="rotate(10 110 146)"/><ellipse cx="128" cy="135" rx="10" ry="3.5" transform="rotate(25 128 135)"/><ellipse cx="142" cy="120" rx="9" ry="3.5" transform="rotate(40 142 120)"/><circle cx="80" cy="128" r="3"/><circle cx="100" cy="138" r="3.5"/><circle cx="120" cy="128" r="3"/></g>
           </svg>
         </div>
       </div>
@@ -977,8 +986,8 @@
         <div class="season">
           <div class="season-title">Primavera</div>
           <div class="season-pair">
-            <div class="chip" style="background: #D9A4A4;"></div>
-            <div class="chip" style="background: #A3C49C;"></div>
+            <div class="chip" style="background: var(--primavera-1);"></div>
+            <div class="chip" style="background: var(--primavera-2);"></div>
           </div>
           <div class="season-meta">
             <strong>Rosa Brote</strong> &nbsp; #D9A4A4<br/>
@@ -988,8 +997,8 @@
         <div class="season">
           <div class="season-title">Verano</div>
           <div class="season-pair">
-            <div class="chip" style="background: #C9573A;"></div>
-            <div class="chip" style="background: #E8C766;"></div>
+            <div class="chip" style="background: var(--verano-1);"></div>
+            <div class="chip" style="background: var(--verano-2);"></div>
           </div>
           <div class="season-meta">
             <strong>Tomate Maduro</strong> &nbsp; #C9573A<br/>
@@ -999,8 +1008,8 @@
         <div class="season">
           <div class="season-title">Otoño</div>
           <div class="season-pair">
-            <div class="chip" style="background: #B66A3D;"></div>
-            <div class="chip" style="background: #C99835;"></div>
+            <div class="chip" style="background: var(--otono-1);"></div>
+            <div class="chip" style="background: var(--otono-2);"></div>
           </div>
           <div class="season-meta">
             <strong>Terracota</strong> &nbsp; #B66A3D<br/>
@@ -1010,11 +1019,11 @@
         <div class="season">
           <div class="season-title">Invierno</div>
           <div class="season-pair">
-            <div class="chip" style="background: #6B2D2D;"></div>
+            <div class="chip" style="background: var(--invierno-1);"></div>
             <div class="chip" style="background: #3F4A30;"></div>
           </div>
           <div class="season-meta">
-            <strong>Granate</strong> &nbsp; #6B2D2D<br/>
+            <strong>Granate</strong> &nbsp; #A04646<br/>
             <strong>Bosque Profundo</strong> &nbsp; #3F4A30
           </div>
         </div>
@@ -1177,8 +1186,8 @@
             <div class="cajon-grain"></div>
             <div class="cajon-mono">
               <svg width="84" height="84" viewBox="0 0 200 200">
-                <circle cx="100" cy="100" r="95" fill="none" stroke="#F4EFE6" stroke-width="2" />
-                <text x="100" y="78" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-size="44" fill="#F4EFE6">Bottega</text><text x="100" y="98" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" letter-spacing="2.5" fill="#F4EFE6">DAL 2026</text><g stroke="#F4EFE6" stroke-width="1.5" fill="none" stroke-linecap="round"><path d="M 50,130 Q 100,160 150,130"/></g><g fill="#F4EFE6"><ellipse cx="58" cy="120" rx="9" ry="3.5" transform="rotate(-40 58 120)"/><ellipse cx="72" cy="135" rx="10" ry="3.5" transform="rotate(-25 72 135)"/><ellipse cx="90" cy="146" rx="10" ry="3.5" transform="rotate(-10 90 146)"/><ellipse cx="110" cy="146" rx="10" ry="3.5" transform="rotate(10 110 146)"/><ellipse cx="128" cy="135" rx="10" ry="3.5" transform="rotate(25 128 135)"/><ellipse cx="142" cy="120" rx="9" ry="3.5" transform="rotate(40 142 120)"/><circle cx="80" cy="128" r="3"/><circle cx="100" cy="138" r="3.5"/><circle cx="120" cy="128" r="3"/></g>
+                <circle cx="100" cy="100" r="95" fill="none" stroke="#F2EBDD" stroke-width="2" />
+                <text x="100" y="78" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-size="44" fill="#F2EBDD">Bottega</text><text x="100" y="98" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" letter-spacing="2.5" fill="#F2EBDD">DAL 2026</text><g stroke="#F2EBDD" stroke-width="1.5" fill="none" stroke-linecap="round"><path d="M 50,130 Q 100,160 150,130"/></g><g fill="#F2EBDD"><ellipse cx="58" cy="120" rx="9" ry="3.5" transform="rotate(-40 58 120)"/><ellipse cx="72" cy="135" rx="10" ry="3.5" transform="rotate(-25 72 135)"/><ellipse cx="90" cy="146" rx="10" ry="3.5" transform="rotate(-10 90 146)"/><ellipse cx="110" cy="146" rx="10" ry="3.5" transform="rotate(10 110 146)"/><ellipse cx="128" cy="135" rx="10" ry="3.5" transform="rotate(25 128 135)"/><ellipse cx="142" cy="120" rx="9" ry="3.5" transform="rotate(40 142 120)"/><circle cx="80" cy="128" r="3"/><circle cx="100" cy="138" r="3.5"/><circle cx="120" cy="128" r="3"/></g>
               </svg>
             </div>
           </div>
@@ -1214,8 +1223,8 @@
             <div class="ig-foot">
               <span class="label">@bottega.ar</span>
               <svg width="36" height="36" viewBox="0 0 200 200">
-                <circle cx="100" cy="100" r="95" fill="none" stroke="#F4EFE6" stroke-width="3" />
-                <text x="100" y="78" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-size="44" fill="#F4EFE6">Bottega</text><text x="100" y="98" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" letter-spacing="2.5" fill="#F4EFE6">DAL 2026</text><g stroke="#F4EFE6" stroke-width="1.5" fill="none" stroke-linecap="round"><path d="M 50,130 Q 100,160 150,130"/></g><g fill="#F4EFE6"><ellipse cx="58" cy="120" rx="9" ry="3.5" transform="rotate(-40 58 120)"/><ellipse cx="72" cy="135" rx="10" ry="3.5" transform="rotate(-25 72 135)"/><ellipse cx="90" cy="146" rx="10" ry="3.5" transform="rotate(-10 90 146)"/><ellipse cx="110" cy="146" rx="10" ry="3.5" transform="rotate(10 110 146)"/><ellipse cx="128" cy="135" rx="10" ry="3.5" transform="rotate(25 128 135)"/><ellipse cx="142" cy="120" rx="9" ry="3.5" transform="rotate(40 142 120)"/><circle cx="80" cy="128" r="3"/><circle cx="100" cy="138" r="3.5"/><circle cx="120" cy="128" r="3"/></g>
+                <circle cx="100" cy="100" r="95" fill="none" stroke="#F2EBDD" stroke-width="3" />
+                <text x="100" y="78" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-size="44" fill="#F2EBDD">Bottega</text><text x="100" y="98" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" letter-spacing="2.5" fill="#F2EBDD">DAL 2026</text><g stroke="#F2EBDD" stroke-width="1.5" fill="none" stroke-linecap="round"><path d="M 50,130 Q 100,160 150,130"/></g><g fill="#F2EBDD"><ellipse cx="58" cy="120" rx="9" ry="3.5" transform="rotate(-40 58 120)"/><ellipse cx="72" cy="135" rx="10" ry="3.5" transform="rotate(-25 72 135)"/><ellipse cx="90" cy="146" rx="10" ry="3.5" transform="rotate(-10 90 146)"/><ellipse cx="110" cy="146" rx="10" ry="3.5" transform="rotate(10 110 146)"/><ellipse cx="128" cy="135" rx="10" ry="3.5" transform="rotate(25 128 135)"/><ellipse cx="142" cy="120" rx="9" ry="3.5" transform="rotate(40 142 120)"/><circle cx="80" cy="128" r="3"/><circle cx="100" cy="138" r="3.5"/><circle cx="120" cy="128" r="3"/></g>
               </svg>
             </div>
           </div>
@@ -1226,7 +1235,7 @@
           <div class="app-whatsapp">
             <div class="wa-bubble">
               Hola Santiago, el cajón de esta semana ya viaja para tu casa. Llega entre las 9 y las 13.
-              <br/><br/>¡Buena cocina! 🌿
+              <br/><br/>¡Buona settimana!
               <span class="wa-time">11:42</span>
             </div>
           </div>
@@ -1272,35 +1281,35 @@
     <div class="body">
       <ol style="list-style: none; counter-reset: rule;">
         <li style="counter-increment: rule; padding: 24px 0; border-bottom: 1px solid var(--oliva-soft); display: grid; grid-template-columns: 60px 1fr; gap: 24px; align-items: baseline;">
-          <span style="font-family: Inter, sans-serif; font-size: 13px; color: var(--oliva); letter-spacing: 0.2em;">01</span>
+          <span style="font-family: Inter, sans-serif; font-size: 13px; color: var(--oliva-texto); letter-spacing: 0.2em;">01</span>
           <div>
             <div style="font-family: Fraunces, serif; font-size: 24px; color: var(--verde-bosque); margin-bottom: 6px;">Curaduría sobre cantidad.</div>
             <div style="font-size: 16px; color: var(--tinta); max-width: 60ch;">Si entran solo cuatro variedades excelentes esta semana, mandamos cuatro. Nunca rellenamos para llenar el cajón.</div>
           </div>
         </li>
         <li style="counter-increment: rule; padding: 24px 0; border-bottom: 1px solid var(--oliva-soft); display: grid; grid-template-columns: 60px 1fr; gap: 24px; align-items: baseline;">
-          <span style="font-family: Inter, sans-serif; font-size: 13px; color: var(--oliva); letter-spacing: 0.2em;">02</span>
+          <span style="font-family: Inter, sans-serif; font-size: 13px; color: var(--oliva-texto); letter-spacing: 0.2em;">02</span>
           <div>
             <div style="font-family: Fraunces, serif; font-size: 24px; color: var(--verde-bosque); margin-bottom: 6px;">Estacionalidad real.</div>
             <div style="font-size: 16px; color: var(--tinta); max-width: 60ch;">Lo que está en su momento. Si no es temporada de frutilla, no hay frutilla. Y lo decimos.</div>
           </div>
         </li>
         <li style="counter-increment: rule; padding: 24px 0; border-bottom: 1px solid var(--oliva-soft); display: grid; grid-template-columns: 60px 1fr; gap: 24px; align-items: baseline;">
-          <span style="font-family: Inter, sans-serif; font-size: 13px; color: var(--oliva); letter-spacing: 0.2em;">03</span>
+          <span style="font-family: Inter, sans-serif; font-size: 13px; color: var(--oliva-texto); letter-spacing: 0.2em;">03</span>
           <div>
             <div style="font-family: Fraunces, serif; font-size: 24px; color: var(--verde-bosque); margin-bottom: 6px;">Confianza, no urgencia.</div>
             <div style="font-size: 16px; color: var(--tinta); max-width: 60ch;">No vendemos por miedo a perderse algo. La marca no grita, no descuenta agresivo, no presiona. Hace bien y se nota.</div>
           </div>
         </li>
         <li style="counter-increment: rule; padding: 24px 0; border-bottom: 1px solid var(--oliva-soft); display: grid; grid-template-columns: 60px 1fr; gap: 24px; align-items: baseline;">
-          <span style="font-family: Inter, sans-serif; font-size: 13px; color: var(--oliva); letter-spacing: 0.2em;">04</span>
+          <span style="font-family: Inter, sans-serif; font-size: 13px; color: var(--oliva-texto); letter-spacing: 0.2em;">04</span>
           <div>
             <div style="font-family: Fraunces, serif; font-size: 24px; color: var(--verde-bosque); margin-bottom: 6px;">Detalle artesanal.</div>
             <div style="font-size: 16px; color: var(--tinta); max-width: 60ch;">Etiqueta a mano, papel real, lino, madera. Cada toque que el cliente ve y toca refuerza que esto está hecho con cuidado.</div>
           </div>
         </li>
         <li style="counter-increment: rule; padding: 24px 0; display: grid; grid-template-columns: 60px 1fr; gap: 24px; align-items: baseline;">
-          <span style="font-family: Inter, sans-serif; font-size: 13px; color: var(--oliva); letter-spacing: 0.2em;">05</span>
+          <span style="font-family: Inter, sans-serif; font-size: 13px; color: var(--oliva-texto); letter-spacing: 0.2em;">05</span>
           <div>
             <div style="font-family: Fraunces, serif; font-size: 24px; color: var(--verde-bosque); margin-bottom: 6px;">Una sola promesa.</div>
             <div style="font-size: 16px; color: var(--tinta); max-width: 60ch;">Lo mejor de la estación, en tu casa, todas las semanas. Punto. La marca no diluye su foco con productos que rompan esa promesa.</div>

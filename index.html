@@ -7,31 +7,31 @@
 <meta name="description" content="Suscripción semanal de frutas y verduras premium, seleccionadas a mano. Entrega puerta a puerta en Nordelta, Villanueva, Tigre, Maschwitz, Escobar y Pilar." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 <link rel="icon" type="image/svg+xml" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><circle cx="100" cy="100" r="95" fill="none" stroke="%2354613F" stroke-width="6"/><g stroke="%2354613F" stroke-width="6" fill="none" stroke-linecap="round"><path d="M 50,120 Q 100,160 150,120"/></g><g fill="%2354613F"><ellipse cx="62" cy="108" rx="13" ry="5" transform="rotate(-40 62 108)"/><ellipse cx="80" cy="130" rx="14" ry="5" transform="rotate(-15 80 130)"/><ellipse cx="120" cy="130" rx="14" ry="5" transform="rotate(15 120 130)"/><ellipse cx="138" cy="108" rx="13" ry="5" transform="rotate(40 138 108)"/><circle cx="100" cy="142" r="6"/></g></svg>' />
 
 <style>
   :root {
-    /* Primario oliva (antes verde bosque) */
-    --verde-bosque: #54613F;
-    --bosque-profundo: #3F4A30;
-    --crema: #F2EBDD;          /* Crema con más undertone madera */
+    --oliva-profundo: #54613F;
+    --oliva-mas-oscuro: #3F4A30;
+    --oliva-texto: #6F7A5C;     /* Para texto: contraste AA sobre crema */
+    --oliva: #8A9476;            /* Decorativo (no para texto pequeño) */
+    --oliva-soft: #B8BFA8;
+    --crema: #F2EBDD;
     --crema-soft: #E6DCC4;
     --tinta: #1A1A18;
-    --oliva: #8A9476;
-    --oliva-soft: #B8BFA8;
 
-    /* Tonos madera — nuevo eje */
-    --madera: #A07545;          /* Walnut medio */
-    --madera-suave: #C9A581;    /* Roble claro */
-    --madera-oscuro: #5C3D1F;   /* Walnut profundo */
+    --madera: #A07545;
+    --madera-suave: #C9A581;     /* Decorativo (no para texto pequeño) */
 
-    /* Acentos cálidos */
-    --acento: #C9573A;          /* Tomate maduro */
-    --acento-2: #E8C766;        /* Limón */
+    --acento: #C9573A;
+    --acento-2: #E8C766;
 
-    /* Spacing */
     --pad-x: clamp(20px, 5vw, 56px);
+
+    /* Aliases legados para no romper código existente */
+    --verde-bosque: var(--oliva-profundo);
+    --bosque-profundo: var(--oliva-mas-oscuro);
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -41,11 +41,50 @@
     color: var(--tinta);
     font-family: "Fraunces", Georgia, serif;
     font-optical-sizing: auto;
-    font-variation-settings: "SOFT" 30, "WONK" 0;
+    font-variation-settings: "SOFT" 30;
     font-weight: 400;
     line-height: 1.55;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+  }
+
+  /* ============ A11Y ============ */
+  :focus-visible {
+    outline: 2px solid var(--oliva-profundo);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  .btn:focus-visible,
+  a.btn:focus-visible {
+    outline-color: var(--madera);
+    outline-offset: 4px;
+  }
+  .skip-link {
+    position: absolute;
+    top: -40px;
+    left: var(--pad-x);
+    background: var(--oliva-profundo);
+    color: var(--crema);
+    padding: 12px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    z-index: 999;
+    transition: top 200ms ease;
+  }
+  .skip-link:focus {
+    top: 12px;
+    color: var(--crema);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+    .strip-inner { animation: none !important; }
   }
 
   /* base */
@@ -67,11 +106,11 @@
   nav {
     position: sticky;
     top: 0;
-    background: rgba(244, 239, 230, 0.92);
+    background: rgba(242, 235, 221, 0.94);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     z-index: 100;
-    border-bottom: 1px solid rgba(138, 148, 118, 0.2);
+    border-bottom: 1px solid var(--madera-suave);
   }
   .nav-inner {
     display: flex;
@@ -124,7 +163,20 @@
   .btn.large { font-size: 15px; padding: 14px 28px; }
 
   @media (max-width: 720px) {
-    .nav-links a:not(.btn) { display: none; }
+    .nav-inner { flex-wrap: wrap; gap: 12px; padding: 12px var(--pad-x); }
+    .nav-links {
+      width: 100%;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      order: 2;
+    }
+    .nav-links a:not(.btn) { font-size: 12px; }
+    .nav-links a.btn {
+      margin-left: auto;
+      padding: 8px 14px;
+      font-size: 12px;
+    }
   }
 
   /* ============ HERO ============ */
@@ -143,7 +195,7 @@
     font-size: 12px;
     letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: var(--oliva);
+    color: var(--oliva-texto);
     margin-bottom: 28px;
     display: flex;
     align-items: center;
@@ -168,7 +220,7 @@
   .hero-text h1 em {
     font-style: italic;
     font-weight: 300;
-    color: var(--oliva);
+    color: var(--oliva-texto);
   }
   .hero-text .lead {
     font-family: "Fraunces", serif;
@@ -289,7 +341,7 @@
     letter-spacing: -0.02em;
     line-height: 1.05;
   }
-  .block-head h2 em { font-style: italic; color: var(--oliva); font-weight: 300; }
+  .block-head h2 em { font-style: italic; color: var(--oliva-texto); font-weight: 300; }
   .block-head p {
     font-family: "Fraunces", serif;
     font-size: 19px;
@@ -391,8 +443,9 @@
     transition: all 200ms ease;
   }
   .basics-pills .pill-wood:hover {
-    background: var(--madera-suave);
+    background: var(--madera);
     border-color: var(--madera);
+    color: var(--crema);
   }
 
   .seasonal-intro {
@@ -453,7 +506,7 @@
     font-size: 10px;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: var(--oliva);
+    color: var(--oliva-texto);
     margin-bottom: 22px;
   }
   .cajon-season .season-divider {
@@ -543,9 +596,13 @@
     font-size: 11px;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: var(--madera-suave);
+    color: var(--acento-2);
   }
-  .week-list .badge.season { color: var(--acento-2); }
+  .week-list .badge.base {
+    color: var(--oliva-soft);
+    opacity: 0.55;
+    font-style: italic;
+  }
   .week-foot {
     margin-top: 24px;
     font-family: "Inter", sans-serif;
@@ -612,7 +669,7 @@
   .plan .plan-desc {
     font-family: "Fraunces", serif;
     font-size: 15px;
-    color: var(--oliva);
+    color: var(--oliva-texto);
     margin-bottom: 24px;
     line-height: 1.5;
   }
@@ -626,7 +683,7 @@
   .plan .price-meta {
     font-family: "Inter", sans-serif;
     font-size: 12px;
-    color: var(--oliva);
+    color: var(--oliva-texto);
     letter-spacing: 0.1em;
     text-transform: uppercase;
     margin-bottom: 32px;
@@ -647,7 +704,7 @@
   }
   .plan-features li::before {
     content: "·";
-    color: var(--oliva);
+    color: var(--oliva-texto);
     font-size: 22px;
     line-height: 1;
   }
@@ -670,7 +727,7 @@
     font-family: "Fraunces", serif;
     font-style: italic;
     font-size: 16px;
-    color: var(--oliva);
+    color: var(--oliva-texto);
   }
 
   /* ============ ZONAS ============ */
@@ -697,7 +754,7 @@
     font-size: 11px;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--oliva);
+    color: var(--oliva-texto);
     margin-bottom: 24px;
   }
   .zone-list {
@@ -766,7 +823,15 @@
   }
   .manifest-inner h2 em {
     font-style: italic;
-    color: var(--oliva);
+    color: var(--oliva-texto);
+  }
+  .manifest-inner .manifest-coda {
+    font-family: "Fraunces", serif;
+    font-size: clamp(22px, 2.4vw, 28px);
+    line-height: 1.4;
+    color: var(--verde-bosque);
+    margin-top: 32px;
+    font-style: italic;
   }
   .manifest-inner .signature {
     margin-top: 56px;
@@ -774,7 +839,7 @@
     align-items: center;
     justify-content: center;
     gap: 16px;
-    color: var(--oliva);
+    color: var(--oliva-texto);
     font-family: "Inter", sans-serif;
     font-size: 12px;
     letter-spacing: 0.2em;
@@ -810,7 +875,7 @@
     font-family: "Inter", sans-serif;
     font-weight: 300;
     font-size: 28px;
-    color: var(--oliva);
+    color: var(--oliva-texto);
     transition: transform 200ms ease;
   }
   details[open] .faq-q::after { content: "−"; transform: rotate(0deg); }
@@ -839,10 +904,19 @@
     content: "";
     position: absolute;
     inset: 0;
-    background:
-      radial-gradient(ellipse at 20% 30%, rgba(232,199,102,0.10), transparent 50%),
-      radial-gradient(ellipse at 80% 70%, rgba(160,117,69,0.22), transparent 50%),
-      repeating-linear-gradient(90deg, transparent 0 18px, rgba(0,0,0,0.04) 18px 19px);
+    background: radial-gradient(ellipse at 50% 100%, rgba(232,199,102,0.18), transparent 60%);
+  }
+  .cta-final::after {
+    content: "";
+    position: absolute;
+    width: 480px; height: 480px;
+    right: -120px; top: 50%;
+    transform: translateY(-50%);
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><g stroke='%23F2EBDD' stroke-width='1' fill='none' stroke-linecap='round' opacity='0.06'><path d='M 50,130 Q 100,160 150,130'/></g><g fill='%23F2EBDD' opacity='0.06'><ellipse cx='58' cy='120' rx='9' ry='3.5' transform='rotate(-40 58 120)'/><ellipse cx='72' cy='135' rx='10' ry='3.5' transform='rotate(-25 72 135)'/><ellipse cx='90' cy='146' rx='10' ry='3.5' transform='rotate(-10 90 146)'/><ellipse cx='110' cy='146' rx='10' ry='3.5' transform='rotate(10 110 146)'/><ellipse cx='128' cy='135' rx='10' ry='3.5' transform='rotate(25 128 135)'/><ellipse cx='142' cy='120' rx='9' ry='3.5' transform='rotate(40 142 120)'/></g></svg>");
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: 1;
   }
   .cta-final-inner {
     position: relative;
@@ -912,7 +986,7 @@
     font-size: 11px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--madera-suave);
+    color: var(--crema);
     margin-bottom: 18px;
     font-weight: 500;
   }
@@ -934,7 +1008,7 @@
     justify-content: space-between;
     font-family: "Inter", sans-serif;
     font-size: 11px;
-    color: rgba(244,239,230,0.4);
+    color: rgba(242,235,221,0.75);
     letter-spacing: 0.08em;
   }
   @media (max-width: 800px) {
@@ -948,11 +1022,13 @@
 </head>
 <body>
 
+<a href="#main" class="skip-link">Saltar al contenido</a>
+
 <!-- ============ NAV ============ -->
-<nav>
+<nav aria-label="Principal">
   <div class="nav-inner">
-    <a href="#top" class="nav-brand">
-      <svg width="36" height="36" viewBox="0 0 200 200">
+    <a href="#top" class="nav-brand" aria-label="Bottega — inicio">
+      <svg width="36" height="36" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
         <circle cx="100" cy="100" r="95" fill="none" stroke="#54613F" stroke-width="6" />
         <text x="100" y="78" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-size="44" fill="#54613F">Bottega</text><text x="100" y="98" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" letter-spacing="2.5" fill="#54613F">DAL 2026</text><g stroke="#54613F" stroke-width="1.5" fill="none" stroke-linecap="round"><path d="M 50,130 Q 100,160 150,130"/></g><g fill="#54613F"><ellipse cx="58" cy="120" rx="9" ry="3.5" transform="rotate(-40 58 120)"/><ellipse cx="72" cy="135" rx="10" ry="3.5" transform="rotate(-25 72 135)"/><ellipse cx="90" cy="146" rx="10" ry="3.5" transform="rotate(-10 90 146)"/><ellipse cx="110" cy="146" rx="10" ry="3.5" transform="rotate(10 110 146)"/><ellipse cx="128" cy="135" rx="10" ry="3.5" transform="rotate(25 128 135)"/><ellipse cx="142" cy="120" rx="9" ry="3.5" transform="rotate(40 142 120)"/><circle cx="80" cy="128" r="3"/><circle cx="100" cy="138" r="3.5"/><circle cx="120" cy="128" r="3"/></g>
       </svg>
@@ -969,6 +1045,8 @@
 </nav>
 
 <!-- ============ HERO ============ -->
+<main id="main">
+
 <section class="hero" id="top">
   <div class="hero-text">
     <div class="eyebrow">Suscripción semanal · zona norte</div>
@@ -980,10 +1058,10 @@
     </div>
   </div>
   <div class="hero-art">
-    <svg class="hero-art-mono" viewBox="0 0 200 200">
-      <circle cx="100" cy="100" r="95" fill="none" stroke="#F4EFE6" stroke-width="1.5" />
-      <circle cx="100" cy="100" r="86" fill="none" stroke="#F4EFE6" stroke-width="0.5" />
-      <text x="100" y="78" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-size="44" fill="#F4EFE6">Bottega</text><text x="100" y="98" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" letter-spacing="2.5" fill="#F4EFE6">DAL 2026</text><g stroke="#F4EFE6" stroke-width="1.5" fill="none" stroke-linecap="round"><path d="M 50,130 Q 100,160 150,130"/></g><g fill="#F4EFE6"><ellipse cx="58" cy="120" rx="9" ry="3.5" transform="rotate(-40 58 120)"/><ellipse cx="72" cy="135" rx="10" ry="3.5" transform="rotate(-25 72 135)"/><ellipse cx="90" cy="146" rx="10" ry="3.5" transform="rotate(-10 90 146)"/><ellipse cx="110" cy="146" rx="10" ry="3.5" transform="rotate(10 110 146)"/><ellipse cx="128" cy="135" rx="10" ry="3.5" transform="rotate(25 128 135)"/><ellipse cx="142" cy="120" rx="9" ry="3.5" transform="rotate(40 142 120)"/><circle cx="80" cy="128" r="3"/><circle cx="100" cy="138" r="3.5"/><circle cx="120" cy="128" r="3"/></g>
+    <svg class="hero-art-mono" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+      <circle cx="100" cy="100" r="95" fill="none" stroke="#F2EBDD" stroke-width="1.5" />
+      <circle cx="100" cy="100" r="86" fill="none" stroke="#F2EBDD" stroke-width="0.5" />
+      <text x="100" y="78" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-size="44" fill="#F2EBDD">Bottega</text><text x="100" y="98" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" letter-spacing="2.5" fill="#F2EBDD">DAL 2026</text><g stroke="#F2EBDD" stroke-width="1.5" fill="none" stroke-linecap="round"><path d="M 50,130 Q 100,160 150,130"/></g><g fill="#F2EBDD"><ellipse cx="58" cy="120" rx="9" ry="3.5" transform="rotate(-40 58 120)"/><ellipse cx="72" cy="135" rx="10" ry="3.5" transform="rotate(-25 72 135)"/><ellipse cx="90" cy="146" rx="10" ry="3.5" transform="rotate(-10 90 146)"/><ellipse cx="110" cy="146" rx="10" ry="3.5" transform="rotate(10 110 146)"/><ellipse cx="128" cy="135" rx="10" ry="3.5" transform="rotate(25 128 135)"/><ellipse cx="142" cy="120" rx="9" ry="3.5" transform="rotate(40 142 120)"/><circle cx="80" cy="128" r="3"/><circle cx="100" cy="138" r="3.5"/><circle cx="120" cy="128" r="3"/></g>
     </svg>
     <div class="hero-art-caption">
       <span>Bottega · Mayo</span>
@@ -1147,7 +1225,7 @@
       </div>
     </div>
 
-    <div class="cajon-season" style="--season-color: #6B2D2D;">
+    <div class="cajon-season" style="--season-color: #A04646;">
       <div class="season-name">Invierno</div>
       <div class="season-months">jun · jul · ago</div>
       <div class="season-divider"></div>
@@ -1182,7 +1260,7 @@
 <section class="week" id="semana">
   <div class="week-inner">
     <div>
-      <span class="label" style="color: var(--acento-2);">Selezione della settimana</span>
+      <span class="label" style="color: var(--acento-2);" lang="it">Selezione della settimana</span>
       <h2 style="margin-top: 16px;">Esta semana, <em>en el cajón.</em></h2>
       <p class="lead">Una mirada al cajón curado de esta semana. Cada cajón es distinto, porque la estación también lo es.</p>
       <div class="week-foot">Mayo · semana 3 · 2026</div>
@@ -1190,43 +1268,43 @@
     <ul class="week-list">
       <li>
         <span class="name">Papa andina <em>de Tucumán</em></span>
-        <span class="badge">siempre</span>
+        <span class="badge base">siempre</span>
       </li>
       <li>
         <span class="name">Batata violeta <em>cosecha fresca</em></span>
-        <span class="badge">siempre</span>
+        <span class="badge base">siempre</span>
       </li>
       <li>
         <span class="name">Cebolla blanca <em>seleccionada</em></span>
-        <span class="badge">siempre</span>
+        <span class="badge base">siempre</span>
       </li>
       <li>
         <span class="name">Calabaza anco <em>de estación</em></span>
-        <span class="badge">siempre</span>
+        <span class="badge base">siempre</span>
       </li>
       <li>
         <span class="name">Tomate perita <em>maduro en planta</em></span>
-        <span class="badge">siempre</span>
+        <span class="badge base">siempre</span>
       </li>
       <li>
         <span class="name">Rúcula salvaje <em>de huerta</em></span>
-        <span class="badge">siempre</span>
+        <span class="badge base">siempre</span>
       </li>
       <li>
         <span class="name">Pera williams <em>punto justo</em></span>
-        <span class="badge season">de otoño</span>
+        <span class="badge">de otoño</span>
       </li>
       <li>
         <span class="name">Manzana red <em>cosecha tardía</em></span>
-        <span class="badge season">de otoño</span>
+        <span class="badge">de otoño</span>
       </li>
       <li>
         <span class="name">Brócoli baby <em>cosecha lunes</em></span>
-        <span class="badge season">de otoño</span>
+        <span class="badge">de otoño</span>
       </li>
       <li>
         <span class="name">Hinojo <em>fresco</em></span>
-        <span class="badge season">de otoño</span>
+        <span class="badge">de otoño</span>
       </li>
     </ul>
   </div>
@@ -1242,7 +1320,7 @@
   <div class="plans-grid">
     <div class="plan">
       <span class="label">Esencial</span>
-      <h3>Picolo</h3>
+      <h3 lang="it">Picolo</h3>
       <p class="plan-desc">Para 1 o 2 personas. Lo justo para una semana de cocina ligera.</p>
       <div class="price">$ —</div>
       <div class="price-meta">Por mes · 4 entregas</div>
@@ -1258,7 +1336,7 @@
     <div class="plan featured">
       <span class="badge-feat">Más elegido</span>
       <span class="label">Familiar</span>
-      <h3>Famiglia</h3>
+      <h3 lang="it">Famiglia</h3>
       <p class="plan-desc">Para 3 o 4 personas. La cocina entera de la semana resuelta.</p>
       <div class="price">$ —</div>
       <div class="price-meta">Por mes · 4 entregas</div>
@@ -1274,7 +1352,7 @@
 
     <div class="plan">
       <span class="label">Generoso</span>
-      <h3>Abbondanza</h3>
+      <h3 lang="it">Abbondanza</h3>
       <p class="plan-desc">Para 5+ personas o quien cocina mucho. Cantidad sin perder curaduría.</p>
       <div class="price">$ —</div>
       <div class="price-meta">Por mes · 4 entregas</div>
@@ -1346,11 +1424,8 @@
 <section class="manifest-block">
   <div class="manifest-inner">
     <span class="label">Nuestro compromiso</span>
-    <h2>
-      Cada semana recorremos los mejores productores y elegimos a mano <em>lo más fresco, lo más sabroso, lo más maduro en su punto justo.</em>
-      <br/><br/>
-      Vos no perdés tiempo. Solo abrís el cajón y cocinás.
-    </h2>
+    <h2>Cada semana recorremos los mejores productores y elegimos a mano <em>lo más fresco, lo más sabroso, lo más maduro en su punto justo.</em></h2>
+    <p class="manifest-coda">Vos no perdés tiempo. Solo abrís el cajón y cocinás.</p>
     <div class="signature">El equipo de Bottega</div>
   </div>
 </section>
@@ -1394,11 +1469,13 @@
   <div class="cta-final-inner">
     <h2>Empezá <em>esta semana.</em></h2>
     <p>Suscribite hoy y recibí tu primer cajón el próximo miércoles o jueves, según tu zona.</p>
-    <a href="https://wa.me/5491100000000?text=Hola%20Bottega%2C%20quiero%20suscribirme" class="btn large">Suscribirme por WhatsApp</a>
+    <a href="https://wa.me/5491100000000?text=Hola%20Bottega%2C%20quiero%20suscribirme" class="btn large" target="_blank" rel="noopener noreferrer" aria-label="Suscribirme por WhatsApp (abre WhatsApp en una nueva pestaña)">Suscribirme por WhatsApp</a>
   </div>
 </section>
 
 <!-- ============ FOOTER ============ -->
+</main>
+
 <footer class="foot">
   <div class="foot-inner">
     <div class="foot-brand">
