@@ -114,13 +114,13 @@
   }
   .nav-inner {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 18px var(--pad-x);
     max-width: 1280px;
     margin: 0 auto;
+    gap: 32px;
   }
-  .nav-brand { display: flex; align-items: center; gap: 12px; }
+  .nav-brand { display: flex; align-items: center; gap: 12px; margin-right: auto; }
   .nav-brand svg { display: block; }
   .nav-brand .word {
     font-family: "Fraunces", serif;
@@ -163,20 +163,24 @@
   .btn.large { font-size: 15px; padding: 14px 28px; }
 
   @media (max-width: 720px) {
-    .nav-inner { flex-wrap: wrap; gap: 12px; padding: 12px var(--pad-x); }
+    .nav-inner {
+      flex-wrap: wrap;
+      gap: 8px 14px;
+      padding: 10px var(--pad-x);
+      align-items: center;
+    }
+    .nav-brand { order: 1; margin-right: auto; }
+    .nav-cta { order: 2; padding: 8px 16px; font-size: 12px; }
     .nav-links {
+      order: 3;
       width: 100%;
-      gap: 14px;
+      gap: 16px 18px;
       flex-wrap: wrap;
       justify-content: flex-start;
-      order: 2;
+      padding-top: 4px;
+      border-top: 1px solid rgba(160,117,69,0.12);
     }
-    .nav-links a:not(.btn) { font-size: 12px; }
-    .nav-links a.btn {
-      margin-left: auto;
-      padding: 8px 14px;
-      font-size: 12px;
-    }
+    .nav-links a { font-size: 12px; padding: 8px 0; }
   }
 
   /* ============ HERO ============ */
@@ -1330,8 +1334,8 @@
       <a href="#cajon">El cajón</a>
       <a href="#planes">Planes</a>
       <a href="#zonas">Zonas</a>
-      <a href="#planes" class="btn">Suscribite</a>
     </div>
+    <a href="#planes" class="btn nav-cta">Suscribite</a>
   </div>
 </nav>
 
