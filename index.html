@@ -1259,6 +1259,48 @@
   /* Plan featured: precio-meta ahora visible sobre verde */
   .plan.featured .price-meta { color: var(--oliva-soft); }
 
+  /* Tabs para Mixtos vs Solo Frutta */
+  .plans-tabs {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 32px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--oliva-soft);
+    flex-wrap: wrap;
+  }
+  .plans-tab {
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    padding: 10px 20px;
+    background: transparent;
+    color: var(--oliva-texto);
+    border: none;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -14px;
+    transition: all 200ms ease;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+  }
+  .plans-tab:hover { color: var(--verde-bosque); }
+  .plans-tab.is-active {
+    color: var(--verde-bosque);
+    border-bottom-color: var(--madera);
+  }
+  .plan-sub {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 0.55em;
+    color: var(--oliva-texto);
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    display: block;
+    margin-top: 4px;
+  }
+  .plan.featured .plan-sub { color: var(--oliva-soft); }
+  .plans-grid[hidden] { display: none; }
+
   /* Plan CTA no full-width en tablet/desktop, solo mobile */
   @media (min-width: 700px) {
     .plan .btn { width: auto; align-self: flex-start; }
@@ -1426,7 +1468,7 @@
     <div class="how-step">
       <div class="step-num">03</div>
       <h3>Recibilo en casa.</h3>
-      <p>Miércoles o jueves —según tu zona— el cajón llega a tu puerta. Abrís y cocinás. Eso es todo.</p>
+      <p>Martes o jueves —según tu zona— el cajón llega a tu puerta. Abrís y cocinás. Eso es todo.</p>
     </div>
   </div>
   <div class="section-cta">
@@ -1639,7 +1681,7 @@
     </ul>
   </div>
   <div class="section-cta">
-    <a href="#planes" class="link-cta">Recibí esto el miércoles →</a>
+    <a href="#planes" class="link-cta">Recibí esto el martes →</a>
   </div>
 </section>
 
@@ -1665,7 +1707,12 @@
     <div id="zone-feedback" class="zone-feedback" aria-live="polite"></div>
   </div>
 
-  <div class="plans-grid">
+  <div class="plans-tabs" role="tablist">
+    <button type="button" class="plans-tab is-active" data-tab="mixtos" role="tab" aria-selected="true">Mixtos · frutas y verduras</button>
+    <button type="button" class="plans-tab" data-tab="frutta" role="tab" aria-selected="false">Solo Frutta</button>
+  </div>
+
+  <div class="plans-grid is-tab-mixtos" data-tab-panel="mixtos">
     <div class="plan">
       <span class="label">Esencial</span>
       <h3 lang="it">Picolo</h3>
@@ -1691,6 +1738,7 @@
       <ul class="plan-features">
         <li>9 a 12 variedades por semana</li>
         <li>Mix de fruta y verdura de estación</li>
+        <li>1 maple de huevos de campo incluido</li>
         <li>Entrega puerta a puerta prioritaria</li>
         <li>Acceso anticipado a productos especiales</li>
         <li>Cancelás cuando quieras</li>
@@ -1707,6 +1755,7 @@
       <ul class="plan-features">
         <li>14 a 18 variedades por semana</li>
         <li>Mix de fruta y verdura de estación</li>
+        <li>1 maple de huevos de campo incluido</li>
         <li>Entrega puerta a puerta prioritaria</li>
         <li>Acceso anticipado a productos especiales</li>
         <li>Hierbas frescas de huerta propia incluidas</li>
@@ -1715,6 +1764,41 @@
       <a href="https://wa.me/5491150562645?text=Hola%20Spiga%2C%20me%20interesa%20el%20plan%20Abbondanza%20(5%2B%20personas).%20%C2%BFMe%20confirman%20precio%20y%20cu%C3%A1ndo%20llega%20el%20primer%20caj%C3%B3n%3F" class="btn plan-cta" data-plan="Abbondanza" data-personas="5+ personas" target="_blank" rel="noopener noreferrer" aria-label="Empezar plan Abbondanza por WhatsApp">Empezar</a>
     </div>
   </div>
+
+  <div class="plans-grid is-frutta" data-tab-panel="frutta" hidden>
+    <div class="plan">
+      <span class="label">Familiar</span>
+      <h3 lang="it">Famiglia <span class="plan-sub">· Solo Frutta</span></h3>
+      <p class="plan-desc">Para 3 o 4 personas — o oficinas chicas. Ideal para desayunos y breaks naturales.</p>
+      <div class="price">$ —</div>
+      <div class="price-meta">Por mes · 4 entregas</div>
+      <ul class="plan-features">
+        <li>6 variedades de fruta por semana</li>
+        <li>Mix de fruta de estación + atemporales (banana, manzana)</li>
+        <li>Entrega puerta a puerta</li>
+        <li>Cancelás cuando quieras</li>
+      </ul>
+      <a href="https://wa.me/5491150562645?text=Hola%20Spiga%2C%20me%20interesa%20el%20plan%20Solo%20Frutta%20Famiglia.%20%C2%BFMe%20confirman%20precio%20y%20cu%C3%A1ndo%20llega%20el%20primer%20caj%C3%B3n%3F" class="btn plan-cta" data-plan="Solo Frutta Famiglia" data-personas="3–4 personas u oficina chica" target="_blank" rel="noopener noreferrer" aria-label="Empezar plan Solo Frutta Famiglia por WhatsApp">Empezar</a>
+    </div>
+
+    <div class="plan featured">
+      <span class="badge-feat">Para oficinas</span>
+      <span class="label">Generoso</span>
+      <h3 lang="it">Abbondanza <span class="plan-sub">· Solo Frutta</span></h3>
+      <p class="plan-desc">Para casas grandes u oficinas. Pensado para desayunos diarios y breaks naturales del equipo.</p>
+      <div class="price">$ —</div>
+      <div class="price-meta">Por mes · 4 entregas</div>
+      <ul class="plan-features">
+        <li>6 variedades en cantidades generosas</li>
+        <li>Mix estacional + atemporales (banana, manzana, naranja)</li>
+        <li>Entrega puerta a puerta prioritaria</li>
+        <li>Posibilidad de doble entrega semanal (consultar)</li>
+        <li>Cancelás cuando quieras</li>
+      </ul>
+      <a href="https://wa.me/5491150562645?text=Hola%20Spiga%2C%20me%20interesa%20el%20plan%20Solo%20Frutta%20Abbondanza%20(para%20oficina%20o%20casa%20grande).%20%C2%BFMe%20confirman%20precio%20y%20cu%C3%A1ndo%20llega%20el%20primer%20caj%C3%B3n%3F" class="btn plan-cta" data-plan="Solo Frutta Abbondanza" data-personas="5+ personas u oficina" target="_blank" rel="noopener noreferrer" aria-label="Empezar plan Solo Frutta Abbondanza por WhatsApp">Empezar</a>
+    </div>
+  </div>
+
   <div class="plans-foot">
     Los precios se confirman al momento de suscribirte. Pago por Mercado Pago, transferencia o tarjeta de crédito.
   </div>
@@ -1729,8 +1813,8 @@
   </div>
 
   <div class="zones-grid">
-    <div class="zone" data-day="Miércoles">
-      <div class="zone-day">Miércoles</div>
+    <div class="zone" data-day="Martes">
+      <div class="zone-day">Martes</div>
       <div class="zone-date">Día de entrega</div>
       <div class="zone-list">
         <button type="button" class="pill zone-mirror" data-zone="Nordelta">Nordelta</button>
@@ -1761,7 +1845,7 @@
       <p>Selección a mano, control de calidad pieza por pieza, armado del cajón con tu nombre.</p>
     </div>
     <div class="tl-step">
-      <div class="day">Mié · Jue</div>
+      <div class="day">Mar · Jue</div>
       <h4>Entregamos.</h4>
       <p>Llega a tu puerta entre las 9 y las 13. Te avisamos por WhatsApp cuando va en camino.</p>
     </div>
@@ -1881,9 +1965,9 @@
   (function () {
     const PHONE = '5491150562645';
     const ZONE_DAY = {
-      'Nordelta': 'Miércoles',
-      'Villanueva': 'Miércoles',
-      'Tigre': 'Miércoles',
+      'Nordelta': 'Martes',
+      'Villanueva': 'Martes',
+      'Tigre': 'Martes',
       'Maschwitz': 'Jueves',
       'Escobar': 'Jueves',
       'Pilar': 'Jueves'
@@ -1953,6 +2037,25 @@
       const planesSection = document.getElementById('planes');
       if (planesSection) planesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }));
+  })();
+
+  // Tabs Mixtos / Solo Frutta en sección Planes
+  (function () {
+    const tabs = document.querySelectorAll('.plans-tab');
+    const panels = document.querySelectorAll('.plans-grid[data-tab-panel]');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const target = tab.dataset.tab;
+        tabs.forEach(t => {
+          const active = t.dataset.tab === target;
+          t.classList.toggle('is-active', active);
+          t.setAttribute('aria-selected', active);
+        });
+        panels.forEach(p => {
+          p.hidden = p.dataset.tabPanel !== target;
+        });
+      });
+    });
   })();
 
   // Detecta estación actual (hemisferio sur, Argentina), la destaca,
