@@ -1082,6 +1082,196 @@
 
   ::selection { background: var(--verde-bosque); color: var(--crema); }
 
+  /* ============ MODAL DE SUSCRIPCIÓN ============ */
+  .modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 220ms ease;
+  }
+  .modal.is-open { opacity: 1; pointer-events: auto; }
+  .modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(31, 28, 24, 0.7);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+  .modal-card {
+    position: relative;
+    background: var(--crema);
+    border-radius: 8px;
+    max-width: 640px;
+    width: 100%;
+    max-height: 92vh;
+    overflow-y: auto;
+    padding: 48px 40px;
+    box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.4);
+    transform: translateY(20px) scale(0.98);
+    transition: transform 280ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .modal.is-open .modal-card { transform: translateY(0) scale(1); }
+  .modal-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: var(--oliva-texto);
+    cursor: pointer;
+    padding: 6px 14px;
+    line-height: 1;
+    border-radius: 4px;
+    font-family: inherit;
+  }
+  .modal-close:hover { color: var(--verde-bosque); background: var(--crema-soft); }
+  .modal-eyebrow {
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--madera);
+    font-weight: 500;
+  }
+  .modal-head h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 500;
+    font-size: clamp(28px, 4vw, 38px);
+    color: var(--verde-bosque);
+    margin: 10px 0 6px;
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+  }
+  .modal-head h2 em { font-style: italic; color: var(--madera); font-weight: 400; }
+  .modal-sub {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 16px;
+    color: var(--tinta);
+    margin-bottom: 28px;
+    line-height: 1.5;
+  }
+
+  .form-sus .form-row { margin-bottom: 16px; }
+  .form-sus .form-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .form-sus label {
+    display: block;
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    color: var(--verde-bosque);
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .form-sus .req { color: var(--acento); }
+  .form-sus input,
+  .form-sus select,
+  .form-sus textarea {
+    display: block;
+    width: 100%;
+    margin-top: 6px;
+    padding: 11px 13px;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    color: var(--tinta);
+    background: #fff;
+    border: 1px solid var(--oliva-soft);
+    border-radius: 4px;
+    transition: border-color 180ms ease, box-shadow 180ms ease;
+    box-sizing: border-box;
+  }
+  .form-sus input:focus,
+  .form-sus select:focus,
+  .form-sus textarea:focus {
+    outline: none;
+    border-color: var(--verde-bosque);
+    box-shadow: 0 0 0 3px rgba(84, 97, 63, 0.18);
+  }
+  .form-sus textarea { resize: vertical; min-height: 60px; font-family: "Cormorant Garamond", serif; font-size: 15px; }
+  .form-sus .form-check {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    cursor: pointer;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+  .form-sus .form-check input {
+    width: auto !important;
+    margin: 4px 0 0 !important;
+    padding: 0 !important;
+    flex-shrink: 0;
+  }
+  .form-sus .form-check span {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 15px;
+    color: var(--tinta);
+    font-weight: 400;
+    line-height: 1.4;
+  }
+  .form-foot {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+    margin-top: 28px;
+    flex-wrap: wrap;
+  }
+  .form-foot .btn { padding: 12px 24px; font-size: 13px; }
+  .form-foot .btn.ghost {
+    background: transparent;
+    color: var(--verde-bosque);
+    border-color: var(--oliva-soft);
+  }
+  .form-foot .btn.ghost:hover { background: var(--crema-soft); color: var(--verde-bosque); }
+  .form-foot .btn.submit:disabled { opacity: 0.6; cursor: wait; }
+  .form-msg {
+    margin-top: 14px;
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    color: #B65656;
+    text-align: right;
+    min-height: 18px;
+  }
+
+  .form-success { text-align: center; padding: 40px 16px; }
+  .form-success .success-icon {
+    font-size: 56px;
+    color: var(--madera);
+    margin-bottom: 12px;
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    line-height: 1;
+  }
+  .form-success h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: 32px;
+    color: var(--verde-bosque);
+    margin-bottom: 14px;
+  }
+  .form-success p {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--tinta);
+    margin: 0 auto 28px;
+    max-width: 42ch;
+  }
+
+  @media (max-width: 600px) {
+    .modal-card { padding: 36px 22px; max-height: 96vh; }
+    .form-sus .form-row-2 { grid-template-columns: 1fr; }
+    .form-foot { flex-direction: column-reverse; }
+    .form-foot .btn { width: 100%; padding: 14px; }
+    .form-msg { text-align: center; }
+  }
+
   /* ============ FLOW & ANCHORS ============ */
   /* Anchors no quedan tapados por el nav sticky */
   section[id], div[id] { scroll-margin-top: 88px; }
@@ -1959,6 +2149,93 @@
   </div>
 </footer>
 
+<!-- ============ MODAL DE SUSCRIPCIÓN ============ -->
+<div class="modal" id="modal-form" hidden role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-card">
+    <button class="modal-close" type="button" aria-label="Cerrar" data-close>×</button>
+
+    <div class="modal-content">
+      <header class="modal-head">
+        <span class="modal-eyebrow">Suscripción</span>
+        <h2 id="modal-title">Te sumás a <em data-plan-name>Spiga</em></h2>
+        <p class="modal-sub">Llená los datos y te contactamos antes del próximo lunes para coordinar tu primer cajón.</p>
+      </header>
+
+      <form class="form-sus" id="form-sus" novalidate>
+        <div class="form-row">
+          <label>Nombre completo <span class="req">*</span>
+            <input type="text" name="nombre" required autocomplete="name" />
+          </label>
+        </div>
+        <div class="form-row form-row-2">
+          <label>Email <span class="req">*</span>
+            <input type="email" name="email" required autocomplete="email" />
+          </label>
+          <label>WhatsApp <span class="req">*</span>
+            <input type="tel" name="whatsapp" required placeholder="+54 9 11 …" autocomplete="tel" />
+          </label>
+        </div>
+        <div class="form-row form-row-2">
+          <label>Zona <span class="req">*</span>
+            <select name="zona" required>
+              <option value="">Elegí tu zona</option>
+              <option value="Nordelta">Nordelta</option>
+              <option value="Villanueva">Villanueva</option>
+              <option value="Tigre">Tigre</option>
+              <option value="Maschwitz">Maschwitz</option>
+              <option value="Escobar">Escobar</option>
+              <option value="Pilar">Pilar</option>
+              <option value="Otra">Otra zona</option>
+            </select>
+          </label>
+          <label>Personas en casa
+            <select name="personas">
+              <option value="">—</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3-4">3 a 4</option>
+              <option value="5+">5 o más</option>
+              <option value="oficina">Es una oficina</option>
+            </select>
+          </label>
+        </div>
+        <div class="form-row">
+          <label>Dirección completa <span class="req">*</span>
+            <textarea name="direccion" rows="2" required placeholder="Calle, número, piso/depto, edificio, indicaciones para el repartidor…" autocomplete="street-address"></textarea>
+          </label>
+        </div>
+        <div class="form-row">
+          <label>Alergias o productos que NO querés recibir
+            <textarea name="alergias" rows="2" placeholder="Ej: sin hongos, sin cebolla, sin gluten…"></textarea>
+          </label>
+        </div>
+        <div class="form-row">
+          <label class="form-check">
+            <input type="checkbox" name="opt_in_marketing" />
+            <span>Sí, quiero recibir novedades, ofertas y qué hay en el cajón cada semana.</span>
+          </label>
+        </div>
+
+        <input type="hidden" name="plan" value="Spiga" />
+
+        <div class="form-foot">
+          <button type="button" class="btn ghost" data-close>Cancelar</button>
+          <button type="submit" class="btn submit">Suscribirme</button>
+        </div>
+        <div class="form-msg" id="form-msg" aria-live="polite"></div>
+      </form>
+    </div>
+
+    <div class="form-success" hidden>
+      <div class="success-icon">✓</div>
+      <h3>¡Estás suscripto!</h3>
+      <p>Te vamos a contactar antes del próximo lunes por <strong data-success-email>email</strong> para coordinar tu primer cajón.</p>
+      <button type="button" class="btn" data-close>Cerrar</button>
+    </div>
+  </div>
+</div>
+
 <script>
   // Zone selector → actualiza CTAs WhatsApp + sincroniza con sección Zonas + feedback visible
   (function () {
@@ -2078,6 +2355,108 @@
       const distance = (cycleIdx - startIdx + 4) % 4;
       card.style.order = String(distance);
       if (season === current) card.classList.add('is-current-season');
+    });
+  })();
+
+  // Form modal de suscripción → POST a Apps Script webhook
+  (function () {
+    const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbxgJ7cAeZ8pO871PKEWAouMv15YebAJznlhaT0Q0cnr-JzMc1O7_eE-j5UBdtf_yuF_GA/exec';
+    const modal = document.getElementById('modal-form');
+    if (!modal) return;
+    const form = document.getElementById('form-sus');
+    const msg = document.getElementById('form-msg');
+    const successBlock = modal.querySelector('.form-success');
+    const formBlock = modal.querySelector('.modal-content');
+    const planNameEl = modal.querySelector('[data-plan-name]');
+    const planInput = form.querySelector('[name="plan"]');
+    const submitBtn = form.querySelector('.btn.submit');
+    let lastFocus = null;
+
+    function openModal(planName, zone) {
+      lastFocus = document.activeElement;
+      planInput.value = planName;
+      planNameEl.textContent = planName;
+      if (zone && zone !== 'otra') {
+        const zonaSel = form.querySelector('[name="zona"]');
+        if (zonaSel) zonaSel.value = zone;
+      }
+      modal.hidden = false;
+      requestAnimationFrame(() => modal.classList.add('is-open'));
+      document.body.style.overflow = 'hidden';
+      setTimeout(() => {
+        const firstInput = form.querySelector('input,select,textarea');
+        firstInput && firstInput.focus();
+      }, 250);
+    }
+
+    function closeModal() {
+      modal.classList.remove('is-open');
+      setTimeout(() => {
+        modal.hidden = true;
+        document.body.style.overflow = '';
+        form.reset();
+        msg.textContent = '';
+        formBlock.hidden = false;
+        successBlock.hidden = true;
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Suscribirme';
+        if (lastFocus && lastFocus.focus) lastFocus.focus();
+      }, 220);
+    }
+
+    // Open desde cualquier botón de plan
+    document.querySelectorAll('.plan-cta').forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.preventDefault();
+        const planName = btn.dataset.plan || 'Spiga';
+        const activePill = document.querySelector('.zone-pill.active');
+        const zone = activePill ? activePill.dataset.zone : null;
+        openModal(planName, zone);
+      });
+    });
+
+    // Cerrar (×, backdrop, cancelar, success cerrar)
+    modal.querySelectorAll('[data-close]').forEach(el => el.addEventListener('click', closeModal));
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && !modal.hidden) closeModal();
+    });
+
+    // Submit
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      msg.textContent = '';
+
+      // Validación nativa
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Enviando…';
+
+      const formData = new FormData(form);
+      const data = {};
+      formData.forEach((v, k) => { data[k] = v; });
+      data.opt_in_marketing = form.querySelector('[name="opt_in_marketing"]').checked;
+
+      try {
+        // Sin Content-Type custom → request "simple" → sin preflight CORS
+        await fetch(WEBHOOK_URL, {
+          method: 'POST',
+          body: JSON.stringify(data)
+        });
+        // Success: mostrar bloque de éxito
+        const successEmail = modal.querySelector('[data-success-email]');
+        if (successEmail) successEmail.textContent = data.email;
+        formBlock.hidden = true;
+        successBlock.hidden = false;
+        successBlock.scrollTop = 0;
+      } catch (err) {
+        msg.textContent = 'No pudimos enviar. Probá de nuevo o escribinos por WhatsApp.';
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Suscribirme';
+      }
     });
   })();
 </script>
