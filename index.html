@@ -1449,47 +1449,64 @@
   /* Plan featured: precio-meta ahora visible sobre verde */
   .plan.featured .price-meta { color: var(--oliva-soft); }
 
-  /* Tabs para Mixtos vs Solo Frutta */
-  .plans-tabs {
-    display: flex;
-    gap: 8px;
-    justify-content: center;
-    margin-bottom: 32px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid var(--oliva-soft);
-    flex-wrap: wrap;
+  /* Sección Spiga para oficinas (después de planes) */
+  .oficinas {
+    background: var(--crema-soft);
+    padding-top: 80px;
+    padding-bottom: 80px;
+    border-radius: 0;
   }
-  .plans-tab {
-    font-family: "Inter", sans-serif;
-    font-size: 13px;
-    padding: 10px 20px;
-    background: transparent;
-    color: var(--oliva-texto);
-    border: none;
-    cursor: pointer;
-    border-bottom: 2px solid transparent;
-    margin-bottom: -14px;
-    transition: all 200ms ease;
-    font-weight: 500;
-    letter-spacing: 0.04em;
+  .oficinas-inner {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 56px;
+    align-items: center;
   }
-  .plans-tab:hover { color: var(--verde-bosque); }
-  .plans-tab.is-active {
-    color: var(--verde-bosque);
-    border-bottom-color: var(--madera);
-  }
-  .plan-sub {
+  .oficinas-inner h2 {
     font-family: "Cormorant Garamond", serif;
-    font-size: 0.55em;
-    color: var(--oliva-texto);
-    font-style: italic;
-    font-weight: 400;
-    letter-spacing: 0.02em;
-    display: block;
-    margin-top: 4px;
+    font-weight: 500;
+    font-size: clamp(32px, 4.5vw, 48px);
+    color: var(--verde-bosque);
+    letter-spacing: -0.015em;
+    line-height: 1.1;
+    margin: 12px 0 18px;
   }
-  .plan.featured .plan-sub { color: var(--oliva-soft); }
-  .plans-grid[hidden] { display: none; }
+  .oficinas-inner h2 em { font-style: italic; color: var(--madera); font-weight: 400; }
+  .oficinas-inner p {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 18px;
+    line-height: 1.55;
+    color: var(--tinta);
+    max-width: 52ch;
+    margin-bottom: 28px;
+  }
+  .oficinas-features {
+    list-style: none;
+    background: var(--crema);
+    border: 1px solid var(--madera-suave);
+    border-radius: 6px;
+    padding: 28px 28px 28px 48px;
+    position: relative;
+  }
+  .oficinas-features li {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 16px;
+    color: var(--tinta);
+    padding: 8px 0;
+    position: relative;
+    line-height: 1.45;
+  }
+  .oficinas-features li::before {
+    content: "·";
+    position: absolute;
+    left: -20px;
+    color: var(--madera);
+    font-size: 22px;
+    line-height: 1;
+  }
+  @media (max-width: 800px) {
+    .oficinas-inner { grid-template-columns: 1fr; gap: 32px; }
+  }
 
   /* Plan CTA no full-width en tablet/desktop, solo mobile */
   @media (min-width: 700px) {
@@ -1591,6 +1608,7 @@
       <a href="#como">Cómo funciona</a>
       <a href="#cajon">El cajón</a>
       <a href="#planes">Planes</a>
+      <a href="#oficinas">Oficinas</a>
       <a href="#zonas">Zonas</a>
     </div>
     <a href="#planes" class="btn nav-cta">Suscribite</a>
@@ -1897,99 +1915,83 @@
     <div id="zone-feedback" class="zone-feedback" aria-live="polite"></div>
   </div>
 
-  <div class="plans-tabs" role="tablist">
-    <button type="button" class="plans-tab is-active" data-tab="mixtos" role="tab" aria-selected="true">Mixtos · frutas y verduras</button>
-    <button type="button" class="plans-tab" data-tab="frutta" role="tab" aria-selected="false">Solo Frutta</button>
-  </div>
-
-  <div class="plans-grid is-tab-mixtos" data-tab-panel="mixtos">
+  <div class="plans-grid">
     <div class="plan">
       <span class="label">Esencial</span>
-      <h3 lang="it">Picolo</h3>
+      <h3 lang="it">Piccolo</h3>
       <p class="plan-desc">Para 1 o 2 personas. Lo justo para una semana de cocina ligera.</p>
       <div class="price">$ —</div>
       <div class="price-meta">Por mes · 4 entregas</div>
       <ul class="plan-features">
-        <li>5 a 7 variedades por semana</li>
-        <li>Mix de fruta y verdura de estación</li>
-        <li>Entrega puerta a puerta</li>
+        <li>18 productos por semana</li>
+        <li>4 verduras de hoja (lechuga, espinaca, acelga, rúcula)</li>
+        <li>9 verduras para cocinar (papa, batata, zanahoria, zapallo…)</li>
+        <li>3 frescas (tomate cherry, morrón, limón)</li>
+        <li>2 frutas (mandarina, banana)</li>
+        <li>Cajón sorpresa cada 3 meses con producto premium</li>
         <li>Cancelás cuando quieras</li>
       </ul>
-      <a href="https://wa.me/5491150562645?text=Hola%20Spiga%2C%20me%20interesa%20el%20plan%20Picolo%20(1%E2%80%932%20personas).%20%C2%BFMe%20confirman%20precio%20y%20cu%C3%A1ndo%20llega%20el%20primer%20caj%C3%B3n%3F" class="btn plan-cta" data-plan="Picolo" data-personas="1–2 personas" target="_blank" rel="noopener noreferrer" aria-label="Empezar plan Picolo por WhatsApp">Empezar</a>
+      <a href="https://wa.me/5491150562645?text=Hola%20Spiga%2C%20me%20interesa%20el%20plan%20Piccolo%20(1%E2%80%932%20personas).%20%C2%BFMe%20confirman%20precio%20y%20cu%C3%A1ndo%20llega%20el%20primer%20caj%C3%B3n%3F" class="btn plan-cta" data-plan="Piccolo" data-personas="1–2 personas" target="_blank" rel="noopener noreferrer" aria-label="Empezar plan Piccolo por WhatsApp">Empezar</a>
     </div>
 
     <div class="plan featured">
       <span class="badge-feat">Más elegido</span>
       <span class="label">Familiar</span>
-      <h3 lang="it">Famiglia</h3>
-      <p class="plan-desc">Para 3 o 4 personas. La cocina entera de la semana resuelta.</p>
-      <div class="price">$ —</div>
-      <div class="price-meta">Por mes · 4 entregas</div>
-      <ul class="plan-features">
-        <li>9 a 12 variedades por semana</li>
-        <li>Mix de fruta y verdura de estación</li>
-        <li>1 maple de huevos de campo incluido</li>
-        <li>Entrega puerta a puerta prioritaria</li>
-        <li>Acceso anticipado a productos especiales</li>
-        <li>Cancelás cuando quieras</li>
-      </ul>
-      <a href="https://wa.me/5491150562645?text=Hola%20Spiga%2C%20me%20interesa%20el%20plan%20Famiglia%20(3%E2%80%934%20personas).%20%C2%BFMe%20confirman%20precio%20y%20cu%C3%A1ndo%20llega%20el%20primer%20caj%C3%B3n%3F" class="btn plan-cta" data-plan="Famiglia" data-personas="3–4 personas" target="_blank" rel="noopener noreferrer" aria-label="Empezar plan Famiglia por WhatsApp">Empezar</a>
-    </div>
-
-    <div class="plan">
-      <span class="label">Generoso</span>
       <h3 lang="it">Abbondanza</h3>
-      <p class="plan-desc">Para 5+ personas o quien cocina mucho. Cantidad sin perder curaduría.</p>
+      <p class="plan-desc">Para 3 o 4 personas. La misma variedad que Piccolo, en cantidades para familia.</p>
       <div class="price">$ —</div>
       <div class="price-meta">Por mes · 4 entregas</div>
       <ul class="plan-features">
-        <li>14 a 18 variedades por semana</li>
-        <li>Mix de fruta y verdura de estación</li>
-        <li>1 maple de huevos de campo incluido</li>
-        <li>Entrega puerta a puerta prioritaria</li>
-        <li>Acceso anticipado a productos especiales</li>
-        <li>Hierbas frescas de huerta propia incluidas</li>
+        <li>18 productos por semana en cantidades familiares</li>
+        <li>4 verduras de hoja (2 unidades de cada)</li>
+        <li>9 verduras para cocinar (papa 1kg, zanahoria 600g, etc.)</li>
+        <li>3 frescas (cherry 350g, morrón, limón ×3)</li>
+        <li>2 frutas (mandarina 1kg, banana ×4)</li>
+        <li>Entrega prioritaria</li>
+        <li>Cajón sorpresa cada 3 meses con producto premium</li>
         <li>Cancelás cuando quieras</li>
       </ul>
-      <a href="https://wa.me/5491150562645?text=Hola%20Spiga%2C%20me%20interesa%20el%20plan%20Abbondanza%20(5%2B%20personas).%20%C2%BFMe%20confirman%20precio%20y%20cu%C3%A1ndo%20llega%20el%20primer%20caj%C3%B3n%3F" class="btn plan-cta" data-plan="Abbondanza" data-personas="5+ personas" target="_blank" rel="noopener noreferrer" aria-label="Empezar plan Abbondanza por WhatsApp">Empezar</a>
+      <a href="https://wa.me/5491150562645?text=Hola%20Spiga%2C%20me%20interesa%20el%20plan%20Abbondanza%20(3%E2%80%934%20personas).%20%C2%BFMe%20confirman%20precio%20y%20cu%C3%A1ndo%20llega%20el%20primer%20caj%C3%B3n%3F" class="btn plan-cta" data-plan="Abbondanza" data-personas="3–4 personas" target="_blank" rel="noopener noreferrer" aria-label="Empezar plan Abbondanza por WhatsApp">Empezar</a>
     </div>
-  </div>
 
-  <div class="plans-grid is-frutta" data-tab-panel="frutta" hidden>
     <div class="plan">
-      <span class="label">Familiar</span>
-      <h3 lang="it">Famiglia <span class="plan-sub">· Solo Frutta</span></h3>
-      <p class="plan-desc">Para 3 o 4 personas — o oficinas chicas. Ideal para desayunos y breaks naturales.</p>
+      <span class="label">Completo</span>
+      <h3 lang="it">Famiglia</h3>
+      <p class="plan-desc">Para 5+ personas o quien cocina mucho. Todo lo de Abbondanza más cinco frutas extra.</p>
       <div class="price">$ —</div>
       <div class="price-meta">Por mes · 4 entregas</div>
       <ul class="plan-features">
-        <li>6 variedades de fruta por semana</li>
-        <li>Mix de fruta de estación + atemporales (banana, manzana)</li>
-        <li>Entrega puerta a puerta</li>
+        <li>23 productos por semana</li>
+        <li>Toda la variedad de Abbondanza</li>
+        <li>+ 5 frutas extra (kiwi, uva, manzana, naranja, pomelo)</li>
+        <li>Entrega prioritaria</li>
+        <li>Cajón sorpresa cada 3 meses con producto premium</li>
         <li>Cancelás cuando quieras</li>
       </ul>
-      <a href="https://wa.me/5491150562645?text=Hola%20Spiga%2C%20me%20interesa%20el%20plan%20Solo%20Frutta%20Famiglia.%20%C2%BFMe%20confirman%20precio%20y%20cu%C3%A1ndo%20llega%20el%20primer%20caj%C3%B3n%3F" class="btn plan-cta" data-plan="Solo Frutta Famiglia" data-personas="3–4 personas u oficina chica" target="_blank" rel="noopener noreferrer" aria-label="Empezar plan Solo Frutta Famiglia por WhatsApp">Empezar</a>
-    </div>
-
-    <div class="plan featured">
-      <span class="label">Generoso</span>
-      <h3 lang="it">Abbondanza <span class="plan-sub">· Solo Frutta</span></h3>
-      <p class="plan-desc">Para casas grandes u oficinas. Pensado para desayunos diarios y breaks naturales del equipo.</p>
-      <div class="price">$ —</div>
-      <div class="price-meta">Por mes · 4 entregas</div>
-      <ul class="plan-features">
-        <li>6 variedades en cantidades generosas</li>
-        <li>Mix estacional + atemporales (banana, manzana, naranja)</li>
-        <li>Entrega puerta a puerta prioritaria</li>
-        <li>Posibilidad de doble entrega semanal (consultar)</li>
-        <li>Cancelás cuando quieras</li>
-      </ul>
-      <a href="https://wa.me/5491150562645?text=Hola%20Spiga%2C%20me%20interesa%20el%20plan%20Solo%20Frutta%20Abbondanza%20(para%20oficina%20o%20casa%20grande).%20%C2%BFMe%20confirman%20precio%20y%20cu%C3%A1ndo%20llega%20el%20primer%20caj%C3%B3n%3F" class="btn plan-cta" data-plan="Solo Frutta Abbondanza" data-personas="5+ personas u oficina" target="_blank" rel="noopener noreferrer" aria-label="Empezar plan Solo Frutta Abbondanza por WhatsApp">Empezar</a>
+      <a href="https://wa.me/5491150562645?text=Hola%20Spiga%2C%20me%20interesa%20el%20plan%20Famiglia%20(5%2B%20personas).%20%C2%BFMe%20confirman%20precio%20y%20cu%C3%A1ndo%20llega%20el%20primer%20caj%C3%B3n%3F" class="btn plan-cta" data-plan="Famiglia" data-personas="5+ personas" target="_blank" rel="noopener noreferrer" aria-label="Empezar plan Famiglia por WhatsApp">Empezar</a>
     </div>
   </div>
 
   <div class="plans-foot">
-    Los precios se confirman al momento de suscribirte. Pago por Mercado Pago, transferencia o tarjeta de crédito.
+    Los precios se confirman al momento de suscribirte. Pago por transferencia, Mercado Pago o tarjeta de crédito. La suscripción es mensual por adelantado.
+  </div>
+</section>
+
+<!-- ============ SPIGA PARA OFICINAS ============ -->
+<section class="block oficinas" id="oficinas">
+  <div class="oficinas-inner">
+    <div>
+      <span class="label">Para oficinas</span>
+      <h2>Cajones de fruta <em>a medida</em> para tu equipo.</h2>
+      <p>Si tu oficina quiere desayunos y breaks naturales, armamos un cajón solo de frutas adaptado a cuánta gente sos y cuántas veces a la semana lo querés. Hablalo con nosotros y te pasamos propuesta personalizada.</p>
+      <a href="https://wa.me/5491150562645?text=Hola%20Spiga%2C%20quiero%20una%20propuesta%20de%20caj%C3%B3n%20de%20frutas%20para%20mi%20oficina.%20Somos%20___%20personas." class="btn" target="_blank" rel="noopener noreferrer">Pedir propuesta por WhatsApp</a>
+    </div>
+    <ul class="oficinas-features">
+      <li>Cajón solo de frutas, mix estacional + atemporales</li>
+      <li>Cantidad y frecuencia ajustadas a tu equipo</li>
+      <li>Entrega coordinada según tu zona</li>
+      <li>Factura como servicio para tu empresa</li>
+    </ul>
   </div>
 </section>
 
@@ -2118,6 +2120,7 @@
         <li><a href="#como">Cómo funciona</a></li>
         <li><a href="#semana">Esta semana</a></li>
         <li><a href="#planes">Planes</a></li>
+        <li><a href="#oficinas">Oficinas</a></li>
         <li><a href="#zonas">Zonas</a></li>
         <li><a href="#faq">Preguntas</a></li>
       </ul>
@@ -2313,25 +2316,6 @@
       const planesSection = document.getElementById('planes');
       if (planesSection) planesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }));
-  })();
-
-  // Tabs Mixtos / Solo Frutta en sección Planes
-  (function () {
-    const tabs = document.querySelectorAll('.plans-tab');
-    const panels = document.querySelectorAll('.plans-grid[data-tab-panel]');
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        const target = tab.dataset.tab;
-        tabs.forEach(t => {
-          const active = t.dataset.tab === target;
-          t.classList.toggle('is-active', active);
-          t.setAttribute('aria-selected', active);
-        });
-        panels.forEach(p => {
-          p.hidden = p.dataset.tabPanel !== target;
-        });
-      });
-    });
   })();
 
   // Detecta estación actual (hemisferio sur, Argentina), la destaca,
