@@ -123,6 +123,58 @@ header.top {
   letter-spacing: 0.02em;
 }
 
+.shortcut-card {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  margin-top: 28px;
+  padding: 22px 24px;
+  background: var(--oliva-profundo);
+  color: var(--crema);
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 14px 28px -14px rgba(44, 61, 46, 0.45);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+  max-width: 640px;
+}
+.shortcut-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 36px -16px rgba(44, 61, 46, 0.55);
+}
+.shortcut-icon {
+  font-size: 32px;
+  line-height: 1;
+  flex-shrink: 0;
+  color: var(--acento-2, #E8C766);
+}
+.shortcut-title {
+  font-family: "Fraunces", serif;
+  font-style: italic;
+  font-size: 20px;
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
+  font-weight: 400;
+}
+.shortcut-text {
+  font-family: "Fraunces", serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--oliva-soft);
+  margin-bottom: 8px;
+}
+.shortcut-text em {
+  font-style: italic;
+  color: var(--crema);
+}
+.shortcut-cta {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #E8C766;
+  font-weight: 500;
+}
+
 main {
   max-width: 880px;
   margin: 0 auto;
@@ -479,6 +531,16 @@ textarea {
   <span class="label">Confidencial · solo Aldana y Santi</span>
   <h1>Datos para <em>planear el salto.</em></h1>
   <p class="lead">Completá lo que sepas — los huecos los completamos después. Todo se guarda en tu navegador a medida que escribís. Nada sale de tu computadora hasta que apretás "Exportar bundle".</p>
+
+  <a href="#archivos" class="shortcut-card">
+    <div class="shortcut-icon">⚡</div>
+    <div>
+      <div class="shortcut-title">Atajo: subí los resúmenes y listo</div>
+      <div class="shortcut-text">En lugar de cargar gastos uno por uno, podés subir el resumen de tarjeta y/o banco. Los leo y saco todo de ahí. Si querés cargar algunos a mano <em>y</em> también subir resúmenes, no se duplican — cruzo las dos fuentes.</div>
+      <div class="shortcut-cta">Ir a archivos →</div>
+    </div>
+  </a>
+
   <div class="note">
     💡 Los montos van en <strong>ARS</strong>, salvo los ahorros que pueden estar en USD. Si tenés algún gasto u otro ingreso en USD, anotalo en las notas libres del final.
   </div>
@@ -532,7 +594,7 @@ textarea {
   <section class="block">
     <span class="block-label">02 · Gastos fijos personales</span>
     <h2>Lo que sí o sí sale cada mes.</h2>
-    <p class="block-desc">Listá todo, aunque sean montos chicos. Lo que olvidás ahora aparece como sorpresa después. Si no sabés el monto exacto, poné el promedio de los últimos 3 meses.</p>
+    <p class="block-desc">Listá lo que recuerdes — promedio de los últimos 3 meses. <strong>Esta sección es opcional si subís el resumen de la tarjeta y banco abajo</strong> (saco los gastos de ahí). Si cargás algunos acá y también subís resúmenes, no se duplican.</p>
 
     <div class="list-rows" data-list="gastos_fijos"></div>
     <button type="button" class="add-row" data-add="gastos_fijos">+ agregar gasto</button>
@@ -670,7 +732,7 @@ textarea {
   </section>
 
   <!-- 06 — ARCHIVOS -->
-  <section class="block">
+  <section class="block" id="archivos">
     <span class="block-label">06 · Archivos</span>
     <h2>Adjuntá lo que tengas.</h2>
     <p class="block-desc">No es obligatorio, pero cuanto más concreto, mejor el análisis. PDFs, fotos de pantalla, exports de Excel — todo sirve. Los archivos viajan dentro del ZIP final, no se suben a internet.</p>
