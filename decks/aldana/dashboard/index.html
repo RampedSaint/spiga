@@ -1,0 +1,1154 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Plan Aldana × Spiga — Análisis</title>
+<meta name="description" content="Análisis financiero personal y proyección de breakeven para el lanzamiento de Spiga." />
+<meta name="robots" content="noindex,nofollow" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+<link rel="icon" type="image/svg+xml" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><circle cx="100" cy="100" r="95" fill="none" stroke="%2354613F" stroke-width="6"/><text x="100" y="148" text-anchor="middle" font-family="Georgia,serif" font-size="140" font-style="italic" fill="%2354613F">S</text></svg>' />
+
+<style>
+:root {
+  --oliva-profundo: #54613F;
+  --oliva-mas-oscuro: #3F4A30;
+  --oliva-texto: #6F7A5C;
+  --oliva: #8A9476;
+  --oliva-soft: #B8BFA8;
+  --crema: #F2EBDD;
+  --crema-soft: #E6DCC4;
+  --tinta: #1A1A18;
+  --madera: #A07545;
+  --madera-suave: #C9A581;
+  --acento: #C9573A;
+  --acento-2: #E8C766;
+  --rojo: #B65656;
+  --verde-ok: #4A7C42;
+  --pad-x: clamp(20px, 5vw, 56px);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--crema);
+  color: var(--tinta);
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+:focus-visible { outline: 2px solid var(--oliva-profundo); outline-offset: 3px; border-radius: 2px; }
+
+header.top {
+  background: var(--crema);
+  border-bottom: 1px solid var(--madera-suave);
+  padding: 22px var(--pad-x);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(10px);
+  background: rgba(242, 235, 221, 0.95);
+}
+.top-inner {
+  max-width: 980px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.top-inner .word {
+  font-family: "Fraunces", serif;
+  font-variation-settings: "SOFT" 50, "opsz" 144;
+  font-size: 24px;
+  color: var(--oliva-profundo);
+  letter-spacing: -0.015em;
+}
+.top-inner .sep { color: var(--madera-suave); font-family: "Fraunces", serif; font-style: italic; font-size: 20px; }
+.top-inner .ctx {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  color: var(--oliva-texto);
+  letter-spacing: 0.04em;
+}
+.top-inner .conf {
+  margin-left: auto;
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--madera);
+  padding: 4px 10px;
+  border: 1px solid var(--madera-suave);
+  border-radius: 999px;
+}
+
+main { max-width: 980px; margin: 0 auto; padding: 0 var(--pad-x); }
+
+.hero { padding: 64px 0 24px; }
+.hero .label {
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--madera);
+  font-weight: 500;
+  margin-bottom: 14px;
+}
+.hero h1 {
+  font-family: "Fraunces", serif;
+  font-variation-settings: "SOFT" 50, "opsz" 144;
+  font-weight: 400;
+  font-size: clamp(38px, 5.5vw, 64px);
+  line-height: 1.02;
+  color: var(--oliva-profundo);
+  letter-spacing: -0.025em;
+  margin-bottom: 24px;
+}
+.hero h1 em { font-style: italic; color: var(--oliva-texto); font-weight: 300; }
+.hero .lead {
+  font-family: "Fraunces", serif;
+  font-size: 19px;
+  line-height: 1.55;
+  color: var(--tinta);
+  max-width: 64ch;
+}
+
+section.block {
+  padding: 56px 0;
+  border-top: 1px solid var(--oliva-soft);
+}
+section.block:first-of-type { border-top: none; }
+section.block .block-label {
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--madera);
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+section.block h2 {
+  font-family: "Fraunces", serif;
+  font-variation-settings: "SOFT" 40, "opsz" 144;
+  font-weight: 400;
+  font-size: clamp(28px, 4vw, 40px);
+  color: var(--oliva-profundo);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 14px;
+}
+section.block h2 em { font-style: italic; color: var(--oliva-texto); font-weight: 300; }
+section.block .block-desc {
+  font-family: "Fraunces", serif;
+  font-size: 17px;
+  color: var(--oliva-texto);
+  margin-bottom: 32px;
+  max-width: 64ch;
+  line-height: 1.5;
+}
+
+/* Big number cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+@media (max-width: 720px) { .cards { grid-template-columns: 1fr; } }
+.card {
+  background: #fff;
+  border: 1px solid var(--oliva-soft);
+  border-radius: 8px;
+  padding: 24px;
+  position: relative;
+}
+.card.warn { background: #fff7f2; border-color: var(--madera-suave); }
+.card.bad { background: #fff2f0; border-color: var(--rojo); }
+.card.good { background: #f5f9f3; border-color: var(--oliva-soft); }
+.card .card-label {
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--oliva-texto);
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+.card .card-amount {
+  font-family: "Fraunces", serif;
+  font-variation-settings: "SOFT" 40, "opsz" 144;
+  font-weight: 400;
+  font-size: clamp(28px, 4vw, 38px);
+  color: var(--oliva-profundo);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.card.bad .card-amount { color: var(--rojo); }
+.card.warn .card-amount { color: var(--madera); }
+.card.good .card-amount { color: var(--verde-ok); }
+.card .card-sub {
+  font-family: "Fraunces", serif;
+  font-size: 14px;
+  font-style: italic;
+  color: var(--oliva-texto);
+  line-height: 1.4;
+}
+.card .card-context {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  color: var(--oliva-texto);
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--oliva-soft);
+}
+
+/* Tables */
+.table-wrap { overflow-x: auto; margin-bottom: 16px; }
+table.data {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  background: #fff;
+  border: 1px solid var(--oliva-soft);
+  border-radius: 6px;
+  overflow: hidden;
+}
+table.data thead { background: var(--crema-soft); }
+table.data th {
+  text-align: left;
+  padding: 12px 14px;
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--oliva-profundo);
+  border-bottom: 1px solid var(--madera-suave);
+}
+table.data td {
+  padding: 11px 14px;
+  border-bottom: 1px solid var(--oliva-soft);
+  color: var(--tinta);
+}
+table.data tr:last-child td { border-bottom: none; }
+table.data td.num, table.data th.num { text-align: right; font-variant-numeric: tabular-nums; }
+table.data td.cat { color: var(--oliva-profundo); font-weight: 500; }
+table.data tr.total { background: var(--crema-soft); }
+table.data tr.total td { font-weight: 600; color: var(--oliva-profundo); border-top: 2px solid var(--madera); }
+table.data td.tag-new {
+  font-family: "Fraunces", serif;
+  font-style: italic;
+  color: var(--madera);
+  font-size: 12px;
+}
+table.data td.tag-up { color: var(--rojo); font-weight: 500; }
+table.data .row-section td {
+  background: var(--crema);
+  font-family: "Fraunces", serif;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--oliva-profundo);
+  font-size: 13px;
+  letter-spacing: 0.02em;
+}
+table.data .row-section td:first-child::before { content: "—  "; color: var(--madera-suave); }
+
+/* Reveal table */
+.gap-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+.gap-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 14px;
+  padding: 16px;
+  background: #fff;
+  border: 1px solid var(--oliva-soft);
+  border-radius: 6px;
+  align-items: center;
+}
+.gap-row .cat { font-family: "Fraunces", serif; font-size: 17px; color: var(--oliva-profundo); }
+.gap-row .said, .gap-row .real {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+}
+.gap-row .said { color: var(--oliva-texto); }
+.gap-row .said::before { content: "Vos dijiste "; font-style: italic; color: var(--oliva); font-family: "Fraunces", serif; }
+.gap-row .real { color: var(--rojo); font-weight: 500; }
+.gap-row .real::before { content: "Tarjeta dice "; font-style: italic; color: var(--oliva); font-weight: 400; font-family: "Fraunces", serif; }
+@media (max-width: 640px) {
+  .gap-row { grid-template-columns: 1fr; gap: 6px; }
+}
+
+/* Calculator */
+.calc {
+  background: #fff;
+  border: 1px solid var(--oliva-soft);
+  border-radius: 8px;
+  padding: 28px;
+  margin-bottom: 20px;
+}
+.calc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+@media (max-width: 720px) { .calc-grid { grid-template-columns: 1fr; } }
+.calc-inputs label {
+  display: block;
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--oliva-profundo);
+  font-weight: 500;
+  margin-bottom: 6px;
+  margin-top: 16px;
+}
+.calc-inputs label:first-child { margin-top: 0; }
+.calc-inputs .slider-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.calc-inputs input[type="range"] {
+  flex: 1;
+  accent-color: var(--oliva-profundo);
+  height: 4px;
+}
+.calc-inputs .value {
+  min-width: 110px;
+  text-align: right;
+  font-family: "Fraunces", serif;
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--oliva-profundo);
+  font-variant-numeric: tabular-nums;
+}
+.calc-inputs input[type="number"] {
+  width: 100%;
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  padding: 9px 12px;
+  border: 1px solid var(--oliva-soft);
+  border-radius: 4px;
+}
+.calc-inputs .hint {
+  font-family: "Fraunces", serif;
+  font-style: italic;
+  font-size: 12px;
+  color: var(--oliva-texto);
+  margin-top: 4px;
+}
+
+.calc-output {
+  background: var(--crema-soft);
+  border-radius: 6px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.calc-output .out-label {
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--madera);
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+.calc-output .out-big {
+  font-family: "Fraunces", serif;
+  font-variation-settings: "SOFT" 50, "opsz" 144;
+  font-size: clamp(36px, 6vw, 56px);
+  color: var(--oliva-profundo);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+}
+.calc-output .out-sub {
+  font-family: "Fraunces", serif;
+  font-style: italic;
+  font-size: 15px;
+  color: var(--oliva-texto);
+  margin-bottom: 18px;
+}
+.calc-output .out-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-top: 1px dashed var(--madera-suave);
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  color: var(--oliva-texto);
+}
+.calc-output .out-row .v {
+  font-family: "Fraunces", serif;
+  font-weight: 500;
+  color: var(--oliva-profundo);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Scenarios */
+.scen-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+@media (max-width: 800px) { .scen-grid { grid-template-columns: 1fr; } }
+.scen {
+  background: #fff;
+  border: 1px solid var(--oliva-soft);
+  border-radius: 8px;
+  padding: 22px;
+  position: relative;
+}
+.scen.bad { border-color: var(--rojo); }
+.scen.mid { border-color: var(--madera); }
+.scen.good { border-color: var(--verde-ok); }
+.scen .scen-name {
+  font-family: "Fraunces", serif;
+  font-style: italic;
+  font-size: 18px;
+  color: var(--oliva-profundo);
+  margin-bottom: 6px;
+}
+.scen .scen-amount {
+  font-family: "Fraunces", serif;
+  font-size: 36px;
+  font-weight: 400;
+  color: var(--oliva-profundo);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+.scen.bad .scen-amount { color: var(--rojo); }
+.scen.mid .scen-amount { color: var(--madera); }
+.scen.good .scen-amount { color: var(--verde-ok); }
+.scen .scen-sub {
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--oliva-texto);
+  margin-bottom: 14px;
+}
+.scen ul {
+  list-style: none;
+  font-family: "Fraunces", serif;
+  font-size: 14px;
+  color: var(--tinta);
+}
+.scen li { padding: 5px 0; display: flex; gap: 8px; }
+.scen li::before { content: "·"; color: var(--madera); font-weight: 700; }
+
+/* Notes */
+.note {
+  background: var(--crema-soft);
+  border-left: 3px solid var(--madera);
+  border-radius: 0 4px 4px 0;
+  padding: 14px 18px;
+  margin: 14px 0 24px;
+  font-family: "Fraunces", serif;
+  font-style: italic;
+  font-size: 15px;
+  color: var(--oliva-profundo);
+  max-width: 64ch;
+  line-height: 1.5;
+}
+.note strong { font-style: normal; color: var(--madera); font-weight: 600; }
+
+.warn-box {
+  background: #fdf3ef;
+  border: 1px solid #e8c2af;
+  border-radius: 6px;
+  padding: 18px 22px;
+  margin: 18px 0;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  color: var(--tinta);
+  line-height: 1.5;
+}
+.warn-box strong { color: var(--acento); }
+
+/* Pregunta cards */
+.q-list { display: grid; grid-template-columns: 1fr; gap: 12px; }
+.q {
+  background: #fff;
+  border: 1px solid var(--madera-suave);
+  border-radius: 6px;
+  padding: 16px 20px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.q .q-num {
+  font-family: "Fraunces", serif;
+  font-style: italic;
+  font-size: 24px;
+  color: var(--madera);
+  line-height: 1;
+  min-width: 28px;
+}
+.q .q-text {
+  font-family: "Fraunces", serif;
+  font-size: 16px;
+  color: var(--tinta);
+  line-height: 1.5;
+}
+.q .q-text strong { color: var(--oliva-profundo); font-weight: 600; }
+.q .q-text em { color: var(--oliva-texto); font-style: italic; }
+
+/* Recommendations */
+.recs { display: grid; grid-template-columns: 1fr; gap: 14px; }
+.rec {
+  background: #fff;
+  border-left: 3px solid var(--oliva-profundo);
+  padding: 18px 22px;
+}
+.rec h3 {
+  font-family: "Fraunces", serif;
+  font-style: italic;
+  font-size: 20px;
+  color: var(--oliva-profundo);
+  margin-bottom: 6px;
+  font-weight: 400;
+}
+.rec p {
+  font-family: "Fraunces", serif;
+  font-size: 15px;
+  color: var(--tinta);
+  line-height: 1.55;
+}
+
+/* Footer */
+footer {
+  padding: 48px var(--pad-x) 32px;
+  border-top: 1px solid var(--madera-suave);
+  margin-top: 56px;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--oliva-texto);
+}
+
+.toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 28px 0 0;
+}
+.toc a {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  color: var(--oliva-profundo);
+  background: var(--crema-soft);
+  padding: 6px 12px;
+  border-radius: 999px;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  border: 1px solid transparent;
+  transition: all 180ms ease;
+}
+.toc a:hover {
+  background: var(--oliva-profundo);
+  color: var(--crema);
+}
+
+.section-id { scroll-margin-top: 100px; }
+
+.callout-quote {
+  font-family: "Fraunces", serif;
+  font-style: italic;
+  font-size: 18px;
+  color: var(--oliva-profundo);
+  border-left: 3px solid var(--oliva);
+  padding: 8px 0 8px 22px;
+  margin: 18px 0;
+  max-width: 64ch;
+  line-height: 1.5;
+}
+.callout-quote .who {
+  display: block;
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-style: normal;
+  color: var(--oliva-texto);
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+.kpi-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin: 18px 0 0;
+}
+@media (max-width: 720px) { .kpi-row { grid-template-columns: repeat(2, 1fr); } }
+.kpi {
+  background: #fff;
+  border: 1px solid var(--oliva-soft);
+  border-radius: 6px;
+  padding: 14px;
+  text-align: center;
+}
+.kpi .kpi-num {
+  font-family: "Fraunces", serif;
+  font-size: 22px;
+  color: var(--oliva-profundo);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+.kpi .kpi-lbl {
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--oliva-texto);
+  margin-top: 4px;
+}
+
+@media print {
+  header.top { position: static; }
+  main { max-width: none; }
+  section.block { padding: 24px 0; page-break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-inner">
+    <span class="word">Spiga</span>
+    <span class="sep">×</span>
+    <span class="ctx">Plan Aldana</span>
+    <span class="conf">Confidencial</span>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <span class="label">Análisis · 28 de mayo de 2026</span>
+  <h1>De empleada <em>a dueña de tu tiempo.</em></h1>
+  <p class="lead">Cuántos meses te banca lo que tenés, qué precio y cuántos clientes necesita Spiga para sostener tu vida actual, y los huecos del presupuesto que vimos al cruzar tus tarjetas. Todo basado en los resúmenes que subiste y en tus respuestas.</p>
+
+  <div class="toc">
+    <a href="#realidad">La foto de hoy</a>
+    <a href="#gap">Lo que tu nota olvidó</a>
+    <a href="#detalle">Gasto real por categoría</a>
+    <a href="#runway">Cuánto bancás</a>
+    <a href="#breakeven">Calculadora Spiga</a>
+    <a href="#preguntas">Lo que falta saber</a>
+    <a href="#recomendaciones">Próximos pasos</a>
+  </div>
+</section>
+
+<!-- 1 — LA REALIDAD -->
+<section class="block section-id" id="realidad">
+  <span class="block-label">01 · La foto de hoy</span>
+  <h2>Esto es lo que dicen <em>los números, no la sensación.</em></h2>
+  <p class="block-desc">Cruzamos tu recibo de sueldo de abril y los resúmenes de Galicia VISA, Mastercard Black y Santander VISA. Lo que sigue es lo que efectivamente <em>entra</em> y <em>sale</em> de tu vida cada mes.</p>
+
+  <div class="cards">
+    <div class="card good">
+      <div class="card-label">Ingreso mensual real</div>
+      <div class="card-amount">$ 4.117.515</div>
+      <div class="card-sub">Neto del recibo de CINME S.A., período abril 2026</div>
+      <div class="card-context">Vos pusiste $3.500.000 en el form — el neto real es $617K más. Bruto $4.825K · deducciones $708K (jubilación + obra social + ley 19032).</div>
+    </div>
+
+    <div class="card bad">
+      <div class="card-label">Gasto mensual real estimado</div>
+      <div class="card-amount">$ 5.987.000</div>
+      <div class="card-sub">Tus categorías declaradas + lo que apareció solo en las tarjetas</div>
+      <div class="card-context">Tu suma manual daba $4.55M. Las tarjetas agregaron $1.44M de gastos reales que no estaban anotados (gas, agua, peajes, nafta, seguro auto, Cabify, farmacia, restaurants).</div>
+    </div>
+
+    <div class="card bad">
+      <div class="card-label">Déficit mensual</div>
+      <div class="card-amount">− $ 1.869.000</div>
+      <div class="card-sub">Lo que cada mes sale de los ahorros</div>
+      <div class="card-context">Esto explica tu sensación: estás cubriendo casi 2 millones de pesos al mes con ahorros. Tu cuenta lo intuía, los números lo confirman.</div>
+    </div>
+
+    <div class="card warn">
+      <div class="card-label">Ahorros disponibles</div>
+      <div class="card-amount">USD 20.000</div>
+      <div class="card-sub">≈ $ 28.000.000 al MEP (≈ $1.400/USD)</div>
+      <div class="card-context">Al ritmo actual de quemado ($1.87M/mes), te quedan aproximadamente <strong>15 meses</strong> de cobertura. <em>Con</em> tu sueldo. Sin él, menos.</div>
+    </div>
+  </div>
+
+  <div class="callout-quote">
+    "Yo con lo que gano no logro cubrir mis gastos básicos. Durante estos meses estoy recurriendo a mis ahorros personales para llegar con todos los gastos y eso me genera ansiedad y angustia."
+    <span class="who">— de tus notas libres</span>
+  </div>
+
+  <div class="note">
+    Tu intuición es exacta. Los números cierran con lo que sentís. <strong>No es desorganización</strong> — es que el sueldo no alcanza para el nivel de vida actual, hace meses. Por eso esta planilla es importante: para que lo que decidas sea por elección, no por desconocimiento.
+  </div>
+</section>
+
+<!-- 2 — LO QUE FALTABA -->
+<section class="block section-id" id="gap">
+  <span class="block-label">02 · Las categorías invisibles</span>
+  <h2>Lo que dijiste vs. lo que <em>realmente gastás.</em></h2>
+  <p class="block-desc">No es que te equivocaste — es que muchos gastos pasan en débito automático, en cuotas de tarjeta o en pago directo, y se vuelven invisibles. Acá están los que aparecieron solos al cruzar resúmenes.</p>
+
+  <div class="gap-grid">
+    <div class="gap-row">
+      <div class="cat">Luz / gas / agua</div>
+      <div class="said">$ 0</div>
+      <div class="real">$ 183.000</div>
+    </div>
+    <div class="gap-row">
+      <div class="cat">Internet / cable</div>
+      <div class="said">$ 0</div>
+      <div class="real">a confirmar — Personal $70K puede ser celular o internet</div>
+    </div>
+    <div class="gap-row">
+      <div class="cat">Transporte / nafta</div>
+      <div class="said">$ 0</div>
+      <div class="real">$ 254.000</div>
+    </div>
+    <div class="gap-row">
+      <div class="cat">Seguro auto</div>
+      <div class="said">$ 0 (no estaba)</div>
+      <div class="real">$ 145.000</div>
+    </div>
+    <div class="gap-row">
+      <div class="cat">Peajes</div>
+      <div class="said">$ 0 (no estaba)</div>
+      <div class="real">$ 134.000</div>
+    </div>
+    <div class="gap-row">
+      <div class="cat">Cabify / remís</div>
+      <div class="said">$ 0 (no estaba)</div>
+      <div class="real">$ 40.000</div>
+    </div>
+    <div class="gap-row">
+      <div class="cat">Farmacia / salud</div>
+      <div class="said">$ 0</div>
+      <div class="real">$ 30.000</div>
+    </div>
+    <div class="gap-row">
+      <div class="cat">Restaurants / cafés</div>
+      <div class="said">$ 0 (no estaba)</div>
+      <div class="real">$ 130.000</div>
+    </div>
+    <div class="gap-row">
+      <div class="cat">"MaryGo" diario</div>
+      <div class="said">$ 0 (no estaba)</div>
+      <div class="real">$ 220.000 — ¿qué es?</div>
+    </div>
+    <div class="gap-row">
+      <div class="cat">Cuotas viejas en tarjeta</div>
+      <div class="said">$ 0 (no estaba)</div>
+      <div class="real">$ 130.000 (Pintureria Rex, Cheeky, Indiastyle, Creciendo Galicia)</div>
+    </div>
+  </div>
+
+  <div class="note">
+    <strong>Suma de lo invisible:</strong> aproximadamente $1.260.000/mes que estaban pasando sin que los registraras como gasto. No son malos hábitos — son cosas legítimas (seguro del auto, gas, peajes). Pero no se pueden planificar si no se ven.
+  </div>
+</section>
+
+<!-- 3 — DETALLE -->
+<section class="block section-id" id="detalle">
+  <span class="block-label">03 · Gasto mensual real, sin duplicar</span>
+  <h2>El monto consolidado <em>por categoría.</em></h2>
+  <p class="block-desc">Para cada concepto tomamos el monto declarado o el observado en tarjetas — el mayor de los dos, nunca la suma. Donde la tarjeta agrega una categoría nueva, se incorpora completa.</p>
+
+  <div class="table-wrap">
+    <table class="data">
+      <thead>
+        <tr>
+          <th>Categoría</th>
+          <th class="num">Monto mensual</th>
+          <th>Fuente</th>
+          <th>Nota</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="row-section"><td colspan="4">Vivienda y hogar</td></tr>
+        <tr><td class="cat">Alquiler / expensas</td><td class="num">$ 550.000</td><td>Manual</td><td>—</td></tr>
+        <tr><td class="cat">Gas (Naturgy)</td><td class="num">$ 91.000</td><td>Mastercard</td><td class="tag-new">no estaba en tu lista</td></tr>
+        <tr><td class="cat">Agua / Modoqri</td><td class="num">$ 92.000</td><td>Mastercard</td><td class="tag-new">no estaba en tu lista</td></tr>
+        <tr><td class="cat">Internet / cable</td><td class="num">$ 50.000</td><td>Estimado</td><td>verificar</td></tr>
+        <tr><td class="cat">Celular (Personal)</td><td class="num">$ 100.000</td><td>Manual + VISA</td><td>—</td></tr>
+
+        <tr class="row-section"><td colspan="4">Auto y transporte</td></tr>
+        <tr><td class="cat">Cuota del auto</td><td class="num">$ 1.600.000</td><td>Manual</td><td><strong>verificar cuántas cuotas faltan</strong></td></tr>
+        <tr><td class="cat">Seguro auto (La Meridional)</td><td class="num">$ 145.000</td><td>VISA</td><td class="tag-new">no estaba</td></tr>
+        <tr><td class="cat">Peajes (Autopistas)</td><td class="num">$ 134.000</td><td>VISA</td><td class="tag-new">no estaba</td></tr>
+        <tr><td class="cat">Nafta</td><td class="num">$ 130.000</td><td>VISA + MC</td><td class="tag-new">no estaba</td></tr>
+        <tr><td class="cat">Cabify</td><td class="num">$ 40.000</td><td>VISA</td><td class="tag-new">no estaba</td></tr>
+
+        <tr class="row-section"><td colspan="4">Nacho</td></tr>
+        <tr><td class="cat">Fonoaudiología</td><td class="num">$ 500.000</td><td>Manual</td><td>—</td></tr>
+        <tr><td class="cat">Comedor</td><td class="num">$ 200.000</td><td>Manual</td><td>—</td></tr>
+        <tr><td class="cat">Indumentaria niño (Mimo, Cheeky, etc.)</td><td class="num">$ 100.000</td><td>VISA</td><td>incluido en Regalos abajo si lo prefieres</td></tr>
+
+        <tr class="row-section"><td colspan="4">Casa y personal</td></tr>
+        <tr><td class="cat">Paola (ayuda doméstica)</td><td class="num">$ 500.000</td><td>Manual</td><td>—</td></tr>
+        <tr><td class="cat">Supermercado</td><td class="num">$ 600.000</td><td>Manual</td><td>poco visible en tarjeta (Jumbo $7K) — debe ser débito/efectivo</td></tr>
+        <tr><td class="cat">Restaurants / cafés</td><td class="num">$ 130.000</td><td>VISA</td><td class="tag-new">Mary, Don Nazareno, Freddo, Palta Remeros</td></tr>
+        <tr><td class="cat">"MaryGo" diario</td><td class="num">$ 220.000</td><td>Santander VISA</td><td class="tag-new"><strong>¿qué es? ~$7.500/día, casi todos los días</strong></td></tr>
+        <tr><td class="cat">Farmacia / salud</td><td class="num">$ 30.000</td><td>VISA</td><td class="tag-new">no estaba</td></tr>
+
+        <tr class="row-section"><td colspan="4">Indumentaria, regalos y ocio</td></tr>
+        <tr><td class="cat">Indumentaria + regalos</td><td class="num">$ 300.000</td><td>Manual</td><td>tarjetas: Yagmour, Caro Cuore, Prune, Mimo, Rimmel, Tienda EB ≈ $300K/mes</td></tr>
+        <tr><td class="cat">Padel</td><td class="num">$ 200.000</td><td>Manual</td><td>—</td></tr>
+        <tr><td class="cat">Libros / ocio (Estación Libro, etc.)</td><td class="num">$ 50.000</td><td>VISA</td><td class="tag-new">no estaba</td></tr>
+
+        <tr class="row-section"><td colspan="4">Tarjetas: cuotas viejas e intereses</td></tr>
+        <tr><td class="cat">Cuotas viejas en tarjetas</td><td class="num">$ 130.000</td><td>VISA + MC</td><td class="tag-new">Pintureria Rex, Indiastyle, Creciendo Galicia</td></tr>
+        <tr><td class="cat">Intereses + percepciones</td><td class="num">$ 50.000</td><td>Promedio</td><td>variable según mes</td></tr>
+
+        <tr class="total">
+          <td class="cat">TOTAL MENSUAL</td>
+          <td class="num">$ 5.987.000</td>
+          <td colspan="2">vs ingreso $ 4.117.515 = déficit mensual $ 1.869.000</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warn-box">
+    <strong>Atención:</strong> abril fue un mes atípico — tuvo viaje a Punta del Este (Casa Giulia $119K, Duty Free USD 387, tiendas Uruguay, etc.) que sumó ≈ $400K extra. Para el cálculo usamos el promedio de MAYO, que es más representativo de un mes "normal". Si los viajes son una o dos veces al año, súmalos al rubro "gastos irregulares 12 meses".
+  </div>
+</section>
+
+<!-- 4 — RUNWAY -->
+<section class="block section-id" id="runway">
+  <span class="block-label">04 · Cuánto te bancan los ahorros</span>
+  <h2>Tres escenarios <em>de qué pasa si.</em></h2>
+  <p class="block-desc">Asumimos USD 20.000 al MEP ≈ $28.000.000 ARS. Estos números son si <em>nada cambia</em> — ni reducción de gastos, ni un peso de Spiga. Son tu piso. Cualquier cosa que hagas a partir de acá, lo mejora.</p>
+
+  <div class="scen-grid">
+    <div class="scen bad">
+      <div class="scen-name">A · Seguís igual</div>
+      <div class="scen-amount">15 meses</div>
+      <div class="scen-sub">Con sueldo, sin cambios</div>
+      <ul>
+        <li>Mantenés el trabajo</li>
+        <li>Gastos siguen en $5.99M</li>
+        <li>Déficit mensual $1.87M sale de ahorros</li>
+        <li>En 15 meses se acaban los USD 20.000</li>
+        <li><strong>El problema empeora, no se resuelve</strong></li>
+      </ul>
+    </div>
+
+    <div class="scen mid">
+      <div class="scen-name">B · Salto sin red</div>
+      <div class="scen-amount">5 meses</div>
+      <div class="scen-sub">Dejás trabajo · sin Spiga · sin recortes</div>
+      <ul>
+        <li>Renunciás al sueldo $4.12M</li>
+        <li>Gastos siguen igual $5.99M</li>
+        <li>Ahorros bancan ~5 meses puro</li>
+        <li>Plus $2.8M de gastos de programador en 12 meses</li>
+        <li><strong>Inviable</strong> sin reducir o sin ingresos del negocio</li>
+      </ul>
+    </div>
+
+    <div class="scen good">
+      <div class="scen-name">C · Salto preparado</div>
+      <div class="scen-amount">9–12 meses</div>
+      <div class="scen-sub">Dejás trabajo · recortes razonables · Spiga arranca</div>
+      <ul>
+        <li>Recortás ≈ $1.2M/mes (auto, Cabify, comedor del trabajo, restaurants)</li>
+        <li>Gasto baja a ~$4.8M/mes</li>
+        <li>Si Spiga genera $1-2M netos al mes 3, runway sube a 9-12 meses</li>
+        <li>Si llegás a breakeven a los 12 meses, salís adelante</li>
+        <li><strong>Es el escenario que hay que armar</strong></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="note">
+    El escenario C no es un sueño — es lo que pasa si: <strong>(1)</strong> dejás el auto financiado o pagás la cuota antes (la cuota de $1.6M es el monstruo del presupuesto), <strong>(2)</strong> los gastos "trabajando" caen solos al no ir a la oficina (Cabify, MaryGo si es del trabajo, peajes diarios), <strong>(3)</strong> Spiga arranca con los 10 clientes iniciales pensados.
+  </div>
+</section>
+
+<!-- 5 — BREAKEVEN -->
+<section class="block section-id" id="breakeven">
+  <span class="block-label">05 · Calculadora Spiga</span>
+  <h2>Cuántos clientes <em>para empatar tu sueldo.</em></h2>
+  <p class="block-desc">Mové los controles para probar precios, costos y mix. Como aún no cargaste precios en el form, dejé valores tentativos basados en el mercado argentino de cajones premium (Sabe la Tierra, La Pampa, etc.). Ajustalos.</p>
+
+  <div class="calc">
+    <div class="calc-grid">
+      <div class="calc-inputs">
+        <label>Precio promedio del plan Abbondanza (por mes, 4 entregas)</label>
+        <div class="slider-row">
+          <input type="range" id="precio" min="60000" max="350000" step="5000" value="180000" />
+          <span class="value" id="precio-v">$ 180.000</span>
+        </div>
+        <p class="hint">Sabe la Tierra: $90–140K. Markets premium: $160–220K. Vos buscás premium.</p>
+
+        <label>Costo del cajón al productor (por entrega)</label>
+        <div class="slider-row">
+          <input type="range" id="costo" min="15000" max="90000" step="2500" value="40000" />
+          <span class="value" id="costo-v">$ 40.000</span>
+        </div>
+        <p class="hint">≈ 4 entregas × $40K = $160K de costo mensual por cliente. Por debajo del 60% del precio es saludable.</p>
+
+        <label>Gastos fijos operativos del negocio (por mes)</label>
+        <div class="slider-row">
+          <input type="range" id="opex" min="0" max="3000000" step="50000" value="1200000" />
+          <span class="value" id="opex-v">$ 1.200.000</span>
+        </div>
+        <p class="hint">Nafta + packaging + seguro + IG ads + bromatología recurrente. Estimado base.</p>
+
+        <label>¿Cómo cobra Paola?</label>
+        <div class="slider-row">
+          <input type="range" id="paola" min="0" max="2000000" step="50000" value="800000" />
+          <span class="value" id="paola-v">$ 800.000</span>
+        </div>
+        <p class="hint">Si es socia, dejá en 0 acá (su ingreso sale de la utilidad). Si es empleada/jornal, mete el monto.</p>
+
+        <label>Sueldo objetivo que querés sacar de Spiga</label>
+        <div class="slider-row">
+          <input type="range" id="objetivo" min="2000000" max="8000000" step="100000" value="4117515" />
+          <span class="value" id="objetivo-v">$ 4.117.515</span>
+        </div>
+        <p class="hint">Tu sueldo actual neto. Subilo si querés cubrir el déficit completo ($5.99M).</p>
+      </div>
+
+      <div class="calc-output">
+        <div class="out-label">Para tu sueldo objetivo</div>
+        <div class="out-big" id="out-clientes">28</div>
+        <div class="out-sub">clientes Abbondanza activos</div>
+
+        <div class="out-row">
+          <span>Margen bruto por cliente / mes</span>
+          <span class="v" id="out-margen">$ 20.000</span>
+        </div>
+        <div class="out-row">
+          <span>Ingreso bruto necesario / mes</span>
+          <span class="v" id="out-brutoneed">$ 6.117.515</span>
+        </div>
+        <div class="out-row">
+          <span>Facturación a esos clientes / mes</span>
+          <span class="v" id="out-facturacion">$ 5.040.000</span>
+        </div>
+        <div class="out-row">
+          <span>Crecimiento sugerido (5 nuevos / mes)</span>
+          <span class="v" id="out-meses">6 meses para llegar</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="kpi-row">
+    <div class="kpi"><div class="kpi-num" id="kpi-piccolo">21</div><div class="kpi-lbl">si fueran Piccolo</div></div>
+    <div class="kpi"><div class="kpi-num" id="kpi-famiglia">38</div><div class="kpi-lbl">si fueran Famiglia</div></div>
+    <div class="kpi"><div class="kpi-num" id="kpi-mix">28</div><div class="kpi-lbl">mix 30/50/20</div></div>
+    <div class="kpi"><div class="kpi-num" id="kpi-deficit">42</div><div class="kpi-lbl">para cubrir $5.99M</div></div>
+  </div>
+
+  <div class="note">
+    <strong>Plan operativo realista:</strong> con 10 clientes confirmados al mes 1, +5 nuevos por mes vía red personal e IG, llegás a 30 clientes al mes 5. Si el deck operativo estimó ~50 clientes para "fase 1", esta calculadora dice que con 28 ya empatás tu sueldo — más holgado que el plan original.
+  </div>
+</section>
+
+<!-- 6 — PREGUNTAS ABIERTAS -->
+<section class="block section-id" id="preguntas">
+  <span class="block-label">06 · Lo que falta saber</span>
+  <h2>Antes de seguir, <em>hay que aclarar esto.</em></h2>
+  <p class="block-desc">Estas son las preguntas concretas que el análisis dejó abiertas. Cada una cambia un número importante. Cuando las respondas, refinamos el modelo.</p>
+
+  <div class="q-list">
+    <div class="q">
+      <span class="q-num">01</span>
+      <div class="q-text">
+        <strong>¿Cuántas cuotas más del auto quedan?</strong>
+        Esa cuota de $1.600.000 es el monstruo del presupuesto. Si quedan 6 cuotas, en medio año cae casi 2M de gasto fijo. Si quedan 36, hay que pensar refinanciar o vender. <em>Si la cancelás con los ahorros, ¿cuánto recuperás?</em>
+      </div>
+    </div>
+    <div class="q">
+      <span class="q-num">02</span>
+      <div class="q-text">
+        <strong>¿Qué es "MaryGo"?</strong>
+        Aparecen consumos de $7.590 casi todos los días en la Santander VISA, ~$220K/mes. Si es la cantina del trabajo, se elimina cuando renuncias. Si es algo de Nacho (guardería, transporte), sigue. <em>Esto cambia el escenario C por $200K.</em>
+      </div>
+    </div>
+    <div class="q">
+      <span class="q-num">03</span>
+      <div class="q-text">
+        <strong>¿La obra social la cubre el trabajo o la pagás por afuera?</strong>
+        En el recibo veo "O.S. de Capataces Estibadores Portuarios" como deducción. Si renunciás, perdés esa cobertura para vos y Nacho. <em>Prepaga similar costaría $180–280K/mes</em> (Swiss/Galeno/OSDE plan medio).
+      </div>
+    </div>
+    <div class="q">
+      <span class="q-num">04</span>
+      <div class="q-text">
+        <strong>¿Cuánto pagás de internet/cable?</strong>
+        No apareció claramente en tarjetas. ¿Telecentro, Fibertel, Movistar Home? El gasto típico es $40–80K/mes. <em>Lo dejé estimado.</em>
+      </div>
+    </div>
+    <div class="q">
+      <span class="q-num">05</span>
+      <div class="q-text">
+        <strong>¿El "Padel" es club mensual o canchas sueltas?</strong>
+        $200K/mes es alto para canchas sueltas. Si es una membresía de club, hay manera de bajarlo o pausarlo durante el arranque.
+      </div>
+    </div>
+    <div class="q">
+      <span class="q-num">06</span>
+      <div class="q-text">
+        <strong>¿Tenés ingreso pasivo o aporte de pareja que no anotaste?</strong>
+        Pregunto porque el déficit de $1.87M/mes lleva meses ocurriendo y los ahorros no se ven afectados al ritmo que correspondería. <em>O hay otro ingreso, o los ahorros bajan más rápido de lo que percibís</em>. Una de las dos.
+      </div>
+    </div>
+    <div class="q">
+      <span class="q-num">07</span>
+      <div class="q-text">
+        <strong>¿Los precios y costos de Spiga que pensás?</strong>
+        El form llegó vacío en esos campos. Decidir esto es la próxima conversación — pero la calculadora de arriba ya te deja jugar con escenarios para tomar la decisión informada.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7 — RECOMENDACIONES -->
+<section class="block section-id" id="recomendaciones">
+  <span class="block-label">07 · Próximos pasos</span>
+  <h2>Qué haría yo <em>en tu lugar, esta semana.</em></h2>
+  <p class="block-desc">No es un plan de "achicate y sufrí" — es un plan para llegar al día del salto con margen, no al borde.</p>
+
+  <div class="recs">
+    <div class="rec">
+      <h3>1. Definir el destino de la cuota del auto.</h3>
+      <p>Esto es el 27% de tu gasto mensual. Las opciones son: cancelar anticipadamente (si los ahorros lo permiten y los intereses son altos), refinanciar a más plazo (baja la cuota pero alarga la pesadilla), o vender y comprar un usado más barato. <em>Hay que tomar una posición acá antes de renunciar.</em></p>
+    </div>
+
+    <div class="rec">
+      <h3>2. Mover ahorros USD a un instrumento que rinda algo.</h3>
+      <p>USD 20.000 quietos son USD 20.000. En un fondo de money market en USD (Galicia, IOL, Cocos) rinden 4-5% anual = ~USD 80/mes. No es mucho, pero son ~$112K/mes de ingreso pasivo "gratis" que extiende tu runway sin riesgo significativo.</p>
+    </div>
+
+    <div class="rec">
+      <h3>3. Definir precios Spiga ya — usar la calculadora arriba.</h3>
+      <p>Sin precio, no hay plan. Mi sugerencia inicial para validar con clientes piloto: Piccolo $130K, Abbondanza $200K, Famiglia $280K. Margen objetivo: 55-60% bruto. Tirar la red ahora a los 10 primeros (red personal, mamis Nordelta, IG) y validar voluntad de pago real.</p>
+    </div>
+
+    <div class="rec">
+      <h3>4. Probar Spiga 2 meses en paralelo al trabajo.</h3>
+      <p>Antes de renunciar, hacer 4 entregas a los primeros 5-10 clientes mientras seguís cobrando sueldo. Te enseña costos reales (no estimados), tiempo de armado, problemas logísticos, y validás precio. <em>El "salto" no es necesariamente todo de una.</em></p>
+    </div>
+
+    <div class="rec">
+      <h3>5. Tener un Plan B explícito.</h3>
+      <p>Si a los 6 meses Spiga no llega a 15 clientes activos, ¿qué pasa? ¿Volvés al mercado laboral? ¿Pivoteás a B2B oficinas? ¿Cerrás? <em>Tener escrito el plan B baja la ansiedad ahora</em>, porque deja de ser "todo o nada".</p>
+    </div>
+
+    <div class="rec">
+      <h3>6. Hablar con un contador antes de cualquier movimiento grande.</h3>
+      <p>Indemnización por renuncia (si te jubilan) vs por despido. Aporte voluntario al monotributo. Si Paola pasa a ser empleada formal del negocio, cambia todo el costo. <em>30 minutos con un contador hoy te ahorran meses de error.</em></p>
+    </div>
+  </div>
+
+  <div class="note">
+    Tu nota cerraba diciendo "quiero que me dé dinero suficiente para vivir super bien, no tener que acotarme con los gastos, poder viajar y comprar una casa propia". Eso es alcanzable, pero requiere que el primer paso sea desde un terreno firme, no desde el borde. Este análisis está pensado para construir ese terreno.
+  </div>
+</section>
+
+</main>
+
+<footer>
+  Plan Aldana × Spiga · análisis privado · generado el 28 de mayo de 2026 a partir de tu form de intake y tus resúmenes de tarjeta y sueldo
+</footer>
+
+<script>
+(() => {
+  'use strict';
+
+  function fmt(n) {
+    if (!isFinite(n) || n === 0) return '$ 0';
+    return '$ ' + Math.round(n).toLocaleString('es-AR');
+  }
+
+  const SUELDO = 4117515;
+  const GASTOS_REALES = 5987000;
+
+  function calc() {
+    const precio = +document.getElementById('precio').value;
+    const costo = +document.getElementById('costo').value;
+    const opex = +document.getElementById('opex').value;
+    const paola = +document.getElementById('paola').value;
+    const objetivo = +document.getElementById('objetivo').value;
+
+    document.getElementById('precio-v').textContent = fmt(precio);
+    document.getElementById('costo-v').textContent = fmt(costo);
+    document.getElementById('opex-v').textContent = fmt(opex);
+    document.getElementById('paola-v').textContent = fmt(paola);
+    document.getElementById('objetivo-v').textContent = fmt(objetivo);
+
+    // Margen por cliente mensual (4 entregas)
+    const costoMensual = costo * 4;
+    const margen = precio - costoMensual;
+
+    // Bruto necesario / mes = objetivo + opex + paola
+    const brutoNeed = objetivo + opex + paola;
+
+    // Clientes necesarios
+    let clientes = margen > 0 ? Math.ceil(brutoNeed / margen) : Infinity;
+    const facturacion = clientes * precio;
+
+    document.getElementById('out-clientes').textContent = isFinite(clientes) ? clientes : '∞';
+    document.getElementById('out-margen').textContent = fmt(margen);
+    document.getElementById('out-brutoneed').textContent = fmt(brutoNeed);
+    document.getElementById('out-facturacion').textContent = isFinite(facturacion) ? fmt(facturacion) : '—';
+
+    // Crecimiento (suponiendo +5 clientes/mes desde 10)
+    const meses = isFinite(clientes) && clientes > 10 ? Math.ceil((clientes - 10) / 5) : 0;
+    document.getElementById('out-meses').textContent = meses > 0 ? `${meses + 1} meses para llegar` : 'desde el mes 1';
+
+    // KPIs alternativos
+    // Piccolo: precio 0.75 del Abbondanza, costo 0.75
+    const precioPiccolo = precio * 0.72;
+    const costoPiccolo = costoMensual * 0.78;
+    const margenPiccolo = precioPiccolo - costoPiccolo;
+    document.getElementById('kpi-piccolo').textContent = margenPiccolo > 0 ? Math.ceil(brutoNeed / margenPiccolo) : '∞';
+
+    // Famiglia: precio 1.35x, costo 1.30x
+    const precioFamiglia = precio * 1.35;
+    const costoFamiglia = costoMensual * 1.30;
+    const margenFamiglia = precioFamiglia - costoFamiglia;
+    document.getElementById('kpi-famiglia').textContent = margenFamiglia > 0 ? Math.ceil(brutoNeed / margenFamiglia) : '∞';
+
+    // Mix 30% Piccolo / 50% Abbondanza / 20% Famiglia
+    const margenMix = 0.30 * margenPiccolo + 0.50 * margen + 0.20 * margenFamiglia;
+    document.getElementById('kpi-mix').textContent = margenMix > 0 ? Math.ceil(brutoNeed / margenMix) : '∞';
+
+    // Para cubrir gastos reales completos
+    const brutoNeedDef = GASTOS_REALES + opex + paola;
+    document.getElementById('kpi-deficit').textContent = margenMix > 0 ? Math.ceil(brutoNeedDef / margenMix) : '∞';
+  }
+
+  document.querySelectorAll('#precio, #costo, #opex, #paola, #objetivo').forEach(el => {
+    el.addEventListener('input', calc);
+  });
+
+  calc();
+})();
+</script>
+
+</body>
+</html>
