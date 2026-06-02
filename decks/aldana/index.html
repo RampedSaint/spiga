@@ -436,6 +436,15 @@
     line-height: 1;
   }
   .cajon-items li strong { color: var(--madera); font-weight: 500; font-style: italic; }
+  .cajones-note {
+    margin-top: clamp(0.9rem, 1.8vw, 1.4rem);
+    font-family: var(--font-ui);
+    font-size: clamp(0.75rem, 1vw, 0.85rem);
+    color: var(--oliva-texto);
+    letter-spacing: 0.03em;
+    line-height: 1.5;
+  }
+  .cajones-note em { color: var(--madera); font-style: italic; }
 
   /* ============ SLIDE: OFICINAS ============ */
   .ofic-grid {
@@ -1066,6 +1075,113 @@
   }
 
   ::selection { background: var(--oliva-profundo); color: var(--crema); }
+
+  /* ============ INTERACTIVE EDITOR ============ */
+  .cajones-cta { display:flex; justify-content:center; margin-top: clamp(0.8rem,1.6vw,1.3rem); }
+  .btn-spiga {
+    font-family: var(--font-ui); font-size: clamp(0.75rem,1vw,0.9rem); font-weight:500; letter-spacing:0.06em;
+    color: var(--crema); background: var(--oliva-profundo); border:1px solid var(--oliva-profundo);
+    padding:0.7em 1.4em; border-radius:999px; cursor:pointer; transition: background .2s, transform .2s;
+    display:inline-flex; align-items:center; gap:.5em;
+  }
+  .btn-spiga:hover { background: var(--oliva-mas-oscuro); transform: translateY(-1px); }
+  .btn-spiga.ghost { background: transparent; color: var(--oliva-profundo); }
+  .btn-spiga.ghost:hover { background: var(--crema-soft); }
+
+  .edit-fab {
+    position: fixed; left: clamp(0.9rem,2vw,1.6rem); bottom: clamp(0.9rem,2vw,1.6rem);
+    z-index: 120; box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+  }
+
+  html.editor-open, body.editor-open { overflow: hidden !important; }
+
+  .editor-overlay {
+    position: fixed; inset: 0; background: rgba(26,26,24,0.55); -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px);
+    z-index: 1000; display: none; padding: clamp(0.5rem,2vw,2rem); overflow-y: auto;
+  }
+  .editor-overlay.open { display: flex; align-items:flex-start; justify-content:center; }
+  .editor-modal {
+    background: var(--crema); border-radius: 10px; width: min(1100px,100%); margin: auto;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3); border:1px solid var(--madera-suave); overflow: hidden;
+  }
+  .editor-head {
+    display:flex; align-items:flex-start; justify-content:space-between; gap:1rem;
+    padding: clamp(1rem,2vw,1.5rem) clamp(1.1rem,2.2vw,1.8rem); background: var(--oliva-profundo); color: var(--crema);
+    position: sticky; top:0; z-index:3;
+  }
+  .editor-eyebrow { font-family:var(--font-ui); font-size:.68rem; letter-spacing:.18em; text-transform:uppercase; color:var(--madera-suave); }
+  .editor-title { font-family:var(--font-display); font-style:italic; color:var(--crema); font-size: clamp(1.3rem,2.4vw,2rem); line-height:1.1; }
+  .editor-head-actions { display:flex; align-items:center; gap:.6rem; flex-shrink:0; }
+  .editor-close, .editor-reset {
+    font-family:var(--font-ui); cursor:pointer; border-radius:999px; border:1px solid rgba(242,235,221,0.4);
+    background:transparent; color:var(--crema); padding:.45em .9em; font-size:.78rem;
+  }
+  .editor-close { width:38px; height:38px; padding:0; font-size:1rem; }
+  .editor-close:hover, .editor-reset:hover { background: rgba(242,235,221,0.15); }
+  .editor-body { padding: clamp(1rem,2.2vw,1.8rem); }
+
+  .editor-tabs { display:flex; flex-wrap:wrap; gap:.5rem; margin-bottom:1rem; }
+  .editor-tab {
+    font-family:var(--font-ui); font-size:.8rem; font-weight:500; letter-spacing:.04em; padding:.5em 1em;
+    border-radius:999px; cursor:pointer; border:1px solid var(--madera-suave); background:transparent; color:var(--oliva-texto);
+  }
+  .editor-tab:hover { border-color: var(--oliva); }
+  .editor-tab.active { background: var(--oliva-profundo); color:var(--crema); border-color:var(--oliva-profundo); }
+  .editor-meta h4 { font-family:var(--font-display); font-style:italic; font-size: clamp(1.2rem,2vw,1.6rem); color:var(--oliva-profundo); }
+  .editor-meta p { font-family:var(--font-ui); font-size:.8rem; color:var(--oliva-texto); margin-bottom:1rem; }
+
+  .editor-table-wrap { overflow-x:auto; border:1px solid var(--crema-soft); border-radius:8px; }
+  table.editor-table { border-collapse:collapse; width:100%; min-width:680px; font-family:var(--font-ui); }
+  .editor-table th, .editor-table td { padding:.5rem .6rem; font-size:.8rem; text-align:left; border-bottom:1px solid var(--crema-soft); }
+  .editor-table th { background: var(--crema-soft); color:var(--oliva-profundo); font-weight:600; letter-spacing:.02em; }
+  .editor-table .num { text-align:right; }
+  .editor-table tfoot td { font-weight:600; background: var(--crema-soft); color:var(--oliva-profundo); border-bottom:none; }
+  .ed-qty, .ed-price {
+    font-family:var(--font-ui); font-size:.8rem; text-align:right; border:1px solid var(--madera-suave);
+    border-radius:5px; padding:.35em .5em; background:#fff; color:var(--tinta);
+  }
+  .ed-qty { width:64px; } .ed-price { width:86px; }
+  .ed-qty:focus, .ed-price:focus { outline:none; border-color:var(--oliva); box-shadow:0 0 0 2px rgba(138,148,118,0.25); }
+  .ed-remove { border:none; background:none; cursor:pointer; color:var(--alerta); font-size:.95rem; line-height:1; padding:.2em .4em; border-radius:5px; }
+  .ed-remove:hover { background: rgba(160,70,70,0.1); }
+  .editor-add { display:flex; flex-wrap:wrap; gap:.5rem; align-items:center; margin:.8rem 0 1.2rem; }
+  .editor-add select { font-family:var(--font-ui); font-size:.8rem; padding:.45em .6em; border-radius:6px; border:1px solid var(--madera-suave); background:#fff; color:var(--tinta); max-width:100%; }
+
+  .editor-kpis { display:grid; grid-template-columns: repeat(4,1fr); gap:.7rem; margin: .5rem 0 1.2rem; }
+  .ed-kpi { border:1px solid var(--crema-soft); border-radius:8px; padding:.8rem .9rem; background:#fff; }
+  .ed-kpi.hl { background: var(--oliva-profundo); border-color:var(--oliva-profundo); }
+  .ed-kpi.hl .ed-kpi-label, .ed-kpi.hl .ed-kpi-sub { color: var(--oliva-soft); }
+  .ed-kpi.hl .ed-kpi-num { color: var(--crema); }
+  .ed-kpi-label { font-family:var(--font-ui); font-size:.66rem; text-transform:uppercase; letter-spacing:.09em; color:var(--oliva-texto); }
+  .ed-kpi-num { font-family:var(--font-display); font-size: clamp(1.2rem,2vw,1.7rem); color:var(--oliva-profundo); line-height:1.1; margin-top:.2rem; }
+  .ed-kpi-sub { font-family:var(--font-ui); font-size:.64rem; color:var(--oliva-texto); margin-top:.2rem; }
+
+  .editor-markup { margin-bottom: 1.2rem; }
+  .editor-markup label, .editor-calc-inputs label { font-family:var(--font-ui); font-size:.76rem; font-weight:600; color:var(--oliva-profundo); display:block; margin-bottom:.35rem; }
+  .slider-row { display:flex; align-items:center; gap:.8rem; }
+  .slider-row input[type=range]{ flex:1; accent-color: var(--oliva-profundo); }
+  .slider-row .sv { font-family:var(--font-ui); font-size:.84rem; font-weight:600; color:var(--madera); min-width:84px; text-align:right; }
+  .editor-hint { font-family:var(--font-ui); font-size:.7rem; color:var(--oliva-texto); margin-top:.3rem; line-height:1.4; }
+
+  .editor-section-title { font-family:var(--font-display); font-style:italic; font-size: clamp(1.2rem,2vw,1.6rem); color:var(--oliva-profundo); margin: 1.4rem 0 .3rem; border-top:1px solid var(--crema-soft); padding-top:1.2rem; }
+  .editor-calc-grid { display:grid; grid-template-columns: 1.1fr .9fr; gap:1.2rem; align-items:start; }
+  .editor-calc-inputs label { margin-top:.8rem; }
+  .editor-calc-inputs label:first-child { margin-top:0; }
+  .editor-calc-out { background: var(--oliva-profundo); color:var(--crema); border-radius:10px; padding:1.2rem; }
+  .editor-calc-out .out-label { font-family:var(--font-ui); font-size:.7rem; text-transform:uppercase; letter-spacing:.1em; color:var(--oliva-soft); }
+  .editor-calc-out .out-big { font-family:var(--font-display); font-size: clamp(2.4rem,6vw,3.6rem); line-height:1; color:var(--crema); }
+  .editor-calc-out .out-sub { font-family:var(--font-ui); font-size:.7rem; color:var(--oliva-soft); margin-bottom:.8rem; }
+  .editor-calc-out .out-row { display:flex; justify-content:space-between; gap:1rem; padding:.4rem 0; border-top:1px solid rgba(242,235,221,0.18); font-family:var(--font-ui); font-size:.76rem; }
+  .editor-calc-out .out-row .v { font-weight:600; color:var(--acento-2); white-space:nowrap; }
+  .editor-kpi-row { display:grid; grid-template-columns:repeat(4,1fr); gap:.7rem; margin-top:1rem; }
+  .editor-kpi-row .k { text-align:center; border:1px solid var(--crema-soft); border-radius:8px; padding:.7rem .5rem; background:#fff; }
+  .editor-kpi-row .k .n { font-family:var(--font-display); font-size: clamp(1.3rem,2.4vw,1.9rem); color:var(--madera); }
+  .editor-kpi-row .k .l { font-family:var(--font-ui); font-size:.62rem; color:var(--oliva-texto); letter-spacing:.03em; }
+  .editor-note { font-family:var(--font-ui); font-size:.72rem; color:var(--oliva-texto); line-height:1.5; margin-top:1.2rem; background:var(--crema-soft); padding:.9rem 1rem; border-radius:8px; }
+  .editor-note strong { color:var(--oliva-profundo); }
+  .editor-saved { color:var(--oliva); font-weight:600; }
+  @media (max-width:780px){ .editor-calc-grid { grid-template-columns:1fr; } }
+  @media (max-width:720px){ .editor-kpis, .editor-kpi-row { grid-template-columns: repeat(2,1fr); } }
 </style>
 </head>
 <body>
@@ -1135,7 +1251,7 @@
       <div class="col-card reveal">
         <span class="col-eyebrow">Qué vendés</span>
         <div class="col-title">Cajones curados de fruta y verdura premium.</div>
-        <div class="col-text">Tres tamaños (Piccolo, Abbondanza, Famiglia) más cajones de frutas a medida para oficinas. Mix de productos siempre presentes + rotación estacional.</div>
+        <div class="col-text">Tres tamaños (Piccolo, Famiglia, Abbondanza) más cajones de frutas a medida para oficinas. Mix de productos siempre presentes + rotación estacional.</div>
         <span class="col-badge">5 productos distintos</span>
       </div>
       <div class="col-card reveal">
@@ -1226,39 +1342,40 @@
       <div class="cajon-card reveal">
         <span class="cajon-eyebrow">Esencial</span>
         <div class="cajon-name">Piccolo</div>
-        <div class="cajon-personas">1 a 2 personas · 18 productos</div>
+        <div class="cajon-personas">1 a 2 personas · 8 variedades por semana</div>
         <ul class="cajon-items">
-          <li>4 verduras de hoja <strong>(lechuga, espinaca, acelga, rúcula)</strong></li>
-          <li>9 verduras para cocinar <strong>(papa, batata, zanahoria, zapallo, zapallito, berenjena, cebolla, verdeo, sopa)</strong></li>
-          <li>3 frescas <strong>(cherry, morrón, limón)</strong></li>
-          <li>2 frutas <strong>(mandarina, banana)</strong></li>
-          <li>Cajón sorpresa premium cada 3 meses</li>
+          <li><strong>Hoja</strong> · lechuga manteca 400 g</li>
+          <li><strong>Para cocinar</strong> · tomate 1 kg, cebolla 1 kg, papa 1,5 kg, zanahoria 500 g, anco 1 kg</li>
+          <li><strong>Frutas</strong> · banana 1 kg, manzana 800 g</li>
+        </ul>
+      </div>
+      <div class="cajon-card reveal">
+        <span class="cajon-eyebrow">Familiar</span>
+        <div class="cajon-name">Famiglia</div>
+        <div class="cajon-personas">3 a 4 personas · 16 variedades · con huevos</div>
+        <ul class="cajon-items">
+          <li><strong>Hoja</strong> · lechuga manteca 400 g, lechuga criolla 400 g, rúcula ×2 at., espinaca ×1 at.</li>
+          <li><strong>Para cocinar</strong> · tomate 2 kg, cebolla 2 kg, papa 2,5 kg, zanahoria 1,5 kg, anco 1,5 kg, zapallito 1 kg, brócoli ×1</li>
+          <li><strong>Frutas</strong> · banana 2 kg, manzana 1,5 kg, naranja 2 kg, pera 1 kg</li>
+          <li><strong>Extra</strong> · maple huevos N3 ×1</li>
         </ul>
       </div>
       <div class="cajon-card featured reveal">
         <span class="featured-badge">Más elegido</span>
-        <span class="cajon-eyebrow">Familiar</span>
-        <div class="cajon-name">Abbondanza</div>
-        <div class="cajon-personas">3 a 4 personas · 18 productos en cantidades familiares</div>
-        <ul class="cajon-items">
-          <li>Misma variedad de Piccolo</li>
-          <li>Verduras de hoja <strong>×2 unidades</strong></li>
-          <li>Papa <strong>1 kg</strong>, zanahoria 600g, zapallito 600g</li>
-          <li>Cherry 350g, mandarina 1 kg, banana ×4</li>
-          <li>Entrega prioritaria + cajón sorpresa cada 3 meses</li>
-        </ul>
-      </div>
-      <div class="cajon-card reveal">
         <span class="cajon-eyebrow">Completo</span>
-        <div class="cajon-name">Famiglia</div>
-        <div class="cajon-personas">5+ personas · 23 productos</div>
+        <div class="cajon-name">Abbondanza</div>
+        <div class="cajon-personas">5+ personas o cocina intensa · 30 variedades · huevos y hierbas</div>
         <ul class="cajon-items">
-          <li>Toda la variedad de Abbondanza</li>
-          <li><strong>+ 5 frutas extra:</strong> kiwi ×5, uva 350g, manzana roja ×4, naranja 2 kg, pomelo 1 kg</li>
-          <li>Entrega prioritaria</li>
-          <li>Cajón sorpresa premium cada 3 meses</li>
+          <li><strong>Hoja y verdes</strong> · lechuga manteca 400 g, lechuga criolla 400 g, rúcula ×2 at., espinaca ×1 at., apio ×1</li>
+          <li><strong>Para cocinar</strong> · tomate perita 2 kg, cherry 500 g, cebolla 2 kg, cebolla morada 500 g, papa 3 kg, papín 500 g, zanahoria 1,5 kg, anco 1,5 kg, batata 1 kg, brócoli ×1, coliflor ×1, zapallito 1 kg, berenjena 1 kg, morrón 500 g, pepino 500 g</li>
+          <li><strong>Frutas</strong> · banana 2,5 kg, manzana 2 kg, naranja 2 kg, pera 1,5 kg, mandarina 1 kg, palta 500 g, kiwi 500 g</li>
+          <li><strong>Hierbas y extra</strong> · perejil ×1 at., albahaca ×1, maple huevos N3 ×1</li>
         </ul>
       </div>
+    </div>
+    <p class="cajones-note reveal">Cantidades semanales fijas — el mix de productos está siempre presente y rota con la estación. <em>Cajón sorpresa premium cada 3 meses</em> y entrega coordinada en todos los tamaños.</p>
+    <div class="cajones-cta reveal">
+      <button type="button" class="btn-spiga" id="openEditor">✎ Editar productos, cantidades y precios</button>
     </div>
   </div>
   <div class="slide-num">04 · 17</div>
@@ -1886,6 +2003,108 @@
   <div class="slide-num">17 · 17</div>
 </section>
 
+<!-- ============ FLOATING EDITOR BUTTON ============ -->
+<button type="button" class="btn-spiga edit-fab" id="editFab" aria-label="Abrir editor de cajones">✎ Jugar con costos</button>
+
+<!-- ============ INTERACTIVE EDITOR MODAL ============ -->
+<div class="editor-overlay" id="editorOverlay" aria-hidden="true">
+  <div class="editor-modal" role="dialog" aria-modal="true" aria-label="Editor de cajones Spiga">
+    <div class="editor-head">
+      <div>
+        <span class="editor-eyebrow">Tablero editable · jugá con costos y productos</span>
+        <div class="editor-title">Armá y coteá cada cajón</div>
+      </div>
+      <div class="editor-head-actions">
+        <button type="button" class="editor-reset" id="editorReset">↺ Restablecer</button>
+        <button type="button" class="editor-close" id="editorClose" aria-label="Cerrar editor">✕</button>
+      </div>
+    </div>
+    <div class="editor-body">
+      <div class="editor-tabs" id="editorTabs"></div>
+
+      <div class="editor-meta">
+        <h4 id="ed-nombre">—</h4>
+        <p id="ed-desc"></p>
+      </div>
+
+      <div class="editor-table-wrap">
+        <table class="editor-table">
+          <thead>
+            <tr>
+              <th>Producto</th><th>Unidad</th>
+              <th class="num">Cantidad</th>
+              <th class="num">Costo unit. mayorista</th>
+              <th class="num">Valor unit. verdulería</th>
+              <th class="num">Subtotal costo</th>
+              <th class="num">Subtotal retail</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="ed-tbody"></tbody>
+          <tfoot id="ed-tfoot"></tfoot>
+        </table>
+      </div>
+
+      <div class="editor-add">
+        <select id="ed-add-select"></select>
+        <button type="button" class="btn-spiga ghost" id="ed-add-btn">+ Agregar producto</button>
+      </div>
+
+      <div class="editor-kpis">
+        <div class="ed-kpi"><div class="ed-kpi-label">Costo / entrega</div><div class="ed-kpi-num" id="ed-costo">$ 0</div><div class="ed-kpi-sub" id="ed-costo-mes">$ 0 / mes</div></div>
+        <div class="ed-kpi"><div class="ed-kpi-label">Valor verdulería</div><div class="ed-kpi-num" id="ed-retail">$ 0</div><div class="ed-kpi-sub">lo que pagaría suelto</div></div>
+        <div class="ed-kpi hl"><div class="ed-kpi-label">Precio sugerido / mes</div><div class="ed-kpi-num" id="ed-precio">$ 0</div><div class="ed-kpi-sub" id="ed-precio-entrega">$ 0 por entrega</div></div>
+        <div class="ed-kpi hl"><div class="ed-kpi-label">Margen / mes</div><div class="ed-kpi-num" id="ed-margen">$ 0</div><div class="ed-kpi-sub" id="ed-pct">0 % margen</div></div>
+      </div>
+
+      <div class="editor-markup">
+        <label>Markup sobre costo — se aplica a todos los cajones por igual</label>
+        <div class="slider-row">
+          <input type="range" id="ed-markup" min="1.2" max="3.0" step="0.05" value="1.8" />
+          <span class="sv" id="ed-markup-v">1.80×</span>
+        </div>
+        <p class="editor-hint">1.5× = mínimo viable · 1.8× = margen sano (sugerido) · 2.0×+ = positioning premium real.</p>
+      </div>
+
+      <div class="editor-section-title">Calculadora — ¿cuántos clientes para tu sueldo?</div>
+      <p class="editor-hint" style="margin-bottom:1rem;">El precio y costo de Abbondanza se autocompletan desde lo que editás arriba. Mix recomendado: 30% Piccolo · 50% Abbondanza · 20% Famiglia.</p>
+      <div class="editor-calc-grid">
+        <div class="editor-calc-inputs">
+          <label>Precio Abbondanza / mes (50% del mix)</label>
+          <div class="slider-row"><input type="range" id="ed-precio-r" min="60000" max="600000" step="5000" value="180000" /><span class="sv" id="ed-precio-rv">$ 180.000</span></div>
+          <label>Costo Abbondanza / entrega</label>
+          <div class="slider-row"><input type="range" id="ed-costo-r" min="10000" max="150000" step="2500" value="40000" /><span class="sv" id="ed-costo-rv">$ 40.000</span></div>
+          <label>Gastos fijos operativos / mes</label>
+          <div class="slider-row"><input type="range" id="ed-opex" min="0" max="3000000" step="50000" value="1200000" /><span class="sv" id="ed-opex-v">$ 1.200.000</span></div>
+          <label>¿Cómo cobra Paola?</label>
+          <div class="slider-row"><input type="range" id="ed-paola" min="0" max="2000000" step="50000" value="800000" /><span class="sv" id="ed-paola-v">$ 800.000</span></div>
+          <label>Sueldo objetivo a sacar de Spiga</label>
+          <div class="slider-row"><input type="range" id="ed-objetivo" min="2000000" max="8000000" step="100000" value="4117515" /><span class="sv" id="ed-objetivo-v">$ 4.117.515</span></div>
+        </div>
+        <div class="editor-calc-out">
+          <div class="out-label">Para tu sueldo objetivo</div>
+          <div class="out-big" id="ed-out-clientes">28</div>
+          <div class="out-sub">clientes · mix 30/50/20</div>
+          <div class="out-row"><span>Margen bruto / cliente / mes</span><span class="v" id="ed-out-margen">$ 0</span></div>
+          <div class="out-row"><span>Ingreso bruto necesario / mes</span><span class="v" id="ed-out-bruto">$ 0</span></div>
+          <div class="out-row"><span>Facturación a esos clientes</span><span class="v" id="ed-out-fact">$ 0</span></div>
+          <div class="out-row"><span>Crecimiento (5 nuevos / mes)</span><span class="v" id="ed-out-meses">—</span></div>
+        </div>
+      </div>
+      <div class="editor-kpi-row">
+        <div class="k"><div class="n" id="ed-kpi-pic">—</div><div class="l">100% Piccolo</div></div>
+        <div class="k"><div class="n" id="ed-kpi-fam">—</div><div class="l">100% Famiglia</div></div>
+        <div class="k"><div class="n" id="ed-kpi-abb">—</div><div class="l">100% Abbondanza</div></div>
+        <div class="k"><div class="n" id="ed-kpi-def">—</div><div class="l">mix · cubrir déficit $5.91M</div></div>
+      </div>
+
+      <div class="editor-note">
+        <strong>Cómo leerlo:</strong> el costo usa el precio mayorista más bajo de cada producto; el valor verdulería es lo que pagaría tu cliente comprando suelto — tu piso de valor. Todo lo que cambies acá (cantidades, precios, productos, markup, sliders) se guarda solo en este navegador. <span class="editor-saved" id="ed-saved"></span>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
   /* ===========================================
      SLIDE PRESENTATION CONTROLLER
@@ -1920,6 +2139,7 @@
 
     setupKeyboardNav() {
       document.addEventListener('keydown', (e) => {
+        if (document.documentElement.classList.contains('editor-open')) return;
         if (e.key === 'ArrowDown' || e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
           e.preventDefault();
           this.goTo(this.currentIndex + 1);
@@ -1940,6 +2160,7 @@
         touchStartY = e.touches[0].clientY;
       }, { passive: true });
       document.addEventListener('touchend', (e) => {
+        if (document.documentElement.classList.contains('editor-open')) return;
         const diff = touchStartY - e.changedTouches[0].clientY;
         if (Math.abs(diff) > 50) {
           if (diff > 0) this.goTo(this.currentIndex + 1);
@@ -1979,6 +2200,336 @@
   }
 
   document.addEventListener('DOMContentLoaded', () => new SpigaDeck());
+</script>
+
+<script>
+  /* ===========================================
+     EDITOR INTERACTIVO DE CAJONES (Aldana)
+     =========================================== */
+(() => {
+  'use strict';
+  const $ = id => document.getElementById(id);
+  const overlay = $('editorOverlay');
+  if (!overlay) return;
+
+  const STORE_KEY = 'spiga_aldana_editor_v1';
+  const GASTOS_REALES = 5907000;
+  const ORDER = ['picolo', 'famiglia', 'abbondanza', 'frutta_fam', 'frutta_abb'];
+
+  const DEFAULT_PRODUCTOS = {
+    lechuga_manteca: { nombre: 'Lechuga manteca', unidad: 'kg', d1: 2500, d2: 2500 },
+    lechuga_criolla: { nombre: 'Lechuga criolla', unidad: 'kg', d1: 2667, d2: 3000 },
+    tomate_perita:   { nombre: 'Tomate perita',   unidad: 'kg', d1: 1833, d2: 2500 },
+    tomate_cherry:   { nombre: 'Tomate cherry',   unidad: 'kg', d1: 2900, d2: 3000 },
+    cebolla:         { nombre: 'Cebolla',         unidad: 'kg', d1: 882,  d2: 1500 },
+    cebolla_morada:  { nombre: 'Cebolla morada',  unidad: 'kg', d1: 1176, d2: 1800 },
+    papa_negra:      { nombre: 'Papa negra',      unidad: 'kg', d1: 778,  d2: 1350 },
+    papin:           { nombre: 'Papín andino',    unidad: 'kg', d1: 3000, d2: 2500 },
+    zanahoria:       { nombre: 'Zanahoria',       unidad: 'kg', d1: 1000, d2: 1000 },
+    anco:            { nombre: 'Anco / calabaza', unidad: 'kg', d1: 833,  d2: 1000 },
+    batata:          { nombre: 'Batata',          unidad: 'kg', d1: 1000, d2: 1500 },
+    brocoli:         { nombre: 'Brócoli',         unidad: 'un', d1: 3000, d2: 4200 },
+    coliflor:        { nombre: 'Coliflor',        unidad: 'un', d1: 2000, d2: 4500 },
+    zapallito:       { nombre: 'Zapallito',       unidad: 'kg', d1: 2222, d2: 3500 },
+    berenjena:       { nombre: 'Berenjena',       unidad: 'kg', d1: 2300, d2: 2500 },
+    pepino:          { nombre: 'Pepino',          unidad: 'kg', d1: 2222, d2: 3000 },
+    morron_rojo:     { nombre: 'Morrón rojo',     unidad: 'kg', d1: 3750, d2: 4500 },
+    espinaca:        { nombre: 'Espinaca',        unidad: 'atado', d1: 1250, d2: 1300 },
+    acelga:          { nombre: 'Acelga',          unidad: 'atado', d1: 1000, d2: 1500 },
+    rucula:          { nombre: 'Rúcula',          unidad: 'atado', d1: 208,  d2: 200 },
+    apio:            { nombre: 'Apio',            unidad: 'un',    d1: 1500, d2: 2000 },
+    perejil:         { nombre: 'Perejil',         unidad: 'atado', d1: 1500, d2: 2500 },
+    albahaca:        { nombre: 'Albahaca',        unidad: 'un',    d1: 900,  d2: 1500 },
+    banana:          { nombre: 'Banana',          unidad: 'kg',    d1: 1778, d2: 2500 },
+    manzana_roja:    { nombre: 'Manzana roja',    unidad: 'kg',    d1: 2000, d2: 2000 },
+    pera:            { nombre: 'Pera',            unidad: 'kg',    d1: 1500, d2: 2000 },
+    naranja_jugo:    { nombre: 'Naranja jugo',    unidad: 'kg',    d1: 722,  d2: 1000 },
+    mandarina:       { nombre: 'Mandarina',       unidad: 'kg',    d1: 667,  d2: 1300 },
+    palta:           { nombre: 'Palta',           unidad: 'kg',    d1: 5500, d2: 2800 },
+    kiwi:            { nombre: 'Kiwi',            unidad: 'kg',    d1: 7500, d2: 4000 },
+    huevos_n3:       { nombre: 'Maple huevos N3', unidad: 'maple', d1: 4167, d2: 3500 },
+  };
+
+  const DEFAULT_CAJONES = {
+    picolo: {
+      nombre: 'Piccolo',
+      descripcion: '1-2 personas · esencial · mix de hoja, cocina y fruta',
+      items: [
+        { id: 'lechuga_manteca', qty: 0.4 }, { id: 'tomate_perita', qty: 1 }, { id: 'cebolla', qty: 1 },
+        { id: 'papa_negra', qty: 1.5 }, { id: 'zanahoria', qty: 0.5 }, { id: 'anco', qty: 1 },
+        { id: 'banana', qty: 1 }, { id: 'manzana_roja', qty: 0.8 },
+      ],
+    },
+    famiglia: {
+      nombre: 'Famiglia',
+      descripcion: '3-4 personas · familiar · incluye maple de huevos N3',
+      items: [
+        { id: 'lechuga_manteca', qty: 0.4 }, { id: 'lechuga_criolla', qty: 0.4 }, { id: 'tomate_perita', qty: 2 },
+        { id: 'cebolla', qty: 2 }, { id: 'papa_negra', qty: 2.5 }, { id: 'zanahoria', qty: 1.5 }, { id: 'anco', qty: 1.5 },
+        { id: 'brocoli', qty: 1 }, { id: 'zapallito', qty: 1 }, { id: 'rucula', qty: 2 }, { id: 'espinaca', qty: 1 },
+        { id: 'banana', qty: 2 }, { id: 'manzana_roja', qty: 1.5 }, { id: 'naranja_jugo', qty: 2 }, { id: 'pera', qty: 1 },
+        { id: 'huevos_n3', qty: 1 },
+      ],
+    },
+    abbondanza: {
+      nombre: 'Abbondanza',
+      descripcion: '5+ personas o cocina intensa · maple de huevos + hierbas',
+      items: [
+        { id: 'lechuga_manteca', qty: 0.4 }, { id: 'lechuga_criolla', qty: 0.4 }, { id: 'tomate_perita', qty: 2 },
+        { id: 'tomate_cherry', qty: 0.5 }, { id: 'cebolla', qty: 2 }, { id: 'cebolla_morada', qty: 0.5 },
+        { id: 'papa_negra', qty: 3 }, { id: 'papin', qty: 0.5 }, { id: 'zanahoria', qty: 1.5 }, { id: 'anco', qty: 1.5 },
+        { id: 'batata', qty: 1 }, { id: 'brocoli', qty: 1 }, { id: 'coliflor', qty: 1 }, { id: 'zapallito', qty: 1 },
+        { id: 'berenjena', qty: 1 }, { id: 'morron_rojo', qty: 0.5 }, { id: 'pepino', qty: 0.5 }, { id: 'rucula', qty: 2 },
+        { id: 'espinaca', qty: 1 }, { id: 'apio', qty: 1 }, { id: 'banana', qty: 2.5 }, { id: 'manzana_roja', qty: 2 },
+        { id: 'naranja_jugo', qty: 2 }, { id: 'pera', qty: 1.5 }, { id: 'mandarina', qty: 1 }, { id: 'palta', qty: 0.5 },
+        { id: 'kiwi', qty: 0.5 }, { id: 'perejil', qty: 1 }, { id: 'albahaca', qty: 1 }, { id: 'huevos_n3', qty: 1 },
+      ],
+    },
+    frutta_fam: {
+      nombre: 'Frutta Famiglia',
+      descripcion: '3-4 personas u oficina chica · 6 variedades de fruta',
+      items: [
+        { id: 'banana', qty: 2 }, { id: 'manzana_roja', qty: 1.5 }, { id: 'naranja_jugo', qty: 2 },
+        { id: 'pera', qty: 1.5 }, { id: 'mandarina', qty: 1.5 }, { id: 'kiwi', qty: 0.5 },
+      ],
+    },
+    frutta_abb: {
+      nombre: 'Frutta Abbondanza',
+      descripcion: '5+ personas u oficina · 6 variedades en cantidades generosas',
+      items: [
+        { id: 'banana', qty: 3 }, { id: 'manzana_roja', qty: 2.5 }, { id: 'naranja_jugo', qty: 3 },
+        { id: 'pera', qty: 2 }, { id: 'mandarina', qty: 2 }, { id: 'palta', qty: 0.8 },
+      ],
+    },
+  };
+
+  let productos, cajones, markup, calcState, activo = 'picolo';
+  const values = {};
+  const clone = o => JSON.parse(JSON.stringify(o));
+  const fmt = n => (!isFinite(n) || n === 0) ? '$ 0' : '$ ' + Math.round(n).toLocaleString('es-AR');
+  const costoUnit = p => { const c1 = p.d1 > 0 ? p.d1 : Infinity, c2 = p.d2 > 0 ? p.d2 : Infinity; const m = Math.min(c1, c2); return isFinite(m) ? m : 0; };
+
+  function loadDefaults() {
+    productos = clone(DEFAULT_PRODUCTOS);
+    cajones = clone(DEFAULT_CAJONES);
+    markup = 1.8;
+    calcState = { opex: 1200000, paola: 800000, objetivo: 4117515 };
+  }
+
+  function loadSaved() {
+    loadDefaults();
+    try {
+      const raw = localStorage.getItem(STORE_KEY);
+      if (!raw) return;
+      const s = JSON.parse(raw);
+      if (s.markup) markup = s.markup;
+      if (s.productos) Object.keys(s.productos).forEach(id => { if (productos[id]) Object.assign(productos[id], s.productos[id]); });
+      if (s.cajones) Object.keys(s.cajones).forEach(k => { if (cajones[k] && Array.isArray(s.cajones[k])) cajones[k].items = s.cajones[k]; });
+      if (s.calc) Object.assign(calcState, s.calc);
+    } catch (e) { /* ignore corrupt store */ }
+  }
+
+  let savedTimer;
+  function save() {
+    const prodOut = {};
+    Object.keys(productos).forEach(id => { prodOut[id] = { d1: productos[id].d1, d2: productos[id].d2 }; });
+    const cajOut = {};
+    Object.keys(cajones).forEach(k => { cajOut[k] = cajones[k].items; });
+    try { localStorage.setItem(STORE_KEY, JSON.stringify({ v: 1, markup, productos: prodOut, cajones: cajOut, calc: calcState })); } catch (e) {}
+    const el = $('ed-saved');
+    if (el) { el.textContent = '✓ Guardado'; clearTimeout(savedTimer); savedTimer = setTimeout(() => { el.textContent = ''; }, 1500); }
+  }
+
+  function computeCajon(c) {
+    let costo = 0, retail = 0;
+    c.items.forEach(it => { const p = productos[it.id]; if (!p) return; costo += it.qty * costoUnit(p); retail += it.qty * (p.d2 || p.d1 || 0); });
+    const precio = costo * markup;
+    return { costo, retail, precio, costoMes: costo * 4, precioMes: precio * 4, margenMes: (precio - costo) * 4 };
+  }
+  function recomputeAll() { ORDER.forEach(k => { values[k] = computeCajon(cajones[k]); }); }
+
+  function renderTabs() {
+    const wrap = $('editorTabs'); wrap.innerHTML = '';
+    ORDER.forEach(k => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'editor-tab' + (k === activo ? ' active' : '');
+      b.textContent = cajones[k].nombre;
+      b.addEventListener('click', () => { activo = k; renderTabs(); renderTable(); });
+      wrap.appendChild(b);
+    });
+  }
+
+  function renderAddSelect() {
+    const sel = $('ed-add-select'); sel.innerHTML = '';
+    const used = new Set(cajones[activo].items.map(i => i.id));
+    const opts = Object.keys(productos).filter(id => !used.has(id))
+      .sort((a, b) => productos[a].nombre.localeCompare(productos[b].nombre, 'es'));
+    if (!opts.length) {
+      const o = document.createElement('option'); o.value = ''; o.textContent = '— todos los productos ya están en este cajón —';
+      sel.appendChild(o); return;
+    }
+    opts.forEach(id => {
+      const o = document.createElement('option'); o.value = id;
+      o.textContent = productos[id].nombre + ' (' + productos[id].unidad + ')';
+      sel.appendChild(o);
+    });
+  }
+
+  function renderTable() {
+    const c = cajones[activo];
+    $('ed-nombre').textContent = c.nombre;
+    $('ed-desc').textContent = c.descripcion;
+    const tb = $('ed-tbody'); tb.innerHTML = '';
+    c.items.forEach((it, idx) => {
+      const p = productos[it.id]; if (!p) return;
+      const tr = document.createElement('tr');
+      tr.innerHTML =
+        '<td>' + p.nombre + '</td>' +
+        '<td>' + p.unidad + '</td>' +
+        '<td class="num"><input class="ed-qty" type="number" min="0" step="0.1" value="' + it.qty + '" data-idx="' + idx + '"></td>' +
+        '<td class="num"><input class="ed-price" type="number" min="0" step="50" value="' + (p.d1 || 0) + '" data-pid="' + it.id + '" data-f="d1"></td>' +
+        '<td class="num"><input class="ed-price" type="number" min="0" step="50" value="' + (p.d2 || 0) + '" data-pid="' + it.id + '" data-f="d2"></td>' +
+        '<td class="num" id="ed-sc-' + idx + '">$ 0</td>' +
+        '<td class="num" id="ed-sr-' + idx + '">$ 0</td>' +
+        '<td class="num"><button class="ed-remove" type="button" data-rm="' + idx + '" aria-label="Quitar">✕</button></td>';
+      tb.appendChild(tr);
+    });
+    tb.querySelectorAll('.ed-qty').forEach(inp => inp.addEventListener('input', e => {
+      cajones[activo].items[+e.target.dataset.idx].qty = Math.max(0, +e.target.value || 0);
+      refreshNumbers(); save();
+    }));
+    tb.querySelectorAll('.ed-price').forEach(inp => inp.addEventListener('input', e => {
+      productos[e.target.dataset.pid][e.target.dataset.f] = Math.max(0, +e.target.value || 0);
+      refreshNumbers(); save();
+    }));
+    tb.querySelectorAll('.ed-remove').forEach(btn => btn.addEventListener('click', e => {
+      cajones[activo].items.splice(+e.currentTarget.dataset.rm, 1);
+      renderTable(); save();
+    }));
+    renderAddSelect();
+    refreshNumbers();
+  }
+
+  function refreshNumbers() {
+    const c = cajones[activo]; let tc = 0, tr = 0;
+    c.items.forEach((it, idx) => {
+      const p = productos[it.id]; if (!p) return;
+      const sc = it.qty * costoUnit(p), sr = it.qty * (p.d2 || p.d1 || 0);
+      tc += sc; tr += sr;
+      const a = $('ed-sc-' + idx), b = $('ed-sr-' + idx);
+      if (a) a.textContent = fmt(sc);
+      if (b) b.textContent = fmt(sr);
+    });
+    $('ed-tfoot').innerHTML = '<tr><td colspan="5"><strong>Totales por entrega</strong></td>' +
+      '<td class="num"><strong>' + fmt(tc) + '</strong></td>' +
+      '<td class="num"><strong>' + fmt(tr) + '</strong></td><td></td></tr>';
+    refreshKpis();
+  }
+
+  function refreshKpis() {
+    recomputeAll();
+    const v = values[activo];
+    $('ed-costo').textContent = fmt(v.costo);
+    $('ed-costo-mes').textContent = fmt(v.costoMes) + ' / mes (4 entregas)';
+    $('ed-retail').textContent = fmt(v.retail);
+    $('ed-precio').textContent = fmt(v.precioMes);
+    $('ed-precio-entrega').textContent = fmt(v.precio) + ' por entrega';
+    $('ed-margen').textContent = fmt(v.margenMes);
+    $('ed-pct').textContent = (v.precioMes > 0 ? (v.margenMes / v.precioMes * 100).toFixed(0) : 0) + ' % margen';
+    syncCalcToAbb();
+    calc();
+  }
+
+  function syncCalcToAbb() {
+    const v = values.abbondanza; if (!v) return;
+    const pr = $('ed-precio-r'), co = $('ed-costo-r');
+    const round = (x, s) => Math.round(x / s) * s;
+    pr.value = Math.min(Math.max(round(v.precioMes, 5000), +pr.min), +pr.max);
+    co.value = Math.min(Math.max(round(v.costo, 2500), +co.min), +co.max);
+  }
+
+  function calc() {
+    const precioAbb = +$('ed-precio-r').value, costoAbb = +$('ed-costo-r').value;
+    const opex = +$('ed-opex').value, paola = +$('ed-paola').value, objetivo = +$('ed-objetivo').value;
+    $('ed-precio-rv').textContent = fmt(precioAbb);
+    $('ed-costo-rv').textContent = fmt(costoAbb);
+    $('ed-opex-v').textContent = fmt(opex);
+    $('ed-paola-v').textContent = fmt(paola);
+    $('ed-objetivo-v').textContent = fmt(objetivo);
+    const brutoNeed = objetivo + opex + paola;
+    const margenP = values.picolo ? values.picolo.margenMes : 0;
+    const margenF = values.famiglia ? values.famiglia.margenMes : 0;
+    const margenA = precioAbb - (costoAbb * 4);
+    const precioP = values.picolo ? values.picolo.precioMes : 0;
+    const precioF = values.famiglia ? values.famiglia.precioMes : 0;
+    const margenMix = 0.30 * margenP + 0.50 * margenA + 0.20 * margenF;
+    const precioMix = 0.30 * precioP + 0.50 * precioAbb + 0.20 * precioF;
+    const clientes = margenMix > 0 ? Math.ceil(brutoNeed / margenMix) : Infinity;
+    const fact = isFinite(clientes) ? clientes * precioMix : 0;
+    $('ed-out-clientes').textContent = isFinite(clientes) ? clientes : '∞';
+    $('ed-out-margen').textContent = fmt(margenMix);
+    $('ed-out-bruto').textContent = fmt(brutoNeed);
+    $('ed-out-fact').textContent = isFinite(fact) ? fmt(fact) : '—';
+    const meses = isFinite(clientes) && clientes > 10 ? Math.ceil((clientes - 10) / 5) : 0;
+    $('ed-out-meses').textContent = meses > 0 ? (meses + 1) + ' meses para llegar' : 'desde el mes 1';
+    $('ed-kpi-pic').textContent = margenP > 0 ? Math.ceil(brutoNeed / margenP) : '∞';
+    $('ed-kpi-fam').textContent = margenF > 0 ? Math.ceil(brutoNeed / margenF) : '∞';
+    $('ed-kpi-abb').textContent = margenA > 0 ? Math.ceil(brutoNeed / margenA) : '∞';
+    const brutoDef = GASTOS_REALES + opex + paola;
+    $('ed-kpi-def').textContent = margenMix > 0 ? Math.ceil(brutoDef / margenMix) : '∞';
+  }
+
+  function syncControls() {
+    $('ed-markup').value = markup;
+    $('ed-markup-v').textContent = markup.toFixed(2) + '×';
+    $('ed-opex').value = calcState.opex;
+    $('ed-paola').value = calcState.paola;
+    $('ed-objetivo').value = calcState.objetivo;
+  }
+
+  function open() {
+    document.documentElement.classList.add('editor-open');
+    document.body.classList.add('editor-open');
+    overlay.classList.add('open');
+    overlay.setAttribute('aria-hidden', 'false');
+    renderTabs(); syncControls(); renderTable();
+  }
+  function close() {
+    document.documentElement.classList.remove('editor-open');
+    document.body.classList.remove('editor-open');
+    overlay.classList.remove('open');
+    overlay.setAttribute('aria-hidden', 'true');
+  }
+  function reset() {
+    try { localStorage.removeItem(STORE_KEY); } catch (e) {}
+    loadDefaults(); syncControls(); renderTabs(); renderTable();
+  }
+
+  $('ed-markup').addEventListener('input', e => {
+    markup = +e.target.value; $('ed-markup-v').textContent = markup.toFixed(2) + '×';
+    refreshKpis(); save();
+  });
+  $('ed-add-btn').addEventListener('click', () => {
+    const id = $('ed-add-select').value; if (!id) return;
+    cajones[activo].items.push({ id, qty: 1 });
+    renderTable(); save();
+  });
+  ['ed-opex', 'ed-paola', 'ed-objetivo'].forEach(id => $(id).addEventListener('input', () => {
+    calcState.opex = +$('ed-opex').value; calcState.paola = +$('ed-paola').value; calcState.objetivo = +$('ed-objetivo').value;
+    calc(); save();
+  }));
+  ['ed-precio-r', 'ed-costo-r'].forEach(id => $(id).addEventListener('input', calc));
+
+  $('editorClose').addEventListener('click', close);
+  $('editorReset').addEventListener('click', () => { if (confirm('¿Restablecer todos los valores a los originales? Se borran tus cambios guardados.')) reset(); });
+  overlay.addEventListener('click', e => { if (e.target === overlay) close(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && overlay.classList.contains('open')) close(); });
+  const ob = $('openEditor'); if (ob) ob.addEventListener('click', open);
+  const fab = $('editFab'); if (fab) fab.addEventListener('click', open);
+
+  loadSaved();
+})();
 </script>
 
 </body>
