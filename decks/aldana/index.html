@@ -83,6 +83,9 @@
     overflow: hidden;
     padding: var(--slide-padding);
   }
+  /* Slides de flujo: repartir header / diagrama / nota para llenar la slide */
+  .flow-slide .slide-content { justify-content: space-between; gap: clamp(1rem, 3vh, 2.2rem); }
+  .flow-slide .head-block { margin-bottom: 0; }
 
   /* ============ SHARED COMPONENTS ============ */
   .eyebrow {
@@ -354,22 +357,26 @@
     grid-template-columns: repeat(3, 1fr);
     gap: clamp(0.8rem, 1.8vw, 1.5rem);
   }
-  .frutta-line {
-    display: flex; align-items: center; gap: clamp(0.8rem, 1.6vw, 1.3rem);
-    margin-top: clamp(0.8rem, 1.6vw, 1.3rem);
-    padding: clamp(0.7rem, 1.4vw, 1.1rem) clamp(1rem, 2vw, 1.5rem);
-    background: var(--crema-soft); border: 1px solid var(--madera-suave);
-    border-left: 4px solid var(--acento-2); border-radius: 8px;
+  .special-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: clamp(0.7rem, 1.5vw, 1.2rem); margin-top: clamp(0.8rem, 1.6vw, 1.3rem);
   }
-  .frutta-tag {
+  .special-card {
+    display: flex; flex-direction: column; gap: 5px;
+    padding: clamp(0.7rem, 1.4vw, 1.1rem) clamp(0.9rem, 1.8vw, 1.3rem);
+    background: var(--crema-soft); border: 1px solid var(--madera-suave); border-radius: 8px;
+  }
+  .special-card.frutta { border-left: 4px solid var(--acento-2); }
+  .special-card.custom { border-left: 4px solid var(--oliva-profundo); }
+  .special-tag {
     font-family: var(--font-display); font-style: italic;
-    font-size: clamp(1.2rem, 1.8vw, 1.6rem); color: var(--madera); flex-shrink: 0;
+    font-size: clamp(1.05rem, 1.5vw, 1.35rem); color: var(--madera);
   }
-  .frutta-text {
-    font-family: var(--font-ui); font-size: clamp(0.78rem, 0.95vw, 0.9rem);
+  .special-text {
+    font-family: var(--font-ui); font-size: clamp(0.76rem, 0.92vw, 0.88rem);
     color: var(--oliva-texto); line-height: 1.4;
   }
-  .frutta-text strong { color: var(--oliva-profundo); }
+  .special-text strong { color: var(--oliva-profundo); }
   .cajon-card {
     border: 1px solid var(--madera-suave);
     border-radius: 6px;
@@ -667,7 +674,7 @@
     flex: 1;
     min-width: 150px;
     max-width: 210px;
-    min-height: clamp(190px, 26vh, 270px);
+    min-height: clamp(165px, 22vh, 240px);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1081,7 +1088,7 @@
     .title-slide .slide-content { grid-template-columns: 1fr; }
     .title-seal { display: none; }
     .brand-grid, .ofic-grid { grid-template-columns: 1fr; }
-    .cols-3, .cajones-grid, .phases-row { grid-template-columns: 1fr; }
+    .cols-3, .cajones-grid, .phases-row, .special-grid { grid-template-columns: 1fr; }
     .week-grid { grid-template-columns: repeat(4, 1fr); }
     .tools-grid { grid-template-columns: repeat(2, 1fr); }
     .legal-list, .checklist-grid, .team-grid { grid-template-columns: 1fr; }
@@ -1284,7 +1291,7 @@
   <div class="slide-content">
     <div class="head-block">
       <span class="eyebrow reveal">01 <span class="sep">·</span> Los cajones</span>
-      <h2 class="reveal">Tres tamaños, <em>una sola promesa.</em></h2>
+      <h2 class="reveal">Elegí <em>tu cajón.</em></h2>
     </div>
     <div class="cajones-grid">
       <div class="cajon-card reveal">
@@ -1321,9 +1328,15 @@
         </ul>
       </div>
     </div>
-    <div class="frutta-line reveal">
-      <span class="frutta-tag">Frutta</span>
-      <span class="frutta-text">La versión <strong>solo fruta</strong> — <strong>Frutta Famiglia</strong> (6 variedades) y <strong>Frutta Abbondanza</strong> (cantidades generosas). Ideal para oficinas y para quienes solo quieren fruta.</span>
+    <div class="special-grid">
+      <div class="special-card frutta reveal">
+        <span class="special-tag">Frutta · solo fruta</span>
+        <span class="special-text"><strong>Frutta Famiglia</strong> y <strong>Frutta Abbondanza</strong> — versiones de pura fruta. Ideal para oficinas.</span>
+      </div>
+      <div class="special-card custom reveal">
+        <span class="special-tag">Armá tu propio cajón</span>
+        <span class="special-text">Elegís los productos de la lista y nosotros lo armamos. <strong>+15%</strong> por la personalización.</span>
+      </div>
     </div>
     <p class="cajones-note reveal">Cantidades semanales fijas — el mix de productos está siempre presente y rota con la estación. <em>Cajón sorpresa premium cada 3 meses</em> y entrega coordinada en todos los tamaños.</p>
     <div class="cajones-cta reveal">
@@ -1334,7 +1347,7 @@
 </section>
 
 <!-- ============ SLIDE 3: FLUJO CLIENTE ============ -->
-<section class="slide">
+<section class="slide flow-slide">
   <div class="slide-content">
     <div class="head-block">
       <span class="eyebrow reveal">02 <span class="sep">·</span> El recorrido del cliente</span>
@@ -1378,7 +1391,7 @@
 </section>
 
 <!-- ============ SLIDE 4: FLUJO ALDANA ============ -->
-<section class="slide">
+<section class="slide flow-slide">
   <div class="slide-content">
     <div class="head-block">
       <span class="eyebrow reveal">03 <span class="sep">·</span> Tu día a día</span>
@@ -1416,6 +1429,7 @@
         <div class="flow-desc">Lista de compra y ruta de la semana, listas</div>
       </div>
     </div>
+    <p class="cajones-note reveal" style="text-align:center;">Lo manejás desde el celu o la compu, cuando quieras — sin planillas ni programadores.</p>
   </div>
   <div class="slide-num">04 · 06</div>
 </section>
