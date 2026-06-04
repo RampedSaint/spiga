@@ -1127,8 +1127,24 @@
   }
   .editor-tab:hover { border-color: var(--oliva); }
   .editor-tab.active { background: var(--oliva-profundo); color:var(--crema); border-color:var(--oliva-profundo); }
-  .editor-meta h4 { font-family:var(--font-display); font-style:italic; font-size: clamp(1.2rem,2vw,1.6rem); color:var(--oliva-profundo); }
-  .editor-meta p { font-family:var(--font-ui); font-size:.8rem; color:var(--oliva-texto); margin-bottom:1rem; }
+  .editor-meta { display:flex; flex-wrap:wrap; align-items:baseline; gap:.4rem .9rem; margin-bottom:1rem; }
+  .ed-meta-nombre {
+    font-family:var(--font-display); font-style:italic; font-size: clamp(1.2rem,2vw,1.6rem); color:var(--oliva-profundo);
+    border:none; border-bottom:1px dashed transparent; background:transparent; padding:.05em .1em; flex:1 1 220px; min-width:160px;
+  }
+  .ed-meta-desc {
+    font-family:var(--font-ui); font-size:.8rem; color:var(--oliva-texto);
+    border:none; border-bottom:1px dashed transparent; background:transparent; padding:.2em .1em; flex:1 1 100%; width:100%;
+  }
+  .ed-meta-nombre:hover, .ed-meta-desc:hover { border-bottom-color: var(--madera-suave); }
+  .ed-meta-nombre:focus, .ed-meta-desc:focus { outline:none; border-bottom-color: var(--oliva); }
+  .ed-del-combo { font-family:var(--font-ui); font-size:.72rem; color:var(--alerta); background:none; border:1px solid transparent; border-radius:6px; cursor:pointer; padding:.3em .6em; white-space:nowrap; }
+  .ed-del-combo:hover { border-color: var(--alerta); }
+  .editor-tab.new-combo { border-style:dashed; color:var(--oliva); font-weight:600; }
+  .ed-np-nombre, .ed-np-costo { font-family:var(--font-ui); font-size:.8rem; padding:.45em .6em; border-radius:6px; border:1px solid var(--madera-suave); background:#fff; color:var(--tinta); }
+  .ed-np-nombre { width:130px; } .ed-np-costo { width:90px; }
+  .ed-add-sep { font-family:var(--font-ui); font-size:.72rem; color:var(--madera-suave); margin-left:.3rem; }
+  .cajon-extra { opacity:.72; font-style:italic; }
 
   .editor-table-wrap { overflow-x:auto; border:1px solid var(--crema-soft); border-radius:8px; }
   table.editor-table { border-collapse:collapse; width:100%; min-width:680px; font-family:var(--font-ui); }
@@ -1372,6 +1388,7 @@
           <li><strong>Para cocinar</strong> · tomate perita 2 kg, cherry 500 g, cebolla 2 kg, cebolla morada 500 g, papa 3 kg, papín 500 g, zanahoria 1,5 kg, anco 1,5 kg, batata 1 kg, brócoli 500 g, coliflor ×1, zapallito 1 kg, morrón 500 g, pepino 500 g</li>
           <li><strong>Frutas</strong> · banana 2,5 kg, manzana 2 kg, naranja 2 kg, pera 1,5 kg, mandarina 1 kg, kiwi 500 g</li>
           <li><strong>Hierbas</strong> · perejil ×1 at., albahaca ×1</li>
+          <li class="cajon-extra"><strong>Extras a pedido</strong> · palta, berenjena, maple de huevos N3</li>
         </ul>
       </div>
     </div>
@@ -2020,8 +2037,9 @@
       <div class="editor-tabs" id="editorTabs"></div>
 
       <div class="editor-meta">
-        <h4 id="ed-nombre">—</h4>
-        <p id="ed-desc"></p>
+        <input id="ed-nombre" class="ed-meta-nombre" type="text" placeholder="Nombre del combo" aria-label="Nombre del combo">
+        <button type="button" class="ed-del-combo" id="ed-del-combo">🗑 Eliminar este combo</button>
+        <input id="ed-desc" class="ed-meta-desc" type="text" placeholder="Descripción corta del combo" aria-label="Descripción del combo">
       </div>
 
       <div class="editor-table-wrap">
@@ -2045,7 +2063,12 @@
 
       <div class="editor-add">
         <select id="ed-add-select"></select>
-        <button type="button" class="btn-spiga ghost" id="ed-add-btn">+ Agregar producto</button>
+        <button type="button" class="btn-spiga ghost" id="ed-add-btn">+ Agregar al combo</button>
+        <span class="ed-add-sep">o creá uno nuevo →</span>
+        <input id="ed-np-nombre" class="ed-np-nombre" type="text" placeholder="Producto nuevo">
+        <select id="ed-np-unidad"><option value="kg">kg</option><option value="un">un</option><option value="atado">atado</option><option value="maple">maple</option></select>
+        <input id="ed-np-costo" class="ed-np-costo" type="number" min="0" step="50" placeholder="$ costo">
+        <button type="button" class="btn-spiga ghost" id="ed-np-btn">+ Crear</button>
       </div>
 
       <div class="editor-kpis">
@@ -2097,7 +2120,7 @@
       </div>
 
       <div class="editor-note">
-        <strong>Cómo leerlo:</strong> el costo usa el precio mayorista más bajo de cada producto; el valor verdulería es lo que pagaría tu cliente comprando suelto — tu piso de valor. <strong>Precio bulto ÷ rinde:</strong> cargá el precio del cajón/bolsa/jaula entero y cuánto rinde (en kg o unidades) y el costo por unidad se calcula solo — no hace falta dividir a mano. Todo lo que cambies acá se guarda solo en este navegador. <span class="editor-saved" id="ed-saved"></span>
+        <strong>Cómo leerlo:</strong> el costo usa el precio mayorista más bajo de cada producto; el valor verdulería es lo que pagaría tu cliente comprando suelto — tu piso de valor. <strong>Precio bulto ÷ rinde:</strong> cargá el precio del cajón/bolsa/jaula entero y cuánto rinde (en kg o unidades) y el costo por unidad se calcula solo — no hace falta dividir a mano. <strong>Armás cada combo a mano:</strong> editá su nombre y descripción arriba, sumá o sacá productos, creá combos nuevos con "+ Nuevo combo", borralos, o cargá un producto que no esté en la lista con "Crear". Todo lo que cambies acá se guarda solo en este navegador. <span class="editor-saved" id="ed-saved"></span>
       </div>
     </div>
   </div>
@@ -2210,9 +2233,9 @@
   const overlay = $('editorOverlay');
   if (!overlay) return;
 
-  const STORE_KEY = 'spiga_aldana_editor_v2';
+  const STORE_KEY = 'spiga_aldana_editor_v3';
   const GASTOS_REALES = 5907000;
-  const ORDER = ['picolo', 'famiglia', 'abbondanza', 'frutta_fam', 'frutta_abb'];
+  let ORDER = ['picolo', 'famiglia', 'abbondanza', 'frutta_fam', 'frutta_abb'];
 
   // Costos mayoristas (d1) desde "Costos Spiga.xlsx" › hoja Precios (jun 2026).
   // d1 = precio unitario = pb (precio del bulto) ÷ rinde. bulto/rinde/pb alimentan la
@@ -2323,6 +2346,7 @@
   function loadDefaults() {
     productos = clone(DEFAULT_PRODUCTOS);
     cajones = clone(DEFAULT_CAJONES);
+    ORDER = Object.keys(DEFAULT_CAJONES);
     markup = 1.8;
     calcState = { opex: 1200000, paola: 800000, objetivo: 4117515 };
   }
@@ -2334,19 +2358,35 @@
       if (!raw) return;
       const s = JSON.parse(raw);
       if (s.markup) markup = s.markup;
-      if (s.productos) Object.keys(s.productos).forEach(id => { if (productos[id]) Object.assign(productos[id], s.productos[id]); });
-      if (s.cajones) Object.keys(s.cajones).forEach(k => { if (cajones[k] && Array.isArray(s.cajones[k])) cajones[k].items = s.cajones[k]; });
+      if (s.productos) Object.keys(s.productos).forEach(id => {
+        if (productos[id]) Object.assign(productos[id], s.productos[id]);
+        else productos[id] = Object.assign({ nombre: id, unidad: 'kg', d1: 0, d2: 0 }, s.productos[id]);
+      });
+      if (s.cajones) Object.keys(s.cajones).forEach(k => {
+        const sc = s.cajones[k];
+        if (Array.isArray(sc)) { if (cajones[k]) cajones[k].items = sc; }            // formato viejo
+        else if (sc && typeof sc === 'object') {
+          cajones[k] = {
+            nombre: sc.nombre != null ? sc.nombre : (cajones[k] ? cajones[k].nombre : k),
+            descripcion: sc.descripcion != null ? sc.descripcion : (cajones[k] ? cajones[k].descripcion : ''),
+            items: Array.isArray(sc.items) ? sc.items : (cajones[k] ? cajones[k].items : []),
+          };
+        }
+      });
+      if (Array.isArray(s.order) && s.order.length) ORDER = s.order.filter(k => cajones[k]);
+      Object.keys(cajones).forEach(k => { if (!ORDER.includes(k)) ORDER.push(k); });
       if (s.calc) Object.assign(calcState, s.calc);
+      if (!cajones[activo]) activo = ORDER[0];
     } catch (e) { /* ignore corrupt store */ }
   }
 
   let savedTimer;
   function save() {
     const prodOut = {};
-    Object.keys(productos).forEach(id => { prodOut[id] = { d1: productos[id].d1, d2: productos[id].d2, pb: productos[id].pb, rinde: productos[id].rinde }; });
+    Object.keys(productos).forEach(id => { const p = productos[id]; prodOut[id] = { nombre: p.nombre, unidad: p.unidad, d1: p.d1, d2: p.d2, pb: p.pb, rinde: p.rinde, bulto: p.bulto }; });
     const cajOut = {};
-    Object.keys(cajones).forEach(k => { cajOut[k] = cajones[k].items; });
-    try { localStorage.setItem(STORE_KEY, JSON.stringify({ v: 2, markup, productos: prodOut, cajones: cajOut, calc: calcState })); } catch (e) {}
+    Object.keys(cajones).forEach(k => { const c = cajones[k]; cajOut[k] = { nombre: c.nombre, descripcion: c.descripcion, items: c.items }; });
+    try { localStorage.setItem(STORE_KEY, JSON.stringify({ v: 3, markup, order: ORDER.slice(), productos: prodOut, cajones: cajOut, calc: calcState })); } catch (e) {}
     const el = $('ed-saved');
     if (el) { el.textContent = '✓ Guardado'; clearTimeout(savedTimer); savedTimer = setTimeout(() => { el.textContent = ''; }, 1500); }
   }
@@ -2365,10 +2405,33 @@
       const b = document.createElement('button');
       b.type = 'button';
       b.className = 'editor-tab' + (k === activo ? ' active' : '');
-      b.textContent = cajones[k].nombre;
+      b.textContent = cajones[k].nombre || '(sin nombre)';
       b.addEventListener('click', () => { activo = k; renderTabs(); renderTable(); });
       wrap.appendChild(b);
     });
+    const nb = document.createElement('button');
+    nb.type = 'button';
+    nb.className = 'editor-tab new-combo';
+    nb.textContent = '+ Nuevo combo';
+    nb.addEventListener('click', addCombo);
+    wrap.appendChild(nb);
+  }
+
+  function addCombo() {
+    const key = 'combo_' + Date.now();
+    cajones[key] = { nombre: 'Combo nuevo', descripcion: '', items: [] };
+    ORDER.push(key); activo = key;
+    renderTabs(); renderTable(); save();
+    const ni = $('ed-nombre'); if (ni) { ni.focus(); ni.select(); }
+  }
+
+  function delCombo() {
+    if (ORDER.length <= 1) { alert('Tenés que dejar al menos un combo.'); return; }
+    if (!confirm('¿Eliminar el combo "' + (cajones[activo].nombre || '') + '"? No se puede deshacer.')) return;
+    const i = ORDER.indexOf(activo);
+    delete cajones[activo]; ORDER.splice(i, 1);
+    activo = ORDER[Math.max(0, i - 1)];
+    renderTabs(); renderTable(); save();
   }
 
   function renderAddSelect() {
@@ -2389,8 +2452,8 @@
 
   function renderTable() {
     const c = cajones[activo];
-    $('ed-nombre').textContent = c.nombre;
-    $('ed-desc').textContent = c.descripcion;
+    $('ed-nombre').value = c.nombre || '';
+    $('ed-desc').value = c.descripcion || '';
     const tb = $('ed-tbody'); tb.innerHTML = '';
     c.items.forEach((it, idx) => {
       const p = productos[it.id]; if (!p) return;
@@ -2529,7 +2592,7 @@
   }
   function reset() {
     try { localStorage.removeItem(STORE_KEY); } catch (e) {}
-    loadDefaults(); syncControls(); renderTabs(); renderTable();
+    loadDefaults(); activo = ORDER[0]; syncControls(); renderTabs(); renderTable();
   }
 
   $('ed-markup').addEventListener('input', e => {
@@ -2539,6 +2602,19 @@
   $('ed-add-btn').addEventListener('click', () => {
     const id = $('ed-add-select').value; if (!id) return;
     cajones[activo].items.push({ id, qty: 1 });
+    renderTable(); save();
+  });
+  $('ed-nombre').addEventListener('input', e => { cajones[activo].nombre = e.target.value; renderTabs(); save(); });
+  $('ed-desc').addEventListener('input', e => { cajones[activo].descripcion = e.target.value; save(); });
+  $('ed-del-combo').addEventListener('click', delCombo);
+  $('ed-np-btn').addEventListener('click', () => {
+    const nombre = $('ed-np-nombre').value.trim(); if (!nombre) { $('ed-np-nombre').focus(); return; }
+    const unidad = $('ed-np-unidad').value;
+    const costo = Math.max(0, +$('ed-np-costo').value || 0);
+    const id = 'p_' + Date.now();
+    productos[id] = { nombre, unidad, d1: costo, d2: costo };
+    cajones[activo].items.push({ id, qty: 1 });
+    $('ed-np-nombre').value = ''; $('ed-np-costo').value = '';
     renderTable(); save();
   });
   ['ed-opex', 'ed-paola', 'ed-objetivo'].forEach(id => $(id).addEventListener('input', () => {
