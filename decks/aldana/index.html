@@ -377,6 +377,26 @@
     color: var(--oliva-texto); line-height: 1.4;
   }
   .special-text strong { color: var(--oliva-profundo); }
+  .bld-cta {
+    margin-top: .4rem; align-self: flex-start;
+    font-family: var(--font-ui); font-size: .76rem; font-weight: 500; letter-spacing: .04em;
+    background: var(--oliva-profundo); color: var(--crema); border: none; border-radius: 999px;
+    padding: .45em 1.1em; cursor: pointer;
+  }
+  .bld-cta:hover { background: var(--oliva); }
+  .bld-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: .6rem; margin: 1rem 0; }
+  .bld-item { display: flex; align-items: center; justify-content: space-between; gap: .6rem; border: 1px solid var(--crema-soft); border-radius: 8px; padding: .55rem .75rem; background: #fff; }
+  .bld-item-info { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
+  .bld-item-name { font-family: var(--font-ui); font-size: .82rem; color: var(--tinta); font-weight: 500; }
+  .bld-item-price { font-family: var(--font-ui); font-size: .7rem; color: var(--oliva-texto); }
+  .bld-stepper { display: flex; align-items: center; gap: .35rem; flex-shrink: 0; }
+  .bld-stepper button { width: 26px; height: 26px; border-radius: 6px; border: 1px solid var(--madera-suave); background: var(--crema); color: var(--oliva-profundo); cursor: pointer; font-size: 1rem; line-height: 1; }
+  .bld-stepper button:hover { border-color: var(--oliva); }
+  .bld-qty { min-width: 30px; text-align: center; font-family: var(--font-ui); font-size: .82rem; color: var(--tinta); }
+  .bld-totals { border-top: 1px solid var(--crema-soft); padding-top: 1rem; margin-top: .5rem; margin-left: auto; max-width: 380px; display: flex; flex-direction: column; gap: .4rem; }
+  .bld-row { display: flex; justify-content: space-between; gap: 1rem; font-family: var(--font-ui); font-size: .85rem; color: var(--oliva-texto); }
+  .bld-row span:last-child { font-variant-numeric: tabular-nums; }
+  .bld-row.bld-total { font-size: 1.15rem; font-weight: 600; color: var(--oliva-profundo); border-top: 1px solid var(--crema-soft); padding-top: .55rem; margin-top: .2rem; }
   .cajon-card {
     border: 1px solid var(--madera-suave);
     border-radius: 6px;
@@ -1336,6 +1356,7 @@
       <div class="special-card custom reveal">
         <span class="special-tag">Armá tu propio cajón</span>
         <span class="special-text">Elegís los productos de la lista y nosotros lo armamos. <strong>+15%</strong> por la personalización.</span>
+        <button type="button" class="bld-cta" id="openBuilder">Probalo →</button>
       </div>
     </div>
     <p class="cajones-note reveal">Cantidades semanales fijas — el mix de productos está siempre presente y rota con la estación. <em>Cajón sorpresa premium cada 3 meses</em> y entrega coordinada en todos los tamaños.</p>
@@ -1589,6 +1610,30 @@
 
       <div class="editor-note">
         <strong>Cómo leerlo:</strong> el costo usa el precio mayorista más bajo de cada producto; el valor verdulería es lo que pagaría tu cliente comprando suelto — tu piso de valor. <strong>Precio bulto ÷ rinde:</strong> cargá el precio del cajón/bolsa/jaula entero y cuánto rinde (en kg o unidades) y el costo por unidad se calcula solo — no hace falta dividir a mano. <strong>Armás cada combo a mano:</strong> editá su nombre y descripción arriba, sumá o sacá productos, creá combos nuevos con "+ Nuevo combo", borralos, o cargá un producto que no esté en la lista con "Crear". Todo lo que cambies acá se guarda solo en este navegador. <span class="editor-saved" id="ed-saved"></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ BUILDER MODAL (cliente · armá tu propio cajón) ============ -->
+<div class="editor-overlay" id="builderOverlay" aria-hidden="true">
+  <div class="editor-modal" role="dialog" aria-modal="true" aria-label="Armá tu propio cajón">
+    <div class="editor-head">
+      <div>
+        <span class="editor-eyebrow">Armá tu propio cajón</span>
+        <div class="editor-title">Elegí lo que quieras</div>
+      </div>
+      <div class="editor-head-actions">
+        <button type="button" class="editor-close" id="builderClose" aria-label="Cerrar">✕</button>
+      </div>
+    </div>
+    <div class="editor-body">
+      <p class="editor-hint">Sumá los productos que quieras con + y −. El cajón a medida tiene un <strong>15% extra</strong> sobre el precio de lista, por armarlo a tu gusto.</p>
+      <div class="bld-list" id="bld-list"></div>
+      <div class="bld-totals">
+        <div class="bld-row"><span>Precio de lista</span><span id="bld-subtotal">$ 0</span></div>
+        <div class="bld-row"><span>Personalización (+15%)</span><span id="bld-recargo">$ 0</span></div>
+        <div class="bld-row bld-total"><span>Tu cajón a medida</span><span id="bld-total">$ 0</span></div>
       </div>
     </div>
   </div>
@@ -2097,6 +2142,61 @@
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && overlay.classList.contains('open')) close(); });
   const ob = $('openEditor'); if (ob) ob.addEventListener('click', open);
   const fab = $('editFab'); if (fab) fab.addEventListener('click', open);
+
+  /* ----- Builder cliente: armá tu propio cajón (+15%) ----- */
+  const builderOverlay = $('builderOverlay');
+  const RECARGO_CUSTOM = 0.15;
+  const builderQty = {};
+  const precioLista = p => Math.round(costoUnit(p) * markup / 50) * 50;
+  function renderBuilder() {
+    const wrap = $('bld-list'); if (!wrap) return;
+    wrap.innerHTML = '';
+    Object.keys(productos).sort((a, b) => productos[a].nombre.localeCompare(productos[b].nombre, 'es')).forEach(id => {
+      const p = productos[id];
+      const div = document.createElement('div');
+      div.className = 'bld-item';
+      div.innerHTML =
+        '<div class="bld-item-info"><span class="bld-item-name">' + p.nombre + '</span>' +
+        '<span class="bld-item-price">' + fmt(precioLista(p)) + ' / ' + p.unidad + '</span></div>' +
+        '<div class="bld-stepper">' +
+        '<button type="button" data-bm="' + id + '" aria-label="Quitar">−</button>' +
+        '<span class="bld-qty" id="bld-q-' + id + '">' + (builderQty[id] || 0) + '</span>' +
+        '<button type="button" data-bp="' + id + '" aria-label="Sumar">+</button></div>';
+      wrap.appendChild(div);
+    });
+    wrap.querySelectorAll('[data-bp]').forEach(b => b.addEventListener('click', e => stepBuilder(e.currentTarget.dataset.bp, 1)));
+    wrap.querySelectorAll('[data-bm]').forEach(b => b.addEventListener('click', e => stepBuilder(e.currentTarget.dataset.bm, -1)));
+    refreshBuilder();
+  }
+  function stepBuilder(id, dir) {
+    const step = productos[id].unidad === 'kg' ? 0.5 : 1;
+    builderQty[id] = Math.max(0, Math.round(((builderQty[id] || 0) + dir * step) * 10) / 10);
+    const q = $('bld-q-' + id); if (q) q.textContent = builderQty[id];
+    refreshBuilder();
+  }
+  function refreshBuilder() {
+    let sub = 0;
+    Object.keys(builderQty).forEach(id => { const p = productos[id]; if (p) sub += (builderQty[id] || 0) * precioLista(p); });
+    const rec = sub * RECARGO_CUSTOM;
+    $('bld-subtotal').textContent = fmt(sub);
+    $('bld-recargo').textContent = fmt(rec);
+    $('bld-total').textContent = fmt(sub + rec);
+  }
+  function openBuilder() {
+    document.documentElement.classList.add('editor-open'); document.body.classList.add('editor-open');
+    builderOverlay.classList.add('open'); builderOverlay.setAttribute('aria-hidden', 'false');
+    renderBuilder();
+  }
+  function closeBuilder() {
+    document.documentElement.classList.remove('editor-open'); document.body.classList.remove('editor-open');
+    builderOverlay.classList.remove('open'); builderOverlay.setAttribute('aria-hidden', 'true');
+  }
+  if (builderOverlay) {
+    const obld = $('openBuilder'); if (obld) obld.addEventListener('click', openBuilder);
+    const bc = $('builderClose'); if (bc) bc.addEventListener('click', closeBuilder);
+    builderOverlay.addEventListener('click', e => { if (e.target === builderOverlay) closeBuilder(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && builderOverlay.classList.contains('open')) closeBuilder(); });
+  }
 
   loadSaved();
 })();
