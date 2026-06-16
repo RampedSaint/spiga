@@ -22,10 +22,10 @@ Todo lo que hoy en el prototipo es manual o "a pedido" tiene que quedar automati
 - La web tiene que poder cerrar la compra sin fricción desde el celular.
 
 ### 3.2 Elegir el cajón
-- Planes base: **Mini** (1–2 personas), **Family** (3–4, el más elegido), **Harvest** (5+), más versiones **Fruit** (solo fruta, para oficinas).
+- Planes base: **Essential** (1–2 personas), **Family** (3–4, el más elegido), **Harvest** (5+), más versiones **Fruit** (solo fruta, para oficinas).
 - Mostrar el contenido del cajón (base fija + estacional que rota).
 - **Extras / productos sueltos (+10%):** a cualquier cajón se le suman productos sueltos (palta, huevos, frutas extra, berenjena, etc.) con un 10% sobre el precio Nativa del producto.
-- **Cajón a medida (+15%):** el cliente arma el cajón producto por producto; recargo del 15% por producto, mínimo equivalente a Mini.
+- **Cajón a medida (+15%):** el cliente arma el cajón producto por producto; recargo del 15% por producto, mínimo equivalente a Essential.
 - Regla de precios horneada (ver §6).
 
 ### 3.3 Suscripción
@@ -78,7 +78,7 @@ Todo lo que hoy en el prototipo es manual o "a pedido" tiene que quedar automati
 - **Recargo cajón a medida: +15%** sobre el precio del cajón estándar.
 - **Recargo productos sueltos: +10%** sobre el precio Nativa del producto.
 - **Descuento** por transferencia/efectivo; **recargo** por tarjeta/Mercado Pago.
-- Mínimo del cajón a medida: equivalente a Mini.
+- Mínimo del cajón a medida: equivalente a Essential.
 - Cupones de descuento por código, con atribución a influencer.
 
 ## 7. Modelo de datos (entidades base)
