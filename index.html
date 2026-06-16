@@ -250,13 +250,11 @@
     position: relative;
     aspect-ratio: 4 / 5;
     background:
-      /* juntas entre tablas (4 tablas verticales tipo cajón) */
-      repeating-linear-gradient(90deg, rgba(0,0,0,0.28) 0 1.5px, transparent 1.5px 25%),
-      /* veta sutil de la madera */
-      repeating-linear-gradient(90deg, rgba(255,255,255,0.03) 0 1px, transparent 1px 8px),
-      /* tono madera cálido */
-      linear-gradient(165deg, #714c25 0%, #573a1c 60%, #3f2a13 100%);
-    background-color: #573a1c;
+      /* rama de hojas como marca de agua (motivo del sello) */
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><g stroke='%23f8f7f2' stroke-width='1.4' fill='none' stroke-linecap='round' opacity='0.08'><path d='M 50,130 Q 100,160 150,130'/></g><g fill='%23f8f7f2' opacity='0.08'><ellipse cx='58' cy='120' rx='9' ry='3.5' transform='rotate(-40 58 120)'/><ellipse cx='72' cy='135' rx='10' ry='3.5' transform='rotate(-25 72 135)'/><ellipse cx='90' cy='146' rx='10' ry='3.5' transform='rotate(-10 90 146)'/><ellipse cx='110' cy='146' rx='10' ry='3.5' transform='rotate(10 110 146)'/><ellipse cx='128' cy='135' rx='10' ry='3.5' transform='rotate(25 128 135)'/><ellipse cx='142' cy='120' rx='9' ry='3.5' transform='rotate(40 142 120)'/></g></svg>") no-repeat center 90% / 64%,
+      /* degradé verde con profundidad */
+      linear-gradient(160deg, #1f8a4d 0%, #166e3e 48%, #0f4d2b 100%);
+    background-color: #166e3e;
     border-radius: 8px;
     overflow: hidden;
     display: flex;
@@ -518,7 +516,7 @@
   }
   .cajon-season.is-current-season::before { height: 5px; }
   .cajon-season.is-current-season::after {
-    content: "Della Stagione";
+    content: "De estación";
     position: absolute;
     top: -10px;
     left: 24px;
@@ -584,7 +582,7 @@
   /* ============ ESTA SEMANA ============ */
   .week {
     background:
-      linear-gradient(135deg, rgba(20,83,45,0.92) 0%, rgba(27,122,67,0.86) 100%),
+      linear-gradient(135deg, rgba(15,58,32,0.965) 0%, rgba(20,83,45,0.945) 100%),
       url('https://image.pollinations.ai/prompt/close%20up%20of%20ripe%20heirloom%20tomatoes%20still%20on%20the%20vine%20in%20sunlit%20vegetable%20garden%2C%20deep%20red%20and%20green%20colors%2C%20soft%20natural%20warm%20backlight%2C%20bokeh%20background%2C%20editorial%20agriculture%20magazine%20photography%2C%20muted%20earth%20tones%2C%20cinematic%20depth%20of%20field%2C%20no%20people%20no%20text?width=1600&height=900&seed=22&nologo=true&model=flux') center/cover no-repeat;
     background-color: var(--verde-bosque);
     color: var(--crema);
