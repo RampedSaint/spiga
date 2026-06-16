@@ -2,7 +2,7 @@
 
 > Documento de arranque para los programadores. Convierte el prototipo (deck + web estática) en el sitio real con backend, pagos, suscripciones y automatizaciones.
 >
-> Referencias: web prototipo (`index.html`), deck de Aldana (`decks/aldana/index.html`), costos (`Costos Spiga.xlsx` › hoja Precios).
+> Referencias: web prototipo (`index.html`), costos (`Costos Spiga.xlsx` › hoja Precios).
 
 ## 1. Qué es Spiga
 
