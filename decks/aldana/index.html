@@ -1389,7 +1389,7 @@
       </div>
       <div class="special-card custom reveal">
         <span class="special-tag">Armá tu propio cajón</span>
-        <span class="special-text">Elegís los productos que quieras de la lista y nosotros lo armamos a tu medida.</span>
+        <span class="special-text">Elegís los productos que quieras y lo armamos a tu medida (+15%), o le sumás sueltos a un cajón estándar (+10%).</span>
         <button type="button" class="bld-cta" id="openBuilder">Probalo →</button>
       </div>
     </div>
@@ -1521,7 +1521,7 @@
       </g>
       <text x="100" y="125" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="78" font-style="italic" font-weight="500" fill="#F2EBDD">S</text>
     </svg>
-    <h2 class="reveal">¿Te cierra <em>el flujo?</em></h2>
+    <h2 class="reveal">El próximo paso <em>es construirlo.</em></h2>
     <p class="lead reveal">Si así es como querés que funcione Spiga, el próximo paso es pasarlo a los programadores y construir el sitio real, con todo automatizado.</p>
     <div class="close-contacts">
       <div class="close-contact reveal">
@@ -1552,25 +1552,24 @@
       <div class="todo-col reveal">
         <div class="todo-col-title">Pendientes</div>
         <ul class="todo-list" id="todo-tareas">
-          <li data-todo="dominio">Comprar el dominio (spiga.com.ar)</li>
-          <li data-todo="pago">Definir el medio de pago / pasarela</li>
-          <li data-todo="legal">Habilitaciones legales y bromatología</li>
-          <li data-todo="mail">Configurar el mail de bienvenida</li>
-          <li data-todo="wpp">Configurar el bot de WhatsApp</li>
+          <li data-todo="dominio">Comprar dominio — spiga.com.ar está tomado (opciones: spigastore.com.ar, spiga.ar, spigamarket.com.ar)</li>
+          <li data-todo="pago">Pagos: transferencia/efectivo con descuento, tarjeta y MercadoPago más caro, link automático (ML o CBU) al elegir</li>
+          <li data-todo="descuento">Códigos de descuento por influencer (ej. Aldi10) + análisis de rentabilidad</li>
+          <li data-todo="precios">Linkear precios de verdulería con COTO / JUMBO</li>
+          <li data-todo="mail">Mail de bienvenida con cupón de primera compra</li>
+          <li data-todo="wpp">Bot de WhatsApp + DM automático de Instagram</li>
+          <li data-todo="popup">Pop-up "Suscribite" con ofertas y descuentos</li>
+          <li data-todo="responsive">Web apta para celular y compu</li>
           <li data-todo="fotos">Fotos reales de cajones y productos</li>
           <li data-todo="ig">Abrir y armar el Instagram</li>
-          <li data-todo="responsive">Web apta para celular y compu</li>
-          <li data-todo="popup">Pop-up "Suscribite" con ofertas y descuentos</li>
+          <li data-todo="srl">Evaluar abrir SRL o SAS (bromatología por ahora no)</li>
         </ul>
       </div>
       <div class="todo-col reveal">
         <div class="todo-col-title">Preguntas abiertas</div>
         <ul class="todo-list" id="todo-preguntas">
-          <li data-todo="q-pago">Pago: descuento por transferencia/efectivo · tarjeta y MercadoPago más caro</li>
-          <li data-todo="q-paylink">Al elegir el medio de pago, ¿mandamos el link (ML o CBU) automático?</li>
-          <li data-todo="q-descuento">¿Códigos de descuento por influencer (ej. Aldi10) con análisis de rentabilidad?</li>
-          <li data-todo="q-precios">¿Linkeamos los precios de verdulería con COTO / JUMBO?</li>
-          <li data-todo="q-coliflor">¿Cuántas coliflores trae el cajón del mayorista?</li>
+          <li data-todo="q-login">¿La suscripción es lo mismo que iniciar sesión? Definir la cuenta del cliente</li>
+          <li data-todo="q-coliflor">¿Cuántas coliflores trae el bulto del mayorista?</li>
         </ul>
       </div>
     </div>
@@ -1701,9 +1700,13 @@
     </div>
     <div class="editor-body">
       <p class="editor-hint">Sumá los productos que quieras con + y −. El precio se arma solo a medida que elegís.</p>
+      <div class="editor-tabs" id="bld-mode" role="group" aria-label="Tipo de recargo">
+        <button type="button" class="editor-tab active" data-bmode="medida">Cajón a medida · +15%</button>
+        <button type="button" class="editor-tab" data-bmode="suelto">Sumar sueltos · +10%</button>
+      </div>
       <div class="bld-list" id="bld-list"></div>
       <div class="bld-totals">
-        <div class="bld-row bld-total"><span>Tu cajón a medida</span><span id="bld-total">$ 0</span></div>
+        <div class="bld-row bld-total"><span id="bld-total-label">Tu cajón a medida</span><span id="bld-total">$ 0</span></div>
       </div>
     </div>
   </div>
@@ -2225,9 +2228,11 @@
 
   /* ----- Builder cliente: armá tu propio cajón (+15%) ----- */
   const builderOverlay = $('builderOverlay');
-  const RECARGO_CUSTOM = 0.15; // recargo por armar a medida, horneado en cada precio (no se muestra)
+  const RECARGO_CUSTOM = 0.15; // armar el cajón entero a medida
+  const RECARGO_SUELTO = 0.10; // sumar productos sueltos a un cajón estándar
+  let builderRecargo = RECARGO_CUSTOM; // lo cambia el toggle del builder
   const builderQty = {};
-  const precioCajon = p => Math.round(costoUnit(p) * markup * (1 + RECARGO_CUSTOM) / 50) * 50;
+  const precioCajon = p => Math.round(costoUnit(p) * markup * (1 + builderRecargo) / 50) * 50;
   function renderBuilder() {
     const wrap = $('bld-list'); if (!wrap) return;
     wrap.innerHTML = '';
@@ -2271,6 +2276,16 @@
   if (builderOverlay) {
     const obld = $('openBuilder'); if (obld) obld.addEventListener('click', openBuilder);
     const bc = $('builderClose'); if (bc) bc.addEventListener('click', closeBuilder);
+    const bldMode = $('bld-mode');
+    if (bldMode) {
+      bldMode.querySelectorAll('[data-bmode]').forEach(b => b.addEventListener('click', e => {
+        const suelto = e.currentTarget.dataset.bmode === 'suelto';
+        builderRecargo = suelto ? RECARGO_SUELTO : RECARGO_CUSTOM;
+        bldMode.querySelectorAll('.editor-tab').forEach(x => x.classList.toggle('active', x === e.currentTarget));
+        const lbl = $('bld-total-label'); if (lbl) lbl.textContent = suelto ? 'Tus sueltos (+10%)' : 'Tu cajón a medida';
+        renderBuilder();
+      }));
+    }
     builderOverlay.addEventListener('click', e => { if (e.target === builderOverlay) closeBuilder(); });
     document.addEventListener('keydown', e => { if (e.key === 'Escape' && builderOverlay.classList.contains('open')) closeBuilder(); });
   }
