@@ -92,7 +92,7 @@ Todo lo que hoy en el prototipo es manual o "a pedido" tiene que quedar automati
 
 ## 8. No funcionales
 - **Responsive** (celular y compu) — prioridad celular.
-- **Dominio**: **`nativamarket.com.ar`**. Falta registrarlo en nic.ar.
+- **Dominio**: **`nativamarket.com.ar`** (registrado). Falta apuntar el DNS a GitHub Pages.
 - Hosting/infra a definir con el equipo de dev.
 
 ## 9. Fases sugeridas
