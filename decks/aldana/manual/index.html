@@ -1074,6 +1074,61 @@
     .team-portrait { width: 70px; height: 70px; font-size: 2rem; }
   }
 
+  /* ============ MOBILE (phones) ============ */
+  @media (max-width: 600px) {
+    /* Fixed-height slides clip tall content on phones — switch to natural
+       document flow so the page scrolls and nothing gets cut off. */
+    html { scroll-snap-type: none; }
+    .slide {
+      height: auto;
+      min-height: auto;
+      overflow: visible;
+      scroll-snap-align: none;
+    }
+    .slide-content {
+      max-height: none;
+      overflow: visible;
+      justify-content: flex-start;
+      padding: clamp(1.5rem, 7vw, 2.25rem) clamp(1.1rem, 5vw, 1.5rem);
+      gap: 1rem;
+    }
+    /* Room so the floating button never covers the last lines of a slide */
+    .slide:last-of-type .slide-content { padding-bottom: 5.5rem; }
+
+    .slide-num { position: static; align-self: flex-end; margin-top: 0.75rem; }
+
+    /* Hide right-edge nav dots: irrelevant once the page scrolls normally */
+    .nav-dots { display: none; }
+
+    /* Week timeline: 4 cols is cramped at 390px — go 2 cols */
+    .week-grid { grid-template-columns: repeat(2, 1fr); gap: 0.7rem; }
+    .week-legend { justify-content: flex-start; }
+
+    /* Tools: single column reads better than squeezed pairs */
+    .tools-grid { grid-template-columns: 1fr; }
+
+    /* RACI matrix: let it scroll horizontally instead of squeezing 5 cols */
+    .matrix { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .matrix thead, .matrix tbody, .matrix tr { display: table; width: 100%; min-width: 460px; table-layout: fixed; }
+    .matrix th:first-child, .matrix td:first-child { width: 40%; }
+    .matrix td.dot { width: 15%; }
+
+    /* Pricing rows: keep label + amount on one readable line */
+    .pricing-line { font-size: 0.95rem; gap: 8px; }
+
+    /* Editor modal: full-bleed on phones, fields comfortable to tap */
+    .editor-overlay { padding: 0; }
+    .editor-modal { border-radius: 0; min-height: 100%; }
+    .editor-calc-grid { grid-template-columns: 1fr; }
+    .editor-kpis, .editor-kpi-row { grid-template-columns: repeat(2, 1fr); }
+    .ed-meta-nombre, .ed-meta-desc,
+    .editor-table th, .editor-table td,
+    .ed-qty, .ed-price, .ed-pb, .ed-rinde,
+    .ed-np-nombre, .ed-np-costo,
+    .editor-add select, .ed-np-unidad { font-size: 16px; }
+    .ed-meta-nombre { font-size: clamp(1.1rem, 5vw, 1.4rem); }
+  }
+
   ::selection { background: var(--verde-profundo); color: var(--crema); }
 
   /* ============ INTERACTIVE EDITOR ============ */

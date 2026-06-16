@@ -642,6 +642,46 @@
     .tone-col + .tone-col { border-left: none; border-top: 1px solid var(--verde-soft); }
   }
 
+  /* ---- PHONE: collapse multi-column layouts to 1 column ---- */
+  @media (max-width: 600px) {
+    section.chapter { padding: 64px 20px; }
+    .hero { padding: 28px 20px; }
+
+    /* allow single-column tracks to shrink below content min-width (prevents blowout) */
+    .body-grid { grid-template-columns: minmax(0, 1fr); }
+    .logo-grid, .palette-base, .donts { grid-template-columns: minmax(0, 1fr) !important; }
+    .apps-grid, .seasons { grid-template-columns: minmax(0, 1fr) !important; }
+
+    /* wordmark/logo samples must fit phone width */
+    .wordmark-large { font-size: clamp(48px, 16vw, 72px); }
+    .logo-card { padding: 48px 20px; min-height: 240px; }
+
+    /* clearspace: stack the two columns */
+    .logo-clearspace { grid-template-columns: 1fr; gap: 24px; padding: 28px; }
+    .clearspace-vis { padding: 48px; }
+
+    /* lockup row: allow wrap so wordmark + mark don't overflow */
+    .lockup-row { flex-wrap: wrap; justify-content: center; gap: 12px; }
+    .lockup-row .wordmark-large { font-size: 40px; }
+
+    /* type samples: shrink oversized display sizes */
+    .type-sample-display { font-size: clamp(44px, 16vw, 88px); }
+    .type-spec { gap: 20px; padding: 36px 0; }
+    .type-meta .name { font-size: 24px; }
+
+    /* tone columns padding */
+    .tone-col { padding: 24px 20px; }
+
+    /* don'ts captions can be long — give room */
+    .dont { aspect-ratio: 4 / 3; }
+
+    /* principles rows: shrink the number gutter */
+    .body-grid ol li[style] {
+      grid-template-columns: 40px 1fr !important;
+      gap: 16px !important;
+    }
+  }
+
   /* selection */
   ::selection { background: var(--verde-bosque); color: var(--crema); }
 </style>

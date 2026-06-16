@@ -627,6 +627,35 @@ footer {
   section.block { padding: 24px 0; page-break-inside: avoid; }
 }
 
+/* ---- Mobile refinements (small screens only; desktop untouched) ---- */
+@media (max-width: 768px) {
+  :root { --pad-x: 18px; }
+  .hero { padding: 40px 0 16px; }
+  section.block { padding: 40px 0; }
+  /* tables scroll inside their wrap; cue the swipe + keep cells compact */
+  .table-wrap {
+    -webkit-overflow-scrolling: touch;
+    border: 1px solid var(--verde-soft);
+    border-radius: 6px;
+  }
+  .table-wrap table.data { border: none; min-width: 560px; }
+  table.data th { padding: 10px 10px; }
+  table.data td { padding: 9px 10px; }
+  .cajon-table th, .cajon-table td { padding: 7px 8px; }
+  .calc { padding: 20px; }
+  .cajon-panel { padding: 16px; }
+  .card { padding: 18px; }
+  .top-inner { gap: 8px; flex-wrap: wrap; }
+  .top-inner .conf { margin-left: auto; }
+}
+
+@media (max-width: 420px) {
+  .cajon-output { grid-template-columns: 1fr; }
+  .kpi-row { gap: 8px; }
+  .top-inner .word { font-size: 20px; }
+  .top-inner .conf { font-size: 10px; padding: 3px 8px; }
+}
+
 /* Cajón builder */
 .cajon-tabs {
   display: flex;

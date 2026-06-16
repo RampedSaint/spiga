@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Nativa · AI test (Flux) — Huerta</title>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 <style>
@@ -115,6 +116,20 @@
     margin-bottom: 6px;
   }
   .footer { margin-top: 64px; text-align: center; font-family: "Fraunces", serif; font-style: italic; color: var(--ambar); font-size: 18px; }
+  img { max-width: 100%; }
+
+  @media (max-width: 768px) {
+    body { padding: 40px 20px; }
+    h1 { font-size: 36px; }
+    .grid { gap: 32px; }
+  }
+
+  @media (max-width: 560px) {
+    body { padding: 32px 16px; }
+    h1 { font-size: 30px; }
+    .pair { grid-template-columns: 1fr; }
+    .demo-text .hh { font-size: 22px; }
+  }
 </style>
 </head>
 <body>

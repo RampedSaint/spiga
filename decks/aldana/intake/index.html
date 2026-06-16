@@ -298,8 +298,27 @@ textarea {
   color: var(--crema);
 }
 @media (max-width: 640px) {
-  .list-row { grid-template-columns: 1fr 1fr; }
-  .list-row .remove { grid-column: span 2; min-height: 36px; }
+  /* Concepto full-width on its own row; monto + remove share the row below.
+     Gives the concept input room instead of truncating it. */
+  .list-row { grid-template-columns: 1fr auto; }
+  .list-row .concepto { grid-column: 1 / -1; }
+  .list-row .remove { min-height: 44px; padding: 0 18px; }
+}
+
+/* ============ MOBILE (phones) ============ */
+@media (max-width: 600px) {
+  /* >=16px on tappable fields stops iOS Safari from auto-zooming on focus. */
+  input[type="text"],
+  input[type="number"],
+  input[type="date"],
+  select,
+  textarea { font-size: 16px; }
+
+  /* Extra bottom room so the fixed export bar never covers the last fields. */
+  main { padding-bottom: 160px; }
+
+  /* Header on small phones: let the context line wrap below the wordmark. */
+  .top-inner { flex-wrap: wrap; gap: 6px 12px; }
 }
 
 .add-row {
@@ -514,6 +533,14 @@ textarea {
 .toggle-pills button.active {
   background: var(--verde-profundo);
   color: var(--crema);
+}
+
+/* Export bar on phones — placed after the base .export-* rules so it wins the
+   cascade: status on its own full-width line, the two buttons side by side. */
+@media (max-width: 600px) {
+  .export-inner { gap: 10px 12px; }
+  .export-status { flex: 0 0 100%; min-width: 0; text-align: center; }
+  .export-bar .btn { flex: 1; padding: 12px 10px; white-space: nowrap; }
 }
 </style>
 </head>

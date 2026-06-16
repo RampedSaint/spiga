@@ -1173,6 +1173,49 @@
     .flow-step { min-height: clamp(120px, 20vh, 160px); padding: clamp(0.7rem, 1.5vw, 1rem); }
   }
 
+  /* ============ MOBILE: let tall slides scroll instead of clipping ============ */
+  @media (max-width: 768px) {
+    /* Stop mandatory snap from trapping content taller than the viewport */
+    html { scroll-snap-type: y proximity; }
+    .slide {
+      height: auto;
+      min-height: 100vh;
+      min-height: 100dvh;
+      overflow: visible;
+    }
+    .slide-content {
+      max-height: none;
+      overflow: visible;
+      justify-content: flex-start;
+      padding-top: clamp(3.5rem, 9vh, 5rem);   /* clear the fixed topbar */
+      padding-bottom: clamp(4.5rem, 12vh, 6rem); /* clear the FAB + seal */
+    }
+    .flow-slide .slide-content { justify-content: flex-start; }
+
+    /* Move nav dots out of the way / keep them off-content */
+    .nav-dots { right: 6px; gap: 7px; }
+
+    /* Topbar: keep it tappable and scrollable, never wider than viewport */
+    .deck-topbar { max-width: calc(100vw - 16px); top: 8px; }
+
+    /* Week timeline: 7 cols is too tight, drop to a readable grid */
+    .week-grid { grid-template-columns: repeat(2, 1fr); }
+
+    /* Tools 2 cols already at 900px; matrix readable */
+  }
+
+  @media (max-width: 480px) {
+    .deck-topbar { gap: 2px; padding: 5px 7px; }
+    .deck-topbar a { padding: 4px 8px; font-size: 0.76rem; }
+    .week-grid { grid-template-columns: 1fr 1fr; }
+    .tools-grid { grid-template-columns: 1fr; }
+    /* FAB: keep compact so it doesn't cover content */
+    .edit-fab { left: 0.7rem; bottom: 0.7rem; padding: 0.6em 1em; font-size: 0.78rem; }
+    /* Special builder CTA / cards keep full width naturally (grid already 1col) */
+    .bld-list { grid-template-columns: 1fr; }
+    .bld-totals { max-width: none; margin-left: 0; }
+  }
+
   ::selection { background: var(--verde-profundo); color: var(--crema); }
 
   /* ============ INTERACTIVE EDITOR ============ */
@@ -1300,6 +1343,39 @@
   .editor-saved { color:var(--verde); font-weight:600; }
   @media (max-width:780px){ .editor-calc-grid { grid-template-columns:1fr; } }
   @media (max-width:720px){ .editor-kpis, .editor-kpi-row { grid-template-columns: repeat(2,1fr); } }
+
+  /* ============ MOBILE: editor + builder modals fit a phone ============ */
+  @media (max-width: 480px) {
+    .editor-overlay { padding: 8px; }
+    .editor-overlay.open { align-items: stretch; }
+    .editor-modal {
+      width: 100%;
+      max-width: 100%;
+      max-height: calc(100dvh - 16px);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;            /* modal frame; body scrolls inside */
+    }
+    .editor-head { padding: 0.9rem 1rem; }
+    .editor-body {
+      padding: 1rem;
+      overflow-y: auto;            /* scroll the content, keep header + close reachable */
+      -webkit-overflow-scrolling: touch;
+    }
+    /* meta row: name, delete and description stack cleanly */
+    .editor-meta { gap: .5rem; }
+    .ed-meta-nombre { flex: 1 1 100%; min-width: 0; }
+    /* add-product row stays wrapped and inputs never overflow */
+    .ed-np-nombre { width: 100%; flex: 1 1 100%; }
+    .ed-np-costo { width: 100%; flex: 1 1 100%; }
+    .editor-add select { width: 100%; flex: 1 1 100%; }
+    /* KPI grids: one column is most legible on a phone */
+    .editor-kpis, .editor-kpi-row { grid-template-columns: 1fr 1fr; }
+    /* slider value stays on its line */
+    .slider-row { flex-wrap: wrap; }
+    .slider-row input[type=range] { flex: 1 1 100%; }
+    .slider-row .sv { min-width: 0; text-align: left; }
+  }
 </style>
 </head>
 <body>
