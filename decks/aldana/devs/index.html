@@ -4,21 +4,21 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="robots" content="noindex" />
-<title>Spiga · Brief de desarrollo</title>
+<title>Nativa · Brief de desarrollo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Hanken+Grotesk:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 <style>
   :root {
-    --oliva: #54613F;
-    --oliva-2: #3F4A30;
-    --oliva-texto: #6B7558;
-    --crema: #F2EBDD;
-    --crema-2: #E6DCC4;
+    --verde: #1b7a43;
+    --verde-2: #14532d;
+    --verde-texto: #6B7558;
+    --crema: #f8f7f2;
+    --crema-2: #ecebe0;
     --papel: #FBF8EF;
     --panel: #EFE8D7;
-    --madera: #A07545;
-    --acento: #C9573A;
+    --ambar: #c8821e;
+    --acento: #f5a524;
     --tinta: #29281F;
     --linea: #DED4BE;
     --font-display: 'Cormorant Garamond', Georgia, serif;
@@ -46,92 +46,92 @@
   }
   .brand { display: flex; align-items: center; gap: 12px; margin-bottom: 4px; }
   .brand svg { width: 40px; height: 40px; flex: none; }
-  .brand-word { font-family: var(--font-display); font-size: 30px; font-weight: 600; color: var(--oliva); line-height: 1; }
-  .brand-sub { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .22em; text-transform: uppercase; color: var(--madera); margin: 16px 0 26px; }
+  .brand-word { font-family: var(--font-display); font-size: 30px; font-weight: 600; color: var(--verde); line-height: 1; }
+  .brand-sub { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .22em; text-transform: uppercase; color: var(--ambar); margin: 16px 0 26px; }
 
   .nav { display: flex; flex-direction: column; gap: 1px; }
   .nav a {
     display: flex; gap: 12px; align-items: baseline;
-    text-decoration: none; color: var(--oliva-texto);
+    text-decoration: none; color: var(--verde-texto);
     font-size: 14px; font-weight: 500; padding: 7px 12px; border-radius: 7px;
     border-left: 2px solid transparent; transition: background .14s, color .14s;
   }
-  .nav a .num { font-family: var(--font-mono); font-size: 11px; color: var(--madera); opacity: .7; min-width: 18px; }
-  .nav a:hover { background: rgba(84,97,63,0.07); color: var(--oliva); }
-  .nav a.active { background: var(--oliva); color: var(--crema); }
+  .nav a .num { font-family: var(--font-mono); font-size: 11px; color: var(--ambar); opacity: .7; min-width: 18px; }
+  .nav a:hover { background: rgba(27,122,67,0.07); color: var(--verde); }
+  .nav a.active { background: var(--verde); color: var(--crema); }
   .nav a.active .num { color: var(--crema); opacity: .85; }
 
   .side-foot { margin-top: auto; padding-top: 22px; border-top: 1px solid var(--linea); display: flex; flex-direction: column; gap: 8px; }
-  .side-foot a { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: .04em; color: var(--oliva-texto); text-decoration: none; display: inline-flex; gap: 7px; align-items: center; }
+  .side-foot a { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: .04em; color: var(--verde-texto); text-decoration: none; display: inline-flex; gap: 7px; align-items: center; }
   .side-foot a:hover { color: var(--acento); }
-  .side-foot a::before { content: '→'; color: var(--madera); }
+  .side-foot a::before { content: '→'; color: var(--ambar); }
 
   /* ---------- MAIN ---------- */
   .main { flex: 1; min-width: 0; }
   .content { max-width: 760px; padding: clamp(40px, 6vw, 88px) clamp(24px, 5vw, 72px) 120px; }
 
   .hero { margin-bottom: 60px; }
-  .hero .kicker { font-family: var(--font-mono); font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--madera); }
+  .hero .kicker { font-family: var(--font-mono); font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--ambar); }
   .hero h1 {
     font-family: var(--font-display); font-weight: 600;
     font-size: clamp(46px, 7vw, 72px); line-height: 1.0; letter-spacing: -0.01em;
-    margin: 16px 0 18px; color: var(--oliva-2);
+    margin: 16px 0 18px; color: var(--verde-2);
   }
   .hero h1 em { font-style: italic; color: var(--acento); }
-  .hero .lede { font-size: 20px; line-height: 1.55; color: var(--oliva-texto); max-width: 56ch; font-weight: 400; }
-  .hero .doc-meta { margin-top: 22px; font-family: var(--font-mono); font-size: 12.5px; color: var(--oliva-texto); }
-  .hero .doc-meta a { color: var(--madera); text-decoration: none; border-bottom: 1px solid var(--crema-2); }
+  .hero .lede { font-size: 20px; line-height: 1.55; color: var(--verde-texto); max-width: 56ch; font-weight: 400; }
+  .hero .doc-meta { margin-top: 22px; font-family: var(--font-mono); font-size: 12.5px; color: var(--verde-texto); }
+  .hero .doc-meta a { color: var(--ambar); text-decoration: none; border-bottom: 1px solid var(--crema-2); }
   .hero .doc-meta a:hover { color: var(--acento); border-color: var(--acento); }
 
   section.doc { padding-top: 14px; margin-top: 40px; scroll-margin-top: 24px; }
   section.doc:first-of-type { margin-top: 0; }
   .sec-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 4px; }
-  .sec-head .sn { font-family: var(--font-mono); font-size: 13px; font-weight: 500; color: var(--madera); }
+  .sec-head .sn { font-family: var(--font-mono); font-size: 13px; font-weight: 500; color: var(--ambar); }
   h2 {
     font-family: var(--font-display); font-weight: 600; font-size: clamp(28px, 3.4vw, 36px);
-    line-height: 1.1; color: var(--oliva-2); margin: 0;
+    line-height: 1.1; color: var(--verde-2); margin: 0;
   }
   .rule { height: 1px; background: var(--linea); margin: 14px 0 20px; }
 
   h3 {
     font-family: var(--font-mono); font-weight: 600; font-size: 12px; letter-spacing: .12em;
-    text-transform: uppercase; color: var(--madera); margin: 28px 0 8px;
+    text-transform: uppercase; color: var(--ambar); margin: 28px 0 8px;
   }
   p { margin: 12px 0; max-width: 64ch; }
   ul { margin: 12px 0; padding: 0; list-style: none; max-width: 66ch; }
   li { position: relative; padding-left: 22px; margin: 9px 0; }
-  li::before { content: ''; position: absolute; left: 3px; top: 11px; width: 6px; height: 6px; border-radius: 50%; background: var(--oliva); opacity: .55; }
-  strong { color: var(--oliva-2); font-weight: 600; }
-  code { font-family: var(--font-mono); font-size: 0.86em; background: var(--crema); color: var(--oliva-2); padding: 2px 6px; border-radius: 5px; border: 1px solid var(--crema-2); }
+  li::before { content: ''; position: absolute; left: 3px; top: 11px; width: 6px; height: 6px; border-radius: 50%; background: var(--verde); opacity: .55; }
+  strong { color: var(--verde-2); font-weight: 600; }
+  code { font-family: var(--font-mono); font-size: 0.86em; background: var(--crema); color: var(--verde-2); padding: 2px 6px; border-radius: 5px; border: 1px solid var(--crema-2); }
   .accent { color: var(--acento); font-weight: 600; }
 
   .callout {
     display: flex; gap: 10px; flex-wrap: wrap; margin: 18px 0 6px;
   }
   .chip {
-    font-family: var(--font-mono); font-size: 12px; color: var(--oliva-2);
+    font-family: var(--font-mono); font-size: 12px; color: var(--verde-2);
     background: var(--crema); border: 1px solid var(--crema-2); border-radius: 999px; padding: 5px 13px;
   }
-  .chip.hot { background: var(--oliva); color: var(--crema); border-color: var(--oliva); }
+  .chip.hot { background: var(--verde); color: var(--crema); border-color: var(--verde); }
 
   .cards { display: grid; gap: 14px; grid-template-columns: 1fr; margin-top: 16px; }
   @media (min-width: 680px) { .cards { grid-template-columns: repeat(3, 1fr); } }
   .card { border: 1px solid var(--linea); border-radius: 12px; padding: 20px; background: #fff; position: relative; overflow: hidden; }
-  .card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--madera); }
-  .card .ph { font-family: var(--font-mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--madera); }
-  .card h4 { font-family: var(--font-display); font-size: 22px; font-weight: 600; margin: 4px 0 8px; color: var(--oliva-2); }
-  .card p { font-size: 14.5px; color: var(--oliva-texto); margin: 0; max-width: none; }
+  .card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--ambar); }
+  .card .ph { font-family: var(--font-mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--ambar); }
+  .card h4 { font-family: var(--font-display); font-size: 22px; font-weight: 600; margin: 4px 0 8px; color: var(--verde-2); }
+  .card p { font-size: 14.5px; color: var(--verde-texto); margin: 0; max-width: none; }
 
   .links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
   .links a {
     font-family: var(--font-mono); font-size: 13px; text-decoration: none; color: var(--crema);
-    background: var(--oliva); padding: 9px 16px; border-radius: 8px; transition: background .15s, transform .12s;
+    background: var(--verde); padding: 9px 16px; border-radius: 8px; transition: background .15s, transform .12s;
   }
-  .links a.ghost { background: transparent; color: var(--oliva-2); border: 1px solid var(--madera); }
-  .links a:hover { background: var(--oliva-2); transform: translateY(-1px); }
-  .links a.ghost:hover { background: var(--oliva); color: var(--crema); border-color: var(--oliva); }
+  .links a.ghost { background: transparent; color: var(--verde-2); border: 1px solid var(--ambar); }
+  .links a:hover { background: var(--verde-2); transform: translateY(-1px); }
+  .links a.ghost:hover { background: var(--verde); color: var(--crema); border-color: var(--verde); }
 
-  footer { margin-top: 64px; padding-top: 22px; border-top: 1px solid var(--linea); font-family: var(--font-mono); font-size: 11.5px; color: var(--oliva-texto); letter-spacing: .03em; }
+  footer { margin-top: 64px; padding-top: 22px; border-top: 1px solid var(--linea); font-family: var(--font-mono); font-size: 11.5px; color: var(--verde-texto); letter-spacing: .03em; }
 
   /* fade-in on load */
   .content > * { opacity: 0; transform: translateY(8px); animation: rise .6s cubic-bezier(.2,.7,.3,1) forwards; }
@@ -164,16 +164,16 @@
   <aside class="sidebar">
     <div class="brand">
       <svg viewBox="0 0 200 200" aria-hidden="true">
-        <circle cx="100" cy="100" r="95" fill="none" stroke="#54613F" stroke-width="5" />
-        <g fill="#54613F"><g transform="translate(100,48) scale(0.5)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g><g transform="translate(100,142) scale(0.5)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g></g>
-        <text x="100" y="128" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="86" font-style="italic" font-weight="500" fill="#54613F">S</text>
+        <circle cx="100" cy="100" r="95" fill="none" stroke="#1b7a43" stroke-width="5" />
+        <g fill="#1b7a43"><g transform="translate(100,48) scale(0.5)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g><g transform="translate(100,142) scale(0.5)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g></g>
+        <text x="100" y="128" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="86" font-style="italic" font-weight="500" fill="#1b7a43">N</text>
       </svg>
-      <span class="brand-word">Spiga</span>
+      <span class="brand-word">Nativa</span>
     </div>
     <div class="brand-sub">Brief de desarrollo</div>
 
     <nav class="nav" id="nav">
-      <a href="#que"><span class="num">01</span> Qué es Spiga</a>
+      <a href="#que"><span class="num">01</span> Qué es Nativa</a>
       <a href="#alcance"><span class="num">02</span> Alcance</a>
       <a href="#cliente"><span class="num">03</span> Flujo cliente</a>
       <a href="#operacion"><span class="num">04</span> Operación</a>
@@ -187,8 +187,8 @@
     </nav>
 
     <div class="side-foot">
-      <a href="https://github.com/RampedSaint/spiga/blob/main/BRIEF-DEVS.md" target="_blank" rel="noopener">Versión Markdown</a>
-      <a href="https://github.com/RampedSaint/spiga" target="_blank" rel="noopener">Repo GitHub</a>
+      <a href="https://github.com/RampedSaint/nativa/blob/main/BRIEF-DEVS.md" target="_blank" rel="noopener">Versión Markdown</a>
+      <a href="https://github.com/RampedSaint/nativa" target="_blank" rel="noopener">Repo GitHub</a>
     </div>
   </aside>
 
@@ -197,14 +197,14 @@
   <div class="content">
 
     <header class="hero">
-      <div class="kicker">Spiga · Dal 2026 · uso interno</div>
+      <div class="kicker">Nativa · Desde 2026 · uso interno</div>
       <h1>Brief de <em>desarrollo</em></h1>
       <p class="lede">Del prototipo al sitio real: backend, pagos, suscripciones y automatizaciones. Documento de arranque para los programadores.</p>
-      <p class="doc-meta">Referencias: <a href="../../../index.html">web prototipo</a> · Costos Spiga.xlsx (hoja Precios)</p>
+      <p class="doc-meta">Referencias: <a href="../../../index.html">web prototipo</a> · Costos Nativa.xlsx (hoja Precios)</p>
     </header>
 
     <section class="doc" id="que">
-      <div class="sec-head"><span class="sn">01</span><h2>Qué es Spiga</h2></div>
+      <div class="sec-head"><span class="sn">01</span><h2>Qué es Nativa</h2></div>
       <div class="rule"></div>
       <p>Delivery premium de frutas y verduras por <strong>suscripción mensual</strong>, zona norte de Buenos Aires (Nordelta, Villanueva, Tigre, Maschwitz, Escobar, Pilar). El cliente elige un cajón, se suscribe y recibe una entrega semanal curada que rota con la estación. Lanzamiento objetivo: <strong>julio 2026</strong>.</p>
     </section>
@@ -229,10 +229,10 @@
       </ul>
       <h3>Elegir el cajón</h3>
       <ul>
-        <li>Planes: <strong>Piccolo</strong> (1–2), <strong>Famiglia</strong> (3–4, <span class="accent">el más elegido</span>), <strong>Abbondanza</strong> (5+), más versiones <strong>Frutta</strong> (solo fruta, oficinas).</li>
+        <li>Planes: <strong>Mini</strong> (1–2), <strong>Family</strong> (3–4, <span class="accent">el más elegido</span>), <strong>Harvest</strong> (5+), más versiones <strong>Fruit</strong> (solo fruta, oficinas).</li>
         <li>Mostrar contenido del cajón (base fija + estacional que rota).</li>
-        <li><strong>Extras / sueltos (+10%):</strong> a cualquier cajón se le suman productos sueltos (palta, huevos, frutas extra, berenjena…) con un 10% sobre el precio Spiga del producto.</li>
-        <li><strong>Cajón a medida (+15%):</strong> el cliente arma el cajón producto por producto; recargo del 15% por producto, mínimo equivalente a Piccolo.</li>
+        <li><strong>Extras / sueltos (+10%):</strong> a cualquier cajón se le suman productos sueltos (palta, huevos, frutas extra, berenjena…) con un 10% sobre el precio Nativa del producto.</li>
+        <li><strong>Cajón a medida (+15%):</strong> el cliente arma el cajón producto por producto; recargo del 15% por producto, mínimo equivalente a Mini.</li>
       </ul>
       <h3>Suscripción</h3>
       <ul>
@@ -300,9 +300,9 @@
       <ul>
         <li>Precio del cajón = costo unitario × markup, redondeado.</li>
         <li><strong>Recargo cajón a medida: +15%</strong> sobre el precio del cajón estándar.</li>
-        <li><strong>Recargo productos sueltos: +10%</strong> sobre el precio Spiga del producto.</li>
+        <li><strong>Recargo productos sueltos: +10%</strong> sobre el precio Nativa del producto.</li>
         <li><strong>Descuento</strong> por transferencia/efectivo; <strong>recargo</strong> por tarjeta/Mercado Pago.</li>
-        <li>Mínimo del cajón a medida: equivalente a Piccolo.</li>
+        <li>Mínimo del cajón a medida: equivalente a Mini.</li>
         <li>Cupones de descuento por código, con atribución a influencer.</li>
       </ul>
       <div class="callout">
@@ -331,7 +331,7 @@
       <div class="rule"></div>
       <ul>
         <li><strong>Responsive</strong> (celular y compu) — prioridad celular.</li>
-        <li><strong>Dominio:</strong> elegido <code>spigastore.com.ar</code> (<code>spiga.com.ar</code> y <code>spiga.ar</code> están tomados). Falta registrarlo en nic.ar.</li>
+        <li><strong>Dominio:</strong> <code>nativamarket.com.ar</code>. Falta registrarlo en nic.ar.</li>
         <li>Hosting/infra a definir con el equipo de dev.</li>
       </ul>
     </section>
@@ -373,11 +373,11 @@
       <div class="rule"></div>
       <div class="links">
         <a href="../../../index.html">Web (prototipo)</a>
-        <a href="https://github.com/RampedSaint/spiga" target="_blank" rel="noopener">Repo GitHub</a>
+        <a href="https://github.com/RampedSaint/nativa" target="_blank" rel="noopener">Repo GitHub</a>
       </div>
     </section>
 
-    <footer>Spiga · brief de desarrollo · la cosecha de la semana, desde julio 2026.</footer>
+    <footer>Nativa · brief de desarrollo · la cosecha de la semana, desde julio 2026.</footer>
 
   </div>
   </main>

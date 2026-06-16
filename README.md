@@ -1,4 +1,4 @@
-# Spiga
+# Nativa
 
 Delivery premium de frutas y verduras por suscripción mensual. Zona norte de Buenos Aires.
 
@@ -11,5 +11,5 @@ Delivery premium de frutas y verduras por suscripción mensual. Zona norte de Bu
 
 ## URLs (cuando GitHub Pages esté activo)
 
-- Sitio: https://rampedsaint.github.io/spiga/
-- Brandbook: https://rampedsaint.github.io/spiga/brandbook/
+- Sitio: https://rampedsaint.github.io/nativa/
+- Brandbook: https://rampedsaint.github.io/nativa/brandbook/

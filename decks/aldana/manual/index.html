@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Spiga · Cómo funciona tu Spiga — Manual para Aldana</title>
+<title>Nativa · Cómo funciona tu Nativa — Manual para Aldana</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -11,20 +11,20 @@
 <style>
   /* ============ TOKENS ============ */
   :root {
-    --oliva-profundo: #54613F;
-    --oliva-mas-oscuro: #3F4A30;
-    --oliva-texto: #6F7A5C;
-    --oliva: #8A9476;
-    --oliva-soft: #B8BFA8;
-    --crema: #F2EBDD;
-    --crema-soft: #E6DCC4;
-    --tinta: #1A1A18;
-    --madera: #A07545;
-    --madera-suave: #C9A581;
-    --madera-oscuro: #5C3D1F;
-    --acento: #C9573A;
-    --acento-2: #E8C766;
-    --alerta: #A04646;
+    --verde-profundo: #1b7a43;
+    --verde-mas-oscuro: #14532d;
+    --verde-texto: #2f6b43;
+    --verde: #3fb85f;
+    --verde-soft: #9fd9ae;
+    --crema: #f8f7f2;
+    --crema-soft: #ecebe0;
+    --tinta: #14201a;
+    --ambar: #c8821e;
+    --ambar-suave: #e3b877;
+    --ambar-oscuro: #4a3410;
+    --acento: #f5a524;
+    --acento-2: #f5a524;
+    --alerta: #2c7a6b;
 
     --font-display: "Cormorant Garamond", Georgia, serif;
     --font-ui: "Inter", system-ui, sans-serif;
@@ -91,16 +91,16 @@
     font-weight: 500;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--madera);
+    color: var(--ambar);
   }
-  .eyebrow .sep { color: var(--oliva-soft); margin: 0 8px; }
+  .eyebrow .sep { color: var(--verde-soft); margin: 0 8px; }
   .slide-num {
     position: absolute;
     bottom: clamp(1rem, 2vw, 2rem);
     right: clamp(1rem, 2vw, 2rem);
     font-family: var(--font-ui);
     font-size: var(--small-size);
-    color: var(--oliva-texto);
+    color: var(--verde-texto);
     letter-spacing: 0.18em;
     font-weight: 500;
     z-index: 5;
@@ -108,12 +108,12 @@
   h1, h2, h3 {
     font-family: var(--font-display);
     font-weight: 400;
-    color: var(--oliva-profundo);
+    color: var(--verde-profundo);
     letter-spacing: -0.015em;
   }
-  em { color: var(--madera); font-style: italic; font-weight: 400; }
+  em { color: var(--ambar); font-style: italic; font-weight: 400; }
   p { font-family: var(--font-display); font-size: clamp(1rem, 1.6vw, 1.25rem); line-height: 1.6; color: var(--tinta); }
-  .small { font-family: var(--font-ui); font-size: var(--small-size); color: var(--oliva-texto); }
+  .small { font-family: var(--font-ui); font-size: var(--small-size); color: var(--verde-texto); }
 
   /* Reveal animations */
   .reveal {
@@ -146,15 +146,15 @@
   .nav-dot {
     width: 7px; height: 7px;
     border-radius: 50%;
-    background: var(--oliva-soft);
+    background: var(--verde-soft);
     border: none;
     cursor: pointer;
     transition: all 250ms ease;
     padding: 0;
   }
-  .nav-dot:hover { background: var(--madera); transform: scale(1.3); }
+  .nav-dot:hover { background: var(--ambar); transform: scale(1.3); }
   .nav-dot.is-active {
-    background: var(--madera);
+    background: var(--ambar);
     transform: scale(1.5);
   }
 
@@ -163,7 +163,7 @@
     top: 0;
     left: 0;
     height: 2px;
-    background: var(--madera);
+    background: var(--ambar);
     width: 0%;
     transition: width 350ms ease;
     z-index: 100;
@@ -186,26 +186,26 @@
     font-size: var(--title-size);
     line-height: 0.98;
     font-weight: 400;
-    color: var(--oliva-profundo);
+    color: var(--verde-profundo);
   }
   .title-slide h1 em {
     font-style: italic;
     font-weight: 300;
-    color: var(--madera);
+    color: var(--ambar);
     display: block;
   }
   .title-slide .subtitle {
     font-family: var(--font-display);
     font-style: italic;
     font-size: clamp(1.1rem, 2vw, 1.6rem);
-    color: var(--oliva-texto);
+    color: var(--verde-texto);
     margin-top: clamp(0.5rem, 1.5vw, 1.5rem);
     max-width: 30ch;
   }
   .title-credits {
     margin-top: clamp(1.5rem, 3vw, 3rem);
     padding-top: clamp(1rem, 2vw, 1.5rem);
-    border-top: 1px solid var(--madera-suave);
+    border-top: 1px solid var(--ambar-suave);
     display: flex;
     gap: clamp(1.5rem, 3vw, 3rem);
     flex-wrap: wrap;
@@ -214,7 +214,7 @@
   .title-credits .credit-label {
     font-family: var(--font-ui);
     font-size: var(--small-size);
-    color: var(--madera);
+    color: var(--ambar);
     text-transform: uppercase;
     letter-spacing: 0.16em;
     font-weight: 500;
@@ -240,12 +240,12 @@
     line-height: 1.05;
     font-weight: 400;
   }
-  .head-block h2 em { font-style: italic; color: var(--madera); font-weight: 300; }
+  .head-block h2 em { font-style: italic; color: var(--ambar); font-weight: 300; }
   .head-block .lead {
     font-family: var(--font-display);
     font-style: italic;
     font-size: clamp(1rem, 1.5vw, 1.25rem);
-    color: var(--oliva-texto);
+    color: var(--verde-texto);
     margin-top: clamp(0.4rem, 0.8vw, 0.7rem);
     max-width: 56ch;
   }
@@ -266,14 +266,14 @@
     font-size: var(--eyebrow-size);
     text-transform: uppercase;
     letter-spacing: 0.18em;
-    color: var(--madera);
+    color: var(--ambar);
     font-weight: 500;
   }
   .col-card .col-title {
     font-family: var(--font-display);
     font-style: italic;
     font-size: clamp(1.3rem, 2.2vw, 1.8rem);
-    color: var(--oliva-profundo);
+    color: var(--verde-profundo);
     line-height: 1.1;
     margin-bottom: clamp(0.3rem, 0.8vw, 0.6rem);
   }
@@ -286,9 +286,9 @@
   .col-card .col-badge {
     font-family: var(--font-ui);
     font-size: clamp(0.7rem, 0.9vw, 0.8rem);
-    color: var(--madera);
+    color: var(--ambar);
     background: var(--crema-soft);
-    border: 1px solid var(--madera-suave);
+    border: 1px solid var(--ambar-suave);
     padding: 4px 10px;
     border-radius: 999px;
     align-self: flex-start;
@@ -315,7 +315,7 @@
   .brand-row-label {
     font-family: var(--font-ui);
     font-size: var(--eyebrow-size);
-    color: var(--madera);
+    color: var(--ambar);
     letter-spacing: 0.2em;
     text-transform: uppercase;
     font-weight: 500;
@@ -324,7 +324,7 @@
     font-family: var(--font-display);
     font-style: italic;
     font-size: clamp(1.2rem, 2vw, 1.7rem);
-    color: var(--oliva-profundo);
+    color: var(--verde-profundo);
     line-height: 1.2;
   }
   .palette-row {
@@ -341,11 +341,11 @@
   .brand-note {
     margin-top: clamp(1rem, 2vw, 1.5rem);
     padding-top: clamp(0.8rem, 1.5vw, 1.2rem);
-    border-top: 1px solid var(--madera-suave);
+    border-top: 1px solid var(--ambar-suave);
     font-family: var(--font-display);
     font-style: italic;
     font-size: clamp(0.9rem, 1.2vw, 1rem);
-    color: var(--oliva-texto);
+    color: var(--verde-texto);
   }
 
   /* ============ SLIDE: CAJONES TABLE ============ */
@@ -355,7 +355,7 @@
     gap: clamp(0.8rem, 1.8vw, 1.5rem);
   }
   .cajon-card {
-    border: 1px solid var(--madera-suave);
+    border: 1px solid var(--ambar-suave);
     border-radius: 6px;
     padding: clamp(1rem, 2vw, 1.75rem);
     background: var(--crema);
@@ -365,18 +365,18 @@
     position: relative;
   }
   .cajon-card.featured {
-    background: var(--oliva-profundo);
+    background: var(--verde-profundo);
     color: var(--crema);
-    border-color: var(--oliva-profundo);
+    border-color: var(--verde-profundo);
   }
-  .cajon-card.featured .cajon-eyebrow { color: var(--madera-suave); }
+  .cajon-card.featured .cajon-eyebrow { color: var(--ambar-suave); }
   .cajon-card.featured .cajon-name { color: var(--crema); }
-  .cajon-card.featured .cajon-personas { color: var(--oliva-soft); }
+  .cajon-card.featured .cajon-personas { color: var(--verde-soft); }
   .cajon-card.featured .cajon-items { color: var(--crema); }
   .cajon-card.featured .cajon-items strong { color: var(--acento-2); }
-  .cajon-card.featured .cajon-items li::before { color: var(--madera-suave); }
+  .cajon-card.featured .cajon-items li::before { color: var(--ambar-suave); }
   .cajon-card.featured .featured-badge {
-    background: var(--madera);
+    background: var(--ambar);
     color: var(--crema);
   }
   .featured-badge {
@@ -385,7 +385,7 @@
     right: clamp(1rem, 1.5vw, 1.25rem);
     font-family: var(--font-ui);
     font-size: clamp(0.65rem, 0.8vw, 0.75rem);
-    background: var(--madera);
+    background: var(--ambar);
     color: var(--crema);
     padding: 4px 12px;
     border-radius: 999px;
@@ -396,7 +396,7 @@
   .cajon-eyebrow {
     font-family: var(--font-ui);
     font-size: var(--eyebrow-size);
-    color: var(--madera);
+    color: var(--ambar);
     text-transform: uppercase;
     letter-spacing: 0.18em;
     font-weight: 500;
@@ -405,13 +405,13 @@
     font-family: var(--font-display);
     font-style: italic;
     font-size: clamp(1.4rem, 2.4vw, 2rem);
-    color: var(--oliva-profundo);
+    color: var(--verde-profundo);
     line-height: 1;
   }
   .cajon-personas {
     font-family: var(--font-ui);
     font-size: clamp(0.75rem, 1vw, 0.85rem);
-    color: var(--oliva-texto);
+    color: var(--verde-texto);
     letter-spacing: 0.04em;
   }
   .cajon-items {
@@ -431,20 +431,20 @@
     content: "·";
     position: absolute;
     left: 0;
-    color: var(--madera);
+    color: var(--ambar);
     font-size: 1.4em;
     line-height: 1;
   }
-  .cajon-items li strong { color: var(--madera); font-weight: 500; font-style: italic; }
+  .cajon-items li strong { color: var(--ambar); font-weight: 500; font-style: italic; }
   .cajones-note {
     margin-top: clamp(0.9rem, 1.8vw, 1.4rem);
     font-family: var(--font-ui);
     font-size: clamp(0.75rem, 1vw, 0.85rem);
-    color: var(--oliva-texto);
+    color: var(--verde-texto);
     letter-spacing: 0.03em;
     line-height: 1.5;
   }
-  .cajones-note em { color: var(--madera); font-style: italic; }
+  .cajones-note em { color: var(--ambar); font-style: italic; }
 
   /* ============ SLIDE: OFICINAS ============ */
   .ofic-grid {
@@ -458,14 +458,14 @@
     font-style: italic;
     font-size: clamp(1.5rem, 3vw, 2.4rem);
     line-height: 1.25;
-    color: var(--oliva-profundo);
+    color: var(--verde-profundo);
     font-weight: 300;
   }
-  .ofic-quote em { color: var(--madera); }
+  .ofic-quote em { color: var(--ambar); }
   .ofic-features {
     list-style: none;
     background: var(--crema-soft);
-    border: 1px solid var(--madera-suave);
+    border: 1px solid var(--ambar-suave);
     border-radius: 6px;
     padding: clamp(1rem, 2.5vw, 1.75rem) clamp(1rem, 2.5vw, 1.75rem) clamp(1rem, 2.5vw, 1.75rem) clamp(2rem, 3.5vw, 2.5rem);
   }
@@ -481,7 +481,7 @@
     content: "·";
     position: absolute;
     left: -18px;
-    color: var(--madera);
+    color: var(--ambar);
     font-size: 1.6em;
     line-height: 1;
   }
@@ -503,33 +503,33 @@
     font-family: var(--font-display);
     font-style: italic;
     font-size: clamp(1.05rem, 1.4vw, 1.3rem);
-    color: var(--oliva-profundo);
+    color: var(--verde-profundo);
     font-weight: 500;
   }
-  .day-col.is-active .day-name { color: var(--madera); }
+  .day-col.is-active .day-name { color: var(--ambar); }
   .day-marker {
     font-family: var(--font-ui);
     font-size: clamp(0.6rem, 0.7vw, 0.7rem);
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--madera);
+    color: var(--ambar);
     font-weight: 500;
   }
   .day-event {
     background: var(--crema);
-    border: 1px solid var(--madera-suave);
+    border: 1px solid var(--ambar-suave);
     border-radius: 4px;
     padding: clamp(0.4rem, 0.8vw, 0.7rem) clamp(0.3rem, 0.6vw, 0.5rem);
     display: flex;
     flex-direction: column;
     gap: 2px;
   }
-  .day-event.entrega { background: var(--oliva-profundo); border-color: var(--oliva-profundo); }
+  .day-event.entrega { background: var(--verde-profundo); border-color: var(--verde-profundo); }
   .day-event.entrega .event-time, .day-event.entrega .event-label { color: var(--crema); }
-  .day-event.entrega .event-detail { color: var(--oliva-soft); }
+  .day-event.entrega .event-detail { color: var(--verde-soft); }
   .day-event.cierre { background: var(--alerta); border-color: var(--alerta); }
   .day-event.cierre .event-time, .day-event.cierre .event-label { color: var(--crema); }
-  .day-event.cierre .event-detail { color: rgba(242,235,221,0.85); }
+  .day-event.cierre .event-detail { color: rgba(248,247,242,0.85); }
   .event-time {
     font-family: var(--font-ui);
     font-size: clamp(0.7rem, 0.9vw, 0.8rem);
@@ -541,14 +541,14 @@
     font-family: var(--font-display);
     font-style: italic;
     font-size: clamp(0.85rem, 1.1vw, 1rem);
-    color: var(--oliva-profundo);
+    color: var(--verde-profundo);
     line-height: 1.15;
     font-weight: 500;
   }
   .event-detail {
     font-family: var(--font-ui);
     font-size: clamp(0.65rem, 0.8vw, 0.72rem);
-    color: var(--oliva-texto);
+    color: var(--verde-texto);
     line-height: 1.25;
   }
   .week-legend {
@@ -564,14 +564,14 @@
     gap: 6px;
     font-family: var(--font-ui);
     font-size: clamp(0.7rem, 0.85vw, 0.8rem);
-    color: var(--oliva-texto);
+    color: var(--verde-texto);
     letter-spacing: 0.04em;
   }
   .legend-dot { width: 10px; height: 10px; border-radius: 2px; }
   .legend-dot.cierre { background: var(--alerta); }
-  .legend-dot.compra { background: var(--crema-soft); border: 1px solid var(--madera-suave); }
-  .legend-dot.armado { background: var(--crema-soft); border: 1px solid var(--madera-suave); }
-  .legend-dot.entrega { background: var(--oliva-profundo); }
+  .legend-dot.compra { background: var(--crema-soft); border: 1px solid var(--ambar-suave); }
+  .legend-dot.armado { background: var(--crema-soft); border: 1px solid var(--ambar-suave); }
+  .legend-dot.entrega { background: var(--verde-profundo); }
 
   /* ============ SLIDE: TEAM ============ */
   .team-grid {
@@ -589,26 +589,26 @@
     height: clamp(80px, 10vw, 120px);
     border-radius: 50%;
     background: var(--crema-soft);
-    border: 2px solid var(--madera-suave);
+    border: 2px solid var(--ambar-suave);
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: var(--font-display);
     font-style: italic;
     font-size: clamp(2rem, 4vw, 3.5rem);
-    color: var(--madera);
+    color: var(--ambar);
     margin-bottom: clamp(0.4rem, 0.8vw, 0.6rem);
   }
   .team-name {
     font-family: var(--font-display);
     font-style: italic;
     font-size: clamp(1.4rem, 2.2vw, 1.9rem);
-    color: var(--oliva-profundo);
+    color: var(--verde-profundo);
   }
   .team-role {
     font-family: var(--font-ui);
     font-size: var(--eyebrow-size);
-    color: var(--madera);
+    color: var(--ambar);
     letter-spacing: 0.18em;
     text-transform: uppercase;
     font-weight: 500;
@@ -629,7 +629,7 @@
     content: "·";
     position: absolute;
     left: 0;
-    color: var(--madera);
+    color: var(--ambar);
     font-size: 1.5em;
     line-height: 1;
   }
@@ -644,7 +644,7 @@
   }
   .flow-step {
     background: var(--crema-soft);
-    border: 1px solid var(--madera-suave);
+    border: 1px solid var(--ambar-suave);
     border-radius: 6px;
     padding: clamp(0.8rem, 1.5vw, 1.2rem);
     flex: 1;
@@ -655,29 +655,29 @@
     gap: 6px;
     text-align: center;
   }
-  .flow-step.is-trigger { background: var(--oliva-profundo); border-color: var(--oliva-profundo); }
+  .flow-step.is-trigger { background: var(--verde-profundo); border-color: var(--verde-profundo); }
   .flow-step.is-trigger .flow-title, .flow-step.is-trigger .flow-desc { color: var(--crema); }
-  .flow-step.is-final { background: var(--madera); border-color: var(--madera); }
+  .flow-step.is-final { background: var(--ambar); border-color: var(--ambar); }
   .flow-step.is-final .flow-title, .flow-step.is-final .flow-desc { color: var(--crema); }
   .flow-num {
     font-family: var(--font-ui);
     font-size: clamp(0.65rem, 0.8vw, 0.75rem);
-    color: var(--madera);
+    color: var(--ambar);
     letter-spacing: 0.18em;
     font-weight: 500;
   }
-  .flow-step.is-trigger .flow-num, .flow-step.is-final .flow-num { color: var(--madera-suave); }
+  .flow-step.is-trigger .flow-num, .flow-step.is-final .flow-num { color: var(--ambar-suave); }
   .flow-title {
     font-family: var(--font-display);
     font-style: italic;
     font-size: clamp(0.95rem, 1.3vw, 1.15rem);
-    color: var(--oliva-profundo);
+    color: var(--verde-profundo);
     line-height: 1.1;
   }
   .flow-desc {
     font-family: var(--font-ui);
     font-size: clamp(0.7rem, 0.85vw, 0.8rem);
-    color: var(--oliva-texto);
+    color: var(--verde-texto);
     line-height: 1.35;
   }
   .flow-arrow {
@@ -685,7 +685,7 @@
     align-items: center;
     font-family: var(--font-display);
     font-style: italic;
-    color: var(--madera);
+    color: var(--ambar);
     font-size: clamp(1rem, 1.5vw, 1.4rem);
   }
 
@@ -697,7 +697,7 @@
   }
   .tool-card {
     background: var(--crema-soft);
-    border: 1px solid var(--madera-suave);
+    border: 1px solid var(--ambar-suave);
     border-radius: 6px;
     padding: clamp(0.8rem, 1.5vw, 1.25rem);
     display: flex;
@@ -708,20 +708,20 @@
     font-family: var(--font-display);
     font-style: italic;
     font-size: clamp(1.8rem, 2.8vw, 2.4rem);
-    color: var(--madera);
+    color: var(--ambar);
     line-height: 1;
   }
   .tool-name {
     font-family: var(--font-display);
     font-style: italic;
     font-size: clamp(1.05rem, 1.5vw, 1.3rem);
-    color: var(--oliva-profundo);
+    color: var(--verde-profundo);
     line-height: 1.1;
   }
   .tool-desc {
     font-family: var(--font-ui);
     font-size: clamp(0.7rem, 0.85vw, 0.78rem);
-    color: var(--oliva-texto);
+    color: var(--verde-texto);
     line-height: 1.4;
   }
 
@@ -730,15 +730,15 @@
     display: grid;
     grid-template-columns: clamp(85px, 12vw, 130px) 1fr;
     gap: 0;
-    border-top: 1px solid var(--madera-suave);
+    border-top: 1px solid var(--ambar-suave);
   }
   .routine-day {
     padding: clamp(0.6rem, 1.2vw, 1rem) clamp(0.6rem, 1.2vw, 1rem);
-    border-bottom: 1px solid var(--madera-suave);
+    border-bottom: 1px solid var(--ambar-suave);
     font-family: var(--font-display);
     font-style: italic;
     font-size: clamp(0.95rem, 1.3vw, 1.1rem);
-    color: var(--oliva-profundo);
+    color: var(--verde-profundo);
     background: var(--crema-soft);
     display: flex;
     flex-direction: column;
@@ -750,24 +750,24 @@
     font-size: clamp(0.62rem, 0.75vw, 0.7rem);
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--madera);
+    color: var(--ambar);
     margin-top: 4px;
     font-weight: 500;
   }
   .routine-tasks {
     padding: clamp(0.6rem, 1.2vw, 1rem) clamp(0.8rem, 1.5vw, 1.2rem);
-    border-bottom: 1px solid var(--madera-suave);
+    border-bottom: 1px solid var(--ambar-suave);
     font-family: var(--font-display);
     font-size: clamp(0.9rem, 1.2vw, 1.02rem);
     color: var(--tinta);
     line-height: 1.45;
   }
-  .routine-tasks strong { color: var(--madera); font-weight: 500; font-style: italic; }
+  .routine-tasks strong { color: var(--ambar); font-weight: 500; font-style: italic; }
 
   /* ============ SLIDE: PRICING FORMULA ============ */
   .pricing-block {
     background: var(--crema-soft);
-    border: 1px solid var(--madera-suave);
+    border: 1px solid var(--ambar-suave);
     border-radius: 8px;
     padding: clamp(1.2rem, 2.5vw, 2rem);
     display: flex;
@@ -779,15 +779,15 @@
     justify-content: space-between;
     align-items: baseline;
     padding: clamp(0.4rem, 0.8vw, 0.6rem) 0;
-    border-bottom: 1px dashed var(--madera-suave);
+    border-bottom: 1px dashed var(--ambar-suave);
     font-family: var(--font-display);
     font-size: clamp(0.95rem, 1.3vw, 1.1rem);
     color: var(--tinta);
     gap: 12px;
   }
   .pricing-line.subtotal {
-    border-bottom: 1px solid var(--madera);
-    color: var(--oliva-profundo);
+    border-bottom: 1px solid var(--ambar);
+    color: var(--verde-profundo);
     font-weight: 500;
     font-style: italic;
     font-size: clamp(1.05rem, 1.5vw, 1.25rem);
@@ -796,7 +796,7 @@
   }
   .pricing-line.result {
     border: none;
-    color: var(--madera);
+    color: var(--ambar);
     font-style: italic;
     font-size: clamp(1.3rem, 2vw, 1.7rem);
     margin-top: 8px;
@@ -804,7 +804,7 @@
     font-weight: 500;
   }
   .pricing-line .op {
-    color: var(--madera);
+    color: var(--ambar);
     font-family: var(--font-ui);
     font-size: 0.85em;
     padding: 0 8px;
@@ -815,19 +815,19 @@
     font-family: var(--font-display);
     font-style: italic;
     font-size: clamp(0.85rem, 1.1vw, 0.95rem);
-    color: var(--oliva-texto);
+    color: var(--verde-texto);
     line-height: 1.5;
   }
 
   /* ============ SLIDE: LEGAL (RED) ============ */
   .legal-slide {
-    background: linear-gradient(135deg, var(--alerta) 0%, #7A2E2E 100%);
+    background: linear-gradient(135deg, var(--alerta) 0%, #1f5c3a 100%);
     color: var(--crema);
   }
   .legal-slide .eyebrow { color: var(--acento-2); }
   .legal-slide h2 { color: var(--crema); }
   .legal-slide h2 em { color: var(--acento-2); }
-  .legal-slide .lead { color: rgba(242,235,221,0.85); }
+  .legal-slide .lead { color: rgba(248,247,242,0.85); }
   .legal-list {
     list-style: none;
     display: grid;
@@ -837,7 +837,7 @@
   }
   .legal-item {
     background: rgba(255,255,255,0.07);
-    border: 1px solid rgba(242,235,221,0.18);
+    border: 1px solid rgba(248,247,242,0.18);
     border-radius: 6px;
     padding: clamp(0.9rem, 1.6vw, 1.3rem);
     display: flex;
@@ -855,7 +855,7 @@
   .legal-item p {
     font-family: var(--font-display);
     font-size: clamp(0.85rem, 1.1vw, 0.95rem);
-    color: rgba(242,235,221,0.85);
+    color: rgba(248,247,242,0.85);
     line-height: 1.4;
   }
   .legal-warning {
@@ -877,13 +877,13 @@
   .check-col h4 {
     font-family: var(--font-ui);
     font-size: var(--eyebrow-size);
-    color: var(--madera);
+    color: var(--ambar);
     letter-spacing: 0.18em;
     text-transform: uppercase;
     font-weight: 500;
     margin-bottom: clamp(0.4rem, 0.8vw, 0.6rem);
     padding-bottom: clamp(0.4rem, 0.8vw, 0.6rem);
-    border-bottom: 1px solid var(--madera-suave);
+    border-bottom: 1px solid var(--ambar-suave);
   }
   .check-list { list-style: none; }
   .check-list li {
@@ -901,7 +901,7 @@
     top: 13px;
     width: 14px;
     height: 14px;
-    border: 1.5px solid var(--madera-suave);
+    border: 1.5px solid var(--ambar-suave);
     border-radius: 3px;
   }
 
@@ -916,7 +916,7 @@
     flex-direction: column;
     gap: clamp(0.4rem, 0.8vw, 0.7rem);
     padding: clamp(1rem, 2vw, 1.5rem);
-    border-left: 3px solid var(--madera);
+    border-left: 3px solid var(--ambar);
     background: var(--crema-soft);
     border-radius: 0 4px 4px 0;
   }
@@ -924,14 +924,14 @@
     font-family: var(--font-display);
     font-style: italic;
     font-size: clamp(2.2rem, 3.5vw, 3.2rem);
-    color: var(--madera);
+    color: var(--ambar);
     line-height: 0.9;
     opacity: 0.7;
   }
   .phase-when {
     font-family: var(--font-ui);
     font-size: clamp(0.7rem, 0.85vw, 0.8rem);
-    color: var(--madera);
+    color: var(--ambar);
     letter-spacing: 0.18em;
     text-transform: uppercase;
     font-weight: 500;
@@ -940,7 +940,7 @@
     font-family: var(--font-display);
     font-style: italic;
     font-size: clamp(1.2rem, 1.8vw, 1.55rem);
-    color: var(--oliva-profundo);
+    color: var(--verde-profundo);
     line-height: 1.1;
   }
   .phase-list { list-style: none; margin-top: clamp(0.3rem, 0.8vw, 0.5rem); }
@@ -956,7 +956,7 @@
     content: "·";
     position: absolute;
     left: 0;
-    color: var(--madera);
+    color: var(--ambar);
     font-size: 1.4em;
     line-height: 1;
   }
@@ -969,7 +969,7 @@
   .matrix th, .matrix td {
     padding: clamp(0.5rem, 1vw, 0.85rem) clamp(0.5rem, 1vw, 0.85rem);
     text-align: left;
-    border-bottom: 1px solid var(--madera-suave);
+    border-bottom: 1px solid var(--ambar-suave);
     font-family: var(--font-display);
     font-size: clamp(0.85rem, 1.1vw, 1rem);
     line-height: 1.3;
@@ -980,19 +980,19 @@
     font-family: var(--font-ui);
     font-weight: 500;
     font-size: var(--eyebrow-size);
-    color: var(--madera);
+    color: var(--ambar);
     letter-spacing: 0.16em;
     text-transform: uppercase;
     background: var(--crema-soft);
   }
   .matrix th:first-child, .matrix td:first-child {
     font-style: italic;
-    color: var(--oliva-profundo);
+    color: var(--verde-profundo);
     width: 36%;
   }
   .matrix td.dot {
     text-align: center;
-    color: var(--madera);
+    color: var(--ambar);
     font-size: 1.4em;
     width: 16%;
   }
@@ -1001,7 +1001,7 @@
 
   /* ============ SLIDE: CLOSE (INVERTED) ============ */
   .close-slide {
-    background: linear-gradient(180deg, var(--oliva-mas-oscuro) 0%, var(--oliva-profundo) 100%);
+    background: linear-gradient(180deg, var(--verde-mas-oscuro) 0%, var(--verde-profundo) 100%);
     color: var(--crema);
   }
   .close-slide .slide-content {
@@ -1014,9 +1014,9 @@
     font-weight: 300;
     line-height: 1.05;
   }
-  .close-slide h2 em { color: var(--madera-suave); font-style: italic; font-weight: 400; }
+  .close-slide h2 em { color: var(--ambar-suave); font-style: italic; font-weight: 400; }
   .close-slide .lead {
-    color: var(--oliva-soft);
+    color: var(--verde-soft);
     font-size: clamp(1.05rem, 1.6vw, 1.4rem);
     max-width: 52ch;
     margin: clamp(1rem, 2vw, 1.5rem) auto 0;
@@ -1026,7 +1026,7 @@
     gap: clamp(2rem, 5vw, 5rem);
     margin-top: clamp(2rem, 4vw, 3.5rem);
     padding-top: clamp(1.2rem, 2.5vw, 2rem);
-    border-top: 1px solid rgba(201,165,129,0.4);
+    border-top: 1px solid rgba(227,184,119,0.4);
     justify-content: center;
     flex-wrap: wrap;
   }
@@ -1034,7 +1034,7 @@
   .close-contact .label {
     font-family: var(--font-ui);
     font-size: var(--small-size);
-    color: var(--madera-suave);
+    color: var(--ambar-suave);
     letter-spacing: 0.18em;
     text-transform: uppercase;
     font-weight: 500;
@@ -1050,7 +1050,7 @@
     font-family: var(--font-display);
     font-style: italic;
     font-size: clamp(0.95rem, 1.3vw, 1.1rem);
-    color: var(--madera-suave);
+    color: var(--ambar-suave);
   }
   .close-seal {
     margin-bottom: clamp(1rem, 2vw, 1.5rem);
@@ -1074,19 +1074,19 @@
     .team-portrait { width: 70px; height: 70px; font-size: 2rem; }
   }
 
-  ::selection { background: var(--oliva-profundo); color: var(--crema); }
+  ::selection { background: var(--verde-profundo); color: var(--crema); }
 
   /* ============ INTERACTIVE EDITOR ============ */
   .cajones-cta { display:flex; justify-content:center; margin-top: clamp(0.8rem,1.6vw,1.3rem); }
-  .btn-spiga {
+  .btn-nativa {
     font-family: var(--font-ui); font-size: clamp(0.75rem,1vw,0.9rem); font-weight:500; letter-spacing:0.06em;
-    color: var(--crema); background: var(--oliva-profundo); border:1px solid var(--oliva-profundo);
+    color: var(--crema); background: var(--verde-profundo); border:1px solid var(--verde-profundo);
     padding:0.7em 1.4em; border-radius:999px; cursor:pointer; transition: background .2s, transform .2s;
     display:inline-flex; align-items:center; gap:.5em;
   }
-  .btn-spiga:hover { background: var(--oliva-mas-oscuro); transform: translateY(-1px); }
-  .btn-spiga.ghost { background: transparent; color: var(--oliva-profundo); }
-  .btn-spiga.ghost:hover { background: var(--crema-soft); }
+  .btn-nativa:hover { background: var(--verde-mas-oscuro); transform: translateY(-1px); }
+  .btn-nativa.ghost { background: transparent; color: var(--verde-profundo); }
+  .btn-nativa.ghost:hover { background: var(--crema-soft); }
 
   .edit-fab {
     position: fixed; left: clamp(0.9rem,2vw,1.6rem); bottom: clamp(0.9rem,2vw,1.6rem);
@@ -1096,109 +1096,109 @@
   html.editor-open, body.editor-open { overflow: hidden !important; }
 
   .editor-overlay {
-    position: fixed; inset: 0; background: rgba(26,26,24,0.55); -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px);
+    position: fixed; inset: 0; background: rgba(20,32,26,0.55); -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px);
     z-index: 1000; display: none; padding: clamp(0.5rem,2vw,2rem); overflow-y: auto;
   }
   .editor-overlay.open { display: flex; align-items:flex-start; justify-content:center; }
   .editor-modal {
     background: var(--crema); border-radius: 10px; width: min(1100px,100%); margin: auto;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.3); border:1px solid var(--madera-suave); overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3); border:1px solid var(--ambar-suave); overflow: hidden;
   }
   .editor-head {
     display:flex; align-items:flex-start; justify-content:space-between; gap:1rem;
-    padding: clamp(1rem,2vw,1.5rem) clamp(1.1rem,2.2vw,1.8rem); background: var(--oliva-profundo); color: var(--crema);
+    padding: clamp(1rem,2vw,1.5rem) clamp(1.1rem,2.2vw,1.8rem); background: var(--verde-profundo); color: var(--crema);
     position: sticky; top:0; z-index:3;
   }
-  .editor-eyebrow { font-family:var(--font-ui); font-size:.68rem; letter-spacing:.18em; text-transform:uppercase; color:var(--madera-suave); }
+  .editor-eyebrow { font-family:var(--font-ui); font-size:.68rem; letter-spacing:.18em; text-transform:uppercase; color:var(--ambar-suave); }
   .editor-title { font-family:var(--font-display); font-style:italic; color:var(--crema); font-size: clamp(1.3rem,2.4vw,2rem); line-height:1.1; }
   .editor-head-actions { display:flex; align-items:center; gap:.6rem; flex-shrink:0; }
   .editor-close, .editor-reset {
-    font-family:var(--font-ui); cursor:pointer; border-radius:999px; border:1px solid rgba(242,235,221,0.4);
+    font-family:var(--font-ui); cursor:pointer; border-radius:999px; border:1px solid rgba(248,247,242,0.4);
     background:transparent; color:var(--crema); padding:.45em .9em; font-size:.78rem;
   }
   .editor-close { width:38px; height:38px; padding:0; font-size:1rem; }
-  .editor-close:hover, .editor-reset:hover { background: rgba(242,235,221,0.15); }
+  .editor-close:hover, .editor-reset:hover { background: rgba(248,247,242,0.15); }
   .editor-body { padding: clamp(1rem,2.2vw,1.8rem); }
 
   .editor-tabs { display:flex; flex-wrap:wrap; gap:.5rem; margin-bottom:1rem; }
   .editor-tab {
     font-family:var(--font-ui); font-size:.8rem; font-weight:500; letter-spacing:.04em; padding:.5em 1em;
-    border-radius:999px; cursor:pointer; border:1px solid var(--madera-suave); background:transparent; color:var(--oliva-texto);
+    border-radius:999px; cursor:pointer; border:1px solid var(--ambar-suave); background:transparent; color:var(--verde-texto);
   }
-  .editor-tab:hover { border-color: var(--oliva); }
-  .editor-tab.active { background: var(--oliva-profundo); color:var(--crema); border-color:var(--oliva-profundo); }
+  .editor-tab:hover { border-color: var(--verde); }
+  .editor-tab.active { background: var(--verde-profundo); color:var(--crema); border-color:var(--verde-profundo); }
   .editor-meta { display:flex; flex-wrap:wrap; align-items:baseline; gap:.4rem .9rem; margin-bottom:1rem; }
   .ed-meta-nombre {
-    font-family:var(--font-display); font-style:italic; font-size: clamp(1.2rem,2vw,1.6rem); color:var(--oliva-profundo);
+    font-family:var(--font-display); font-style:italic; font-size: clamp(1.2rem,2vw,1.6rem); color:var(--verde-profundo);
     border:none; border-bottom:1px dashed transparent; background:transparent; padding:.05em .1em; flex:1 1 220px; min-width:160px;
   }
   .ed-meta-desc {
-    font-family:var(--font-ui); font-size:.8rem; color:var(--oliva-texto);
+    font-family:var(--font-ui); font-size:.8rem; color:var(--verde-texto);
     border:none; border-bottom:1px dashed transparent; background:transparent; padding:.2em .1em; flex:1 1 100%; width:100%;
   }
-  .ed-meta-nombre:hover, .ed-meta-desc:hover { border-bottom-color: var(--madera-suave); }
-  .ed-meta-nombre:focus, .ed-meta-desc:focus { outline:none; border-bottom-color: var(--oliva); }
+  .ed-meta-nombre:hover, .ed-meta-desc:hover { border-bottom-color: var(--ambar-suave); }
+  .ed-meta-nombre:focus, .ed-meta-desc:focus { outline:none; border-bottom-color: var(--verde); }
   .ed-del-combo { font-family:var(--font-ui); font-size:.72rem; color:var(--alerta); background:none; border:1px solid transparent; border-radius:6px; cursor:pointer; padding:.3em .6em; white-space:nowrap; }
   .ed-del-combo:hover { border-color: var(--alerta); }
-  .editor-tab.new-combo { border-style:dashed; color:var(--oliva); font-weight:600; }
-  .ed-np-nombre, .ed-np-costo { font-family:var(--font-ui); font-size:.8rem; padding:.45em .6em; border-radius:6px; border:1px solid var(--madera-suave); background:#fff; color:var(--tinta); }
+  .editor-tab.new-combo { border-style:dashed; color:var(--verde); font-weight:600; }
+  .ed-np-nombre, .ed-np-costo { font-family:var(--font-ui); font-size:.8rem; padding:.45em .6em; border-radius:6px; border:1px solid var(--ambar-suave); background:#fff; color:var(--tinta); }
   .ed-np-nombre { width:130px; } .ed-np-costo { width:90px; }
-  .ed-add-sep { font-family:var(--font-ui); font-size:.72rem; color:var(--madera-suave); margin-left:.3rem; }
+  .ed-add-sep { font-family:var(--font-ui); font-size:.72rem; color:var(--ambar-suave); margin-left:.3rem; }
   .cajon-extra { opacity:.72; font-style:italic; }
 
   .editor-table-wrap { overflow-x:auto; border:1px solid var(--crema-soft); border-radius:8px; }
   table.editor-table { border-collapse:collapse; width:100%; min-width:680px; font-family:var(--font-ui); }
   .editor-table th, .editor-table td { padding:.5rem .6rem; font-size:.8rem; text-align:left; border-bottom:1px solid var(--crema-soft); }
-  .editor-table th { background: var(--crema-soft); color:var(--oliva-profundo); font-weight:600; letter-spacing:.02em; }
+  .editor-table th { background: var(--crema-soft); color:var(--verde-profundo); font-weight:600; letter-spacing:.02em; }
   .editor-table .num { text-align:right; }
-  .editor-table tfoot td { font-weight:600; background: var(--crema-soft); color:var(--oliva-profundo); border-bottom:none; }
+  .editor-table tfoot td { font-weight:600; background: var(--crema-soft); color:var(--verde-profundo); border-bottom:none; }
   .ed-qty, .ed-price, .ed-pb, .ed-rinde {
-    font-family:var(--font-ui); font-size:.8rem; text-align:right; border:1px solid var(--madera-suave);
+    font-family:var(--font-ui); font-size:.8rem; text-align:right; border:1px solid var(--ambar-suave);
     border-radius:5px; padding:.35em .5em; background:#fff; color:var(--tinta);
   }
   .ed-qty { width:64px; } .ed-price { width:86px; }
   .ed-pb { width:78px; } .ed-rinde { width:54px; }
-  .ed-pb::placeholder, .ed-rinde::placeholder { color:var(--madera-suave); font-size:.72rem; }
-  .ed-bulto-div { color:var(--madera-suave); margin:0 .22em; font-size:.85rem; }
-  .ed-qty:focus, .ed-price:focus, .ed-pb:focus, .ed-rinde:focus { outline:none; border-color:var(--oliva); box-shadow:0 0 0 2px rgba(138,148,118,0.25); }
+  .ed-pb::placeholder, .ed-rinde::placeholder { color:var(--ambar-suave); font-size:.72rem; }
+  .ed-bulto-div { color:var(--ambar-suave); margin:0 .22em; font-size:.85rem; }
+  .ed-qty:focus, .ed-price:focus, .ed-pb:focus, .ed-rinde:focus { outline:none; border-color:var(--verde); box-shadow:0 0 0 2px rgba(63,184,95,0.25); }
   .ed-remove { border:none; background:none; cursor:pointer; color:var(--alerta); font-size:.95rem; line-height:1; padding:.2em .4em; border-radius:5px; }
-  .ed-remove:hover { background: rgba(160,70,70,0.1); }
+  .ed-remove:hover { background: rgba(44,122,107,0.1); }
   .editor-add { display:flex; flex-wrap:wrap; gap:.5rem; align-items:center; margin:.8rem 0 1.2rem; }
-  .editor-add select { font-family:var(--font-ui); font-size:.8rem; padding:.45em .6em; border-radius:6px; border:1px solid var(--madera-suave); background:#fff; color:var(--tinta); max-width:100%; }
+  .editor-add select { font-family:var(--font-ui); font-size:.8rem; padding:.45em .6em; border-radius:6px; border:1px solid var(--ambar-suave); background:#fff; color:var(--tinta); max-width:100%; }
 
   .editor-kpis { display:grid; grid-template-columns: repeat(4,1fr); gap:.7rem; margin: .5rem 0 1.2rem; }
   .ed-kpi { border:1px solid var(--crema-soft); border-radius:8px; padding:.8rem .9rem; background:#fff; }
-  .ed-kpi.hl { background: var(--oliva-profundo); border-color:var(--oliva-profundo); }
-  .ed-kpi.hl .ed-kpi-label, .ed-kpi.hl .ed-kpi-sub { color: var(--oliva-soft); }
+  .ed-kpi.hl { background: var(--verde-profundo); border-color:var(--verde-profundo); }
+  .ed-kpi.hl .ed-kpi-label, .ed-kpi.hl .ed-kpi-sub { color: var(--verde-soft); }
   .ed-kpi.hl .ed-kpi-num { color: var(--crema); }
-  .ed-kpi-label { font-family:var(--font-ui); font-size:.66rem; text-transform:uppercase; letter-spacing:.09em; color:var(--oliva-texto); }
-  .ed-kpi-num { font-family:var(--font-display); font-size: clamp(1.2rem,2vw,1.7rem); color:var(--oliva-profundo); line-height:1.1; margin-top:.2rem; }
-  .ed-kpi-sub { font-family:var(--font-ui); font-size:.64rem; color:var(--oliva-texto); margin-top:.2rem; }
+  .ed-kpi-label { font-family:var(--font-ui); font-size:.66rem; text-transform:uppercase; letter-spacing:.09em; color:var(--verde-texto); }
+  .ed-kpi-num { font-family:var(--font-display); font-size: clamp(1.2rem,2vw,1.7rem); color:var(--verde-profundo); line-height:1.1; margin-top:.2rem; }
+  .ed-kpi-sub { font-family:var(--font-ui); font-size:.64rem; color:var(--verde-texto); margin-top:.2rem; }
 
   .editor-markup { margin-bottom: 1.2rem; }
-  .editor-markup label, .editor-calc-inputs label { font-family:var(--font-ui); font-size:.76rem; font-weight:600; color:var(--oliva-profundo); display:block; margin-bottom:.35rem; }
+  .editor-markup label, .editor-calc-inputs label { font-family:var(--font-ui); font-size:.76rem; font-weight:600; color:var(--verde-profundo); display:block; margin-bottom:.35rem; }
   .slider-row { display:flex; align-items:center; gap:.8rem; }
-  .slider-row input[type=range]{ flex:1; accent-color: var(--oliva-profundo); }
-  .slider-row .sv { font-family:var(--font-ui); font-size:.84rem; font-weight:600; color:var(--madera); min-width:84px; text-align:right; }
-  .editor-hint { font-family:var(--font-ui); font-size:.7rem; color:var(--oliva-texto); margin-top:.3rem; line-height:1.4; }
+  .slider-row input[type=range]{ flex:1; accent-color: var(--verde-profundo); }
+  .slider-row .sv { font-family:var(--font-ui); font-size:.84rem; font-weight:600; color:var(--ambar); min-width:84px; text-align:right; }
+  .editor-hint { font-family:var(--font-ui); font-size:.7rem; color:var(--verde-texto); margin-top:.3rem; line-height:1.4; }
 
-  .editor-section-title { font-family:var(--font-display); font-style:italic; font-size: clamp(1.2rem,2vw,1.6rem); color:var(--oliva-profundo); margin: 1.4rem 0 .3rem; border-top:1px solid var(--crema-soft); padding-top:1.2rem; }
+  .editor-section-title { font-family:var(--font-display); font-style:italic; font-size: clamp(1.2rem,2vw,1.6rem); color:var(--verde-profundo); margin: 1.4rem 0 .3rem; border-top:1px solid var(--crema-soft); padding-top:1.2rem; }
   .editor-calc-grid { display:grid; grid-template-columns: 1.1fr .9fr; gap:1.2rem; align-items:start; }
   .editor-calc-inputs label { margin-top:.8rem; }
   .editor-calc-inputs label:first-child { margin-top:0; }
-  .editor-calc-out { background: var(--oliva-profundo); color:var(--crema); border-radius:10px; padding:1.2rem; }
-  .editor-calc-out .out-label { font-family:var(--font-ui); font-size:.7rem; text-transform:uppercase; letter-spacing:.1em; color:var(--oliva-soft); }
+  .editor-calc-out { background: var(--verde-profundo); color:var(--crema); border-radius:10px; padding:1.2rem; }
+  .editor-calc-out .out-label { font-family:var(--font-ui); font-size:.7rem; text-transform:uppercase; letter-spacing:.1em; color:var(--verde-soft); }
   .editor-calc-out .out-big { font-family:var(--font-display); font-size: clamp(2.4rem,6vw,3.6rem); line-height:1; color:var(--crema); }
-  .editor-calc-out .out-sub { font-family:var(--font-ui); font-size:.7rem; color:var(--oliva-soft); margin-bottom:.8rem; }
-  .editor-calc-out .out-row { display:flex; justify-content:space-between; gap:1rem; padding:.4rem 0; border-top:1px solid rgba(242,235,221,0.18); font-family:var(--font-ui); font-size:.76rem; }
+  .editor-calc-out .out-sub { font-family:var(--font-ui); font-size:.7rem; color:var(--verde-soft); margin-bottom:.8rem; }
+  .editor-calc-out .out-row { display:flex; justify-content:space-between; gap:1rem; padding:.4rem 0; border-top:1px solid rgba(248,247,242,0.18); font-family:var(--font-ui); font-size:.76rem; }
   .editor-calc-out .out-row .v { font-weight:600; color:var(--acento-2); white-space:nowrap; }
   .editor-kpi-row { display:grid; grid-template-columns:repeat(4,1fr); gap:.7rem; margin-top:1rem; }
   .editor-kpi-row .k { text-align:center; border:1px solid var(--crema-soft); border-radius:8px; padding:.7rem .5rem; background:#fff; }
-  .editor-kpi-row .k .n { font-family:var(--font-display); font-size: clamp(1.3rem,2.4vw,1.9rem); color:var(--madera); }
-  .editor-kpi-row .k .l { font-family:var(--font-ui); font-size:.62rem; color:var(--oliva-texto); letter-spacing:.03em; }
-  .editor-note { font-family:var(--font-ui); font-size:.72rem; color:var(--oliva-texto); line-height:1.5; margin-top:1.2rem; background:var(--crema-soft); padding:.9rem 1rem; border-radius:8px; }
-  .editor-note strong { color:var(--oliva-profundo); }
-  .editor-saved { color:var(--oliva); font-weight:600; }
+  .editor-kpi-row .k .n { font-family:var(--font-display); font-size: clamp(1.3rem,2.4vw,1.9rem); color:var(--ambar); }
+  .editor-kpi-row .k .l { font-family:var(--font-ui); font-size:.62rem; color:var(--verde-texto); letter-spacing:.03em; }
+  .editor-note { font-family:var(--font-ui); font-size:.72rem; color:var(--verde-texto); line-height:1.5; margin-top:1.2rem; background:var(--crema-soft); padding:.9rem 1rem; border-radius:8px; }
+  .editor-note strong { color:var(--verde-profundo); }
+  .editor-saved { color:var(--verde); font-weight:600; }
   @media (max-width:780px){ .editor-calc-grid { grid-template-columns:1fr; } }
   @media (max-width:720px){ .editor-kpis, .editor-kpi-row { grid-template-columns: repeat(2,1fr); } }
 </style>
@@ -1216,28 +1216,28 @@
   <div class="slide-content">
     <div class="title-seal">
       <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <circle cx="100" cy="100" r="95" fill="none" stroke="#54613F" stroke-width="1.2" />
-        <circle cx="100" cy="100" r="86" fill="none" stroke="#54613F" stroke-width="0.5" />
-        <g fill="#54613F">
+        <circle cx="100" cy="100" r="95" fill="none" stroke="#1b7a43" stroke-width="1.2" />
+        <circle cx="100" cy="100" r="86" fill="none" stroke="#1b7a43" stroke-width="0.5" />
+        <g fill="#1b7a43">
           <g transform="translate(100,46) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g>
           <g transform="translate(100,144) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g>
         </g>
-        <text x="100" y="125" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="78" font-style="italic" font-weight="500" fill="#54613F">S</text>
+        <text x="100" y="125" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="78" font-style="italic" font-weight="500" fill="#1b7a43">N</text>
         <defs>
           <path id="topArcT" d="M 30,100 A 70,70 0 0 1 170,100" fill="none"/>
           <path id="botArcT" d="M 30,100 A 70,70 0 0 0 170,100" fill="none"/>
         </defs>
-        <text font-family="Inter, sans-serif" font-size="11" font-weight="700" letter-spacing="4" fill="#54613F">
-          <textPath href="#topArcT" startOffset="50%" text-anchor="middle">FRESCHEZZA · CURATA</textPath>
+        <text font-family="Inter, sans-serif" font-size="11" font-weight="700" letter-spacing="4" fill="#1b7a43">
+          <textPath href="#topArcT" startOffset="50%" text-anchor="middle">FRESCO · LOCAL</textPath>
         </text>
-        <text font-family="Inter, sans-serif" font-size="11" font-weight="700" letter-spacing="4" fill="#54613F">
-          <textPath href="#botArcT" startOffset="50%" text-anchor="middle">SPIGA · DAL 2026</textPath>
+        <text font-family="Inter, sans-serif" font-size="11" font-weight="700" letter-spacing="4" fill="#1b7a43">
+          <textPath href="#botArcT" startOffset="50%" text-anchor="middle">NATIVA · DESDE 2026</textPath>
         </text>
       </svg>
     </div>
     <div class="title-meta">
       <span class="eyebrow reveal">Manual de operación</span>
-      <h1 class="reveal">Cómo funciona <em>tu Spiga.</em></h1>
+      <h1 class="reveal">Cómo funciona <em>tu Nativa.</em></h1>
       <p class="subtitle reveal">Todo lo que necesitás saber para operar tu delivery de verdura y fruta premium — desde el día uno.</p>
       <div class="title-credits reveal">
         <div>
@@ -1263,14 +1263,14 @@
   <div class="slide-content">
     <div class="head-block">
       <span class="eyebrow reveal">01 <span class="sep">·</span> El proyecto en una página</span>
-      <h2 class="reveal">Tu Spiga en <em>tres preguntas.</em></h2>
+      <h2 class="reveal">Tu Nativa en <em>tres preguntas.</em></h2>
       <p class="lead reveal">Lo que vendés, a quién, y cómo cobrás. El resto del deck explica cómo se sostiene esto operativamente.</p>
     </div>
     <div class="cols-3">
       <div class="col-card reveal">
         <span class="col-eyebrow">Qué vendés</span>
         <div class="col-title">Cajones curados de verdura y fruta premium.</div>
-        <div class="col-text">Tres tamaños (Piccolo, Famiglia, Abbondanza) más cajones de frutas a medida para oficinas. Mix de productos siempre presentes + rotación estacional.</div>
+        <div class="col-text">Tres tamaños (Mini, Family, Harvest) más cajones de frutas a medida para oficinas. Mix de productos siempre presentes + rotación estacional.</div>
         <span class="col-badge">5 productos distintos</span>
       </div>
       <div class="col-card reveal">
@@ -1295,55 +1295,55 @@
   <div class="slide-content">
     <div class="head-block">
       <span class="eyebrow reveal">02 <span class="sep">·</span> Tu marca</span>
-      <h2 class="reveal">Spiga <em>— la cosecha de la semana.</em></h2>
+      <h2 class="reveal">Nativa <em>— la cosecha de la semana.</em></h2>
     </div>
     <div class="brand-grid">
       <div class="brand-seal-big reveal">
         <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <circle cx="100" cy="100" r="95" fill="none" stroke="#54613F" stroke-width="1.4" />
-          <circle cx="100" cy="100" r="86" fill="none" stroke="#54613F" stroke-width="0.5" />
-          <g fill="#54613F">
+          <circle cx="100" cy="100" r="95" fill="none" stroke="#1b7a43" stroke-width="1.4" />
+          <circle cx="100" cy="100" r="86" fill="none" stroke="#1b7a43" stroke-width="0.5" />
+          <g fill="#1b7a43">
             <g transform="translate(100,46) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g>
             <g transform="translate(100,144) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g>
           </g>
-          <text x="100" y="125" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="78" font-style="italic" font-weight="500" fill="#54613F">S</text>
+          <text x="100" y="125" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="78" font-style="italic" font-weight="500" fill="#1b7a43">N</text>
           <defs>
             <path id="topArcB" d="M 30,100 A 70,70 0 0 1 170,100" fill="none"/>
             <path id="botArcB" d="M 30,100 A 70,70 0 0 0 170,100" fill="none"/>
           </defs>
-          <text font-family="Inter, sans-serif" font-size="11" font-weight="700" letter-spacing="4" fill="#54613F">
-            <textPath href="#topArcB" startOffset="50%" text-anchor="middle">FRESCHEZZA · CURATA</textPath>
+          <text font-family="Inter, sans-serif" font-size="11" font-weight="700" letter-spacing="4" fill="#1b7a43">
+            <textPath href="#topArcB" startOffset="50%" text-anchor="middle">FRESCO · LOCAL</textPath>
           </text>
-          <text font-family="Inter, sans-serif" font-size="11" font-weight="700" letter-spacing="4" fill="#54613F">
-            <textPath href="#botArcB" startOffset="50%" text-anchor="middle">SPIGA · DAL 2026</textPath>
+          <text font-family="Inter, sans-serif" font-size="11" font-weight="700" letter-spacing="4" fill="#1b7a43">
+            <textPath href="#botArcB" startOffset="50%" text-anchor="middle">NATIVA · DESDE 2026</textPath>
           </text>
         </svg>
       </div>
       <div class="brand-data">
         <div class="brand-row reveal">
           <span class="brand-row-label">Significado</span>
-          <span class="brand-row-value">Spiga = espiga · cabeza del cereal en italiano. Símbolo universal de cosecha.</span>
+          <span class="brand-row-value">Nativa = lo que nace de esta tierra. Producto local, de estación, en su mejor momento.</span>
         </div>
         <div class="brand-row reveal">
           <span class="brand-row-label">Pronunciación</span>
-          <span class="brand-row-value">spí-ga · acento en la primera sílaba.</span>
+          <span class="brand-row-value">na-tí-va · acento en la segunda sílaba.</span>
         </div>
         <div class="brand-row reveal">
           <span class="brand-row-label">Paleta</span>
           <div class="palette-row">
-            <div class="swatch" style="background: #54613F" title="Oliva profundo · primario"></div>
-            <div class="swatch" style="background: #F2EBDD" title="Crema cálida · fondo"></div>
-            <div class="swatch" style="background: #A07545" title="Madera · acento"></div>
-            <div class="swatch" style="background: #C9A581" title="Madera suave"></div>
-            <div class="swatch" style="background: #E8C766" title="Limón · acento secundario"></div>
-            <div class="swatch" style="background: #C9573A" title="Tomate · estacional verano"></div>
+            <div class="swatch" style="background: #1b7a43" title="Verde Nativa · primario"></div>
+            <div class="swatch" style="background: #f8f7f2" title="Blanco hueso · fondo"></div>
+            <div class="swatch" style="background: #c8821e" title="Cítrico · acento"></div>
+            <div class="swatch" style="background: #e3b877" title="Cítrico suave"></div>
+            <div class="swatch" style="background: #bef264" title="Lima · highlight / destacado"></div>
+            <div class="swatch" style="background: #f5a524" title="Cítrico · acento cálido"></div>
           </div>
         </div>
         <div class="brand-row reveal">
           <span class="brand-row-label">Tipografía</span>
           <span class="brand-row-value">Cormorant Garamond (display) + Inter (UI). Ambas Google Fonts gratis.</span>
         </div>
-        <div class="brand-note reveal">El sello actual (S itálica + sello circular) es <strong>provisorio</strong> — se define versión final antes de prensa, papelería y dominio comercial.</div>
+        <div class="brand-note reveal">El sello actual (N itálica + sello circular) es <strong>provisorio</strong> — se define versión final antes de prensa, papelería y dominio comercial.</div>
       </div>
     </div>
   </div>
@@ -1360,7 +1360,7 @@
     <div class="cajones-grid">
       <div class="cajon-card reveal">
         <span class="cajon-eyebrow">Esencial</span>
-        <div class="cajon-name">Piccolo</div>
+        <div class="cajon-name">Mini</div>
         <div class="cajon-personas">1 a 2 personas · 8 variedades por semana</div>
         <ul class="cajon-items">
           <li><strong>Hoja</strong> · lechuga manteca 400 g</li>
@@ -1372,7 +1372,7 @@
       <div class="cajon-card featured reveal">
         <span class="featured-badge">Más elegido</span>
         <span class="cajon-eyebrow">Familiar</span>
-        <div class="cajon-name">Famiglia</div>
+        <div class="cajon-name">Family</div>
         <div class="cajon-personas">3 a 4 personas · 15 variedades</div>
         <ul class="cajon-items">
           <li><strong>Hoja</strong> · lechuga manteca 400 g, lechuga capuchina 400 g, rúcula ×2 at., espinaca ×1 at.</li>
@@ -1383,7 +1383,7 @@
       </div>
       <div class="cajon-card reveal">
         <span class="cajon-eyebrow">Completo</span>
-        <div class="cajon-name">Abbondanza</div>
+        <div class="cajon-name">Harvest</div>
         <div class="cajon-personas">5+ personas o cocina intensa · 27 variedades · hierbas frescas</div>
         <ul class="cajon-items">
           <li><strong>Hoja y verdes</strong> · lechuga manteca 400 g, lechuga capuchina 400 g, rúcula ×2 at., espinaca ×1 at., apio ×1</li>
@@ -1396,7 +1396,7 @@
     </div>
     <p class="cajones-note reveal">Con la suscripción mensual el mix de productos siempre está presente y rota con la estación. Cada cliente recibe un <em>cajón sorpresa premium cada 3 meses</em> y entrega coordinada en todos los tamaños.</p>
     <div class="cajones-cta reveal">
-      <button type="button" class="btn-spiga" id="openEditor">✎ Editar productos, cantidades y precios</button>
+      <button type="button" class="btn-nativa" id="openEditor">✎ Editar productos, cantidades y precios</button>
     </div>
   </div>
   <div class="slide-num">04 · 16</div>
@@ -1406,7 +1406,7 @@
 <section class="slide">
   <div class="slide-content">
     <div class="head-block">
-      <span class="eyebrow reveal">03 <span class="sep">·</span> Spiga para oficinas</span>
+      <span class="eyebrow reveal">03 <span class="sep">·</span> Nativa para oficinas</span>
       <h2 class="reveal">Cajones de fruta <em>a medida.</em></h2>
     </div>
     <div class="ofic-grid">
@@ -1573,13 +1573,13 @@
     <div class="cols-3">
       <div class="col-card reveal">
         <span class="col-eyebrow">Sitio web</span>
-        <div class="col-title">spigastore.com.ar</div>
-        <div class="col-text">Donde el cliente lee qué es Spiga, ve los cajones y completa el form de suscripción. La data llega automática al Sheet y a tu mail.</div>
+        <div class="col-title">nativamarket.com.ar</div>
+        <div class="col-text">Donde el cliente lee qué es Nativa, ve los cajones y completa el form de suscripción. La data llega automática al Sheet y a tu mail.</div>
         <span class="col-badge">Conversión principal</span>
       </div>
       <div class="col-card reveal">
         <span class="col-eyebrow">Instagram</span>
-        <div class="col-title">@spiga.ar</div>
+        <div class="col-title">@nativamarket</div>
         <div class="col-text">Vidriera viva. Mostrás cajón de la semana, cocina con productos, productores, behind-the-scenes. Influencers reciben cajón gratis a cambio de stories.</div>
         <span class="col-badge">Adquisición</span>
       </div>
@@ -1663,7 +1663,7 @@
       <div class="tool-card reveal">
         <div class="tool-icon">▽</div>
         <div class="tool-name">Google Drive</div>
-        <div class="tool-desc">Carpeta "Spiga" con todo: facturas, fotos productores, listas de compra, comprobantes.</div>
+        <div class="tool-desc">Carpeta "Nativa" con todo: facturas, fotos productores, listas de compra, comprobantes.</div>
       </div>
       <div class="tool-card reveal">
         <div class="tool-icon">✦</div>
@@ -1673,7 +1673,7 @@
       <div class="tool-card reveal">
         <div class="tool-icon">@</div>
         <div class="tool-name">Instagram</div>
-        <div class="tool-desc">@spiga.ar — vidriera. Mostrás cajón de la semana, productos, equipo, clientes felices.</div>
+        <div class="tool-desc">@nativamarket — vidriera. Mostrás cajón de la semana, productos, equipo, clientes felices.</div>
       </div>
       <div class="tool-card reveal">
         <div class="tool-icon">✉</div>
@@ -1683,7 +1683,7 @@
       <div class="tool-card reveal">
         <div class="tool-icon">↗</div>
         <div class="tool-name">Sitio web</div>
-        <div class="tool-desc">spigastore.com.ar — vidriera comercial + form de conversión. Editás contenido vía Sheet.</div>
+        <div class="tool-desc">nativamarket.com.ar — vidriera comercial + form de conversión. Editás contenido vía Sheet.</div>
       </div>
     </div>
   </div>
@@ -1806,8 +1806,8 @@
         <ul class="check-list">
           <li>Calcular costo real por cajón con la fórmula</li>
           <li>Definir precio final de cada plan</li>
-          <li>Comprar dominio spigastore.com.ar (NIC.ar, ~$3000/año)</li>
-          <li>Crear cuenta Instagram @spiga.ar</li>
+          <li>Comprar dominio nativamarket.com.ar (NIC.ar, ~$3000/año)</li>
+          <li>Crear cuenta Instagram @nativamarket</li>
           <li>Confirmar 2 productores fijos del Mercado de Escobar</li>
         </ul>
       </div>
@@ -1959,16 +1959,16 @@
 <section class="slide close-slide">
   <div class="slide-content">
     <svg class="close-seal reveal" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <circle cx="100" cy="100" r="95" fill="none" stroke="#F2EBDD" stroke-width="1.4" />
-      <circle cx="100" cy="100" r="86" fill="none" stroke="#F2EBDD" stroke-width="0.5" />
-      <g fill="#F2EBDD">
+      <circle cx="100" cy="100" r="95" fill="none" stroke="#f8f7f2" stroke-width="1.4" />
+      <circle cx="100" cy="100" r="86" fill="none" stroke="#f8f7f2" stroke-width="0.5" />
+      <g fill="#f8f7f2">
         <g transform="translate(100,46) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g>
         <g transform="translate(100,144) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g>
       </g>
-      <text x="100" y="125" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="78" font-style="italic" font-weight="500" fill="#F2EBDD">S</text>
+      <text x="100" y="125" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="78" font-style="italic" font-weight="500" fill="#f8f7f2">N</text>
     </svg>
     <h2 class="reveal">Cualquier duda, <em>estás cubierta.</em></h2>
-    <p class="lead reveal">Este deck más el sitio más tu Google Sheet te dan autonomía completa para operar Spiga. Si algo se rompe o querés cambiar algo más complejo, hay caminos claros.</p>
+    <p class="lead reveal">Este deck más el sitio más tu Google Sheet te dan autonomía completa para operar Nativa. Si algo se rompe o querés cambiar algo más complejo, hay caminos claros.</p>
     <div class="close-contacts">
       <div class="close-contact reveal">
         <span class="label">Mantenimiento futuro</span>
@@ -1977,7 +1977,7 @@
       </div>
       <div class="close-contact reveal">
         <span class="label">Repositorio del sitio</span>
-        <span class="value">github.com/RampedSaint/spiga</span>
+        <span class="value">github.com/RampedSaint/nativa</span>
         <span class="label" style="margin-top: 2px; letter-spacing: 0.06em">cualquier dev lo puede continuar</span>
       </div>
     </div>
@@ -1987,11 +1987,11 @@
 </section>
 
 <!-- ============ FLOATING EDITOR BUTTON ============ -->
-<button type="button" class="btn-spiga edit-fab" id="editFab" aria-label="Abrir editor de cajones">✎ Jugar con costos</button>
+<button type="button" class="btn-nativa edit-fab" id="editFab" aria-label="Abrir editor de cajones">✎ Jugar con costos</button>
 
 <!-- ============ INTERACTIVE EDITOR MODAL ============ -->
 <div class="editor-overlay" id="editorOverlay" aria-hidden="true">
-  <div class="editor-modal" role="dialog" aria-modal="true" aria-label="Editor de cajones Spiga">
+  <div class="editor-modal" role="dialog" aria-modal="true" aria-label="Editor de cajones Nativa">
     <div class="editor-head">
       <div>
         <span class="editor-eyebrow">Tablero editable · jugá con costos y productos</span>
@@ -2032,12 +2032,12 @@
 
       <div class="editor-add">
         <select id="ed-add-select"></select>
-        <button type="button" class="btn-spiga ghost" id="ed-add-btn">+ Agregar al combo</button>
+        <button type="button" class="btn-nativa ghost" id="ed-add-btn">+ Agregar al combo</button>
         <span class="ed-add-sep">o creá uno nuevo →</span>
         <input id="ed-np-nombre" class="ed-np-nombre" type="text" placeholder="Producto nuevo">
         <select id="ed-np-unidad"><option value="kg">kg</option><option value="un">un</option><option value="atado">atado</option><option value="maple">maple</option></select>
         <input id="ed-np-costo" class="ed-np-costo" type="number" min="0" step="50" placeholder="$ costo">
-        <button type="button" class="btn-spiga ghost" id="ed-np-btn">+ Crear</button>
+        <button type="button" class="btn-nativa ghost" id="ed-np-btn">+ Crear</button>
       </div>
 
       <div class="editor-kpis">
@@ -2057,18 +2057,18 @@
       </div>
 
       <div class="editor-section-title">Calculadora — ¿cuántos clientes para tu sueldo?</div>
-      <p class="editor-hint" style="margin-bottom:1rem;">El precio y costo de Abbondanza se autocompletan desde lo que editás arriba. Mix recomendado: 30% Piccolo · 50% Abbondanza · 20% Famiglia.</p>
+      <p class="editor-hint" style="margin-bottom:1rem;">El precio y costo de Harvest se autocompletan desde lo que editás arriba. Mix recomendado: 30% Mini · 50% Harvest · 20% Family.</p>
       <div class="editor-calc-grid">
         <div class="editor-calc-inputs">
-          <label>Precio Abbondanza / mes (50% del mix)</label>
+          <label>Precio Harvest / mes (50% del mix)</label>
           <div class="slider-row"><input type="range" id="ed-precio-r" min="60000" max="600000" step="5000" value="180000" /><span class="sv" id="ed-precio-rv">$ 180.000</span></div>
-          <label>Costo Abbondanza / entrega</label>
+          <label>Costo Harvest / entrega</label>
           <div class="slider-row"><input type="range" id="ed-costo-r" min="10000" max="150000" step="2500" value="40000" /><span class="sv" id="ed-costo-rv">$ 40.000</span></div>
           <label>Gastos fijos operativos / mes</label>
           <div class="slider-row"><input type="range" id="ed-opex" min="0" max="3000000" step="50000" value="1200000" /><span class="sv" id="ed-opex-v">$ 1.200.000</span></div>
           <label>¿Cómo cobra Paola?</label>
           <div class="slider-row"><input type="range" id="ed-paola" min="0" max="2000000" step="50000" value="800000" /><span class="sv" id="ed-paola-v">$ 800.000</span></div>
-          <label>Sueldo objetivo a sacar de Spiga</label>
+          <label>Sueldo objetivo a sacar de Nativa</label>
           <div class="slider-row"><input type="range" id="ed-objetivo" min="2000000" max="8000000" step="100000" value="4117515" /><span class="sv" id="ed-objetivo-v">$ 4.117.515</span></div>
         </div>
         <div class="editor-calc-out">
@@ -2082,9 +2082,9 @@
         </div>
       </div>
       <div class="editor-kpi-row">
-        <div class="k"><div class="n" id="ed-kpi-pic">—</div><div class="l">100% Piccolo</div></div>
-        <div class="k"><div class="n" id="ed-kpi-fam">—</div><div class="l">100% Famiglia</div></div>
-        <div class="k"><div class="n" id="ed-kpi-abb">—</div><div class="l">100% Abbondanza</div></div>
+        <div class="k"><div class="n" id="ed-kpi-pic">—</div><div class="l">100% Mini</div></div>
+        <div class="k"><div class="n" id="ed-kpi-fam">—</div><div class="l">100% Family</div></div>
+        <div class="k"><div class="n" id="ed-kpi-abb">—</div><div class="l">100% Harvest</div></div>
         <div class="k"><div class="n" id="ed-kpi-def">—</div><div class="l">mix · cubrir déficit $5.91M</div></div>
       </div>
 
@@ -2099,7 +2099,7 @@
   /* ===========================================
      SLIDE PRESENTATION CONTROLLER
      =========================================== */
-  class SpigaDeck {
+  class NativaDeck {
     constructor() {
       this.slides = Array.from(document.querySelectorAll('.slide'));
       this.currentIndex = 0;
@@ -2189,7 +2189,7 @@
     }
   }
 
-  document.addEventListener('DOMContentLoaded', () => new SpigaDeck());
+  document.addEventListener('DOMContentLoaded', () => new NativaDeck());
 </script>
 
 <script>
@@ -2206,7 +2206,7 @@
   const GASTOS_REALES = 5907000;
   let ORDER = ['picolo', 'famiglia', 'abbondanza', 'frutta_fam', 'frutta_abb'];
 
-  // Costos mayoristas (d1) desde "Costos Spiga.xlsx" › hoja Precios (jun 2026).
+  // Costos mayoristas (d1) desde "Costos Nativa.xlsx" › hoja Precios (jun 2026).
   // d1 = precio unitario = pb (precio del bulto) ÷ rinde. bulto/rinde/pb alimentan la
   // calculadora de bulto: editar pb o rinde recalcula d1 solo.
   // d2 = valor verdulería (retail jun-2026, ref. La Barata + INDEC). Siempre d2 ≥ d1.
@@ -2256,7 +2256,7 @@
 
   const DEFAULT_CAJONES = {
     picolo: {
-      nombre: 'Piccolo',
+      nombre: 'Mini',
       descripcion: '1-2 personas · esencial · mix de hoja, cocina y fruta',
       items: [
         { id: 'lechuga_manteca', qty: 0.4 }, { id: 'tomate_perita', qty: 1 }, { id: 'cebolla', qty: 1 },
@@ -2265,7 +2265,7 @@
       ],
     },
     famiglia: {
-      nombre: 'Famiglia',
+      nombre: 'Family',
       descripcion: '3-4 personas · familiar · mix de hoja, cocina y fruta',
       items: [
         { id: 'lechuga_manteca', qty: 0.4 }, { id: 'lechuga_capuchina', qty: 0.4 }, { id: 'tomate_perita', qty: 2 },
@@ -2275,7 +2275,7 @@
       ],
     },
     abbondanza: {
-      nombre: 'Abbondanza',
+      nombre: 'Harvest',
       descripcion: '5+ personas o cocina intensa · incluye hierbas frescas',
       items: [
         { id: 'lechuga_manteca', qty: 0.4 }, { id: 'lechuga_capuchina', qty: 0.4 }, { id: 'tomate_perita', qty: 2 },
@@ -2289,7 +2289,7 @@
       ],
     },
     frutta_fam: {
-      nombre: 'Frutta Famiglia',
+      nombre: 'Fruit Family',
       descripcion: '3-4 personas u oficina chica · 6 variedades de fruta',
       items: [
         { id: 'banana', qty: 2 }, { id: 'manzana_roja', qty: 1.5 }, { id: 'naranja_jugo', qty: 2 },
@@ -2297,7 +2297,7 @@
       ],
     },
     frutta_abb: {
-      nombre: 'Frutta Abbondanza',
+      nombre: 'Fruit Harvest',
       descripcion: '5+ personas u oficina · 6 variedades en cantidades generosas',
       items: [
         { id: 'banana', qty: 3 }, { id: 'manzana_roja', qty: 2.5 }, { id: 'naranja_jugo', qty: 3 },

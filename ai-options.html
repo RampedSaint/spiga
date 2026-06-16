@@ -2,23 +2,23 @@
 <html lang="es">
 <head>
 <meta charset="utf-8" />
-<title>Spiga · AI test (Flux) — Huerta</title>
+<title>Nativa · AI test (Flux) — Huerta</title>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 <style>
   :root {
-    --oliva: #54613F;
-    --crema: #F2EBDD;
-    --tinta: #1A1A18;
-    --madera: #A07545;
+    --verde: #1b7a43;
+    --crema: #f8f7f2;
+    --tinta: #14201a;
+    --ambar: #c8821e;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { background: var(--crema); color: var(--tinta); font-family: "Fraunces", serif; padding: 64px 32px; }
   .container { max-width: 1400px; margin: 0 auto; }
-  h1 { font-family: "Fraunces", serif; font-weight: 400; font-size: 48px; color: var(--oliva); margin-bottom: 12px; letter-spacing: -0.02em; }
-  .sub { font-family: "Inter", sans-serif; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--madera); margin-bottom: 16px; }
+  h1 { font-family: "Fraunces", serif; font-weight: 400; font-size: 48px; color: var(--verde); margin-bottom: 12px; letter-spacing: -0.02em; }
+  .sub { font-family: "Inter", sans-serif; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ambar); margin-bottom: 16px; }
   .warn {
     background: #f7e4c8;
-    border: 1px solid #c9a581;
+    border: 1px solid #e3b877;
     padding: 16px 20px;
     border-radius: 4px;
     font-family: "Inter", sans-serif;
@@ -40,7 +40,7 @@
     position: absolute;
     top: 16px;
     left: 16px;
-    background: var(--oliva);
+    background: var(--verde);
     color: var(--crema);
     font-family: "Inter", sans-serif;
     font-size: 11px;
@@ -53,7 +53,7 @@
   .card-img-raw {
     width: 100%;
     aspect-ratio: 16 / 9;
-    background: #e6dcc4 url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'><circle cx='20' cy='20' r='10' fill='none' stroke='%23A07545' stroke-width='2' stroke-dasharray='4 6'/></svg>") center/40px no-repeat;
+    background: #ecebe0 url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'><circle cx='20' cy='20' r='10' fill='none' stroke='%23c8821e' stroke-width='2' stroke-dasharray='4 6'/></svg>") center/40px no-repeat;
     display: block;
     object-fit: cover;
   }
@@ -72,7 +72,7 @@
   .card-preview .overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(63,74,48,0.86) 0%, rgba(84,97,63,0.78) 100%);
+    background: linear-gradient(135deg, rgba(20,83,45,0.86) 0%, rgba(27,122,67,0.78) 100%);
   }
   .card-preview .demo-text {
     position: absolute;
@@ -89,15 +89,15 @@
     z-index: 2;
     line-height: 1.3;
   }
-  .demo-text .ll { font-family: "Inter", sans-serif; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #C9A581; font-style: normal; margin-bottom: 12px; }
+  .demo-text .ll { font-family: "Inter", sans-serif; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #e3b877; font-style: normal; margin-bottom: 12px; }
   .demo-text .hh { font-size: 28px; max-width: 22ch; }
-  .demo-text .hh em { color: #E8C766; font-style: italic; font-weight: 300; }
+  .demo-text .hh em { color: #f5a524; font-style: italic; font-weight: 300; }
   .card-body { padding: 20px 24px 24px; }
   .card-title {
     font-family: "Fraunces", serif;
     font-style: italic;
     font-size: 20px;
-    color: var(--oliva);
+    color: var(--verde);
     margin-bottom: 6px;
   }
   .card-prompt {
@@ -111,10 +111,10 @@
     font-size: 11px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--madera);
+    color: var(--ambar);
     margin-bottom: 6px;
   }
-  .footer { margin-top: 64px; text-align: center; font-family: "Fraunces", serif; font-style: italic; color: var(--madera); font-size: 18px; }
+  .footer { margin-top: 64px; text-align: center; font-family: "Fraunces", serif; font-style: italic; color: var(--ambar); font-size: 18px; }
 </style>
 </head>
 <body>
@@ -135,12 +135,12 @@
       <div class="pair">
         <div>
           <div class="pair-label">Cruda</div>
-          <img class="card-img-raw" src="https://image.pollinations.ai/prompt/aerial%20overhead%20view%20of%20organic%20vegetable%20garden%20with%20neat%20rows%20of%20kale%20chard%20cabbage%20and%20herbs%2C%20rich%20dark%20soil%20between%20rows%2C%20warm%20golden%20hour%20side%20light%20casting%20long%20shadows%2C%20rural%20italian%20countryside%2C%20muted%20earth%20tones%2C%20editorial%20landscape%20photography%2C%20cinematic%2C%20no%20people%20no%20text?width=1200&height=675&seed=11&nologo=true&model=flux" alt="A" loading="lazy" />
+          <img class="card-img-raw" src="https://image.pollinations.ai/prompt/aerial%20overhead%20view%20of%20organic%20vegetable%20garden%20with%20neat%20rows%20of%20kale%20chard%20cabbage%20and%20herbs%2C%20rich%20dark%20soil%20between%20rows%2C%20warm%20golden%20hour%20side%20light%20casting%20long%20shadows%2C%20rural%20countryside%2C%20muted%20earth%20tones%2C%20editorial%20landscape%20photography%2C%20cinematic%2C%20no%20people%20no%20text?width=1200&height=675&seed=11&nologo=true&model=flux" alt="A" loading="lazy" />
         </div>
         <div>
           <div class="pair-label">Como fondo</div>
           <div class="card-preview">
-            <img src="https://image.pollinations.ai/prompt/aerial%20overhead%20view%20of%20organic%20vegetable%20garden%20with%20neat%20rows%20of%20kale%20chard%20cabbage%20and%20herbs%2C%20rich%20dark%20soil%20between%20rows%2C%20warm%20golden%20hour%20side%20light%20casting%20long%20shadows%2C%20rural%20italian%20countryside%2C%20muted%20earth%20tones%2C%20editorial%20landscape%20photography%2C%20cinematic%2C%20no%20people%20no%20text?width=1200&height=675&seed=11&nologo=true&model=flux" alt="A bg" loading="lazy" />
+            <img src="https://image.pollinations.ai/prompt/aerial%20overhead%20view%20of%20organic%20vegetable%20garden%20with%20neat%20rows%20of%20kale%20chard%20cabbage%20and%20herbs%2C%20rich%20dark%20soil%20between%20rows%2C%20warm%20golden%20hour%20side%20light%20casting%20long%20shadows%2C%20rural%20countryside%2C%20muted%20earth%20tones%2C%20editorial%20landscape%20photography%2C%20cinematic%2C%20no%20people%20no%20text?width=1200&height=675&seed=11&nologo=true&model=flux" alt="A bg" loading="lazy" />
             <div class="overlay"></div>
             <div class="demo-text">
               <div class="ll">Nuestro compromiso</div>
@@ -151,7 +151,7 @@
       </div>
       <div class="card-body">
         <div class="card-title">Surcos de huerta orgánica desde arriba</div>
-        <div class="card-prompt">Vista cenital de hileras de kale, acelga, repollo, hierbas. Tierra oscura entre surcos. Hora dorada, sombras largas. Campo italiano.</div>
+        <div class="card-prompt">Vista cenital de hileras de kale, acelga, repollo, hierbas. Tierra oscura entre surcos. Hora dorada, sombras largas. Huerta local.</div>
       </div>
     </div>
 
@@ -187,12 +187,12 @@
       <div class="pair">
         <div>
           <div class="pair-label">Cruda</div>
-          <img class="card-img-raw" src="https://image.pollinations.ai/prompt/woven%20wicker%20basket%20with%20freshly%20harvested%20vegetables%20and%20fruits%20sitting%20on%20rich%20dark%20soil%20at%20edge%20of%20vegetable%20garden%20row%2C%20warm%20afternoon%20side%20light%2C%20rustic%20italian%20countryside%2C%20earth%20tones%2C%20editorial%20farm%20to%20table%20photography%2C%20cinematic%20depth%20of%20field%2C%20muted%20saturation%2C%20no%20people%20no%20text?width=1200&height=675&seed=33&nologo=true&model=flux" alt="C" loading="lazy" />
+          <img class="card-img-raw" src="https://image.pollinations.ai/prompt/woven%20wicker%20basket%20with%20freshly%20harvested%20vegetables%20and%20fruits%20sitting%20on%20rich%20dark%20soil%20at%20edge%20of%20vegetable%20garden%20row%2C%20warm%20afternoon%20side%20light%2C%20rustic%20countryside%2C%20earth%20tones%2C%20editorial%20farm%20to%20table%20photography%2C%20cinematic%20depth%20of%20field%2C%20muted%20saturation%2C%20no%20people%20no%20text?width=1200&height=675&seed=33&nologo=true&model=flux" alt="C" loading="lazy" />
         </div>
         <div>
           <div class="pair-label">Como fondo</div>
           <div class="card-preview">
-            <img src="https://image.pollinations.ai/prompt/woven%20wicker%20basket%20with%20freshly%20harvested%20vegetables%20and%20fruits%20sitting%20on%20rich%20dark%20soil%20at%20edge%20of%20vegetable%20garden%20row%2C%20warm%20afternoon%20side%20light%2C%20rustic%20italian%20countryside%2C%20earth%20tones%2C%20editorial%20farm%20to%20table%20photography%2C%20cinematic%20depth%20of%20field%2C%20muted%20saturation%2C%20no%20people%20no%20text?width=1200&height=675&seed=33&nologo=true&model=flux" alt="C bg" loading="lazy" />
+            <img src="https://image.pollinations.ai/prompt/woven%20wicker%20basket%20with%20freshly%20harvested%20vegetables%20and%20fruits%20sitting%20on%20rich%20dark%20soil%20at%20edge%20of%20vegetable%20garden%20row%2C%20warm%20afternoon%20side%20light%2C%20rustic%20countryside%2C%20earth%20tones%2C%20editorial%20farm%20to%20table%20photography%2C%20cinematic%20depth%20of%20field%2C%20muted%20saturation%2C%20no%20people%20no%20text?width=1200&height=675&seed=33&nologo=true&model=flux" alt="C bg" loading="lazy" />
             <div class="overlay"></div>
             <div class="demo-text">
               <div class="ll">Nuestro compromiso</div>
@@ -213,12 +213,12 @@
       <div class="pair">
         <div>
           <div class="pair-label">Cruda</div>
-          <img class="card-img-raw" src="https://image.pollinations.ai/prompt/sunlight%20filtering%20through%20rows%20of%20pear%20and%20apple%20trees%20in%20italian%20orchard%20at%20golden%20hour%2C%20long%20shadows%20across%20grass%20floor%2C%20warm%20amber%20light%2C%20mediterranean%20countryside%2C%20editorial%20landscape%20photography%2C%20cinematic%2C%20muted%20earth%20tones%2C%20depth%20of%20field%2C%20no%20people%20no%20text?width=1200&height=675&seed=44&nologo=true&model=flux" alt="D" loading="lazy" />
+          <img class="card-img-raw" src="https://image.pollinations.ai/prompt/sunlight%20filtering%20through%20rows%20of%20pear%20and%20apple%20trees%20in%20orchard%20at%20golden%20hour%2C%20long%20shadows%20across%20grass%20floor%2C%20warm%20amber%20light%2C%20green%20countryside%2C%20editorial%20landscape%20photography%2C%20cinematic%2C%20muted%20earth%20tones%2C%20depth%20of%20field%2C%20no%20people%20no%20text?width=1200&height=675&seed=44&nologo=true&model=flux" alt="D" loading="lazy" />
         </div>
         <div>
           <div class="pair-label">Como fondo</div>
           <div class="card-preview">
-            <img src="https://image.pollinations.ai/prompt/sunlight%20filtering%20through%20rows%20of%20pear%20and%20apple%20trees%20in%20italian%20orchard%20at%20golden%20hour%2C%20long%20shadows%20across%20grass%20floor%2C%20warm%20amber%20light%2C%20mediterranean%20countryside%2C%20editorial%20landscape%20photography%2C%20cinematic%2C%20muted%20earth%20tones%2C%20depth%20of%20field%2C%20no%20people%20no%20text?width=1200&height=675&seed=44&nologo=true&model=flux" alt="D bg" loading="lazy" />
+            <img src="https://image.pollinations.ai/prompt/sunlight%20filtering%20through%20rows%20of%20pear%20and%20apple%20trees%20in%20orchard%20at%20golden%20hour%2C%20long%20shadows%20across%20grass%20floor%2C%20warm%20amber%20light%2C%20green%20countryside%2C%20editorial%20landscape%20photography%2C%20cinematic%2C%20muted%20earth%20tones%2C%20depth%20of%20field%2C%20no%20people%20no%20text?width=1200&height=675&seed=44&nologo=true&model=flux" alt="D bg" loading="lazy" />
             <div class="overlay"></div>
             <div class="demo-text">
               <div class="ll">Nuestro compromiso</div>
@@ -229,7 +229,7 @@
       </div>
       <div class="card-body">
         <div class="card-title">Hilera de árboles frutales al atardecer</div>
-        <div class="card-prompt">Sol filtrándose entre perales y manzanos en huerto italiano. Hora dorada, sombras largas, paleta ámbar/oliva.</div>
+        <div class="card-prompt">Sol filtrándose entre perales y manzanos en huerta local. Hora dorada, sombras largas, paleta verde fresca.</div>
       </div>
     </div>
 
@@ -239,12 +239,12 @@
       <div class="pair">
         <div>
           <div class="pair-label">Cruda</div>
-          <img class="card-img-raw" src="https://image.pollinations.ai/prompt/close%20up%20of%20weathered%20hands%20pulling%20fresh%20carrots%20with%20greens%20still%20attached%20from%20rich%20dark%20soil%2C%20warm%20natural%20side%20light%2C%20rustic%20italian%20farm%2C%20muted%20earth%20tones%2C%20editorial%20agriculture%20photography%2C%20cinematic%2C%20no%20faces%20visible%2C%20no%20text?width=1200&height=675&seed=55&nologo=true&model=flux" alt="E" loading="lazy" />
+          <img class="card-img-raw" src="https://image.pollinations.ai/prompt/close%20up%20of%20weathered%20hands%20pulling%20fresh%20carrots%20with%20greens%20still%20attached%20from%20rich%20dark%20soil%2C%20warm%20natural%20side%20light%2C%20rustic%20farm%2C%20muted%20earth%20tones%2C%20editorial%20agriculture%20photography%2C%20cinematic%2C%20no%20faces%20visible%2C%20no%20text?width=1200&height=675&seed=55&nologo=true&model=flux" alt="E" loading="lazy" />
         </div>
         <div>
           <div class="pair-label">Como fondo</div>
           <div class="card-preview">
-            <img src="https://image.pollinations.ai/prompt/close%20up%20of%20weathered%20hands%20pulling%20fresh%20carrots%20with%20greens%20still%20attached%20from%20rich%20dark%20soil%2C%20warm%20natural%20side%20light%2C%20rustic%20italian%20farm%2C%20muted%20earth%20tones%2C%20editorial%20agriculture%20photography%2C%20cinematic%2C%20no%20faces%20visible%2C%20no%20text?width=1200&height=675&seed=55&nologo=true&model=flux" alt="E bg" loading="lazy" />
+            <img src="https://image.pollinations.ai/prompt/close%20up%20of%20weathered%20hands%20pulling%20fresh%20carrots%20with%20greens%20still%20attached%20from%20rich%20dark%20soil%2C%20warm%20natural%20side%20light%2C%20rustic%20farm%2C%20muted%20earth%20tones%2C%20editorial%20agriculture%20photography%2C%20cinematic%2C%20no%20faces%20visible%2C%20no%20text?width=1200&height=675&seed=55&nologo=true&model=flux" alt="E bg" loading="lazy" />
             <div class="overlay"></div>
             <div class="demo-text">
               <div class="ll">Nuestro compromiso</div>
@@ -265,12 +265,12 @@
       <div class="pair">
         <div>
           <div class="pair-label">Cruda</div>
-          <img class="card-img-raw" src="https://image.pollinations.ai/prompt/wide%20shot%20of%20rolling%20italian%20countryside%20with%20vegetable%20fields%20in%20foreground%20and%20stone%20farmhouse%20in%20background%2C%20cypress%20trees%20on%20horizon%2C%20warm%20late%20afternoon%20light%2C%20muted%20olive%20and%20amber%20tones%2C%20mediterranean%20landscape%2C%20editorial%20travel%20photography%2C%20cinematic%2C%20no%20people%20no%20text?width=1200&height=675&seed=66&nologo=true&model=flux" alt="F" loading="lazy" />
+          <img class="card-img-raw" src="https://image.pollinations.ai/prompt/wide%20shot%20of%20rolling%20countryside%20with%20vegetable%20fields%20in%20foreground%20and%20stone%20farmhouse%20in%20background%2C%20open%20sky%20on%20horizon%2C%20warm%20late%20afternoon%20light%2C%20vibrant%20fresh%20green%20tones%2C%20green%20landscape%2C%20editorial%20travel%20photography%2C%20cinematic%2C%20no%20people%20no%20text?width=1200&height=675&seed=66&nologo=true&model=flux" alt="F" loading="lazy" />
         </div>
         <div>
           <div class="pair-label">Como fondo</div>
           <div class="card-preview">
-            <img src="https://image.pollinations.ai/prompt/wide%20shot%20of%20rolling%20italian%20countryside%20with%20vegetable%20fields%20in%20foreground%20and%20stone%20farmhouse%20in%20background%2C%20cypress%20trees%20on%20horizon%2C%20warm%20late%20afternoon%20light%2C%20muted%20olive%20and%20amber%20tones%2C%20mediterranean%20landscape%2C%20editorial%20travel%20photography%2C%20cinematic%2C%20no%20people%20no%20text?width=1200&height=675&seed=66&nologo=true&model=flux" alt="F bg" loading="lazy" />
+            <img src="https://image.pollinations.ai/prompt/wide%20shot%20of%20rolling%20countryside%20with%20vegetable%20fields%20in%20foreground%20and%20stone%20farmhouse%20in%20background%2C%20open%20sky%20on%20horizon%2C%20warm%20late%20afternoon%20light%2C%20vibrant%20fresh%20green%20tones%2C%20green%20landscape%2C%20editorial%20travel%20photography%2C%20cinematic%2C%20no%20people%20no%20text?width=1200&height=675&seed=66&nologo=true&model=flux" alt="F bg" loading="lazy" />
             <div class="overlay"></div>
             <div class="demo-text">
               <div class="ll">Nuestro compromiso</div>
@@ -280,8 +280,8 @@
         </div>
       </div>
       <div class="card-body">
-        <div class="card-title">Paisaje italiano con cultivos</div>
-        <div class="card-prompt">Plano amplio: cultivos en primer plano, casa de piedra y cipreses al fondo. Toscana vibe. Atemporal, evocativo.</div>
+        <div class="card-title">Paisaje de huerta con cultivos</div>
+        <div class="card-prompt">Plano amplio: cultivos en primer plano, casa de piedra y cielo abierto al fondo. Huerta vibe. Atemporal, evocativo.</div>
       </div>
     </div>
 

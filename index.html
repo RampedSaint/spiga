@@ -3,35 +3,36 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Spiga · La cosecha de la semana.</title>
+<title>Nativa · La cosecha de la semana.</title>
 <meta name="description" content="Suscripción semanal de frutas y verduras premium, seleccionadas a mano. Entrega puerta a puerta en Nordelta, Villanueva, Tigre, Maschwitz, Escobar y Pilar." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=Cormorant+Garamond:ital,wght@0,500;1,300;1,500&family=Cinzel:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-<link rel="icon" type="image/svg+xml" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><circle cx="100" cy="100" r="95" fill="none" stroke="%2354613F" stroke-width="6"/><text x="100" y="148" text-anchor="middle" font-family="Georgia,serif" font-size="140" font-style="italic" fill="%2354613F">S</text></svg>' />
+<link rel="icon" type="image/svg+xml" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><circle cx="100" cy="100" r="95" fill="none" stroke="%231b7a43" stroke-width="6"/><text x="100" y="148" text-anchor="middle" font-family="Georgia,serif" font-size="140" font-style="italic" fill="%231b7a43">N</text></svg>' />
 
 <style>
   :root {
-    --oliva-profundo: #54613F;
-    --oliva-mas-oscuro: #3F4A30;
-    --oliva-texto: #6F7A5C;     /* Para texto: contraste AA sobre crema */
-    --oliva: #8A9476;            /* Decorativo (no para texto pequeño) */
-    --oliva-soft: #B8BFA8;
-    --crema: #F2EBDD;
-    --crema-soft: #E6DCC4;
-    --tinta: #1A1A18;
+    --verde-profundo: #1b7a43;
+    --verde-mas-oscuro: #14532d;
+    --verde-texto: #2f6b43;     /* Para texto: contraste AA sobre crema */
+    --verde: #3fb85f;            /* Decorativo (no para texto pequeño) */
+    --verde-soft: #9fd9ae;
+    --crema: #f8f7f2;
+    --crema-soft: #ecebe0;
+    --tinta: #14201a;
 
-    --madera: #A07545;
-    --madera-suave: #C9A581;     /* Decorativo (no para texto pequeño) */
+    --ambar: #c8821e;
+    --ambar-suave: #e3b877;     /* Decorativo (no para texto pequeño) */
 
-    --acento: #C9573A;
-    --acento-2: #E8C766;
+    --acento: #f5a524;
+    --acento-2: #f5a524;
+    --lima: #bef264;            /* Highlight / destacado */
 
     --pad-x: clamp(20px, 5vw, 56px);
 
     /* Aliases legados para no romper código existente */
-    --verde-bosque: var(--oliva-profundo);
-    --bosque-profundo: var(--oliva-mas-oscuro);
+    --verde-bosque: var(--verde-profundo);
+    --bosque-profundo: var(--verde-mas-oscuro);
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -50,20 +51,20 @@
 
   /* ============ A11Y ============ */
   :focus-visible {
-    outline: 2px solid var(--oliva-profundo);
+    outline: 2px solid var(--verde-profundo);
     outline-offset: 3px;
     border-radius: 2px;
   }
   .btn:focus-visible,
   a.btn:focus-visible {
-    outline-color: var(--madera);
+    outline-color: var(--ambar);
     outline-offset: 4px;
   }
   .skip-link {
     position: absolute;
     top: -40px;
     left: var(--pad-x);
-    background: var(--oliva-profundo);
+    background: var(--verde-profundo);
     color: var(--crema);
     padding: 12px 20px;
     border-radius: 4px;
@@ -106,11 +107,11 @@
   nav {
     position: sticky;
     top: 0;
-    background: rgba(242, 235, 221, 0.94);
+    background: rgba(248,247,242, 0.94);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     z-index: 100;
-    border-bottom: 1px solid var(--madera-suave);
+    border-bottom: 1px solid var(--ambar-suave);
   }
   .nav-inner {
     display: flex;
@@ -178,7 +179,7 @@
       flex-wrap: wrap;
       justify-content: flex-start;
       padding-top: 4px;
-      border-top: 1px solid rgba(160,117,69,0.12);
+      border-top: 1px solid rgba(200,130,30,0.12);
     }
     .nav-links a { font-size: 12px; padding: 8px 0; }
   }
@@ -199,7 +200,7 @@
     font-size: 12px;
     letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: var(--oliva-texto);
+    color: var(--verde-texto);
     margin-bottom: 28px;
     display: flex;
     align-items: center;
@@ -209,7 +210,7 @@
     content: "";
     width: 28px;
     height: 1px;
-    background: var(--oliva);
+    background: var(--verde);
   }
   .hero-text h1 {
     font-family: "Fraunces", serif;
@@ -224,7 +225,7 @@
   .hero-text h1 em {
     font-style: italic;
     font-weight: 300;
-    color: var(--oliva-texto);
+    color: var(--verde-texto);
   }
   .hero-text .lead {
     font-family: "Fraunces", serif;
@@ -240,7 +241,7 @@
     font-style: italic;
     font-size: 16px;
     color: var(--verde-bosque);
-    border-bottom: 1px solid var(--oliva-soft);
+    border-bottom: 1px solid var(--verde-soft);
     padding-bottom: 2px;
   }
 
@@ -249,9 +250,9 @@
     position: relative;
     aspect-ratio: 4 / 5;
     background:
-      linear-gradient(135deg, rgba(31,44,32,0.86) 0%, rgba(63,74,48,0.90) 100%),
+      linear-gradient(135deg, rgba(20,32,26,0.86) 0%, rgba(20,83,45,0.90) 100%),
       url('img/hero-bg.jpg') center/cover no-repeat;
-    background-color: var(--oliva-mas-oscuro);
+    background-color: var(--verde-mas-oscuro);
     border-radius: 8px;
     overflow: hidden;
     display: flex;
@@ -264,8 +265,8 @@
     position: absolute;
     inset: 0;
     background:
-      radial-gradient(ellipse at 30% 20%, rgba(242,235,221,0.10), transparent 50%),
-      radial-gradient(ellipse at 80% 90%, rgba(160,117,69,0.30), transparent 60%),
+      radial-gradient(ellipse at 30% 20%, rgba(248,247,242,0.10), transparent 50%),
+      radial-gradient(ellipse at 80% 90%, rgba(200,130,30,0.30), transparent 60%),
       repeating-linear-gradient(90deg, transparent 0 14px, rgba(0,0,0,0.05) 14px 15px);
   }
   .hero-art-mono {
@@ -278,7 +279,7 @@
     bottom: 24px;
     left: 24px;
     right: 24px;
-    color: var(--oliva-soft);
+    color: var(--verde-soft);
     font-family: "Inter", sans-serif;
     font-size: 11px;
     letter-spacing: 0.22em;
@@ -287,7 +288,7 @@
     justify-content: space-between;
     z-index: 2;
     padding-top: 14px;
-    border-top: 1px solid rgba(242,235,221,0.22);
+    border-top: 1px solid rgba(248,247,242,0.22);
   }
 
   @media (max-width: 900px) {
@@ -298,18 +299,18 @@
   /* ============ STRIP ============ */
   .strip {
     background: var(--verde-bosque);
-    color: var(--oliva-soft);
+    color: var(--verde-soft);
     padding: 18px 0;
     overflow: hidden;
     position: relative;
-    border-top: 1px solid var(--madera);
-    border-bottom: 1px solid var(--madera);
+    border-top: 1px solid var(--ambar);
+    border-bottom: 1px solid var(--ambar);
   }
   .strip::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: repeating-linear-gradient(90deg, transparent 0 24px, rgba(160,117,69,0.10) 24px 25px);
+    background: repeating-linear-gradient(90deg, transparent 0 24px, rgba(200,130,30,0.10) 24px 25px);
     pointer-events: none;
   }
   .strip-inner {
@@ -324,7 +325,7 @@
     position: relative;
   }
   .strip-inner span { display: inline-flex; align-items: center; gap: 48px; }
-  .strip-inner span::after { content: "·"; color: var(--madera-suave); font-style: normal; }
+  .strip-inner span::after { content: "·"; color: var(--ambar-suave); font-style: normal; }
   @keyframes marquee {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
@@ -350,7 +351,7 @@
     letter-spacing: -0.02em;
     line-height: 1.05;
   }
-  .block-head h2 em { font-style: italic; color: var(--oliva-texto); font-weight: 300; }
+  .block-head h2 em { font-style: italic; color: var(--verde-texto); font-weight: 300; }
   .block-head p {
     font-family: "Fraunces", serif;
     font-size: 19px;
@@ -367,7 +368,7 @@
     gap: 32px;
   }
   .how-step {
-    border-top: 1px solid var(--oliva-soft);
+    border-top: 1px solid var(--verde-soft);
     padding-top: 28px;
     position: relative;
   }
@@ -375,11 +376,11 @@
     font-family: "Fraunces", serif;
     font-style: italic;
     font-size: 64px;
-    color: var(--madera-suave);
+    color: var(--ambar-suave);
     line-height: 1;
     margin-bottom: 24px;
   }
-  .how-step { border-top-color: var(--madera-suave); }
+  .how-step { border-top-color: var(--ambar-suave); }
   .how-step h3 {
     font-family: "Fraunces", serif;
     font-size: 28px;
@@ -399,7 +400,7 @@
   /* ============ QUÉ VIENE EN EL CAJÓN ============ */
   .basics {
     background: var(--crema-soft);
-    border: 1px solid var(--madera-suave);
+    border: 1px solid var(--ambar-suave);
     border-radius: 4px;
     padding: 48px;
     margin-bottom: 64px;
@@ -410,7 +411,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: repeating-linear-gradient(90deg, transparent 0 32px, rgba(160,117,69,0.05) 32px 33px);
+    background: repeating-linear-gradient(90deg, transparent 0 32px, rgba(200,130,30,0.05) 32px 33px);
     pointer-events: none;
   }
   .basics-head {
@@ -423,7 +424,7 @@
     font-size: 11px;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--madera);
+    color: var(--ambar);
     margin-bottom: 14px;
     font-weight: 500;
   }
@@ -446,14 +447,14 @@
     font-size: 18px;
     color: var(--verde-bosque);
     background: var(--crema);
-    border: 1px solid var(--madera-suave);
+    border: 1px solid var(--ambar-suave);
     padding: 12px 20px;
     border-radius: 999px;
     transition: all 200ms ease;
   }
   .basics-pills .pill-wood:hover {
-    background: var(--madera);
-    border-color: var(--madera);
+    background: var(--ambar);
+    border-color: var(--ambar);
     color: var(--crema);
   }
 
@@ -484,7 +485,7 @@
   }
   .cajon-season {
     background: var(--crema);
-    border: 1px solid var(--oliva-soft);
+    border: 1px solid var(--verde-soft);
     border-radius: 4px;
     padding: 28px 24px;
     transition: transform 200ms ease, box-shadow 200ms ease;
@@ -493,21 +494,21 @@
   }
   .cajon-season:hover {
     transform: translateY(-3px);
-    box-shadow: 0 16px 32px -12px rgba(44,61,46,0.12);
+    box-shadow: 0 16px 32px -12px rgba(20,32,26,0.12);
   }
   .cajon-season::before {
     content: "";
     position: absolute;
     top: 0; left: 0; right: 0;
     height: 3px;
-    background: var(--season-color, var(--oliva));
+    background: var(--season-color, var(--verde));
   }
   /* Estación actual: primera + destacada (el orden lo maneja JS para
      que las siguientes sigan el ciclo natural). */
   .cajon-season.is-current-season {
-    border-color: var(--madera);
+    border-color: var(--ambar);
     background: var(--crema);
-    box-shadow: 0 16px 36px -10px rgba(160,117,69,0.32);
+    box-shadow: 0 16px 36px -10px rgba(200,130,30,0.32);
     overflow: visible;
     margin-top: 12px;
   }
@@ -517,7 +518,7 @@
     position: absolute;
     top: -10px;
     left: 24px;
-    background: var(--madera);
+    background: var(--ambar);
     color: var(--crema);
     padding: 4px 12px;
     font-family: "Inter", sans-serif;
@@ -527,7 +528,7 @@
     font-weight: 500;
     border-radius: 999px;
   }
-  .cajon-season.is-current-season .season-name { color: var(--madera); }
+  .cajon-season.is-current-season .season-name { color: var(--ambar); }
   .cajon-season .season-name {
     font-family: "Fraunces", serif;
     font-style: italic;
@@ -541,13 +542,13 @@
     font-size: 10px;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: var(--oliva-texto);
+    color: var(--verde-texto);
     margin-bottom: 22px;
   }
   .cajon-season .season-divider {
     width: 28px;
     height: 1px;
-    background: var(--season-color, var(--oliva));
+    background: var(--season-color, var(--verde));
     opacity: 0.6;
     margin-bottom: 22px;
   }
@@ -561,7 +562,7 @@
     font-size: 10px;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--madera);
+    color: var(--ambar);
     font-weight: 500;
     margin-bottom: 8px;
   }
@@ -579,7 +580,7 @@
   /* ============ ESTA SEMANA ============ */
   .week {
     background:
-      linear-gradient(135deg, rgba(63,74,48,0.92) 0%, rgba(84,97,63,0.86) 100%),
+      linear-gradient(135deg, rgba(20,83,45,0.92) 0%, rgba(27,122,67,0.86) 100%),
       url('https://image.pollinations.ai/prompt/close%20up%20of%20ripe%20heirloom%20tomatoes%20still%20on%20the%20vine%20in%20sunlit%20vegetable%20garden%2C%20deep%20red%20and%20green%20colors%2C%20soft%20natural%20warm%20backlight%2C%20bokeh%20background%2C%20editorial%20agriculture%20magazine%20photography%2C%20muted%20earth%20tones%2C%20cinematic%20depth%20of%20field%2C%20no%20people%20no%20text?width=1600&height=900&seed=22&nologo=true&model=flux') center/cover no-repeat;
     background-color: var(--verde-bosque);
     color: var(--crema);
@@ -607,17 +608,17 @@
     letter-spacing: -0.02em;
   }
   .week h2 em { font-style: italic; color: var(--acento-2); font-weight: 300; }
-  .week .lead { font-family: "Fraunces", serif; font-size: 18px; line-height: 1.6; color: var(--oliva-soft); max-width: 40ch; }
+  .week .lead { font-family: "Fraunces", serif; font-size: 18px; line-height: 1.6; color: var(--verde-soft); max-width: 40ch; }
   .week-list {
     list-style: none;
-    border-top: 1px solid rgba(244,239,230,0.18);
+    border-top: 1px solid rgba(248,247,242,0.18);
   }
   .week-list li {
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: baseline;
     padding: 18px 0;
-    border-bottom: 1px solid rgba(244,239,230,0.18);
+    border-bottom: 1px solid rgba(248,247,242,0.18);
   }
   .week-list .name {
     font-family: "Fraunces", serif;
@@ -626,7 +627,7 @@
   }
   .week-list .name em {
     font-style: italic;
-    color: var(--oliva-soft);
+    color: var(--verde-soft);
     font-size: 14px;
     margin-left: 8px;
   }
@@ -638,7 +639,7 @@
     color: var(--acento-2);
   }
   .week-list .badge.base {
-    color: var(--oliva-soft);
+    color: var(--verde-soft);
     opacity: 0.55;
     font-style: italic;
   }
@@ -646,7 +647,7 @@
     margin-top: 24px;
     font-family: "Inter", sans-serif;
     font-size: 12px;
-    color: var(--oliva-soft);
+    color: var(--verde-soft);
     letter-spacing: 0.06em;
   }
   @media (max-width: 900px) {
@@ -661,7 +662,7 @@
   }
   .plan {
     background: var(--crema);
-    border: 1px solid var(--oliva-soft);
+    border: 1px solid var(--verde-soft);
     padding: 40px 32px;
     border-radius: 4px;
     display: flex;
@@ -670,7 +671,7 @@
   }
   .plan:hover {
     transform: translateY(-4px);
-    box-shadow: 0 24px 48px -16px rgba(44,61,46,0.15);
+    box-shadow: 0 24px 48px -16px rgba(20,32,26,0.15);
   }
   .plan.featured {
     background: var(--verde-bosque);
@@ -682,20 +683,21 @@
   .plan.featured h3,
   .plan.featured .price { color: var(--crema); }
   .plan.featured .plan-desc,
-  .plan.featured .plan-features li { color: var(--oliva-soft); }
+  .plan.featured .plan-features li { color: var(--verde-soft); }
   .plan.featured .badge-feat {
     position: absolute;
     top: -12px;
     right: 24px;
-    background: var(--madera);
-    color: var(--crema);
+    background: var(--lima);
+    color: var(--verde-bosque);
     padding: 6px 12px;
     font-family: "Inter", sans-serif;
     font-size: 10px;
+    font-weight: 600;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     border-radius: 999px;
-    box-shadow: 0 4px 12px rgba(160,117,69,0.3);
+    box-shadow: 0 4px 12px rgba(190,242,100,0.4);
   }
   .plan h3 {
     font-family: "Fraunces", serif;
@@ -708,7 +710,7 @@
   .plan .plan-desc {
     font-family: "Fraunces", serif;
     font-size: 15px;
-    color: var(--oliva-texto);
+    color: var(--verde-texto);
     margin-bottom: 24px;
     line-height: 1.5;
   }
@@ -722,7 +724,7 @@
   .plan .price-meta {
     font-family: "Inter", sans-serif;
     font-size: 12px;
-    color: var(--oliva-texto);
+    color: var(--verde-texto);
     letter-spacing: 0.1em;
     text-transform: uppercase;
     margin-bottom: 32px;
@@ -743,7 +745,7 @@
   }
   .plan-features li::before {
     content: "·";
-    color: var(--oliva-texto);
+    color: var(--verde-texto);
     font-size: 22px;
     line-height: 1;
   }
@@ -766,7 +768,7 @@
     font-family: "Fraunces", serif;
     font-style: italic;
     font-size: 16px;
-    color: var(--oliva-texto);
+    color: var(--verde-texto);
   }
 
   /* ============ ZONAS ============ */
@@ -777,7 +779,7 @@
   }
   .zone {
     background: var(--crema);
-    border: 1px solid var(--oliva-soft);
+    border: 1px solid var(--verde-soft);
     padding: 40px;
     border-radius: 4px;
   }
@@ -793,7 +795,7 @@
     font-size: 11px;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--oliva-texto);
+    color: var(--verde-texto);
     margin-bottom: 24px;
   }
   .zone-list {
@@ -812,7 +814,7 @@
   }
   .timeline {
     margin-top: 48px;
-    border-top: 1px solid var(--oliva-soft);
+    border-top: 1px solid var(--verde-soft);
     padding-top: 32px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -840,8 +842,8 @@
   /* ============ MANIFIESTO ============ */
   .manifest-block {
     background:
-      linear-gradient(180deg, rgba(31,28,24,0.78) 0%, rgba(31,28,24,0.88) 100%),
-      url('https://image.pollinations.ai/prompt/woven%20wicker%20basket%20with%20freshly%20harvested%20vegetables%20and%20fruits%20sitting%20on%20rich%20dark%20soil%20at%20edge%20of%20vegetable%20garden%20row%2C%20warm%20afternoon%20side%20light%2C%20rustic%20italian%20countryside%2C%20earth%20tones%2C%20editorial%20farm%20to%20table%20photography%2C%20cinematic%20depth%20of%20field%2C%20muted%20saturation%2C%20no%20people%20no%20text?width=1600&height=900&seed=33&nologo=true&model=flux') center/cover no-repeat;
+      linear-gradient(180deg, rgba(20,32,26,0.78) 0%, rgba(20,32,26,0.88) 100%),
+      url('https://image.pollinations.ai/prompt/woven%20basket%20overflowing%20with%20freshly%20harvested%20colorful%20vegetables%20and%20fruits%20in%20a%20sunny%20home%20vegetable%20garden%2C%20bright%20morning%20light%2C%20vibrant%20fresh%20greens%2C%20crisp%20natural%20colors%2C%20editorial%20farm%20to%20table%20photography%2C%20shallow%20depth%20of%20field%2C%20no%20people%20no%20text?width=1600&height=900&seed=33&nologo=true&model=flux') center/cover no-repeat;
     background-color: var(--tinta);
     padding: 120px var(--pad-x);
     margin: 80px calc(50% - 50vw);
@@ -849,12 +851,12 @@
     max-width: 100vw;
     position: relative;
   }
-  .manifest-block .label { color: var(--madera-suave) !important; }
+  .manifest-block .label { color: var(--ambar-suave) !important; }
   .manifest-inner h2 { color: var(--crema) !important; }
-  .manifest-inner h2 em { color: var(--madera-suave) !important; }
-  .manifest-inner .manifest-coda { color: var(--oliva-soft) !important; }
-  .manifest-inner .signature { color: var(--madera-suave) !important; }
-  .manifest-inner .signature::before, .manifest-inner .signature::after { background: var(--madera-suave) !important; }
+  .manifest-inner h2 em { color: var(--ambar-suave) !important; }
+  .manifest-inner .manifest-coda { color: var(--verde-soft) !important; }
+  .manifest-inner .signature { color: var(--ambar-suave) !important; }
+  .manifest-inner .signature::before, .manifest-inner .signature::after { background: var(--ambar-suave) !important; }
   .manifest-inner {
     max-width: 900px;
     margin: 0 auto;
@@ -872,7 +874,7 @@
   }
   .manifest-inner h2 em {
     font-style: italic;
-    color: var(--oliva-texto);
+    color: var(--verde-texto);
   }
   .manifest-inner .manifest-coda {
     font-family: "Fraunces", serif;
@@ -888,7 +890,7 @@
     align-items: center;
     justify-content: center;
     gap: 16px;
-    color: var(--oliva-texto);
+    color: var(--verde-texto);
     font-family: "Inter", sans-serif;
     font-size: 12px;
     letter-spacing: 0.2em;
@@ -898,13 +900,13 @@
     content: "";
     width: 32px;
     height: 1px;
-    background: var(--oliva);
+    background: var(--verde);
   }
 
   /* ============ FAQ ============ */
-  .faq-list { border-top: 1px solid var(--oliva-soft); }
+  .faq-list { border-top: 1px solid var(--verde-soft); }
   .faq-item {
-    border-bottom: 1px solid var(--oliva-soft);
+    border-bottom: 1px solid var(--verde-soft);
     padding: 24px 0;
   }
   .faq-q {
@@ -924,7 +926,7 @@
     font-family: "Inter", sans-serif;
     font-weight: 300;
     font-size: 28px;
-    color: var(--oliva-texto);
+    color: var(--verde-texto);
     transition: transform 200ms ease;
   }
   details[open] .faq-q::after { content: "−"; transform: rotate(0deg); }
@@ -940,8 +942,8 @@
   /* ============ CTA FINAL ============ */
   .cta-final {
     background:
-      linear-gradient(125deg, rgba(31,28,24,0.85) 0%, rgba(63,74,48,0.78) 100%),
-      url('https://image.pollinations.ai/prompt/wide%20shot%20of%20rolling%20italian%20countryside%20with%20vegetable%20fields%20in%20foreground%20and%20stone%20farmhouse%20in%20background%2C%20cypress%20trees%20on%20horizon%2C%20warm%20late%20afternoon%20light%2C%20muted%20olive%20and%20amber%20tones%2C%20mediterranean%20landscape%2C%20editorial%20travel%20photography%2C%20cinematic%2C%20no%20people%20no%20text?width=1600&height=900&seed=66&nologo=true&model=flux') center/cover no-repeat;
+      linear-gradient(125deg, rgba(20,32,26,0.85) 0%, rgba(20,83,45,0.78) 100%),
+      url('https://image.pollinations.ai/prompt/wide%20shot%20of%20a%20lush%20green%20vegetable%20garden%20with%20neat%20rows%20of%20leafy%20crops%20and%20herbs%2C%20bright%20fresh%20morning%20light%2C%20vibrant%20greens%2C%20clear%20sky%2C%20local%20farm%2C%20editorial%20landscape%20photography%2C%20cinematic%2C%20no%20people%20no%20text?width=1600&height=900&seed=66&nologo=true&model=flux') center/cover no-repeat;
     background-color: var(--verde-bosque);
     color: var(--crema);
     padding: 120px var(--pad-x);
@@ -964,7 +966,7 @@
     width: 480px; height: 480px;
     right: -120px; top: 50%;
     transform: translateY(-50%);
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><g stroke='%23F2EBDD' stroke-width='1' fill='none' stroke-linecap='round' opacity='0.06'><path d='M 50,130 Q 100,160 150,130'/></g><g fill='%23F2EBDD' opacity='0.06'><ellipse cx='58' cy='120' rx='9' ry='3.5' transform='rotate(-40 58 120)'/><ellipse cx='72' cy='135' rx='10' ry='3.5' transform='rotate(-25 72 135)'/><ellipse cx='90' cy='146' rx='10' ry='3.5' transform='rotate(-10 90 146)'/><ellipse cx='110' cy='146' rx='10' ry='3.5' transform='rotate(10 110 146)'/><ellipse cx='128' cy='135' rx='10' ry='3.5' transform='rotate(25 128 135)'/><ellipse cx='142' cy='120' rx='9' ry='3.5' transform='rotate(40 142 120)'/></g></svg>");
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><g stroke='%23f8f7f2' stroke-width='1' fill='none' stroke-linecap='round' opacity='0.06'><path d='M 50,130 Q 100,160 150,130'/></g><g fill='%23f8f7f2' opacity='0.06'><ellipse cx='58' cy='120' rx='9' ry='3.5' transform='rotate(-40 58 120)'/><ellipse cx='72' cy='135' rx='10' ry='3.5' transform='rotate(-25 72 135)'/><ellipse cx='90' cy='146' rx='10' ry='3.5' transform='rotate(-10 90 146)'/><ellipse cx='110' cy='146' rx='10' ry='3.5' transform='rotate(10 110 146)'/><ellipse cx='128' cy='135' rx='10' ry='3.5' transform='rotate(25 128 135)'/><ellipse cx='142' cy='120' rx='9' ry='3.5' transform='rotate(40 142 120)'/></g></svg>");
     background-size: contain;
     background-repeat: no-repeat;
     pointer-events: none;
@@ -989,7 +991,7 @@
   .cta-final p {
     font-family: "Fraunces", serif;
     font-size: 20px;
-    color: var(--oliva-soft);
+    color: var(--verde-soft);
     margin-bottom: 40px;
     max-width: 50ch;
     margin-left: auto;
@@ -1009,7 +1011,7 @@
   /* ============ FOOTER ============ */
   footer.foot {
     background: var(--bosque-profundo);
-    color: var(--oliva-soft);
+    color: var(--verde-soft);
     padding: 64px var(--pad-x) 32px;
   }
   .foot-inner {
@@ -1031,7 +1033,7 @@
     font-family: "Fraunces", serif;
     font-style: italic;
     font-size: 16px;
-    color: var(--oliva-soft);
+    color: var(--verde-soft);
   }
   .foot-col h5 {
     font-family: "Inter", sans-serif;
@@ -1047,20 +1049,20 @@
     font-family: "Inter", sans-serif;
     font-size: 13px;
     margin-bottom: 10px;
-    color: var(--oliva-soft);
+    color: var(--verde-soft);
   }
-  .foot-col a { color: var(--oliva-soft); }
+  .foot-col a { color: var(--verde-soft); }
   .foot-col a:hover { color: var(--crema); }
   .foot-bottom {
     max-width: 1280px;
     margin: 48px auto 0;
-    border-top: 1px solid rgba(244,239,230,0.12);
+    border-top: 1px solid rgba(248,247,242,0.12);
     padding-top: 24px;
     display: flex;
     justify-content: space-between;
     font-family: "Inter", sans-serif;
     font-size: 11px;
-    color: rgba(242,235,221,0.75);
+    color: rgba(248,247,242,0.75);
     letter-spacing: 0.08em;
   }
   @media (max-width: 800px) {
@@ -1073,11 +1075,11 @@
     margin: 16px auto 0;
     font-family: "Inter", sans-serif;
     font-size: 10px;
-    color: rgba(242,235,221,0.45);
+    color: rgba(248,247,242,0.45);
     letter-spacing: 0.05em;
     text-align: center;
   }
-  .foot-credits a { color: rgba(242,235,221,0.7); text-decoration: underline; }
+  .foot-credits a { color: rgba(248,247,242,0.7); text-decoration: underline; }
   .foot-credits a:hover { color: var(--crema); }
 
   ::selection { background: var(--verde-bosque); color: var(--crema); }
@@ -1099,7 +1101,7 @@
   .modal-backdrop {
     position: absolute;
     inset: 0;
-    background: rgba(31, 28, 24, 0.7);
+    background: rgba(20,32,26, 0.7);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
   }
@@ -1124,7 +1126,7 @@
     background: none;
     border: none;
     font-size: 28px;
-    color: var(--oliva-texto);
+    color: var(--verde-texto);
     cursor: pointer;
     padding: 6px 14px;
     line-height: 1;
@@ -1137,7 +1139,7 @@
     font-size: 12px;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--madera);
+    color: var(--ambar);
     font-weight: 500;
   }
   .modal-head h2 {
@@ -1149,7 +1151,7 @@
     letter-spacing: -0.01em;
     line-height: 1.15;
   }
-  .modal-head h2 em { font-style: italic; color: var(--madera); font-weight: 400; }
+  .modal-head h2 em { font-style: italic; color: var(--ambar); font-weight: 400; }
   .modal-sub {
     font-family: "Cormorant Garamond", serif;
     font-size: 16px;
@@ -1181,7 +1183,7 @@
     font-size: 14px;
     color: var(--tinta);
     background: #fff;
-    border: 1px solid var(--oliva-soft);
+    border: 1px solid var(--verde-soft);
     border-radius: 4px;
     transition: border-color 180ms ease, box-shadow 180ms ease;
     box-sizing: border-box;
@@ -1191,7 +1193,7 @@
   .form-sus textarea:focus {
     outline: none;
     border-color: var(--verde-bosque);
-    box-shadow: 0 0 0 3px rgba(84, 97, 63, 0.18);
+    box-shadow: 0 0 0 3px rgba(27,122,67, 0.18);
   }
   .form-sus textarea { resize: vertical; min-height: 60px; font-family: "Cormorant Garamond", serif; font-size: 15px; }
   .form-sus .form-check {
@@ -1226,7 +1228,7 @@
   .form-foot .btn.ghost {
     background: transparent;
     color: var(--verde-bosque);
-    border-color: var(--oliva-soft);
+    border-color: var(--verde-soft);
   }
   .form-foot .btn.ghost:hover { background: var(--crema-soft); color: var(--verde-bosque); }
   .form-foot .btn.submit:disabled { opacity: 0.6; cursor: wait; }
@@ -1234,7 +1236,7 @@
     margin-top: 14px;
     font-family: "Inter", sans-serif;
     font-size: 13px;
-    color: #B65656;
+    color: #e0813c;
     text-align: right;
     min-height: 18px;
   }
@@ -1242,7 +1244,7 @@
   .form-success { text-align: center; padding: 40px 16px; }
   .form-success .success-icon {
     font-size: 56px;
-    color: var(--madera);
+    color: var(--ambar);
     margin-bottom: 12px;
     font-family: "Cormorant Garamond", serif;
     font-style: italic;
@@ -1287,7 +1289,7 @@
     font-size: 12px;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--madera);
+    color: var(--ambar);
     margin-bottom: 14px;
     font-weight: 500;
   }
@@ -1302,14 +1304,14 @@
     font-size: 13px;
     color: var(--verde-bosque);
     background: transparent;
-    border: 1px solid var(--madera-suave);
+    border: 1px solid var(--ambar-suave);
     padding: 8px 16px;
     border-radius: 999px;
     cursor: pointer;
     transition: all 180ms ease;
     font-weight: 500;
   }
-  .zone-pill:hover { border-color: var(--madera); color: var(--madera); }
+  .zone-pill:hover { border-color: var(--ambar); color: var(--ambar); }
   .zone-pill.active {
     background: var(--verde-bosque);
     color: var(--crema);
@@ -1332,12 +1334,12 @@
     opacity: 1;
     transform: translateY(0);
   }
-  .zone-feedback strong { font-weight: 500; color: var(--madera); font-style: normal; }
+  .zone-feedback strong { font-weight: 500; color: var(--ambar); font-style: normal; }
   .zone-feedback .dot {
     display: inline-block;
     width: 7px; height: 7px;
     border-radius: 50%;
-    background: var(--madera);
+    background: var(--ambar);
     margin-right: 8px;
     vertical-align: middle;
     transform: translateY(-1px);
@@ -1354,33 +1356,33 @@
     font-weight: 500;
   }
   .zone-mirror:hover {
-    background: var(--madera-suave);
+    background: var(--ambar-suave);
     color: var(--crema);
   }
   .zone-mirror.is-active-zone {
     background: var(--verde-bosque);
     color: var(--crema);
     border-color: var(--verde-bosque);
-    box-shadow: 0 4px 14px -4px rgba(44,61,46,0.4);
+    box-shadow: 0 4px 14px -4px rgba(20,32,26,0.4);
   }
   /* La card del día se resalta cuando una zona suya está activa */
   .zone {
     transition: all 250ms ease;
   }
   .zone.is-active-day {
-    border-color: var(--madera);
+    border-color: var(--ambar);
     background: var(--crema);
-    box-shadow: 0 8px 24px -10px rgba(160,117,69,0.35);
+    box-shadow: 0 8px 24px -10px rgba(200,130,30,0.35);
   }
   .zone.is-active-day .zone-day {
-    color: var(--madera);
+    color: var(--ambar);
   }
   .zone.is-active-day::before {
     content: "Tu día";
     position: absolute;
     top: -10px;
     left: 24px;
-    background: var(--madera);
+    background: var(--ambar);
     color: var(--crema);
     padding: 4px 12px;
     font-family: "Inter", sans-serif;
@@ -1402,18 +1404,18 @@
     font-style: italic;
     font-size: 19px;
     color: var(--verde-bosque);
-    border-bottom: 1px solid var(--madera-suave);
+    border-bottom: 1px solid var(--ambar-suave);
     padding-bottom: 4px;
     transition: all 180ms ease;
   }
   .section-cta .link-cta:hover {
-    color: var(--madera);
-    border-bottom-color: var(--madera);
+    color: var(--ambar);
+    border-bottom-color: var(--ambar);
   }
   /* Variante para fondos oscuros (week section) */
   .week .section-cta .link-cta {
     color: var(--crema);
-    border-bottom-color: var(--madera-suave);
+    border-bottom-color: var(--ambar-suave);
   }
   .week .section-cta .link-cta:hover {
     color: var(--acento-2);
@@ -1426,11 +1428,11 @@
     font-family: "Fraunces", serif;
     font-style: italic;
     font-size: 16px;
-    color: var(--oliva-soft);
+    color: var(--verde-soft);
   }
   .cta-final-secondary a {
-    color: var(--madera-suave);
-    border-bottom: 1px solid var(--madera-suave);
+    color: var(--ambar-suave);
+    border-bottom: 1px solid var(--ambar-suave);
     padding-bottom: 2px;
   }
   .cta-final-secondary a:hover { color: var(--crema); border-bottom-color: var(--crema); }
@@ -1447,9 +1449,9 @@
   .pair-label { font-size: 12px; }
 
   /* Plan featured: precio-meta ahora visible sobre verde */
-  .plan.featured .price-meta { color: var(--oliva-soft); }
+  .plan.featured .price-meta { color: var(--verde-soft); }
 
-  /* Sección Spiga para oficinas (después de planes) */
+  /* Sección Nativa para oficinas (después de planes) */
   .oficinas {
     background: var(--crema-soft);
     padding-top: 80px;
@@ -1471,7 +1473,7 @@
     line-height: 1.1;
     margin: 12px 0 18px;
   }
-  .oficinas-inner h2 em { font-style: italic; color: var(--madera); font-weight: 400; }
+  .oficinas-inner h2 em { font-style: italic; color: var(--ambar); font-weight: 400; }
   .oficinas-inner p {
     font-family: "Cormorant Garamond", serif;
     font-size: 18px;
@@ -1483,7 +1485,7 @@
   .oficinas-features {
     list-style: none;
     background: var(--crema);
-    border: 1px solid var(--madera-suave);
+    border: 1px solid var(--ambar-suave);
     border-radius: 6px;
     padding: 28px 28px 28px 48px;
     position: relative;
@@ -1500,7 +1502,7 @@
     content: "·";
     position: absolute;
     left: -20px;
-    color: var(--madera);
+    color: var(--ambar);
     font-size: 22px;
     line-height: 1;
   }
@@ -1597,12 +1599,12 @@
 <!-- ============ NAV ============ -->
 <nav aria-label="Principal">
   <div class="nav-inner">
-    <a href="#top" class="nav-brand" aria-label="Spiga — inicio">
+    <a href="#top" class="nav-brand" aria-label="Nativa — inicio">
       <svg width="36" height="36" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
-        <circle cx="100" cy="100" r="95" fill="none" stroke="#54613F" stroke-width="6" />
-        <g fill="#54613F"><g transform="translate(100,46) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g><g transform="translate(100,144) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g></g><text x="100" y="125" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="78" font-style="italic" font-weight="500" fill="#54613F">S</text><defs><path id="topArc1" d="M 30,100 A 70,70 0 0 1 170,100" fill="none"/><path id="botArc1" d="M 30,100 A 70,70 0 0 0 170,100" fill="none"/></defs><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#54613F"><textPath href="#topArc1" startOffset="50%" text-anchor="middle">FRESCHEZZA · CURATA</textPath></text><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#54613F"><textPath href="#botArc1" startOffset="50%" text-anchor="middle">SPIGA · DAL 2026</textPath></text>
+        <circle cx="100" cy="100" r="95" fill="none" stroke="#1b7a43" stroke-width="6" />
+        <g fill="#1b7a43"><g transform="translate(100,46) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g><g transform="translate(100,144) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g></g><text x="100" y="125" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="78" font-style="italic" font-weight="500" fill="#1b7a43">N</text><defs><path id="topArc1" d="M 30,100 A 70,70 0 0 1 170,100" fill="none"/><path id="botArc1" d="M 30,100 A 70,70 0 0 0 170,100" fill="none"/></defs><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#1b7a43"><textPath href="#topArc1" startOffset="50%" text-anchor="middle">FRESCO · LOCAL</textPath></text><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#1b7a43"><textPath href="#botArc1" startOffset="50%" text-anchor="middle">NATIVA · DESDE 2026</textPath></text>
       </svg>
-      <span class="word">Spiga</span>
+      <span class="word">Nativa</span>
     </a>
     <div class="nav-links">
       <a href="#como">Cómo funciona</a>
@@ -1631,12 +1633,12 @@
   </div>
   <div class="hero-art">
     <svg class="hero-art-mono" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
-      <circle cx="100" cy="100" r="95" fill="none" stroke="#F2EBDD" stroke-width="1.5" />
-      <circle cx="100" cy="100" r="86" fill="none" stroke="#F2EBDD" stroke-width="0.5" />
-      <g fill="#F2EBDD"><g transform="translate(100,46) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g><g transform="translate(100,144) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g></g><text x="100" y="125" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="78" font-style="italic" font-weight="500" fill="#F2EBDD">S</text><defs><path id="topArc2" d="M 30,100 A 70,70 0 0 1 170,100" fill="none"/><path id="botArc2" d="M 30,100 A 70,70 0 0 0 170,100" fill="none"/></defs><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#F2EBDD"><textPath href="#topArc2" startOffset="50%" text-anchor="middle">FRESCHEZZA · CURATA</textPath></text><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#F2EBDD"><textPath href="#botArc2" startOffset="50%" text-anchor="middle">SPIGA · DAL 2026</textPath></text>
+      <circle cx="100" cy="100" r="95" fill="none" stroke="#f8f7f2" stroke-width="1.5" />
+      <circle cx="100" cy="100" r="86" fill="none" stroke="#f8f7f2" stroke-width="0.5" />
+      <g fill="#f8f7f2"><g transform="translate(100,46) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g><g transform="translate(100,144) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g></g><text x="100" y="125" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="78" font-style="italic" font-weight="500" fill="#f8f7f2">N</text><defs><path id="topArc2" d="M 30,100 A 70,70 0 0 1 170,100" fill="none"/><path id="botArc2" d="M 30,100 A 70,70 0 0 0 170,100" fill="none"/></defs><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#f8f7f2"><textPath href="#topArc2" startOffset="50%" text-anchor="middle">FRESCO · LOCAL</textPath></text><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#f8f7f2"><textPath href="#botArc2" startOffset="50%" text-anchor="middle">NATIVA · DESDE 2026</textPath></text>
     </svg>
     <div class="hero-art-caption">
-      <span>Spiga · Mayo</span>
+      <span>Nativa · Mayo</span>
       <span>Buenos Aires</span>
     </div>
   </div>
@@ -1720,7 +1722,7 @@
 
   <div class="cajon-seasons">
 
-    <div class="cajon-season" data-season="primavera" style="--season-color: #A3C49C;">
+    <div class="cajon-season" data-season="primavera" style="--season-color: #86d99b;">
       <div class="season-name">Primavera</div>
       <div class="season-months">sept · oct · nov</div>
       <div class="season-divider"></div>
@@ -1747,7 +1749,7 @@
       </div>
     </div>
 
-    <div class="cajon-season" data-season="verano" style="--season-color: #C9573A;">
+    <div class="cajon-season" data-season="verano" style="--season-color: #f5a524;">
       <div class="season-name">Verano</div>
       <div class="season-months">dic · ene · feb</div>
       <div class="season-divider"></div>
@@ -1775,7 +1777,7 @@
       </div>
     </div>
 
-    <div class="cajon-season" data-season="otono" style="--season-color: #B66A3D;">
+    <div class="cajon-season" data-season="otono" style="--season-color: #e0813c;">
       <div class="season-name">Otoño</div>
       <div class="season-months">mar · abr · may</div>
       <div class="season-divider"></div>
@@ -1803,7 +1805,7 @@
       </div>
     </div>
 
-    <div class="cajon-season" data-season="invierno" style="--season-color: #A04646;">
+    <div class="cajon-season" data-season="invierno" style="--season-color: #2c7a6b;">
       <div class="season-name">Invierno</div>
       <div class="season-months">jun · jul · ago</div>
       <div class="season-divider"></div>
@@ -1839,7 +1841,7 @@
       <span class="label-wood">Sumale al cajón</span>
       <h3>Extras y productos sueltos.</h3>
     </div>
-    <p style="max-width: 58ch; margin: 4px auto 26px; text-align: center; color: var(--oliva-texto); font-size: 17px; line-height: 1.6;">A cualquier cajón le sumás lo que quieras, no solo lo que trae de base. Se agregan al pedido con un 10% extra sobre el precio Spiga del producto.</p>
+    <p style="max-width: 58ch; margin: 4px auto 26px; text-align: center; color: var(--verde-texto); font-size: 17px; line-height: 1.6;">A cualquier cajón le sumás lo que quieras, no solo lo que trae de base. Se agregan al pedido con un 10% extra sobre el precio Nativa del producto.</p>
     <div class="basics-pills">
       <span class="pill-wood">Palta</span>
       <span class="pill-wood">Huevos de campo</span>
@@ -1860,7 +1862,7 @@
 <section class="week" id="semana">
   <div class="week-inner">
     <div>
-      <span class="label" style="color: var(--acento-2);" lang="it">Selezione della settimana</span>
+      <span class="label" style="color: var(--acento-2);">Selección de la semana</span>
       <h2 style="margin-top: 16px;">Esta semana, <em>en el cajón.</em></h2>
       <p class="lead">Una mirada al cajón curado de esta semana. Cada cajón es distinto, porque la estación también lo es.</p>
       <div class="week-foot">Mayo · semana 3 · 2026</div>
@@ -1938,7 +1940,7 @@
   <div class="plans-grid">
     <div class="plan">
       <span class="label">Esencial</span>
-      <h3 lang="it">Piccolo</h3>
+      <h3 lang="it">Mini</h3>
       <p class="plan-desc">Para 1 o 2 personas. Lo justo para una semana de cocina ligera.</p>
       <div class="price">$ —</div>
       <div class="price-meta">Por mes · 4 entregas</div>
@@ -1951,14 +1953,14 @@
         <li>Cajón sorpresa cada 3 meses con producto premium</li>
         <li>Cancelás cuando quieras</li>
       </ul>
-      <a href="https://wa.me/5491150562645?text=Hola%20Spiga%2C%20me%20interesa%20el%20plan%20Piccolo%20(1%E2%80%932%20personas).%20%C2%BFMe%20confirman%20precio%20y%20cu%C3%A1ndo%20llega%20el%20primer%20caj%C3%B3n%3F" class="btn plan-cta" data-plan="Piccolo" data-personas="1–2 personas" target="_blank" rel="noopener noreferrer" aria-label="Empezar plan Piccolo por WhatsApp">Empezar</a>
+      <a href="https://wa.me/5491150562645?text=Hola%20Nativa%2C%20me%20interesa%20el%20plan%20Mini%20(1%E2%80%932%20personas).%20%C2%BFMe%20confirman%20precio%20y%20cu%C3%A1ndo%20llega%20el%20primer%20caj%C3%B3n%3F" class="btn plan-cta" data-plan="Mini" data-personas="1–2 personas" target="_blank" rel="noopener noreferrer" aria-label="Empezar plan Mini por WhatsApp">Empezar</a>
     </div>
 
     <div class="plan featured">
       <span class="badge-feat">Más elegido</span>
       <span class="label">Familiar</span>
-      <h3 lang="it">Famiglia</h3>
-      <p class="plan-desc">Para 3 o 4 personas. La misma variedad que Piccolo, en cantidades para familia.</p>
+      <h3 lang="it">Family</h3>
+      <p class="plan-desc">Para 3 o 4 personas. La misma variedad que Mini, en cantidades para familia.</p>
       <div class="price">$ —</div>
       <div class="price-meta">Por mes · 4 entregas</div>
       <ul class="plan-features">
@@ -1971,24 +1973,24 @@
         <li>Cajón sorpresa cada 3 meses con producto premium</li>
         <li>Cancelás cuando quieras</li>
       </ul>
-      <a href="https://wa.me/5491150562645?text=Hola%20Spiga%2C%20me%20interesa%20el%20plan%20Famiglia%20(3%E2%80%934%20personas).%20%C2%BFMe%20confirman%20precio%20y%20cu%C3%A1ndo%20llega%20el%20primer%20caj%C3%B3n%3F" class="btn plan-cta" data-plan="Famiglia" data-personas="3–4 personas" target="_blank" rel="noopener noreferrer" aria-label="Empezar plan Famiglia por WhatsApp">Empezar</a>
+      <a href="https://wa.me/5491150562645?text=Hola%20Nativa%2C%20me%20interesa%20el%20plan%20Family%20(3%E2%80%934%20personas).%20%C2%BFMe%20confirman%20precio%20y%20cu%C3%A1ndo%20llega%20el%20primer%20caj%C3%B3n%3F" class="btn plan-cta" data-plan="Family" data-personas="3–4 personas" target="_blank" rel="noopener noreferrer" aria-label="Empezar plan Family por WhatsApp">Empezar</a>
     </div>
 
     <div class="plan">
       <span class="label">Completo</span>
-      <h3 lang="it">Abbondanza</h3>
-      <p class="plan-desc">Para 5+ personas o quien cocina mucho. Todo lo de Famiglia más cinco frutas extra.</p>
+      <h3 lang="it">Harvest</h3>
+      <p class="plan-desc">Para 5+ personas o quien cocina mucho. Todo lo de Family más cinco frutas extra.</p>
       <div class="price">$ —</div>
       <div class="price-meta">Por mes · 4 entregas</div>
       <ul class="plan-features">
         <li>23 productos por semana</li>
-        <li>Toda la variedad de Famiglia</li>
+        <li>Toda la variedad de Family</li>
         <li>+ 5 frutas extra (kiwi, uva, manzana, naranja, pomelo)</li>
         <li>Entrega prioritaria</li>
         <li>Cajón sorpresa cada 3 meses con producto premium</li>
         <li>Cancelás cuando quieras</li>
       </ul>
-      <a href="https://wa.me/5491150562645?text=Hola%20Spiga%2C%20me%20interesa%20el%20plan%20Abbondanza%20(5%2B%20personas).%20%C2%BFMe%20confirman%20precio%20y%20cu%C3%A1ndo%20llega%20el%20primer%20caj%C3%B3n%3F" class="btn plan-cta" data-plan="Abbondanza" data-personas="5+ personas" target="_blank" rel="noopener noreferrer" aria-label="Empezar plan Abbondanza por WhatsApp">Empezar</a>
+      <a href="https://wa.me/5491150562645?text=Hola%20Nativa%2C%20me%20interesa%20el%20plan%20Harvest%20(5%2B%20personas).%20%C2%BFMe%20confirman%20precio%20y%20cu%C3%A1ndo%20llega%20el%20primer%20caj%C3%B3n%3F" class="btn plan-cta" data-plan="Harvest" data-personas="5+ personas" target="_blank" rel="noopener noreferrer" aria-label="Empezar plan Harvest por WhatsApp">Empezar</a>
     </div>
   </div>
 
@@ -2002,30 +2004,30 @@
   <div class="block-head">
     <span class="label">A medida</span>
     <h2>Armá tu propio cajón. <em>Vos elegís todo.</em></h2>
-    <p>Si preferís elegir producto por producto en vez de la curaduría de la semana, armás tu cajón a medida. Elegís qué entra y en qué cantidad. Tiene un 15% extra por producto sobre el cajón curado, con un mínimo equivalente al plan Piccolo y la misma entrega semanal.</p>
+    <p>Si preferís elegir producto por producto en vez de la curaduría de la semana, armás tu cajón a medida. Elegís qué entra y en qué cantidad. Tiene un 15% extra por producto sobre el cajón curado, con un mínimo equivalente al plan Mini y la misma entrega semanal.</p>
   </div>
   <div class="basics">
     <div class="basics-pills">
       <span class="pill-wood">Elegís cada producto</span>
       <span class="pill-wood">Cantidades a tu medida</span>
       <span class="pill-wood">+15% por producto</span>
-      <span class="pill-wood">Mínimo igual a Piccolo</span>
+      <span class="pill-wood">Mínimo igual a Mini</span>
       <span class="pill-wood">Misma entrega semanal</span>
     </div>
   </div>
   <div class="section-cta">
-    <a href="https://wa.me/5491150562645?text=Hola%20Spiga%2C%20quiero%20armar%20mi%20caj%C3%B3n%20a%20medida.%20%C2%BFC%C3%B3mo%20elijo%20los%20productos%3F" class="btn" target="_blank" rel="noopener noreferrer" aria-label="Armar mi cajón a medida por WhatsApp">Armar mi cajón por WhatsApp</a>
+    <a href="https://wa.me/5491150562645?text=Hola%20Nativa%2C%20quiero%20armar%20mi%20caj%C3%B3n%20a%20medida.%20%C2%BFC%C3%B3mo%20elijo%20los%20productos%3F" class="btn" target="_blank" rel="noopener noreferrer" aria-label="Armar mi cajón a medida por WhatsApp">Armar mi cajón por WhatsApp</a>
   </div>
 </section>
 
-<!-- ============ SPIGA PARA OFICINAS ============ -->
+<!-- ============ NATIVA PARA OFICINAS ============ -->
 <section class="block oficinas" id="oficinas">
   <div class="oficinas-inner">
     <div>
       <span class="label">Para oficinas</span>
       <h2>Cajones de fruta <em>a medida</em> para tu equipo.</h2>
       <p>Si tu oficina quiere desayunos y breaks naturales, armamos un cajón solo de frutas adaptado a cuánta gente sos y cuántas veces a la semana lo querés. Hablalo con nosotros y te pasamos propuesta personalizada.</p>
-      <a href="https://wa.me/5491150562645?text=Hola%20Spiga%2C%20quiero%20una%20propuesta%20de%20caj%C3%B3n%20de%20frutas%20para%20mi%20oficina.%20Somos%20___%20personas." class="btn" target="_blank" rel="noopener noreferrer">Pedir propuesta por WhatsApp</a>
+      <a href="https://wa.me/5491150562645?text=Hola%20Nativa%2C%20quiero%20una%20propuesta%20de%20caj%C3%B3n%20de%20frutas%20para%20mi%20oficina.%20Somos%20___%20personas." class="btn" target="_blank" rel="noopener noreferrer">Pedir propuesta por WhatsApp</a>
     </div>
     <ul class="oficinas-features">
       <li>Cajón solo de frutas, mix estacional + atemporales</li>
@@ -2093,7 +2095,7 @@
     <span class="label">Nuestro compromiso</span>
     <h2>Cada semana recorremos los mejores productores y elegimos a mano <em>lo más fresco, lo más sabroso, lo más maduro en su punto justo.</em></h2>
     <p class="manifest-coda">Vos no perdés tiempo. Solo abrís el cajón y cocinás.</p>
-    <div class="signature">El equipo de Spiga</div>
+    <div class="signature">El equipo de Nativa</div>
   </div>
 </section>
 
@@ -2106,7 +2108,7 @@
   <div class="faq-list">
     <details class="faq-item">
       <summary class="faq-q">¿Puedo elegir qué viene en el cajón?</summary>
-      <p class="faq-a">Sí, de tres formas. Podés quedarte con la curaduría de la semana, que es lo que hace a Spiga; sumarle productos sueltos a cualquier cajón con un 10% extra; o armar tu cajón a medida eligiendo producto por producto con un 15% extra. Y si tenés alguna alergia o algo que no comés, lo dejás anotado al suscribirte y lo respetamos.</p>
+      <p class="faq-a">Sí, de tres formas. Podés quedarte con la curaduría de la semana, que es lo que hace a Nativa; sumarle productos sueltos a cualquier cajón con un 10% extra; o armar tu cajón a medida eligiendo producto por producto con un 15% extra. Y si tenés alguna alergia o algo que no comés, lo dejás anotado al suscribirte y lo respetamos.</p>
     </details>
     <details class="faq-item">
       <summary class="faq-q">¿Qué pasa si me voy de viaje una semana?</summary>
@@ -2130,7 +2132,7 @@
     </details>
   </div>
   <div class="section-cta">
-    <a href="https://wa.me/5491150562645?text=Hola%20Spiga%2C%20tengo%20una%20consulta%20antes%20de%20suscribirme." class="link-cta" target="_blank" rel="noopener noreferrer">¿Otra duda? Escribinos →</a>
+    <a href="https://wa.me/5491150562645?text=Hola%20Nativa%2C%20tengo%20una%20consulta%20antes%20de%20suscribirme." class="link-cta" target="_blank" rel="noopener noreferrer">¿Otra duda? Escribinos →</a>
   </div>
 </section>
 
@@ -2139,7 +2141,7 @@
   <div class="cta-final-inner">
     <h2>¿Hablamos <em>antes de empezar?</em></h2>
     <p>Si querés contarnos cuántos son en casa, alergias, o consultar precios, escribinos. Te respondemos personalmente.</p>
-    <a href="https://wa.me/5491150562645?text=Hola%20Spiga%2C%20tengo%20una%20consulta%20antes%20de%20suscribirme." class="btn large" target="_blank" rel="noopener noreferrer" aria-label="Hablar con el equipo de Spiga por WhatsApp">Hablar con el equipo</a>
+    <a href="https://wa.me/5491150562645?text=Hola%20Nativa%2C%20tengo%20una%20consulta%20antes%20de%20suscribirme." class="btn large" target="_blank" rel="noopener noreferrer" aria-label="Hablar con el equipo de Nativa por WhatsApp">Hablar con el equipo</a>
     <div class="cta-final-secondary">
       ¿Listo? <a href="#planes">Volver a los planes →</a>
     </div>
@@ -2152,7 +2154,7 @@
 <footer class="foot">
   <div class="foot-inner">
     <div class="foot-brand">
-      <div class="word">Spiga</div>
+      <div class="word">Nativa</div>
       <div class="tag">La cosecha de la semana.</div>
     </div>
     <div class="foot-col">
@@ -2170,9 +2172,9 @@
     <div class="foot-col">
       <h5>Contacto</h5>
       <ul>
-        <li><a href="https://wa.me/5491150562645?text=Hola%20Spiga%2C%20tengo%20una%20consulta." target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
-        <li><a href="mailto:hola@spigastore.com.ar">hola@spigastore.com.ar</a></li>
-        <li><a href="https://instagram.com/spiga.ar">@spiga.ar</a></li>
+        <li><a href="https://wa.me/5491150562645?text=Hola%20Nativa%2C%20tengo%20una%20consulta." target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+        <li><a href="mailto:hola@nativamarket.com.ar">hola@nativamarket.com.ar</a></li>
+        <li><a href="https://instagram.com/nativamarket">@nativamarket</a></li>
       </ul>
     </div>
     <div class="foot-col">
@@ -2186,7 +2188,7 @@
     </div>
   </div>
   <div class="foot-bottom">
-    <span>© 2026 Spiga · Buenos Aires</span>
+    <span>© 2026 Nativa · Buenos Aires</span>
     <span>Hecho con cuidado en zona norte</span>
   </div>
   <div class="foot-credits">
@@ -2203,7 +2205,7 @@
     <div class="modal-content">
       <header class="modal-head">
         <span class="modal-eyebrow">Suscripción</span>
-        <h2 id="modal-title">Te sumás a <em data-plan-name>Spiga</em></h2>
+        <h2 id="modal-title">Te sumás a <em data-plan-name>Nativa</em></h2>
         <p class="modal-sub">Llená los datos y te contactamos antes del próximo lunes para coordinar tu primer cajón.</p>
       </header>
 
@@ -2262,7 +2264,7 @@
           </label>
         </div>
 
-        <input type="hidden" name="plan" value="Spiga" />
+        <input type="hidden" name="plan" value="Nativa" />
 
         <div class="form-foot">
           <button type="button" class="btn ghost" data-close>Cancelar</button>
@@ -2303,9 +2305,9 @@
 
     function buildMsg(plan, personas, zone) {
       if (zone === 'otra') {
-        return `Hola Spiga, vivo fuera de las zonas habituales (Nordelta/Villanueva/Tigre/Maschwitz/Escobar/Pilar). ¿Llegan a mi domicilio? Me interesa el plan ${plan} (${personas}).`;
+        return `Hola Nativa, vivo fuera de las zonas habituales (Nordelta/Villanueva/Tigre/Maschwitz/Escobar/Pilar). ¿Llegan a mi domicilio? Me interesa el plan ${plan} (${personas}).`;
       }
-      let msg = `Hola Spiga, me interesa el plan ${plan} (${personas}).`;
+      let msg = `Hola Nativa, me interesa el plan ${plan} (${personas}).`;
       if (zone) msg += ` Vivo en ${zone}.`;
       msg += ` ¿Me confirman precio y cuándo llega el primer cajón?`;
       return msg;
@@ -2434,7 +2436,7 @@
     document.querySelectorAll('.plan-cta').forEach(btn => {
       btn.addEventListener('click', e => {
         e.preventDefault();
-        const planName = btn.dataset.plan || 'Spiga';
+        const planName = btn.dataset.plan || 'Nativa';
         const activePill = document.querySelector('.zone-pill.active');
         const zone = activePill ? activePill.dataset.zone : null;
         openModal(planName, zone);

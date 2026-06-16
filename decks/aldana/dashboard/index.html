@@ -3,31 +3,31 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Plan Aldana × Spiga — Análisis</title>
-<meta name="description" content="Análisis financiero personal y proyección de breakeven para el lanzamiento de Spiga." />
+<title>Plan Aldana × Nativa — Análisis</title>
+<meta name="description" content="Análisis financiero personal y proyección de breakeven para el lanzamiento de Nativa." />
 <meta name="robots" content="noindex,nofollow" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-<link rel="icon" type="image/svg+xml" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><circle cx="100" cy="100" r="95" fill="none" stroke="%2354613F" stroke-width="6"/><text x="100" y="148" text-anchor="middle" font-family="Georgia,serif" font-size="140" font-style="italic" fill="%2354613F">S</text></svg>' />
+<link rel="icon" type="image/svg+xml" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><circle cx="100" cy="100" r="95" fill="none" stroke="%231b7a43" stroke-width="6"/><text x="100" y="148" text-anchor="middle" font-family="Georgia,serif" font-size="140" font-style="italic" fill="%231b7a43">N</text></svg>' />
 
 <style>
 :root {
-  --oliva-profundo: #54613F;
-  --oliva-mas-oscuro: #3F4A30;
-  --oliva-texto: #6F7A5C;
-  --oliva: #8A9476;
-  --oliva-soft: #B8BFA8;
-  --crema: #F2EBDD;
-  --crema-soft: #E6DCC4;
-  --tinta: #1A1A18;
-  --madera: #A07545;
-  --madera-suave: #C9A581;
-  --acento: #C9573A;
-  --acento-2: #E8C766;
-  --rojo: #B65656;
+  --verde-profundo: #1b7a43;
+  --verde-mas-oscuro: #14532d;
+  --verde-texto: #2f6b43;
+  --verde: #3fb85f;
+  --verde-soft: #9fd9ae;
+  --crema: #f8f7f2;
+  --crema-soft: #ecebe0;
+  --tinta: #14201a;
+  --ambar: #c8821e;
+  --ambar-suave: #e3b877;
+  --acento: #f5a524;
+  --acento-2: #f5a524;
+  --rojo: #e0813c;
   --verde-ok: #4A7C42;
   --pad-x: clamp(20px, 5vw, 56px);
 }
@@ -42,17 +42,17 @@ body {
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
 }
-:focus-visible { outline: 2px solid var(--oliva-profundo); outline-offset: 3px; border-radius: 2px; }
+:focus-visible { outline: 2px solid var(--verde-profundo); outline-offset: 3px; border-radius: 2px; }
 
 header.top {
   background: var(--crema);
-  border-bottom: 1px solid var(--madera-suave);
+  border-bottom: 1px solid var(--ambar-suave);
   padding: 22px var(--pad-x);
   position: sticky;
   top: 0;
   z-index: 50;
   backdrop-filter: blur(10px);
-  background: rgba(242, 235, 221, 0.95);
+  background: rgba(248,247,242, 0.95);
 }
 .top-inner {
   max-width: 980px;
@@ -65,14 +65,14 @@ header.top {
   font-family: "Fraunces", serif;
   font-variation-settings: "SOFT" 50, "opsz" 144;
   font-size: 24px;
-  color: var(--oliva-profundo);
+  color: var(--verde-profundo);
   letter-spacing: -0.015em;
 }
-.top-inner .sep { color: var(--madera-suave); font-family: "Fraunces", serif; font-style: italic; font-size: 20px; }
+.top-inner .sep { color: var(--ambar-suave); font-family: "Fraunces", serif; font-style: italic; font-size: 20px; }
 .top-inner .ctx {
   font-family: "Inter", sans-serif;
   font-size: 12px;
-  color: var(--oliva-texto);
+  color: var(--verde-texto);
   letter-spacing: 0.04em;
 }
 .top-inner .conf {
@@ -81,9 +81,9 @@ header.top {
   font-size: 11px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--madera);
+  color: var(--ambar);
   padding: 4px 10px;
-  border: 1px solid var(--madera-suave);
+  border: 1px solid var(--ambar-suave);
   border-radius: 999px;
 }
 
@@ -95,7 +95,7 @@ main { max-width: 980px; margin: 0 auto; padding: 0 var(--pad-x); }
   font-size: 11px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--madera);
+  color: var(--ambar);
   font-weight: 500;
   margin-bottom: 14px;
 }
@@ -105,11 +105,11 @@ main { max-width: 980px; margin: 0 auto; padding: 0 var(--pad-x); }
   font-weight: 400;
   font-size: clamp(38px, 5.5vw, 64px);
   line-height: 1.02;
-  color: var(--oliva-profundo);
+  color: var(--verde-profundo);
   letter-spacing: -0.025em;
   margin-bottom: 24px;
 }
-.hero h1 em { font-style: italic; color: var(--oliva-texto); font-weight: 300; }
+.hero h1 em { font-style: italic; color: var(--verde-texto); font-weight: 300; }
 .hero .lead {
   font-family: "Fraunces", serif;
   font-size: 19px;
@@ -120,7 +120,7 @@ main { max-width: 980px; margin: 0 auto; padding: 0 var(--pad-x); }
 
 section.block {
   padding: 56px 0;
-  border-top: 1px solid var(--oliva-soft);
+  border-top: 1px solid var(--verde-soft);
 }
 section.block:first-of-type { border-top: none; }
 section.block .block-label {
@@ -128,7 +128,7 @@ section.block .block-label {
   font-size: 11px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--madera);
+  color: var(--ambar);
   font-weight: 500;
   margin-bottom: 12px;
 }
@@ -137,16 +137,16 @@ section.block h2 {
   font-variation-settings: "SOFT" 40, "opsz" 144;
   font-weight: 400;
   font-size: clamp(28px, 4vw, 40px);
-  color: var(--oliva-profundo);
+  color: var(--verde-profundo);
   letter-spacing: -0.02em;
   line-height: 1.1;
   margin-bottom: 14px;
 }
-section.block h2 em { font-style: italic; color: var(--oliva-texto); font-weight: 300; }
+section.block h2 em { font-style: italic; color: var(--verde-texto); font-weight: 300; }
 section.block .block-desc {
   font-family: "Fraunces", serif;
   font-size: 17px;
-  color: var(--oliva-texto);
+  color: var(--verde-texto);
   margin-bottom: 32px;
   max-width: 64ch;
   line-height: 1.5;
@@ -162,20 +162,20 @@ section.block .block-desc {
 @media (max-width: 720px) { .cards { grid-template-columns: 1fr; } }
 .card {
   background: #fff;
-  border: 1px solid var(--oliva-soft);
+  border: 1px solid var(--verde-soft);
   border-radius: 8px;
   padding: 24px;
   position: relative;
 }
-.card.warn { background: #fff7f2; border-color: var(--madera-suave); }
-.card.bad { background: #fff2f0; border-color: var(--rojo); }
-.card.good { background: #f5f9f3; border-color: var(--oliva-soft); }
+.card.warn { background: #fbfbf7; border-color: var(--ambar-suave); }
+.card.bad { background: #fbfbf7; border-color: var(--rojo); }
+.card.good { background: #f4faf4; border-color: var(--verde-soft); }
 .card .card-label {
   font-family: "Inter", sans-serif;
   font-size: 11px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--oliva-texto);
+  color: var(--verde-texto);
   margin-bottom: 10px;
   font-weight: 500;
 }
@@ -184,28 +184,28 @@ section.block .block-desc {
   font-variation-settings: "SOFT" 40, "opsz" 144;
   font-weight: 400;
   font-size: clamp(28px, 4vw, 38px);
-  color: var(--oliva-profundo);
+  color: var(--verde-profundo);
   letter-spacing: -0.02em;
   line-height: 1;
   margin-bottom: 8px;
 }
 .card.bad .card-amount { color: var(--rojo); }
-.card.warn .card-amount { color: var(--madera); }
+.card.warn .card-amount { color: var(--ambar); }
 .card.good .card-amount { color: var(--verde-ok); }
 .card .card-sub {
   font-family: "Fraunces", serif;
   font-size: 14px;
   font-style: italic;
-  color: var(--oliva-texto);
+  color: var(--verde-texto);
   line-height: 1.4;
 }
 .card .card-context {
   font-family: "Inter", sans-serif;
   font-size: 12px;
-  color: var(--oliva-texto);
+  color: var(--verde-texto);
   margin-top: 12px;
   padding-top: 10px;
-  border-top: 1px dashed var(--oliva-soft);
+  border-top: 1px dashed var(--verde-soft);
 }
 
 /* Tables */
@@ -216,7 +216,7 @@ table.data {
   font-family: "Inter", sans-serif;
   font-size: 14px;
   background: #fff;
-  border: 1px solid var(--oliva-soft);
+  border: 1px solid var(--verde-soft);
   border-radius: 6px;
   overflow: hidden;
 }
@@ -228,23 +228,23 @@ table.data th {
   font-size: 11px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--oliva-profundo);
-  border-bottom: 1px solid var(--madera-suave);
+  color: var(--verde-profundo);
+  border-bottom: 1px solid var(--ambar-suave);
 }
 table.data td {
   padding: 11px 14px;
-  border-bottom: 1px solid var(--oliva-soft);
+  border-bottom: 1px solid var(--verde-soft);
   color: var(--tinta);
 }
 table.data tr:last-child td { border-bottom: none; }
 table.data td.num, table.data th.num { text-align: right; font-variant-numeric: tabular-nums; }
-table.data td.cat { color: var(--oliva-profundo); font-weight: 500; }
+table.data td.cat { color: var(--verde-profundo); font-weight: 500; }
 table.data tr.total { background: var(--crema-soft); }
-table.data tr.total td { font-weight: 600; color: var(--oliva-profundo); border-top: 2px solid var(--madera); }
+table.data tr.total td { font-weight: 600; color: var(--verde-profundo); border-top: 2px solid var(--ambar); }
 table.data td.tag-new {
   font-family: "Fraunces", serif;
   font-style: italic;
-  color: var(--madera);
+  color: var(--ambar);
   font-size: 12px;
 }
 table.data td.tag-up { color: var(--rojo); font-weight: 500; }
@@ -253,11 +253,11 @@ table.data .row-section td {
   font-family: "Fraunces", serif;
   font-style: italic;
   font-weight: 500;
-  color: var(--oliva-profundo);
+  color: var(--verde-profundo);
   font-size: 13px;
   letter-spacing: 0.02em;
 }
-table.data .row-section td:first-child::before { content: "—  "; color: var(--madera-suave); }
+table.data .row-section td:first-child::before { content: "—  "; color: var(--ambar-suave); }
 
 /* Reveal table */
 .gap-grid {
@@ -271,20 +271,20 @@ table.data .row-section td:first-child::before { content: "—  "; color: var(--
   gap: 14px;
   padding: 16px;
   background: #fff;
-  border: 1px solid var(--oliva-soft);
+  border: 1px solid var(--verde-soft);
   border-radius: 6px;
   align-items: center;
 }
-.gap-row .cat { font-family: "Fraunces", serif; font-size: 17px; color: var(--oliva-profundo); }
+.gap-row .cat { font-family: "Fraunces", serif; font-size: 17px; color: var(--verde-profundo); }
 .gap-row .said, .gap-row .real {
   font-family: "Inter", sans-serif;
   font-size: 14px;
   font-variant-numeric: tabular-nums;
 }
-.gap-row .said { color: var(--oliva-texto); }
-.gap-row .said::before { content: "Vos dijiste "; font-style: italic; color: var(--oliva); font-family: "Fraunces", serif; }
+.gap-row .said { color: var(--verde-texto); }
+.gap-row .said::before { content: "Vos dijiste "; font-style: italic; color: var(--verde); font-family: "Fraunces", serif; }
 .gap-row .real { color: var(--rojo); font-weight: 500; }
-.gap-row .real::before { content: "Tarjeta dice "; font-style: italic; color: var(--oliva); font-weight: 400; font-family: "Fraunces", serif; }
+.gap-row .real::before { content: "Tarjeta dice "; font-style: italic; color: var(--verde); font-weight: 400; font-family: "Fraunces", serif; }
 @media (max-width: 640px) {
   .gap-row { grid-template-columns: 1fr; gap: 6px; }
 }
@@ -292,7 +292,7 @@ table.data .row-section td:first-child::before { content: "—  "; color: var(--
 /* Calculator */
 .calc {
   background: #fff;
-  border: 1px solid var(--oliva-soft);
+  border: 1px solid var(--verde-soft);
   border-radius: 8px;
   padding: 28px;
   margin-bottom: 20px;
@@ -309,7 +309,7 @@ table.data .row-section td:first-child::before { content: "—  "; color: var(--
   font-size: 11px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--oliva-profundo);
+  color: var(--verde-profundo);
   font-weight: 500;
   margin-bottom: 6px;
   margin-top: 16px;
@@ -322,7 +322,7 @@ table.data .row-section td:first-child::before { content: "—  "; color: var(--
 }
 .calc-inputs input[type="range"] {
   flex: 1;
-  accent-color: var(--oliva-profundo);
+  accent-color: var(--verde-profundo);
   height: 4px;
 }
 .calc-inputs .value {
@@ -331,7 +331,7 @@ table.data .row-section td:first-child::before { content: "—  "; color: var(--
   font-family: "Fraunces", serif;
   font-size: 17px;
   font-weight: 500;
-  color: var(--oliva-profundo);
+  color: var(--verde-profundo);
   font-variant-numeric: tabular-nums;
 }
 .calc-inputs input[type="number"] {
@@ -339,14 +339,14 @@ table.data .row-section td:first-child::before { content: "—  "; color: var(--
   font-family: "Inter", sans-serif;
   font-size: 15px;
   padding: 9px 12px;
-  border: 1px solid var(--oliva-soft);
+  border: 1px solid var(--verde-soft);
   border-radius: 4px;
 }
 .calc-inputs .hint {
   font-family: "Fraunces", serif;
   font-style: italic;
   font-size: 12px;
-  color: var(--oliva-texto);
+  color: var(--verde-texto);
   margin-top: 4px;
 }
 
@@ -363,7 +363,7 @@ table.data .row-section td:first-child::before { content: "—  "; color: var(--
   font-size: 11px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--madera);
+  color: var(--ambar);
   font-weight: 500;
   margin-bottom: 8px;
 }
@@ -371,7 +371,7 @@ table.data .row-section td:first-child::before { content: "—  "; color: var(--
   font-family: "Fraunces", serif;
   font-variation-settings: "SOFT" 50, "opsz" 144;
   font-size: clamp(36px, 6vw, 56px);
-  color: var(--oliva-profundo);
+  color: var(--verde-profundo);
   line-height: 1;
   letter-spacing: -0.02em;
   margin-bottom: 6px;
@@ -380,22 +380,22 @@ table.data .row-section td:first-child::before { content: "—  "; color: var(--
   font-family: "Fraunces", serif;
   font-style: italic;
   font-size: 15px;
-  color: var(--oliva-texto);
+  color: var(--verde-texto);
   margin-bottom: 18px;
 }
 .calc-output .out-row {
   display: flex;
   justify-content: space-between;
   padding: 8px 0;
-  border-top: 1px dashed var(--madera-suave);
+  border-top: 1px dashed var(--ambar-suave);
   font-family: "Inter", sans-serif;
   font-size: 13px;
-  color: var(--oliva-texto);
+  color: var(--verde-texto);
 }
 .calc-output .out-row .v {
   font-family: "Fraunces", serif;
   font-weight: 500;
-  color: var(--oliva-profundo);
+  color: var(--verde-profundo);
   font-variant-numeric: tabular-nums;
 }
 
@@ -408,39 +408,39 @@ table.data .row-section td:first-child::before { content: "—  "; color: var(--
 @media (max-width: 800px) { .scen-grid { grid-template-columns: 1fr; } }
 .scen {
   background: #fff;
-  border: 1px solid var(--oliva-soft);
+  border: 1px solid var(--verde-soft);
   border-radius: 8px;
   padding: 22px;
   position: relative;
 }
 .scen.bad { border-color: var(--rojo); }
-.scen.mid { border-color: var(--madera); }
+.scen.mid { border-color: var(--ambar); }
 .scen.good { border-color: var(--verde-ok); }
 .scen .scen-name {
   font-family: "Fraunces", serif;
   font-style: italic;
   font-size: 18px;
-  color: var(--oliva-profundo);
+  color: var(--verde-profundo);
   margin-bottom: 6px;
 }
 .scen .scen-amount {
   font-family: "Fraunces", serif;
   font-size: 36px;
   font-weight: 400;
-  color: var(--oliva-profundo);
+  color: var(--verde-profundo);
   line-height: 1;
   letter-spacing: -0.02em;
   margin-bottom: 4px;
 }
 .scen.bad .scen-amount { color: var(--rojo); }
-.scen.mid .scen-amount { color: var(--madera); }
+.scen.mid .scen-amount { color: var(--ambar); }
 .scen.good .scen-amount { color: var(--verde-ok); }
 .scen .scen-sub {
   font-family: "Inter", sans-serif;
   font-size: 11px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--oliva-texto);
+  color: var(--verde-texto);
   margin-bottom: 14px;
 }
 .scen ul {
@@ -450,26 +450,26 @@ table.data .row-section td:first-child::before { content: "—  "; color: var(--
   color: var(--tinta);
 }
 .scen li { padding: 5px 0; display: flex; gap: 8px; }
-.scen li::before { content: "·"; color: var(--madera); font-weight: 700; }
+.scen li::before { content: "·"; color: var(--ambar); font-weight: 700; }
 
 /* Notes */
 .note {
   background: var(--crema-soft);
-  border-left: 3px solid var(--madera);
+  border-left: 3px solid var(--ambar);
   border-radius: 0 4px 4px 0;
   padding: 14px 18px;
   margin: 14px 0 24px;
   font-family: "Fraunces", serif;
   font-style: italic;
   font-size: 15px;
-  color: var(--oliva-profundo);
+  color: var(--verde-profundo);
   max-width: 64ch;
   line-height: 1.5;
 }
-.note strong { font-style: normal; color: var(--madera); font-weight: 600; }
+.note strong { font-style: normal; color: var(--ambar); font-weight: 600; }
 
 .warn-box {
-  background: #fdf3ef;
+  background: #fbfbf7;
   border: 1px solid #e8c2af;
   border-radius: 6px;
   padding: 18px 22px;
@@ -485,7 +485,7 @@ table.data .row-section td:first-child::before { content: "—  "; color: var(--
 .q-list { display: grid; grid-template-columns: 1fr; gap: 12px; }
 .q {
   background: #fff;
-  border: 1px solid var(--madera-suave);
+  border: 1px solid var(--ambar-suave);
   border-radius: 6px;
   padding: 16px 20px;
   display: flex;
@@ -496,7 +496,7 @@ table.data .row-section td:first-child::before { content: "—  "; color: var(--
   font-family: "Fraunces", serif;
   font-style: italic;
   font-size: 24px;
-  color: var(--madera);
+  color: var(--ambar);
   line-height: 1;
   min-width: 28px;
 }
@@ -506,21 +506,21 @@ table.data .row-section td:first-child::before { content: "—  "; color: var(--
   color: var(--tinta);
   line-height: 1.5;
 }
-.q .q-text strong { color: var(--oliva-profundo); font-weight: 600; }
-.q .q-text em { color: var(--oliva-texto); font-style: italic; }
+.q .q-text strong { color: var(--verde-profundo); font-weight: 600; }
+.q .q-text em { color: var(--verde-texto); font-style: italic; }
 
 /* Recommendations */
 .recs { display: grid; grid-template-columns: 1fr; gap: 14px; }
 .rec {
   background: #fff;
-  border-left: 3px solid var(--oliva-profundo);
+  border-left: 3px solid var(--verde-profundo);
   padding: 18px 22px;
 }
 .rec h3 {
   font-family: "Fraunces", serif;
   font-style: italic;
   font-size: 20px;
-  color: var(--oliva-profundo);
+  color: var(--verde-profundo);
   margin-bottom: 6px;
   font-weight: 400;
 }
@@ -534,13 +534,13 @@ table.data .row-section td:first-child::before { content: "—  "; color: var(--
 /* Footer */
 footer {
   padding: 48px var(--pad-x) 32px;
-  border-top: 1px solid var(--madera-suave);
+  border-top: 1px solid var(--ambar-suave);
   margin-top: 56px;
   text-align: center;
   font-family: "Inter", sans-serif;
   font-size: 11px;
   letter-spacing: 0.12em;
-  color: var(--oliva-texto);
+  color: var(--verde-texto);
 }
 
 .toc {
@@ -552,7 +552,7 @@ footer {
 .toc a {
   font-family: "Inter", sans-serif;
   font-size: 12px;
-  color: var(--oliva-profundo);
+  color: var(--verde-profundo);
   background: var(--crema-soft);
   padding: 6px 12px;
   border-radius: 999px;
@@ -562,7 +562,7 @@ footer {
   transition: all 180ms ease;
 }
 .toc a:hover {
-  background: var(--oliva-profundo);
+  background: var(--verde-profundo);
   color: var(--crema);
 }
 
@@ -572,8 +572,8 @@ footer {
   font-family: "Fraunces", serif;
   font-style: italic;
   font-size: 18px;
-  color: var(--oliva-profundo);
-  border-left: 3px solid var(--oliva);
+  color: var(--verde-profundo);
+  border-left: 3px solid var(--verde);
   padding: 8px 0 8px 22px;
   margin: 18px 0;
   max-width: 64ch;
@@ -586,7 +586,7 @@ footer {
   letter-spacing: 0.16em;
   text-transform: uppercase;
   font-style: normal;
-  color: var(--oliva-texto);
+  color: var(--verde-texto);
   margin-top: 10px;
   font-weight: 500;
 }
@@ -600,7 +600,7 @@ footer {
 @media (max-width: 720px) { .kpi-row { grid-template-columns: repeat(2, 1fr); } }
 .kpi {
   background: #fff;
-  border: 1px solid var(--oliva-soft);
+  border: 1px solid var(--verde-soft);
   border-radius: 6px;
   padding: 14px;
   text-align: center;
@@ -608,7 +608,7 @@ footer {
 .kpi .kpi-num {
   font-family: "Fraunces", serif;
   font-size: 22px;
-  color: var(--oliva-profundo);
+  color: var(--verde-profundo);
   font-weight: 500;
   letter-spacing: -0.01em;
 }
@@ -617,7 +617,7 @@ footer {
   font-size: 10px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--oliva-texto);
+  color: var(--verde-texto);
   margin-top: 4px;
 }
 
@@ -636,8 +636,8 @@ footer {
 }
 .cajon-tab {
   background: var(--crema-soft);
-  border: 1px solid var(--oliva-soft);
-  color: var(--oliva-profundo);
+  border: 1px solid var(--verde-soft);
+  color: var(--verde-profundo);
   font-family: "Inter", sans-serif;
   font-size: 13px;
   letter-spacing: 0.04em;
@@ -646,15 +646,15 @@ footer {
   cursor: pointer;
   transition: all 180ms ease;
 }
-.cajon-tab:hover { border-color: var(--oliva); background: #fff; }
+.cajon-tab:hover { border-color: var(--verde); background: #fff; }
 .cajon-tab.active {
-  background: var(--oliva-profundo);
+  background: var(--verde-profundo);
   color: var(--crema);
-  border-color: var(--oliva-profundo);
+  border-color: var(--verde-profundo);
 }
 .cajon-panel {
   background: #fff;
-  border: 1px solid var(--oliva-soft);
+  border: 1px solid var(--verde-soft);
   border-radius: 8px;
   padding: 24px;
 }
@@ -664,14 +664,14 @@ footer {
   font-style: italic;
   font-weight: 400;
   font-size: 26px;
-  color: var(--oliva-profundo);
+  color: var(--verde-profundo);
   margin-bottom: 4px;
   letter-spacing: -0.01em;
 }
 .cajon-meta p {
   font-family: "Fraunces", serif;
   font-size: 14px;
-  color: var(--oliva-texto);
+  color: var(--verde-texto);
 }
 .cajon-table th, .cajon-table td { padding: 9px 10px; font-size: 13px; }
 .cajon-table .qty-input,
@@ -679,7 +679,7 @@ footer {
   font-family: "Inter", sans-serif;
   font-size: 13px;
   padding: 4px 8px;
-  border: 1px solid var(--oliva-soft);
+  border: 1px solid var(--verde-soft);
   border-radius: 4px;
   text-align: right;
   font-variant-numeric: tabular-nums;
@@ -689,13 +689,13 @@ footer {
 .cajon-table .price-input { width: 92px; }
 .cajon-table .qty-input:focus,
 .cajon-table .price-input:focus {
-  outline: 2px solid var(--oliva-profundo);
-  border-color: var(--oliva-profundo);
+  outline: 2px solid var(--verde-profundo);
+  border-color: var(--verde-profundo);
 }
 .cajon-table tfoot td {
   background: var(--crema-soft);
-  color: var(--oliva-profundo);
-  border-top: 2px solid var(--madera);
+  color: var(--verde-profundo);
+  border-top: 2px solid var(--ambar);
 }
 .cajon-control {
   display: grid;
@@ -721,7 +721,7 @@ footer {
   font-size: 10px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--madera);
+  color: var(--ambar);
   margin-bottom: 6px;
   font-weight: 500;
 }
@@ -729,24 +729,24 @@ footer {
   font-family: "Fraunces", serif;
   font-variation-settings: "SOFT" 40, "opsz" 144;
   font-size: 22px;
-  color: var(--oliva-profundo);
+  color: var(--verde-profundo);
   font-weight: 500;
   line-height: 1.1;
   letter-spacing: -0.01em;
   font-variant-numeric: tabular-nums;
 }
-.ko.highlight { background: #f5f9f3; border: 1px solid var(--oliva-soft); }
+.ko.highlight { background: #f4faf4; border: 1px solid var(--verde-soft); }
 .ko.highlight .ko-amount { color: var(--verde-ok); }
 .ko-sub {
   font-family: "Fraunces", serif;
   font-style: italic;
   font-size: 12px;
-  color: var(--oliva-texto);
+  color: var(--verde-texto);
   margin-top: 4px;
 }
 .cajon-markup {
   background: var(--crema);
-  border: 1px solid var(--oliva-soft);
+  border: 1px solid var(--verde-soft);
   border-radius: 6px;
   padding: 18px;
   display: flex;
@@ -758,7 +758,7 @@ footer {
   font-size: 11px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--oliva-profundo);
+  color: var(--verde-profundo);
   font-weight: 500;
   margin-bottom: 8px;
 }
@@ -770,7 +770,7 @@ footer {
 }
 .cajon-markup input[type="range"] {
   flex: 1;
-  accent-color: var(--oliva-profundo);
+  accent-color: var(--verde-profundo);
   height: 4px;
 }
 .cajon-markup .value {
@@ -779,21 +779,21 @@ footer {
   font-family: "Fraunces", serif;
   font-size: 17px;
   font-weight: 500;
-  color: var(--oliva-profundo);
+  color: var(--verde-profundo);
   font-variant-numeric: tabular-nums;
 }
 .cajon-markup .hint {
   font-family: "Fraunces", serif;
   font-style: italic;
   font-size: 12px;
-  color: var(--oliva-texto);
+  color: var(--verde-texto);
   margin-bottom: 14px;
   line-height: 1.4;
   flex: 1;
 }
 .btn-primary {
   width: 100%;
-  background: var(--oliva-profundo);
+  background: var(--verde-profundo);
   color: var(--crema);
   border: none;
   font-family: "Inter", sans-serif;
@@ -806,14 +806,14 @@ footer {
   cursor: pointer;
   transition: background 180ms ease;
 }
-.btn-primary:hover { background: var(--oliva-mas-oscuro); }
+.btn-primary:hover { background: var(--verde-mas-oscuro); }
 </style>
 </head>
 <body>
 
 <header class="top">
   <div class="top-inner">
-    <span class="word">Spiga</span>
+    <span class="word">Nativa</span>
     <span class="sep">×</span>
     <span class="ctx">Plan Aldana</span>
     <span class="conf">Confidencial</span>
@@ -825,7 +825,7 @@ footer {
 <section class="hero">
   <span class="label">Análisis · 28 de mayo de 2026</span>
   <h1>De empleada <em>a dueña de tu tiempo.</em></h1>
-  <p class="lead">Cuántos meses te banca lo que tenés, qué precio y cuántos clientes necesita Spiga para sostener tu vida actual, y los huecos del presupuesto que vimos al cruzar tus tarjetas. Todo basado en los resúmenes que subiste y en tus respuestas.</p>
+  <p class="lead">Cuántos meses te banca lo que tenés, qué precio y cuántos clientes necesita Nativa para sostener tu vida actual, y los huecos del presupuesto que vimos al cruzar tus tarjetas. Todo basado en los resúmenes que subiste y en tus respuestas.</p>
 
   <div class="toc">
     <a href="#realidad">La foto de hoy</a>
@@ -833,7 +833,7 @@ footer {
     <a href="#detalle">Gasto real por categoría</a>
     <a href="#runway">Cuánto bancás</a>
     <a href="#cajones">Catálogo y cajones</a>
-    <a href="#breakeven">Calculadora Spiga</a>
+    <a href="#breakeven">Calculadora Nativa</a>
     <a href="#preguntas">Lo que falta saber</a>
     <a href="#recomendaciones">Próximos pasos</a>
   </div>
@@ -1036,7 +1036,7 @@ footer {
     </div>
 
     <div class="scen bad">
-      <div class="scen-name">B · Renuncia ya, sin Spiga</div>
+      <div class="scen-name">B · Renuncia ya, sin Nativa</div>
       <div class="scen-amount">5 meses</div>
       <div class="scen-sub">Salís del trabajo · sin ingresos del negocio</div>
       <ul>
@@ -1050,22 +1050,22 @@ footer {
     </div>
 
     <div class="scen good">
-      <div class="scen-name">C · Trabajo + Spiga 8 meses, salto al mes 9</div>
+      <div class="scen-name">C · Trabajo + Nativa 8 meses, salto al mes 9</div>
       <div class="scen-amount">indefinido</div>
-      <div class="scen-sub">Aprovechás los 8 meses para arrancar Spiga en paralelo</div>
+      <div class="scen-sub">Aprovechás los 8 meses para arrancar Nativa en paralelo</div>
       <ul>
-        <li>Meses 1-8: trabajo + Spiga part-time = 10-20 clientes piloto</li>
+        <li>Meses 1-8: trabajo + Nativa part-time = 10-20 clientes piloto</li>
         <li>Pausás padel (-$200K/mes) y bajás gastos opcionales</li>
         <li>Aprendés costos reales, refinás precios, validás operativa</li>
         <li>Mes 9: cae cuota del auto + renunciás → gastos $4.15M</li>
-        <li>Si Spiga ya da $2-3M netos, déficit es cero o positivo</li>
+        <li>Si Nativa ya da $2-3M netos, déficit es cero o positivo</li>
         <li><strong>Es el plan que la matemática pide</strong></li>
       </ul>
     </div>
   </div>
 
   <div class="note">
-    La revelación es <strong>el mes 9</strong>. Las 8 cuotas restantes del auto son el reloj que organiza todo el plan. No tiene sentido renunciar antes — pero tampoco tiene sentido esperar a renunciar para arrancar Spiga. <em>Los 8 meses son para construir el negocio en paralelo</em>: red de clientes piloto, validar precios reales (sección 05 arriba), ajustar operativa con Paola, y llegar al mes 9 con el negocio andando y la cuota del auto fuera de la ecuación.
+    La revelación es <strong>el mes 9</strong>. Las 8 cuotas restantes del auto son el reloj que organiza todo el plan. No tiene sentido renunciar antes — pero tampoco tiene sentido esperar a renunciar para arrancar Nativa. <em>Los 8 meses son para construir el negocio en paralelo</em>: red de clientes piloto, validar precios reales (sección 05 arriba), ajustar operativa con Paola, y llegar al mes 9 con el negocio andando y la cuota del auto fuera de la ecuación.
   </div>
 </section>
 
@@ -1076,16 +1076,16 @@ footer {
   <p class="block-desc">La lista 2705 PDF (mayorista por bulto) es tu costo más bajo. La lista pública por kg/unidad es lo que el cliente pagaría suelto en una verdulería — es tu referencia de valor. <strong>Cantidades, precios D1 y precios D2 son todos editables</strong>: ajustá cualquiera y se recalcula el costo del cajón, el valor retail, el precio sugerido, el margen y el simulador de abajo en vivo. Para cada cajón usamos el más barato de los dos como costo.</p>
 
   <div class="cajon-tabs">
-    <button data-cajon="picolo" class="cajon-tab active" type="button">Piccolo</button>
-    <button data-cajon="famiglia" class="cajon-tab" type="button">Famiglia</button>
-    <button data-cajon="abbondanza" class="cajon-tab" type="button">Abbondanza</button>
-    <button data-cajon="frutta_fam" class="cajon-tab" type="button">Frutta Famiglia</button>
-    <button data-cajon="frutta_abb" class="cajon-tab" type="button">Frutta Abbondanza</button>
+    <button data-cajon="picolo" class="cajon-tab active" type="button">Mini</button>
+    <button data-cajon="famiglia" class="cajon-tab" type="button">Family</button>
+    <button data-cajon="abbondanza" class="cajon-tab" type="button">Harvest</button>
+    <button data-cajon="frutta_fam" class="cajon-tab" type="button">Fruit Family</button>
+    <button data-cajon="frutta_abb" class="cajon-tab" type="button">Fruit Harvest</button>
   </div>
 
   <div class="cajon-panel">
     <div class="cajon-meta">
-      <h3 id="cajon-nombre">Piccolo</h3>
+      <h3 id="cajon-nombre">Mini</h3>
       <p id="cajon-desc"></p>
     </div>
 
@@ -1150,26 +1150,26 @@ footer {
 
 <!-- 5 — BREAKEVEN -->
 <section class="block section-id" id="breakeven">
-  <span class="block-label">06 · Calculadora Spiga</span>
+  <span class="block-label">06 · Calculadora Nativa</span>
   <h2>Cuántos clientes <em>para empatar tu sueldo.</em></h2>
-  <p class="block-desc">El número grande es el <strong>mix recomendado 30/50/20</strong>: 30% de tus clientes con Piccolo, 50% con Abbondanza, 20% con Famiglia. Los sliders abajo arrancan con los valores reales del cajón Abbondanza (calculados en la sección 05 con tus distribuidores). Ajustá el markup en la sección 05 y los sliders acá se autosincronizan. Los KPIs de abajo te muestran cuántos clientes harían falta si todo fuera de un único cajón — para ver por qué el mix es mejor.</p>
+  <p class="block-desc">El número grande es el <strong>mix recomendado 30/50/20</strong>: 30% de tus clientes con Mini, 50% con Harvest, 20% con Family. Los sliders abajo arrancan con los valores reales del cajón Harvest (calculados en la sección 05 con tus distribuidores). Ajustá el markup en la sección 05 y los sliders acá se autosincronizan. Los KPIs de abajo te muestran cuántos clientes harían falta si todo fuera de un único cajón — para ver por qué el mix es mejor.</p>
 
   <div class="calc">
     <div class="calc-grid">
       <div class="calc-inputs">
-        <label>Precio Abbondanza / mes (50% del mix)</label>
+        <label>Precio Harvest / mes (50% del mix)</label>
         <div class="slider-row">
           <input type="range" id="precio" min="60000" max="600000" step="5000" value="180000" />
           <span class="value" id="precio-v">$ 180.000</span>
         </div>
         <p class="hint">Autosincronizado con la sección 05 cuando cambiás el markup. Movelo manualmente si querés sobreescribir.</p>
 
-        <label>Costo Abbondanza / entrega</label>
+        <label>Costo Harvest / entrega</label>
         <div class="slider-row">
           <input type="range" id="costo" min="10000" max="150000" step="2500" value="40000" />
           <span class="value" id="costo-v">$ 40.000</span>
         </div>
-        <p class="hint">El costo real surge de la composición editable arriba. 4 entregas/mes × este costo = tu costo mensual por cliente Abbondanza.</p>
+        <p class="hint">El costo real surge de la composición editable arriba. 4 entregas/mes × este costo = tu costo mensual por cliente Harvest.</p>
 
         <label>Gastos fijos operativos del negocio (por mes)</label>
         <div class="slider-row">
@@ -1185,7 +1185,7 @@ footer {
         </div>
         <p class="hint">Si es socia, dejá en 0 acá (su ingreso sale de la utilidad). Si es empleada/jornal, mete el monto.</p>
 
-        <label>Sueldo objetivo que querés sacar de Spiga</label>
+        <label>Sueldo objetivo que querés sacar de Nativa</label>
         <div class="slider-row">
           <input type="range" id="objetivo" min="2000000" max="8000000" step="100000" value="4117515" />
           <span class="value" id="objetivo-v">$ 4.117.515</span>
@@ -1219,14 +1219,14 @@ footer {
   </div>
 
   <div class="kpi-row">
-    <div class="kpi"><div class="kpi-num" id="kpi-piccolo">—</div><div class="kpi-lbl">100% Piccolo</div></div>
-    <div class="kpi"><div class="kpi-num" id="kpi-famiglia">—</div><div class="kpi-lbl">100% Famiglia</div></div>
-    <div class="kpi"><div class="kpi-num" id="kpi-mix">—</div><div class="kpi-lbl">100% Abbondanza</div></div>
+    <div class="kpi"><div class="kpi-num" id="kpi-piccolo">—</div><div class="kpi-lbl">100% Mini</div></div>
+    <div class="kpi"><div class="kpi-num" id="kpi-famiglia">—</div><div class="kpi-lbl">100% Family</div></div>
+    <div class="kpi"><div class="kpi-num" id="kpi-mix">—</div><div class="kpi-lbl">100% Harvest</div></div>
     <div class="kpi"><div class="kpi-num" id="kpi-deficit">—</div><div class="kpi-lbl">mix · cubrir déficit $5.91M</div></div>
   </div>
 
   <div class="note">
-    <strong>El recomendado es el mix 30/50/20:</strong> es la mezcla típica de clientes reales — 30% Piccolo (parejas, vivienda chica), 50% Abbondanza (familias grandes, oficinas, cocineros intensivos) y 20% Famiglia. Con ese mix necesitás muchos menos clientes que apostando todo a un solo cajón. <strong>Plan operativo:</strong> 10 clientes confirmados al mes 1, +5 nuevos por mes vía red personal e IG. Llegás al número objetivo entre el mes 7-12 dependiendo del markup que elijas arriba.
+    <strong>El recomendado es el mix 30/50/20:</strong> es la mezcla típica de clientes reales — 30% Mini (parejas, vivienda chica), 50% Harvest (familias grandes, oficinas, cocineros intensivos) y 20% Family. Con ese mix necesitás muchos menos clientes que apostando todo a un solo cajón. <strong>Plan operativo:</strong> 10 clientes confirmados al mes 1, +5 nuevos por mes vía red personal e IG. Llegás al número objetivo entre el mes 7-12 dependiendo del markup que elijas arriba.
   </div>
 </section>
 
@@ -1241,7 +1241,7 @@ footer {
       <span class="q-num">01</span>
       <div class="q-text">
         <strong>Cuotas del auto: 8 que quedan.</strong>
-        <em>Implicación enorme.</em> A partir del <strong>mes 9</strong>, caen $1.600.000/mes de gasto fijo. Tu déficit pasa de $1.79M a ~$190K — casi breakeven sin tocar nada más. Si Spiga arranca con 3-5 clientes en ese momento, ya estás en positivo. <strong>El plan se acomoda alrededor de esos 8 meses.</strong>
+        <em>Implicación enorme.</em> A partir del <strong>mes 9</strong>, caen $1.600.000/mes de gasto fijo. Tu déficit pasa de $1.79M a ~$190K — casi breakeven sin tocar nada más. Si Nativa arranca con 3-5 clientes en ese momento, ya estás en positivo. <strong>El plan se acomoda alrededor de esos 8 meses.</strong>
       </div>
     </div>
     <div class="q">
@@ -1269,7 +1269,7 @@ footer {
       <span class="q-num">05</span>
       <div class="q-text">
         <strong>Padel: mensual $200K confirmado.</strong>
-        Es membresía. Si pausás durante los primeros 6 meses del arranque de Spiga, sumás <strong>+$1.2M de runway</strong> sin afectar nada estructural. Cuando estabilices, lo retomás.
+        Es membresía. Si pausás durante los primeros 6 meses del arranque de Nativa, sumás <strong>+$1.2M de runway</strong> sin afectar nada estructural. Cuando estabilices, lo retomás.
       </div>
     </div>
     <div class="q">
@@ -1282,8 +1282,8 @@ footer {
     <div class="q">
       <span class="q-num">07</span>
       <div class="q-text">
-        <strong>Precios Spiga: subiste los dos distribuidores.</strong>
-        <em>Procesados.</em> Mirá la sección <a href="#cajones" style="color: var(--oliva-profundo); text-decoration: underline;">05 · Catálogo y armado de cajones</a> arriba — los 5 cajones (Piccolo, Famiglia, Abbondanza y los dos Frutta) están dimensionados con costos reales del PDF mayorista y benchmark de retail público. Ya podés jugar con cantidades y markup, y volcarlo a la calculadora.
+        <strong>Precios Nativa: subiste los dos distribuidores.</strong>
+        <em>Procesados.</em> Mirá la sección <a href="#cajones" style="color: var(--verde-profundo); text-decoration: underline;">05 · Catálogo y armado de cajones</a> arriba — los 5 cajones (Mini, Family, Harvest y los dos Fruit) están dimensionados con costos reales del PDF mayorista y benchmark de retail público. Ya podés jugar con cantidades y markup, y volcarlo a la calculadora.
       </div>
     </div>
   </div>
@@ -1307,18 +1307,18 @@ footer {
     </div>
 
     <div class="rec">
-      <h3>3. Definir precios Spiga ya — usar la calculadora arriba.</h3>
-      <p>Sin precio, no hay plan. Mi sugerencia inicial para validar con clientes piloto: Piccolo $130K, Abbondanza $200K, Famiglia $280K. Margen objetivo: 55-60% bruto. Tirar la red ahora a los 10 primeros (red personal, mamis Nordelta, IG) y validar voluntad de pago real.</p>
+      <h3>3. Definir precios Nativa ya — usar la calculadora arriba.</h3>
+      <p>Sin precio, no hay plan. Mi sugerencia inicial para validar con clientes piloto: Mini $130K, Harvest $200K, Family $280K. Margen objetivo: 55-60% bruto. Tirar la red ahora a los 10 primeros (red personal, mamis Nordelta, IG) y validar voluntad de pago real.</p>
     </div>
 
     <div class="rec">
-      <h3>4. Probar Spiga 2 meses en paralelo al trabajo.</h3>
+      <h3>4. Probar Nativa 2 meses en paralelo al trabajo.</h3>
       <p>Antes de renunciar, hacer 4 entregas a los primeros 5-10 clientes mientras seguís cobrando sueldo. Te enseña costos reales (no estimados), tiempo de armado, problemas logísticos, y validás precio. <em>El "salto" no es necesariamente todo de una.</em></p>
     </div>
 
     <div class="rec">
       <h3>5. Tener un Plan B explícito.</h3>
-      <p>Si a los 6 meses Spiga no llega a 15 clientes activos, ¿qué pasa? ¿Volvés al mercado laboral? ¿Pivoteás a B2B oficinas? ¿Cerrás? <em>Tener escrito el plan B baja la ansiedad ahora</em>, porque deja de ser "todo o nada".</p>
+      <p>Si a los 6 meses Nativa no llega a 15 clientes activos, ¿qué pasa? ¿Volvés al mercado laboral? ¿Pivoteás a B2B oficinas? ¿Cerrás? <em>Tener escrito el plan B baja la ansiedad ahora</em>, porque deja de ser "todo o nada".</p>
     </div>
 
     <div class="rec">
@@ -1335,7 +1335,7 @@ footer {
 </main>
 
 <footer>
-  Plan Aldana × Spiga · análisis privado · generado el 28 de mayo de 2026 a partir de tu form de intake y tus resúmenes de tarjeta y sueldo
+  Plan Aldana × Nativa · análisis privado · generado el 28 de mayo de 2026 a partir de tu form de intake y tus resúmenes de tarjeta y sueldo
 </footer>
 
 <script>
@@ -1349,7 +1349,7 @@ footer {
 
   const GASTOS_REALES = 5907000;
 
-  // Costos mayoristas (d1) desde "Costos Spiga.xlsx" › hoja Precios (jun 2026).
+  // Costos mayoristas (d1) desde "Costos Nativa.xlsx" › hoja Precios (jun 2026).
   // d1 = precio unitario = pb (precio del bulto) ÷ rinde.
   // d2 = valor verdulería (retail jun-2026, ref. La Barata + INDEC). Siempre d2 ≥ d1.
   // Unificado con el editor en decks/aldana/index.html — actualizar ambos al cambiar precios.
@@ -1399,7 +1399,7 @@ footer {
 
   const cajones = {
     picolo: {
-      nombre: 'Piccolo',
+      nombre: 'Mini',
       descripcion: '1-2 personas · 5-7 variedades por semana · esencial',
       items: [
         { id: 'lechuga_manteca', qty: 0.4 },
@@ -1413,7 +1413,7 @@ footer {
       ],
     },
     famiglia: {
-      nombre: 'Famiglia',
+      nombre: 'Family',
       descripcion: '3-4 personas · 9-12 variedades · familiar',
       items: [
         { id: 'lechuga_manteca', qty: 0.4 },
@@ -1434,7 +1434,7 @@ footer {
       ],
     },
     abbondanza: {
-      nombre: 'Abbondanza',
+      nombre: 'Harvest',
       descripcion: '5+ personas o cocina intensa · 14-18 variedades · hierbas frescas',
       items: [
         { id: 'lechuga_manteca', qty: 0.4 },
@@ -1467,7 +1467,7 @@ footer {
       ],
     },
     frutta_fam: {
-      nombre: 'Frutta Famiglia',
+      nombre: 'Fruit Family',
       descripcion: '3-4 personas u oficina chica · 6 variedades de fruta',
       items: [
         { id: 'banana', qty: 2 },
@@ -1479,7 +1479,7 @@ footer {
       ],
     },
     frutta_abb: {
-      nombre: 'Frutta Abbondanza',
+      nombre: 'Fruit Harvest',
       descripcion: '5+ personas u oficina · 6 variedades en cantidades generosas',
       items: [
         { id: 'banana', qty: 3 },
@@ -1554,7 +1554,7 @@ footer {
     document.getElementById('kx-margen').textContent = fmt(v.margenMes);
     const pct = v.precioMes > 0 ? (v.margenMes / v.precioMes * 100).toFixed(0) : 0;
     document.getElementById('kx-pct').textContent = pct + ' % margen';
-    syncSlidersToAbbondanza();
+    syncSlidersToHarvest();
     calc();
   }
 
@@ -1606,7 +1606,7 @@ footer {
     updateCajonOutputs();
   }
 
-  function syncSlidersToAbbondanza() {
+  function syncSlidersToHarvest() {
     const v = cajonValues.abbondanza;
     if (!v) return;
     const precioEl = document.getElementById('precio');

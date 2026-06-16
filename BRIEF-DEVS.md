@@ -1,10 +1,10 @@
-# Spiga — Brief para desarrollo
+# Nativa — Brief para desarrollo
 
 > Documento de arranque para los programadores. Convierte el prototipo (deck + web estática) en el sitio real con backend, pagos, suscripciones y automatizaciones.
 >
-> Referencias: web prototipo (`index.html`), costos (`Costos Spiga.xlsx` › hoja Precios).
+> Referencias: web prototipo (`index.html`), costos (`Costos Nativa.xlsx` › hoja Precios).
 
-## 1. Qué es Spiga
+## 1. Qué es Nativa
 
 Delivery premium de frutas y verduras por **suscripción mensual**, zona norte de Buenos Aires (Nordelta, Villanueva, Tigre, Maschwitz, Escobar, Pilar). El cliente elige un cajón, se suscribe y recibe una entrega semanal curada que rota con la estación. Lanzamiento objetivo: **julio 2026**.
 
@@ -22,10 +22,10 @@ Todo lo que hoy en el prototipo es manual o "a pedido" tiene que quedar automati
 - La web tiene que poder cerrar la compra sin fricción desde el celular.
 
 ### 3.2 Elegir el cajón
-- Planes base: **Piccolo** (1–2 personas), **Famiglia** (3–4, el más elegido), **Abbondanza** (5+), más versiones **Frutta** (solo fruta, para oficinas).
+- Planes base: **Mini** (1–2 personas), **Family** (3–4, el más elegido), **Harvest** (5+), más versiones **Fruit** (solo fruta, para oficinas).
 - Mostrar el contenido del cajón (base fija + estacional que rota).
-- **Extras / productos sueltos (+10%):** a cualquier cajón se le suman productos sueltos (palta, huevos, frutas extra, berenjena, etc.) con un 10% sobre el precio Spiga del producto.
-- **Cajón a medida (+15%):** el cliente arma el cajón producto por producto; recargo del 15% por producto, mínimo equivalente a Piccolo.
+- **Extras / productos sueltos (+10%):** a cualquier cajón se le suman productos sueltos (palta, huevos, frutas extra, berenjena, etc.) con un 10% sobre el precio Nativa del producto.
+- **Cajón a medida (+15%):** el cliente arma el cajón producto por producto; recargo del 15% por producto, mínimo equivalente a Mini.
 - Regla de precios horneada (ver §6).
 
 ### 3.3 Suscripción
@@ -76,9 +76,9 @@ Todo lo que hoy en el prototipo es manual o "a pedido" tiene que quedar automati
 ## 6. Reglas de negocio (precios)
 - Precio del cajón = costo unitario × markup, redondeado.
 - **Recargo cajón a medida: +15%** sobre el precio del cajón estándar.
-- **Recargo productos sueltos: +10%** sobre el precio Spiga del producto.
+- **Recargo productos sueltos: +10%** sobre el precio Nativa del producto.
 - **Descuento** por transferencia/efectivo; **recargo** por tarjeta/Mercado Pago.
-- Mínimo del cajón a medida: equivalente a Piccolo.
+- Mínimo del cajón a medida: equivalente a Mini.
 - Cupones de descuento por código, con atribución a influencer.
 
 ## 7. Modelo de datos (entidades base)
@@ -92,7 +92,7 @@ Todo lo que hoy en el prototipo es manual o "a pedido" tiene que quedar automati
 
 ## 8. No funcionales
 - **Responsive** (celular y compu) — prioridad celular.
-- **Dominio**: elegido **`spigastore.com.ar`** (`spiga.com.ar` y `spiga.ar` están tomados). Falta registrarlo en nic.ar.
+- **Dominio**: **`nativamarket.com.ar`**. Falta registrarlo en nic.ar.
 - Hosting/infra a definir con el equipo de dev.
 
 ## 9. Fases sugeridas

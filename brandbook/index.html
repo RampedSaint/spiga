@@ -3,34 +3,34 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Spiga — Brandbook v1.0</title>
+<title>Nativa — Brandbook v1.0</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=Cormorant+Garamond:ital,wght@0,500;1,300;1,500&family=Cinzel:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 <style>
   :root {
-    --oliva-profundo: #54613F;
-    --oliva-mas-oscuro: #3F4A30;
-    --oliva-texto: #6F7A5C;
-    --oliva: #8A9476;
-    --oliva-soft: #B8BFA8;
-    --crema: #F2EBDD;
-    --crema-soft: #E6DCC4;
-    --tinta: #1A1A18;
-    --madera: #A07545;
-    --madera-suave: #C9A581;
+    --verde-profundo: #1b7a43;
+    --verde-mas-oscuro: #14532d;
+    --verde-texto: #2f6b43;
+    --verde: #3fb85f;
+    --verde-soft: #9fd9ae;
+    --crema: #f8f7f2;
+    --crema-soft: #ecebe0;
+    --tinta: #14201a;
+    --ambar: #c8821e;
+    --ambar-suave: #e3b877;
 
-    --primavera-1: #D9A4A4;  --primavera-2: #A3C49C;
-    --verano-1:    #C9573A;  --verano-2:    #E8C766;
-    --otono-1:     #B66A3D;  --otono-2:     #C99835;
-    --invierno-1:  #A04646;  --invierno-2:  #3F4A30;
+    --primavera-1: #cfe6cf;  --primavera-2: #86d99b;
+    --verano-1:    #f5a524;  --verano-2:    #f5a524;
+    --otono-1:     #e0813c;  --otono-2:     #c8821e;
+    --invierno-1:  #2c7a6b;  --invierno-2:  #14532d;
 
-    --verde-bosque: var(--oliva-profundo);
-    --bosque-profundo: var(--oliva-mas-oscuro);
+    --verde-bosque: var(--verde-profundo);
+    --bosque-profundo: var(--verde-mas-oscuro);
   }
 
   :focus-visible {
-    outline: 2px solid var(--oliva-profundo);
+    outline: 2px solid var(--verde-profundo);
     outline-offset: 3px;
     border-radius: 2px;
   }
@@ -71,7 +71,7 @@
     font-size: 11px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--oliva-texto);
+    color: var(--verde-texto);
     font-weight: 500;
   }
 
@@ -85,7 +85,7 @@
     justify-content: space-between;
     padding: 48px 56px;
     background: var(--crema);
-    border-bottom: 1px solid var(--oliva-soft);
+    border-bottom: 1px solid var(--verde-soft);
   }
   .hero-top { display: flex; justify-content: space-between; align-items: flex-start; }
   .hero-mark { display: flex; flex-direction: column; align-items: center; justify-content: center; flex: 1; }
@@ -110,12 +110,12 @@
     text-align: center;
   }
   .hero-bottom { display: flex; justify-content: space-between; align-items: flex-end; }
-  .hero-meta { font-family: "Inter", sans-serif; font-size: 12px; color: var(--oliva-texto); letter-spacing: 0.12em; text-transform: uppercase; }
+  .hero-meta { font-family: "Inter", sans-serif; font-size: 12px; color: var(--verde-texto); letter-spacing: 0.12em; text-transform: uppercase; }
 
   /* ============ LAYOUT ============ */
   section.chapter {
     padding: 120px 56px;
-    border-bottom: 1px solid var(--oliva-soft);
+    border-bottom: 1px solid var(--verde-soft);
     max-width: 1280px;
     margin: 0 auto;
   }
@@ -130,7 +130,7 @@
     font-family: "Inter", sans-serif;
     font-size: 12px;
     letter-spacing: 0.2em;
-    color: var(--oliva-texto);
+    color: var(--verde-texto);
     text-transform: uppercase;
     font-weight: 500;
     padding-top: 14px;
@@ -149,7 +149,7 @@
     font-style: italic;
     font-weight: 300;
     font-size: 18px;
-    color: var(--oliva-texto);
+    color: var(--verde-texto);
     margin-top: 16px;
     max-width: 56ch;
   }
@@ -175,7 +175,7 @@
 
   hr.hair {
     border: none;
-    border-top: 1px solid var(--oliva-soft);
+    border-top: 1px solid var(--verde-soft);
     margin: 64px 0;
   }
 
@@ -192,7 +192,7 @@
   }
   .manifest em {
     font-style: italic;
-    color: var(--oliva-texto);
+    color: var(--verde-texto);
     font-weight: 300;
   }
 
@@ -205,7 +205,7 @@
   }
   .logo-card {
     background: var(--crema);
-    border: 1px solid var(--oliva-soft);
+    border: 1px solid var(--verde-soft);
     padding: 64px 32px;
     display: flex;
     flex-direction: column;
@@ -215,7 +215,7 @@
     position: relative;
   }
   .logo-card.dark { background: var(--verde-bosque); border-color: var(--verde-bosque); color: var(--crema); }
-  .logo-card.dark .label { color: var(--oliva-soft); }
+  .logo-card.dark .label { color: var(--verde-soft); }
   .logo-card .label { position: absolute; top: 16px; left: 16px; }
 
   .wordmark-large {
@@ -231,7 +231,7 @@
 
   .logo-clearspace {
     background: var(--crema);
-    border: 1px solid var(--oliva-soft);
+    border: 1px solid var(--verde-soft);
     padding: 48px;
     margin-top: 40px;
     display: grid;
@@ -242,7 +242,7 @@
   .clearspace-vis {
     position: relative;
     padding: 80px;
-    background: repeating-linear-gradient(45deg, transparent 0 7px, rgba(138,148,118,0.12) 7px 8px);
+    background: repeating-linear-gradient(45deg, transparent 0 7px, rgba(63,184,95,0.12) 7px 8px);
   }
   .clearspace-vis svg { display: block; margin: 0 auto; background: var(--crema); padding: 16px; }
 
@@ -258,7 +258,7 @@
   }
   .dont {
     background: var(--crema);
-    border: 1px solid var(--oliva-soft);
+    border: 1px solid var(--verde-soft);
     aspect-ratio: 1 / 1;
     display: flex;
     align-items: center;
@@ -266,10 +266,10 @@
     position: relative;
     padding: 16px;
   }
-  .dont .label { position: absolute; bottom: 12px; left: 12px; color: #B65656; font-weight: 500; }
+  .dont .label { position: absolute; bottom: 12px; left: 12px; color: #e0813c; font-weight: 500; }
   .dont .x {
     position: absolute; top: 10px; right: 14px;
-    font-family: "Inter", sans-serif; color: #B65656; font-size: 22px; font-weight: 300;
+    font-family: "Inter", sans-serif; color: #e0813c; font-size: 22px; font-weight: 300;
   }
 
   /* ============ PALETA ============ */
@@ -296,8 +296,8 @@
     gap: 4px;
   }
   .swatch .name { font-family: "Fraunces", serif; font-size: 16px; color: var(--tinta); }
-  .swatch .hex { font-family: "Inter", sans-serif; font-size: 11px; letter-spacing: 0.12em; color: var(--oliva-texto); text-transform: uppercase; }
-  .swatch .role { font-family: "Inter", sans-serif; font-size: 11px; color: var(--oliva-texto); margin-top: 2px; }
+  .swatch .hex { font-family: "Inter", sans-serif; font-size: 11px; letter-spacing: 0.12em; color: var(--verde-texto); text-transform: uppercase; }
+  .swatch .role { font-family: "Inter", sans-serif; font-size: 11px; color: var(--verde-texto); margin-top: 2px; }
 
   .seasons {
     display: grid;
@@ -306,7 +306,7 @@
     margin-top: 32px;
   }
   .season {
-    border: 1px solid var(--oliva-soft);
+    border: 1px solid var(--verde-soft);
     padding: 24px;
     background: var(--crema);
   }
@@ -319,7 +319,7 @@
   }
   .season-pair { display: flex; gap: 12px; margin-bottom: 16px; }
   .season-pair .chip { width: 60px; height: 60px; }
-  .season-meta { font-family: "Inter", sans-serif; font-size: 11px; color: var(--oliva-texto); letter-spacing: 0.06em; line-height: 1.6; }
+  .season-meta { font-family: "Inter", sans-serif; font-size: 11px; color: var(--verde-texto); letter-spacing: 0.06em; line-height: 1.6; }
   .season-meta strong { color: var(--tinta); font-weight: 500; }
 
   /* ============ TIPOGRAFÍA ============ */
@@ -328,7 +328,7 @@
     grid-template-columns: 200px 1fr;
     gap: 40px;
     padding: 48px 0;
-    border-bottom: 1px solid var(--oliva-soft);
+    border-bottom: 1px solid var(--verde-soft);
   }
   .type-spec:last-child { border-bottom: none; }
   .type-meta .label { display: block; margin-bottom: 8px; }
@@ -338,7 +338,7 @@
     color: var(--verde-bosque);
     margin-bottom: 8px;
   }
-  .type-meta .role-text { font-family: "Inter", sans-serif; font-size: 13px; color: var(--oliva-texto); line-height: 1.6; }
+  .type-meta .role-text { font-family: "Inter", sans-serif; font-size: 13px; color: var(--verde-texto); line-height: 1.6; }
 
   .fr-display { font-family: "Fraunces", serif; font-variation-settings: "SOFT" 50, "opsz" 144; font-weight: 400; }
   .fr-text    { font-family: "Fraunces", serif; font-variation-settings: "SOFT" 30, "opsz" 18; font-weight: 400; }
@@ -363,7 +363,7 @@
   .type-paragraph { font-size: 17px; line-height: 1.7; max-width: 60ch; color: var(--tinta); margin-top: 16px; }
 
   .ui-sample { font-family: "Inter", sans-serif; }
-  .ui-sample .ui-l { font-size: 13px; color: var(--oliva-texto); letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 4px; }
+  .ui-sample .ui-l { font-size: 13px; color: var(--verde-texto); letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 4px; }
   .ui-sample .ui-h { font-size: 28px; color: var(--tinta); font-weight: 500; letter-spacing: -0.01em; }
   .ui-sample .ui-p { font-size: 14px; color: var(--tinta); margin-top: 12px; line-height: 1.55; max-width: 50ch; }
   .ui-sample .ui-num { font-size: 56px; color: var(--verde-bosque); font-weight: 400; letter-spacing: -0.02em; margin-top: 16px; font-variant-numeric: tabular-nums; }
@@ -373,11 +373,11 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0;
-    border: 1px solid var(--oliva-soft);
+    border: 1px solid var(--verde-soft);
     margin-top: 24px;
   }
   .tone-col { padding: 32px; }
-  .tone-col + .tone-col { border-left: 1px solid var(--oliva-soft); }
+  .tone-col + .tone-col { border-left: 1px solid var(--verde-soft); }
   .tone-col h4 {
     font-family: "Fraunces", serif;
     font-style: italic;
@@ -392,14 +392,14 @@
     font-size: 16px;
     line-height: 1.55;
     padding: 10px 0;
-    border-bottom: 1px dashed var(--oliva-soft);
+    border-bottom: 1px dashed var(--verde-soft);
     color: var(--tinta);
   }
   .tone-col li:last-child { border-bottom: none; }
   .tone-col .ex {
     font-family: "Inter", sans-serif;
     font-size: 12px;
-    color: var(--oliva-texto);
+    color: var(--verde-texto);
     margin-top: 4px;
     display: block;
     letter-spacing: 0.02em;
@@ -416,17 +416,17 @@
     font-size: 11px;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--oliva-texto);
+    color: var(--verde-texto);
     text-align: left;
     padding: 14px 0;
-    border-bottom: 1px solid var(--oliva-soft);
+    border-bottom: 1px solid var(--verde-soft);
     font-weight: 500;
   }
   .lex td {
     font-family: "Fraunces", serif;
     font-size: 17px;
     padding: 14px 0;
-    border-bottom: 1px solid var(--oliva-soft);
+    border-bottom: 1px solid var(--verde-soft);
     color: var(--tinta);
   }
   .lex td.no { color: #A87474; text-decoration: line-through; }
@@ -445,7 +445,7 @@
     aspect-ratio: 4 / 3;
     border-radius: 4px;
     box-shadow:
-      inset 0 0 0 8px rgba(60, 35, 18, 0.12),
+      inset 0 0 0 8px rgba(74,52,16, 0.12),
       inset 0 0 0 1px rgba(0,0,0,0.2),
       0 20px 40px rgba(0,0,0,0.06);
     position: relative;
@@ -457,14 +457,14 @@
   .app-cajon::before, .app-cajon::after {
     content: "";
     position: absolute;
-    background: rgba(60,35,18,0.18);
+    background: rgba(74,52,16,0.18);
   }
   .app-cajon::before { top: 12%; left: 0; right: 0; height: 1px; }
   .app-cajon::after  { bottom: 12%; left: 0; right: 0; height: 1px; }
   .cajon-grain {
     position: absolute; inset: 0;
     background:
-      repeating-linear-gradient(90deg, transparent 0 12px, rgba(60,35,18,0.05) 12px 13px),
+      repeating-linear-gradient(90deg, transparent 0 12px, rgba(74,52,16,0.05) 12px 13px),
       repeating-linear-gradient(0deg, transparent 0 60px, rgba(0,0,0,0.04) 60px 61px);
     pointer-events: none;
   }
@@ -504,7 +504,7 @@
     font-size: 10px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: rgba(26,26,24,0.6);
+    color: rgba(20,32,26,0.6);
   }
   .etiqueta-row2 {
     font-family: "Fraunces", serif;
@@ -536,7 +536,7 @@
     font-family: "Inter", sans-serif;
     font-size: 14px;
     line-height: 1.45;
-    color: #1A1A18;
+    color: #14201a;
     box-shadow: 0 1px 1px rgba(0,0,0,0.06);
   }
   .wa-bubble .wa-time { display: block; font-size: 10px; color: rgba(0,0,0,0.5); text-align: right; margin-top: 4px; }
@@ -557,9 +557,9 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse at 30% 70%, rgba(244,239,230,0.06), transparent 60%);
+    background: radial-gradient(ellipse at 30% 70%, rgba(248,247,242,0.06), transparent 60%);
   }
-  .ig-top { font-family: "Inter", sans-serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--oliva-soft); }
+  .ig-top { font-family: "Inter", sans-serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--verde-soft); }
   .ig-headline {
     font-family: "Fraunces", serif;
     font-style: italic;
@@ -575,7 +575,7 @@
     align-items: center;
     z-index: 2;
   }
-  .ig-foot .label { color: var(--oliva-soft); }
+  .ig-foot .label { color: var(--verde-soft); }
 
   /* Vehículo */
   .app-vehiculo {
@@ -605,14 +605,14 @@
   }
   .vehiculo-text { line-height: 1.1; }
   .vehiculo-text .v-name { font-family: "Fraunces", serif; font-size: 56px; color: var(--crema); letter-spacing: -0.02em; }
-  .vehiculo-text .v-url { font-family: "Inter", sans-serif; font-size: 11px; color: var(--oliva-soft); letter-spacing: 0.22em; text-transform: uppercase; margin-top: 8px; }
+  .vehiculo-text .v-url { font-family: "Inter", sans-serif; font-size: 11px; color: var(--verde-soft); letter-spacing: 0.22em; text-transform: uppercase; margin-top: 8px; }
 
   .app-caption {
     font-family: "Inter", sans-serif;
     font-size: 11px;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--oliva-texto);
+    color: var(--verde-texto);
     margin-top: 14px;
   }
 
@@ -620,7 +620,7 @@
   footer.colofon {
     padding: 80px 56px 64px;
     text-align: center;
-    color: var(--oliva-texto);
+    color: var(--verde-texto);
     font-family: "Inter", sans-serif;
     font-size: 12px;
     letter-spacing: 0.18em;
@@ -639,7 +639,7 @@
     .seasons, .apps-grid { grid-template-columns: 1fr; }
     .type-spec { grid-template-columns: 1fr; }
     .tone { grid-template-columns: 1fr; }
-    .tone-col + .tone-col { border-left: none; border-top: 1px solid var(--oliva-soft); }
+    .tone-col + .tone-col { border-left: none; border-top: 1px solid var(--verde-soft); }
   }
 
   /* selection */
@@ -656,12 +656,12 @@
   </div>
 
   <div class="hero-mark">
-    <svg class="hero-mono" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-label="Spiga monogram">
-      <circle cx="100" cy="100" r="95" fill="none" stroke="#54613F" stroke-width="1.2" />
-      <circle cx="100" cy="100" r="86" fill="none" stroke="#54613F" stroke-width="0.5" />
-      <g fill="#54613F"><g transform="translate(100,46) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g><g transform="translate(100,144) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g></g><text x="100" y="125" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="78" font-style="italic" font-weight="500" fill="#54613F">S</text><defs><path id="topArc1" d="M 30,100 A 70,70 0 0 1 170,100" fill="none"/><path id="botArc1" d="M 30,100 A 70,70 0 0 0 170,100" fill="none"/></defs><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#54613F"><textPath href="#topArc1" startOffset="50%" text-anchor="middle">FRESCHEZZA · CURATA</textPath></text><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#54613F"><textPath href="#botArc1" startOffset="50%" text-anchor="middle">SPIGA · DAL 2026</textPath></text></svg>
+    <svg class="hero-mono" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-label="Nativa monogram">
+      <circle cx="100" cy="100" r="95" fill="none" stroke="#1b7a43" stroke-width="1.2" />
+      <circle cx="100" cy="100" r="86" fill="none" stroke="#1b7a43" stroke-width="0.5" />
+      <g fill="#1b7a43"><g transform="translate(100,46) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g><g transform="translate(100,144) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g></g><text x="100" y="125" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="78" font-style="italic" font-weight="500" fill="#1b7a43">N</text><defs><path id="topArc1" d="M 30,100 A 70,70 0 0 1 170,100" fill="none"/><path id="botArc1" d="M 30,100 A 70,70 0 0 0 170,100" fill="none"/></defs><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#1b7a43"><textPath href="#topArc1" startOffset="50%" text-anchor="middle">FRESCO · LOCAL</textPath></text><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#1b7a43"><textPath href="#botArc1" startOffset="50%" text-anchor="middle">NATIVA · DESDE 2026</textPath></text></svg>
 
-    <h1 class="hero-wordmark">Spiga</h1>
+    <h1 class="hero-wordmark">Nativa</h1>
     <p class="hero-tagline">La cosecha de la semana.</p>
   </div>
 
@@ -688,7 +688,7 @@
       </p>
       <hr class="hair" />
       <p class="lead">Vos no perdés tiempo en góndolas. No cargás bolsas. No comparás precios. Solo abrís el cajón y cocinás.</p>
-      <p>Eso es Spiga: la huerta más cuidada del país, llegando puntual a tu casa. Una sola cosa, hecha bien.</p>
+      <p>Eso es Nativa: la huerta más cuidada del país, llegando puntual a tu casa. Una sola cosa, hecha bien.</p>
     </div>
   </div>
 </section>
@@ -730,28 +730,28 @@
   <div class="chapter-head">
     <div class="chapter-num">02 — Nombre</div>
     <div>
-      <h2 class="chapter-title">Spiga.</h2>
-      <p class="chapter-kicker">Italiano. Significa <em>espiga</em> — la cabeza del cereal que contiene los granos. Símbolo universal de cosecha, abundancia y oficio agrícola.</p>
+      <h2 class="chapter-title">Nativa.</h2>
+      <p class="chapter-kicker">Lo que nace de esta tierra. <em>Nativo</em> es lo de acá: lo de estación, lo que crece cerca y llega fresco. La palabra dice la promesa entera: producto local, de productores reales, en su mejor momento.</p>
     </div>
   </div>
 
   <div class="body-grid">
     <div class="body">
-      <p>Spiga evoca la cosecha: lo que la tierra produce cuando llega su momento. No es una palabra restringida al trigo — es la imagen de "lo que está listo para juntar". Esa es la promesa: cada semana cosechamos para vos lo mejor de la estación. La rotación estacional del sistema visual (paleta y claim cambian cada trimestre) refuerza la idea — las frutas y verduras son estacionales por naturaleza.</p>
+      <p>Nativa habla de origen: fruta y verdura que crecen cerca y se cosechan en su punto, no que viajan miles de kilómetros ni esperan semanas en una góndola. Esa es la promesa: cada semana elegimos para vos lo mejor de la estación. La rotación estacional del sistema visual (la paleta y el claim cambian cada trimestre) refuerza la idea: las frutas y verduras son estacionales por naturaleza.</p>
 
       <hr class="hair" />
 
       <div class="ui-sample">
         <div class="ui-l">Pronunciación</div>
-        <div class="ui-h">spí-ga</div>
-        <div class="ui-p">Dos sílabas, acento en la primera. Pronunciación trivial para argentinos (similar a "espiga"). Cuando se escribe en redes y web, siempre <strong>Spiga</strong> con S mayúscula.</div>
+        <div class="ui-h">na-tí-va</div>
+        <div class="ui-p">Tres sílabas, acento en la segunda. Palabra de uso cotidiano, pronunciación natural para argentinos. Cuando se escribe en redes y web, siempre <strong>Nativa</strong> con N mayúscula.</div>
       </div>
 
       <hr class="hair" />
 
       <div class="ui-sample">
         <div class="ui-l">Marca extendida (futuro)</div>
-        <div class="ui-h fr-text" style="font-family: Fraunces, serif; font-style: italic;">Spiga Cocina · Spiga Despensa · Spiga Vino</div>
+        <div class="ui-h fr-text" style="font-family: Fraunces, serif; font-style: italic;">Nativa Cocina · Nativa Despensa · Nativa Vino</div>
         <div class="ui-p">El nombre admite extensiones de línea sin romper la marca madre. Cada extensión usa la misma tipografía y monograma con el sub-nombre debajo, separado por una línea fina.</div>
       </div>
     </div>
@@ -774,26 +774,26 @@
       <div class="logo-grid">
         <div class="logo-card">
           <span class="label">Wordmark</span>
-          <div class="wordmark-large">Spiga</div>
+          <div class="wordmark-large">Nativa</div>
         </div>
         <div class="logo-card dark">
           <span class="label">Wordmark · negativo</span>
-          <div class="wordmark-large">Spiga</div>
+          <div class="wordmark-large">Nativa</div>
         </div>
         <div class="logo-card">
           <span class="label">Monograma · sello</span>
           <svg width="170" height="170" viewBox="0 0 200 200">
-            <circle cx="100" cy="100" r="95" fill="none" stroke="#54613F" stroke-width="1.2" />
-            <circle cx="100" cy="100" r="86" fill="none" stroke="#54613F" stroke-width="0.5" />
-            <g fill="#54613F"><g transform="translate(100,46) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g><g transform="translate(100,144) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g></g><text x="100" y="125" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="78" font-style="italic" font-weight="500" fill="#54613F">S</text><defs><path id="topArc2" d="M 30,100 A 70,70 0 0 1 170,100" fill="none"/><path id="botArc2" d="M 30,100 A 70,70 0 0 0 170,100" fill="none"/></defs><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#54613F"><textPath href="#topArc2" startOffset="50%" text-anchor="middle">FRESCHEZZA · CURATA</textPath></text><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#54613F"><textPath href="#botArc2" startOffset="50%" text-anchor="middle">SPIGA · DAL 2026</textPath></text>
+            <circle cx="100" cy="100" r="95" fill="none" stroke="#1b7a43" stroke-width="1.2" />
+            <circle cx="100" cy="100" r="86" fill="none" stroke="#1b7a43" stroke-width="0.5" />
+            <g fill="#1b7a43"><g transform="translate(100,46) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g><g transform="translate(100,144) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g></g><text x="100" y="125" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="78" font-style="italic" font-weight="500" fill="#1b7a43">N</text><defs><path id="topArc2" d="M 30,100 A 70,70 0 0 1 170,100" fill="none"/><path id="botArc2" d="M 30,100 A 70,70 0 0 0 170,100" fill="none"/></defs><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#1b7a43"><textPath href="#topArc2" startOffset="50%" text-anchor="middle">FRESCO · LOCAL</textPath></text><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#1b7a43"><textPath href="#botArc2" startOffset="50%" text-anchor="middle">NATIVA · DESDE 2026</textPath></text>
           </svg>
         </div>
         <div class="logo-card dark">
           <span class="label">Monograma · negativo</span>
           <svg width="170" height="170" viewBox="0 0 200 200">
-            <circle cx="100" cy="100" r="95" fill="none" stroke="#F2EBDD" stroke-width="1.2" />
-            <circle cx="100" cy="100" r="86" fill="none" stroke="#F2EBDD" stroke-width="0.5" />
-            <g fill="#F2EBDD"><g transform="translate(100,46) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g><g transform="translate(100,144) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g></g><text x="100" y="125" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="78" font-style="italic" font-weight="500" fill="#F2EBDD">S</text><defs><path id="topArc11" d="M 30,100 A 70,70 0 0 1 170,100" fill="none"/><path id="botArc11" d="M 30,100 A 70,70 0 0 0 170,100" fill="none"/></defs><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#F2EBDD"><textPath href="#topArc11" startOffset="50%" text-anchor="middle">FRESCHEZZA · CURATA</textPath></text><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#F2EBDD"><textPath href="#botArc11" startOffset="50%" text-anchor="middle">SPIGA · DAL 2026</textPath></text>
+            <circle cx="100" cy="100" r="95" fill="none" stroke="#f8f7f2" stroke-width="1.2" />
+            <circle cx="100" cy="100" r="86" fill="none" stroke="#f8f7f2" stroke-width="0.5" />
+            <g fill="#f8f7f2"><g transform="translate(100,46) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g><g transform="translate(100,144) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g></g><text x="100" y="125" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="78" font-style="italic" font-weight="500" fill="#f8f7f2">N</text><defs><path id="topArc11" d="M 30,100 A 70,70 0 0 1 170,100" fill="none"/><path id="botArc11" d="M 30,100 A 70,70 0 0 0 170,100" fill="none"/></defs><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#f8f7f2"><textPath href="#topArc11" startOffset="50%" text-anchor="middle">FRESCO · LOCAL</textPath></text><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#f8f7f2"><textPath href="#botArc11" startOffset="50%" text-anchor="middle">NATIVA · DESDE 2026</textPath></text>
           </svg>
         </div>
       </div>
@@ -806,10 +806,10 @@
       <div class="logo-card" style="margin-top: 16px;">
         <div class="lockup-row">
           <svg width="80" height="80" viewBox="0 0 200 200">
-            <circle cx="100" cy="100" r="95" fill="none" stroke="#54613F" stroke-width="2" />
-            <g fill="#54613F"><g transform="translate(100,46) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g><g transform="translate(100,144) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g></g><text x="100" y="125" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="78" font-style="italic" font-weight="500" fill="#54613F">S</text><defs><path id="topArc3" d="M 30,100 A 70,70 0 0 1 170,100" fill="none"/><path id="botArc3" d="M 30,100 A 70,70 0 0 0 170,100" fill="none"/></defs><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#54613F"><textPath href="#topArc3" startOffset="50%" text-anchor="middle">FRESCHEZZA · CURATA</textPath></text><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#54613F"><textPath href="#botArc3" startOffset="50%" text-anchor="middle">SPIGA · DAL 2026</textPath></text>
+            <circle cx="100" cy="100" r="95" fill="none" stroke="#1b7a43" stroke-width="2" />
+            <g fill="#1b7a43"><g transform="translate(100,46) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g><g transform="translate(100,144) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g></g><text x="100" y="125" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="78" font-style="italic" font-weight="500" fill="#1b7a43">N</text><defs><path id="topArc3" d="M 30,100 A 70,70 0 0 1 170,100" fill="none"/><path id="botArc3" d="M 30,100 A 70,70 0 0 0 170,100" fill="none"/></defs><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#1b7a43"><textPath href="#topArc3" startOffset="50%" text-anchor="middle">FRESCO · LOCAL</textPath></text><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#1b7a43"><textPath href="#botArc3" startOffset="50%" text-anchor="middle">NATIVA · DESDE 2026</textPath></text>
           </svg>
-          <div class="wordmark-large">Spiga</div>
+          <div class="wordmark-large">Nativa</div>
         </div>
       </div>
 
@@ -822,16 +822,16 @@
       <div class="logo-clearspace">
         <div class="clearspace-vis">
           <svg width="120" height="120" viewBox="0 0 200 200">
-            <circle cx="100" cy="100" r="95" fill="none" stroke="#54613F" stroke-width="1.5" />
-            <g fill="#54613F"><g transform="translate(100,46) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g><g transform="translate(100,144) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g></g><text x="100" y="125" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="78" font-style="italic" font-weight="500" fill="#54613F">S</text><defs><path id="topArc4" d="M 30,100 A 70,70 0 0 1 170,100" fill="none"/><path id="botArc4" d="M 30,100 A 70,70 0 0 0 170,100" fill="none"/></defs><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#54613F"><textPath href="#topArc4" startOffset="50%" text-anchor="middle">FRESCHEZZA · CURATA</textPath></text><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#54613F"><textPath href="#botArc4" startOffset="50%" text-anchor="middle">SPIGA · DAL 2026</textPath></text>
+            <circle cx="100" cy="100" r="95" fill="none" stroke="#1b7a43" stroke-width="1.5" />
+            <g fill="#1b7a43"><g transform="translate(100,46) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g><g transform="translate(100,144) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g></g><text x="100" y="125" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="78" font-style="italic" font-weight="500" fill="#1b7a43">N</text><defs><path id="topArc4" d="M 30,100 A 70,70 0 0 1 170,100" fill="none"/><path id="botArc4" d="M 30,100 A 70,70 0 0 0 170,100" fill="none"/></defs><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#1b7a43"><textPath href="#topArc4" startOffset="50%" text-anchor="middle">FRESCO · LOCAL</textPath></text><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#1b7a43"><textPath href="#botArc4" startOffset="50%" text-anchor="middle">NATIVA · DESDE 2026</textPath></text>
           </svg>
         </div>
         <div>
           <div class="ui-l" style="margin-bottom: 8px;">Tamaño mínimo</div>
           <div style="display: flex; gap: 32px; align-items: center;">
             <svg width="40" height="40" viewBox="0 0 200 200">
-              <circle cx="100" cy="100" r="95" fill="none" stroke="#54613F" stroke-width="3" />
-              <g fill="#54613F"><g transform="translate(100,46) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g><g transform="translate(100,144) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g></g><text x="100" y="125" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="78" font-style="italic" font-weight="500" fill="#54613F">S</text><defs><path id="topArc5" d="M 30,100 A 70,70 0 0 1 170,100" fill="none"/><path id="botArc5" d="M 30,100 A 70,70 0 0 0 170,100" fill="none"/></defs><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#54613F"><textPath href="#topArc5" startOffset="50%" text-anchor="middle">FRESCHEZZA · CURATA</textPath></text><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#54613F"><textPath href="#botArc5" startOffset="50%" text-anchor="middle">SPIGA · DAL 2026</textPath></text>
+              <circle cx="100" cy="100" r="95" fill="none" stroke="#1b7a43" stroke-width="3" />
+              <g fill="#1b7a43"><g transform="translate(100,46) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g><g transform="translate(100,144) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g></g><text x="100" y="125" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="78" font-style="italic" font-weight="500" fill="#1b7a43">N</text><defs><path id="topArc5" d="M 30,100 A 70,70 0 0 1 170,100" fill="none"/><path id="botArc5" d="M 30,100 A 70,70 0 0 0 170,100" fill="none"/></defs><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#1b7a43"><textPath href="#topArc5" startOffset="50%" text-anchor="middle">FRESCO · LOCAL</textPath></text><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#1b7a43"><textPath href="#botArc5" startOffset="50%" text-anchor="middle">NATIVA · DESDE 2026</textPath></text>
             </svg>
             <div>
               <div class="ui-l">Digital: 32px</div>
@@ -851,32 +851,32 @@
         <div class="dont">
           <span class="x">×</span>
           <svg width="80" height="80" viewBox="0 0 200 200" style="transform: rotate(20deg);">
-            <circle cx="100" cy="100" r="95" fill="none" stroke="#54613F" stroke-width="1.5" />
-            <g fill="#54613F"><g transform="translate(100,46) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g><g transform="translate(100,144) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g></g><text x="100" y="125" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="78" font-style="italic" font-weight="500" fill="#54613F">S</text><defs><path id="topArc6" d="M 30,100 A 70,70 0 0 1 170,100" fill="none"/><path id="botArc6" d="M 30,100 A 70,70 0 0 0 170,100" fill="none"/></defs><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#54613F"><textPath href="#topArc6" startOffset="50%" text-anchor="middle">FRESCHEZZA · CURATA</textPath></text><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#54613F"><textPath href="#botArc6" startOffset="50%" text-anchor="middle">SPIGA · DAL 2026</textPath></text>
+            <circle cx="100" cy="100" r="95" fill="none" stroke="#1b7a43" stroke-width="1.5" />
+            <g fill="#1b7a43"><g transform="translate(100,46) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g><g transform="translate(100,144) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g></g><text x="100" y="125" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="78" font-style="italic" font-weight="500" fill="#1b7a43">N</text><defs><path id="topArc6" d="M 30,100 A 70,70 0 0 1 170,100" fill="none"/><path id="botArc6" d="M 30,100 A 70,70 0 0 0 170,100" fill="none"/></defs><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#1b7a43"><textPath href="#topArc6" startOffset="50%" text-anchor="middle">FRESCO · LOCAL</textPath></text><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#1b7a43"><textPath href="#botArc6" startOffset="50%" text-anchor="middle">NATIVA · DESDE 2026</textPath></text>
           </svg>
           <span class="label">No rotar</span>
         </div>
         <div class="dont">
           <span class="x">×</span>
           <svg width="120" height="60" viewBox="0 0 200 200" preserveAspectRatio="none">
-            <circle cx="100" cy="100" r="95" fill="none" stroke="#54613F" stroke-width="1.5" />
-            <g fill="#54613F"><g transform="translate(100,46) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g><g transform="translate(100,144) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g></g><text x="100" y="125" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="78" font-style="italic" font-weight="500" fill="#54613F">S</text><defs><path id="topArc7" d="M 30,100 A 70,70 0 0 1 170,100" fill="none"/><path id="botArc7" d="M 30,100 A 70,70 0 0 0 170,100" fill="none"/></defs><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#54613F"><textPath href="#topArc7" startOffset="50%" text-anchor="middle">FRESCHEZZA · CURATA</textPath></text><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#54613F"><textPath href="#botArc7" startOffset="50%" text-anchor="middle">SPIGA · DAL 2026</textPath></text>
+            <circle cx="100" cy="100" r="95" fill="none" stroke="#1b7a43" stroke-width="1.5" />
+            <g fill="#1b7a43"><g transform="translate(100,46) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g><g transform="translate(100,144) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g></g><text x="100" y="125" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="78" font-style="italic" font-weight="500" fill="#1b7a43">N</text><defs><path id="topArc7" d="M 30,100 A 70,70 0 0 1 170,100" fill="none"/><path id="botArc7" d="M 30,100 A 70,70 0 0 0 170,100" fill="none"/></defs><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#1b7a43"><textPath href="#topArc7" startOffset="50%" text-anchor="middle">FRESCO · LOCAL</textPath></text><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#1b7a43"><textPath href="#botArc7" startOffset="50%" text-anchor="middle">NATIVA · DESDE 2026</textPath></text>
           </svg>
           <span class="label">No estirar</span>
         </div>
         <div class="dont">
           <span class="x">×</span>
           <svg width="80" height="80" viewBox="0 0 200 200">
-            <circle cx="100" cy="100" r="95" fill="#C9573A" stroke="#C9573A" stroke-width="1.5" />
-            <g fill="#FF66CC"><g transform="translate(100,46) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g><g transform="translate(100,144) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g></g><text x="100" y="125" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="78" font-style="italic" font-weight="500" fill="#FF66CC">S</text><defs><path id="topArc14" d="M 30,100 A 70,70 0 0 1 170,100" fill="none"/><path id="botArc14" d="M 30,100 A 70,70 0 0 0 170,100" fill="none"/></defs><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#FF66CC"><textPath href="#topArc14" startOffset="50%" text-anchor="middle">FRESCHEZZA · CURATA</textPath></text><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#FF66CC"><textPath href="#botArc14" startOffset="50%" text-anchor="middle">SPIGA · DAL 2026</textPath></text>
+            <circle cx="100" cy="100" r="95" fill="#f5a524" stroke="#f5a524" stroke-width="1.5" />
+            <g fill="#f5a524"><g transform="translate(100,46) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g><g transform="translate(100,144) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g></g><text x="100" y="125" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="78" font-style="italic" font-weight="500" fill="#f5a524">N</text><defs><path id="topArc14" d="M 30,100 A 70,70 0 0 1 170,100" fill="none"/><path id="botArc14" d="M 30,100 A 70,70 0 0 0 170,100" fill="none"/></defs><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#f5a524"><textPath href="#topArc14" startOffset="50%" text-anchor="middle">FRESCO · LOCAL</textPath></text><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#f5a524"><textPath href="#botArc14" startOffset="50%" text-anchor="middle">NATIVA · DESDE 2026</textPath></text>
           </svg>
           <span class="label">No recolorear fuera de paleta</span>
         </div>
         <div class="dont">
           <span class="x">×</span>
           <svg width="80" height="80" viewBox="0 0 200 200" style="filter: drop-shadow(0 4px 6px rgba(0,0,0,0.4));">
-            <circle cx="100" cy="100" r="95" fill="none" stroke="#54613F" stroke-width="1.5" />
-            <g fill="#54613F"><g transform="translate(100,46) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g><g transform="translate(100,144) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g></g><text x="100" y="125" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="78" font-style="italic" font-weight="500" fill="#54613F">S</text><defs><path id="topArc8" d="M 30,100 A 70,70 0 0 1 170,100" fill="none"/><path id="botArc8" d="M 30,100 A 70,70 0 0 0 170,100" fill="none"/></defs><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#54613F"><textPath href="#topArc8" startOffset="50%" text-anchor="middle">FRESCHEZZA · CURATA</textPath></text><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#54613F"><textPath href="#botArc8" startOffset="50%" text-anchor="middle">SPIGA · DAL 2026</textPath></text>
+            <circle cx="100" cy="100" r="95" fill="none" stroke="#1b7a43" stroke-width="1.5" />
+            <g fill="#1b7a43"><g transform="translate(100,46) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g><g transform="translate(100,144) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g></g><text x="100" y="125" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="78" font-style="italic" font-weight="500" fill="#1b7a43">N</text><defs><path id="topArc8" d="M 30,100 A 70,70 0 0 1 170,100" fill="none"/><path id="botArc8" d="M 30,100 A 70,70 0 0 0 170,100" fill="none"/></defs><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#1b7a43"><textPath href="#topArc8" startOffset="50%" text-anchor="middle">FRESCO · LOCAL</textPath></text><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#1b7a43"><textPath href="#botArc8" startOffset="50%" text-anchor="middle">NATIVA · DESDE 2026</textPath></text>
           </svg>
           <span class="label">No agregar sombras / efectos</span>
         </div>
@@ -902,34 +902,34 @@
       <div class="ui-sample"><div class="ui-l">Permanente</div></div>
       <div class="palette-base">
         <div class="swatch">
-          <div class="chip" style="background: #54613F;"></div>
+          <div class="chip" style="background: #1b7a43;"></div>
           <div class="meta">
-            <div class="name">Oliva Profundo</div>
-            <div class="hex">#54613F</div>
+            <div class="name">Verde Nativa</div>
+            <div class="hex">#1b7a43</div>
             <div class="role">Primario · logo · titulares</div>
           </div>
         </div>
         <div class="swatch">
-          <div class="chip" style="background: #F2EBDD;"></div>
+          <div class="chip" style="background: #f8f7f2;"></div>
           <div class="meta">
-            <div class="name">Crema Lino</div>
-            <div class="hex">#F2EBDD</div>
+            <div class="name">Blanco Hueso</div>
+            <div class="hex">#f8f7f2</div>
             <div class="role">Fondo principal</div>
           </div>
         </div>
         <div class="swatch">
-          <div class="chip" style="background: #1A1A18;"></div>
+          <div class="chip" style="background: #14201a;"></div>
           <div class="meta">
             <div class="name">Tinta</div>
-            <div class="hex">#1A1A18</div>
+            <div class="hex">#14201a</div>
             <div class="role">Texto largo · detalles</div>
           </div>
         </div>
         <div class="swatch">
-          <div class="chip" style="background: #8A9476;"></div>
+          <div class="chip" style="background: #3fb85f;"></div>
           <div class="meta">
-            <div class="name">Oliva Polvo</div>
-            <div class="hex">#8A9476</div>
+            <div class="name">Verde Hoja</div>
+            <div class="hex">#3fb85f</div>
             <div class="role">UI · líneas · captions</div>
           </div>
         </div>
@@ -938,39 +938,39 @@
       <hr class="hair" />
 
       <div class="ui-sample">
-        <div class="ui-l">Madera · eje cálido permanente</div>
-        <div class="ui-p">Los tonos madera son el otro eje de la marca. Aportan calidez de cosecha y oficio rural al sistema. Se usan en acentos sutiles: badges, divisores, texturas, etiquetas.</div>
+        <div class="ui-l">Cítrico · eje de acento permanente</div>
+        <div class="ui-p">El cítrico es el otro eje de la marca. Aporta energía fresca y vida al sistema. Se usa en acentos puntuales: badges, divisores, llamados a la acción, etiquetas.</div>
       </div>
       <div class="palette-base" style="margin-top: 16px;">
         <div class="swatch">
-          <div class="chip" style="background: #C9A581;"></div>
+          <div class="chip" style="background: #e3b877;"></div>
           <div class="meta">
-            <div class="name">Madera Suave</div>
-            <div class="hex">#C9A581</div>
-            <div class="role">Roble claro · etiquetas</div>
+            <div class="name">Cítrico Suave</div>
+            <div class="hex">#e3b877</div>
+            <div class="role">Cítrico claro · etiquetas</div>
           </div>
         </div>
         <div class="swatch">
-          <div class="chip" style="background: #A07545;"></div>
+          <div class="chip" style="background: #c8821e;"></div>
           <div class="meta">
-            <div class="name">Madera</div>
-            <div class="hex">#A07545</div>
-            <div class="role">Walnut · badges · acentos</div>
+            <div class="name">Cítrico</div>
+            <div class="hex">#c8821e</div>
+            <div class="role">Naranja cálido · badges · acentos</div>
           </div>
         </div>
         <div class="swatch">
-          <div class="chip" style="background: #5C3D1F;"></div>
+          <div class="chip" style="background: #4a3410;"></div>
           <div class="meta">
-            <div class="name">Madera Oscura</div>
-            <div class="hex">#5C3D1F</div>
-            <div class="role">Walnut profundo · contraste</div>
+            <div class="name">Cítrico Oscuro</div>
+            <div class="hex">#4a3410</div>
+            <div class="role">Ámbar profundo · contraste</div>
           </div>
         </div>
         <div class="swatch">
-          <div class="chip" style="background: #E6DCC4;"></div>
+          <div class="chip" style="background: #ecebe0;"></div>
           <div class="meta">
-            <div class="name">Crema Cálida</div>
-            <div class="hex">#E6DCC4</div>
+            <div class="name">Crema Fría</div>
+            <div class="hex">#ecebe0</div>
             <div class="role">Fondos secundarios</div>
           </div>
         </div>
@@ -990,8 +990,8 @@
             <div class="chip" style="background: var(--primavera-2);"></div>
           </div>
           <div class="season-meta">
-            <strong>Rosa Brote</strong> &nbsp; #D9A4A4<br/>
-            <strong>Verde Tierno</strong> &nbsp; #A3C49C
+            <strong>Rosa Brote</strong> &nbsp; #cfe6cf<br/>
+            <strong>Verde Tierno</strong> &nbsp; #86d99b
           </div>
         </div>
         <div class="season">
@@ -1001,8 +1001,8 @@
             <div class="chip" style="background: var(--verano-2);"></div>
           </div>
           <div class="season-meta">
-            <strong>Tomate Maduro</strong> &nbsp; #C9573A<br/>
-            <strong>Limón</strong> &nbsp; #E8C766
+            <strong>Tomate Maduro</strong> &nbsp; #f5a524<br/>
+            <strong>Limón</strong> &nbsp; #f5a524
           </div>
         </div>
         <div class="season">
@@ -1012,19 +1012,19 @@
             <div class="chip" style="background: var(--otono-2);"></div>
           </div>
           <div class="season-meta">
-            <strong>Terracota</strong> &nbsp; #B66A3D<br/>
-            <strong>Mostaza</strong> &nbsp; #C99835
+            <strong>Terracota</strong> &nbsp; #e0813c<br/>
+            <strong>Mostaza</strong> &nbsp; #c8821e
           </div>
         </div>
         <div class="season">
           <div class="season-title">Invierno</div>
           <div class="season-pair">
             <div class="chip" style="background: var(--invierno-1);"></div>
-            <div class="chip" style="background: #3F4A30;"></div>
+            <div class="chip" style="background: #14532d;"></div>
           </div>
           <div class="season-meta">
-            <strong>Granate</strong> &nbsp; #A04646<br/>
-            <strong>Bosque Profundo</strong> &nbsp; #3F4A30
+            <strong>Granate</strong> &nbsp; #2c7a6b<br/>
+            <strong>Bosque Profundo</strong> &nbsp; #14532d
           </div>
         </div>
       </div>
@@ -1053,7 +1053,7 @@
           <div class="role-text">Serif moderna con detalles tipográficos opcionales. Carácter sin perder elegancia. Soporta ejes "soft" y "wonky" para variar la voz.</div>
         </div>
         <div>
-          <div class="type-sample-display fr-display">Spiga</div>
+          <div class="type-sample-display fr-display">Nativa</div>
           <div class="type-sample-quote fr-text">"Cada semana, lo mejor de la estación, elegido a mano."</div>
           <div class="type-scale-row fr-display">
             <span style="font-size: 56px;">Aa</span>
@@ -1115,7 +1115,7 @@
             <li>Esta semana llegan los primeros duraznos blancos. <span class="ex">Estacional, evento natural.</span></li>
             <li>Elegidos a mano por nuestro equipo. <span class="ex">Curaduría humana visible.</span></li>
             <li>Tu cajón viaja para tu casa. <span class="ex">Personal, doméstico.</span></li>
-            <li>Buona settimana. <span class="ex">Italiano sutil, cariño.</span></li>
+            <li>Que tengas linda semana. <span class="ex">Cercano, cálido, sin sonar a local comercial.</span></li>
           </ul>
         </div>
         <div class="tone-col no">
@@ -1186,8 +1186,8 @@
             <div class="cajon-grain"></div>
             <div class="cajon-mono">
               <svg width="84" height="84" viewBox="0 0 200 200">
-                <circle cx="100" cy="100" r="95" fill="none" stroke="#F2EBDD" stroke-width="2" />
-                <g fill="#F2EBDD"><g transform="translate(100,46) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g><g transform="translate(100,144) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g></g><text x="100" y="125" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="78" font-style="italic" font-weight="500" fill="#F2EBDD">S</text><defs><path id="topArc12" d="M 30,100 A 70,70 0 0 1 170,100" fill="none"/><path id="botArc12" d="M 30,100 A 70,70 0 0 0 170,100" fill="none"/></defs><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#F2EBDD"><textPath href="#topArc12" startOffset="50%" text-anchor="middle">FRESCHEZZA · CURATA</textPath></text><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#F2EBDD"><textPath href="#botArc12" startOffset="50%" text-anchor="middle">SPIGA · DAL 2026</textPath></text>
+                <circle cx="100" cy="100" r="95" fill="none" stroke="#f8f7f2" stroke-width="2" />
+                <g fill="#f8f7f2"><g transform="translate(100,46) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g><g transform="translate(100,144) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g></g><text x="100" y="125" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="78" font-style="italic" font-weight="500" fill="#f8f7f2">N</text><defs><path id="topArc12" d="M 30,100 A 70,70 0 0 1 170,100" fill="none"/><path id="botArc12" d="M 30,100 A 70,70 0 0 0 170,100" fill="none"/></defs><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#f8f7f2"><textPath href="#topArc12" startOffset="50%" text-anchor="middle">FRESCO · LOCAL</textPath></text><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#f8f7f2"><textPath href="#botArc12" startOffset="50%" text-anchor="middle">NATIVA · DESDE 2026</textPath></text>
               </svg>
             </div>
           </div>
@@ -1197,7 +1197,7 @@
         <div class="app-stack">
           <div>
             <div class="app-etiqueta">
-              <div class="etiqueta-row1">Selezione della settimana</div>
+              <div class="etiqueta-row1">Selección de la semana</div>
               <div class="etiqueta-row2">Mayo · semana 3</div>
               <div class="etiqueta-list">
                 <span>· Tomate perita</span>
@@ -1218,13 +1218,13 @@
       <div class="apps-grid">
         <div>
           <div class="app-instagram">
-            <div class="ig-top">Spiga · post</div>
+            <div class="ig-top">Nativa · post</div>
             <div class="ig-headline">Empezó la temporada de duraznos blancos. Y ya están en su mejor momento.</div>
             <div class="ig-foot">
-              <span class="label">@spiga.ar</span>
+              <span class="label">@nativamarket</span>
               <svg width="36" height="36" viewBox="0 0 200 200">
-                <circle cx="100" cy="100" r="95" fill="none" stroke="#F2EBDD" stroke-width="3" />
-                <g fill="#F2EBDD"><g transform="translate(100,46) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g><g transform="translate(100,144) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g></g><text x="100" y="125" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="78" font-style="italic" font-weight="500" fill="#F2EBDD">S</text><defs><path id="topArc13" d="M 30,100 A 70,70 0 0 1 170,100" fill="none"/><path id="botArc13" d="M 30,100 A 70,70 0 0 0 170,100" fill="none"/></defs><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#F2EBDD"><textPath href="#topArc13" startOffset="50%" text-anchor="middle">FRESCHEZZA · CURATA</textPath></text><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#F2EBDD"><textPath href="#botArc13" startOffset="50%" text-anchor="middle">SPIGA · DAL 2026</textPath></text>
+                <circle cx="100" cy="100" r="95" fill="none" stroke="#f8f7f2" stroke-width="3" />
+                <g fill="#f8f7f2"><g transform="translate(100,46) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g><g transform="translate(100,144) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g></g><text x="100" y="125" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="78" font-style="italic" font-weight="500" fill="#f8f7f2">N</text><defs><path id="topArc13" d="M 30,100 A 70,70 0 0 1 170,100" fill="none"/><path id="botArc13" d="M 30,100 A 70,70 0 0 0 170,100" fill="none"/></defs><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#f8f7f2"><textPath href="#topArc13" startOffset="50%" text-anchor="middle">FRESCO · LOCAL</textPath></text><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#f8f7f2"><textPath href="#botArc13" startOffset="50%" text-anchor="middle">NATIVA · DESDE 2026</textPath></text>
               </svg>
             </div>
           </div>
@@ -1235,7 +1235,7 @@
           <div class="app-whatsapp">
             <div class="wa-bubble">
               Hola Santiago, el cajón de esta semana ya viaja para tu casa. Llega entre las 9 y las 13.
-              <br/><br/>¡Buona settimana!
+              <br/><br/>¡Que tengas linda semana!
               <span class="wa-time">11:42</span>
             </div>
           </div>
@@ -1250,13 +1250,13 @@
           <div class="vehiculo-mark">
             <div class="vehiculo-mono">
               <svg width="64" height="64" viewBox="0 0 200 200">
-                <circle cx="100" cy="100" r="95" fill="none" stroke="#54613F" stroke-width="3" />
-                <g fill="#54613F"><g transform="translate(100,46) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g><g transform="translate(100,144) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g></g><text x="100" y="125" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="78" font-style="italic" font-weight="500" fill="#54613F">S</text><defs><path id="topArc9" d="M 30,100 A 70,70 0 0 1 170,100" fill="none"/><path id="botArc9" d="M 30,100 A 70,70 0 0 0 170,100" fill="none"/></defs><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#54613F"><textPath href="#topArc9" startOffset="50%" text-anchor="middle">FRESCHEZZA · CURATA</textPath></text><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#54613F"><textPath href="#botArc9" startOffset="50%" text-anchor="middle">SPIGA · DAL 2026</textPath></text>
+                <circle cx="100" cy="100" r="95" fill="none" stroke="#1b7a43" stroke-width="3" />
+                <g fill="#1b7a43"><g transform="translate(100,46) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g><g transform="translate(100,144) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g></g><text x="100" y="125" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="78" font-style="italic" font-weight="500" fill="#1b7a43">N</text><defs><path id="topArc9" d="M 30,100 A 70,70 0 0 1 170,100" fill="none"/><path id="botArc9" d="M 30,100 A 70,70 0 0 0 170,100" fill="none"/></defs><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#1b7a43"><textPath href="#topArc9" startOffset="50%" text-anchor="middle">FRESCO · LOCAL</textPath></text><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#1b7a43"><textPath href="#botArc9" startOffset="50%" text-anchor="middle">NATIVA · DESDE 2026</textPath></text>
               </svg>
             </div>
             <div class="vehiculo-text">
-              <div class="v-name">Spiga</div>
-              <div class="v-url">spigastore.com.ar</div>
+              <div class="v-name">Nativa</div>
+              <div class="v-url">nativamarket.com.ar</div>
             </div>
           </div>
         </div>
@@ -1280,36 +1280,36 @@
   <div class="body-grid">
     <div class="body">
       <ol style="list-style: none; counter-reset: rule;">
-        <li style="counter-increment: rule; padding: 24px 0; border-bottom: 1px solid var(--oliva-soft); display: grid; grid-template-columns: 60px 1fr; gap: 24px; align-items: baseline;">
-          <span style="font-family: Inter, sans-serif; font-size: 13px; color: var(--oliva-texto); letter-spacing: 0.2em;">01</span>
+        <li style="counter-increment: rule; padding: 24px 0; border-bottom: 1px solid var(--verde-soft); display: grid; grid-template-columns: 60px 1fr; gap: 24px; align-items: baseline;">
+          <span style="font-family: Inter, sans-serif; font-size: 13px; color: var(--verde-texto); letter-spacing: 0.2em;">01</span>
           <div>
             <div style="font-family: Fraunces, serif; font-size: 24px; color: var(--verde-bosque); margin-bottom: 6px;">Curaduría sobre cantidad.</div>
             <div style="font-size: 16px; color: var(--tinta); max-width: 60ch;">Si entran solo cuatro variedades excelentes esta semana, mandamos cuatro. Nunca rellenamos para llenar el cajón.</div>
           </div>
         </li>
-        <li style="counter-increment: rule; padding: 24px 0; border-bottom: 1px solid var(--oliva-soft); display: grid; grid-template-columns: 60px 1fr; gap: 24px; align-items: baseline;">
-          <span style="font-family: Inter, sans-serif; font-size: 13px; color: var(--oliva-texto); letter-spacing: 0.2em;">02</span>
+        <li style="counter-increment: rule; padding: 24px 0; border-bottom: 1px solid var(--verde-soft); display: grid; grid-template-columns: 60px 1fr; gap: 24px; align-items: baseline;">
+          <span style="font-family: Inter, sans-serif; font-size: 13px; color: var(--verde-texto); letter-spacing: 0.2em;">02</span>
           <div>
             <div style="font-family: Fraunces, serif; font-size: 24px; color: var(--verde-bosque); margin-bottom: 6px;">Estacionalidad real.</div>
             <div style="font-size: 16px; color: var(--tinta); max-width: 60ch;">Lo que está en su momento. Si no es temporada de frutilla, no hay frutilla. Y lo decimos.</div>
           </div>
         </li>
-        <li style="counter-increment: rule; padding: 24px 0; border-bottom: 1px solid var(--oliva-soft); display: grid; grid-template-columns: 60px 1fr; gap: 24px; align-items: baseline;">
-          <span style="font-family: Inter, sans-serif; font-size: 13px; color: var(--oliva-texto); letter-spacing: 0.2em;">03</span>
+        <li style="counter-increment: rule; padding: 24px 0; border-bottom: 1px solid var(--verde-soft); display: grid; grid-template-columns: 60px 1fr; gap: 24px; align-items: baseline;">
+          <span style="font-family: Inter, sans-serif; font-size: 13px; color: var(--verde-texto); letter-spacing: 0.2em;">03</span>
           <div>
             <div style="font-family: Fraunces, serif; font-size: 24px; color: var(--verde-bosque); margin-bottom: 6px;">Confianza, no urgencia.</div>
             <div style="font-size: 16px; color: var(--tinta); max-width: 60ch;">No vendemos por miedo a perderse algo. La marca no grita, no descuenta agresivo, no presiona. Hace bien y se nota.</div>
           </div>
         </li>
-        <li style="counter-increment: rule; padding: 24px 0; border-bottom: 1px solid var(--oliva-soft); display: grid; grid-template-columns: 60px 1fr; gap: 24px; align-items: baseline;">
-          <span style="font-family: Inter, sans-serif; font-size: 13px; color: var(--oliva-texto); letter-spacing: 0.2em;">04</span>
+        <li style="counter-increment: rule; padding: 24px 0; border-bottom: 1px solid var(--verde-soft); display: grid; grid-template-columns: 60px 1fr; gap: 24px; align-items: baseline;">
+          <span style="font-family: Inter, sans-serif; font-size: 13px; color: var(--verde-texto); letter-spacing: 0.2em;">04</span>
           <div>
             <div style="font-family: Fraunces, serif; font-size: 24px; color: var(--verde-bosque); margin-bottom: 6px;">Detalle artesanal.</div>
             <div style="font-size: 16px; color: var(--tinta); max-width: 60ch;">Etiqueta a mano, papel real, lino, madera. Cada toque que el cliente ve y toca refuerza que esto está hecho con cuidado.</div>
           </div>
         </li>
         <li style="counter-increment: rule; padding: 24px 0; display: grid; grid-template-columns: 60px 1fr; gap: 24px; align-items: baseline;">
-          <span style="font-family: Inter, sans-serif; font-size: 13px; color: var(--oliva-texto); letter-spacing: 0.2em;">05</span>
+          <span style="font-family: Inter, sans-serif; font-size: 13px; color: var(--verde-texto); letter-spacing: 0.2em;">05</span>
           <div>
             <div style="font-family: Fraunces, serif; font-size: 24px; color: var(--verde-bosque); margin-bottom: 6px;">Una sola promesa.</div>
             <div style="font-size: 16px; color: var(--tinta); max-width: 60ch;">Lo mejor de la estación, en tu casa, todas las semanas. Punto. La marca no diluye su foco con productos que rompan esa promesa.</div>
@@ -1324,11 +1324,11 @@
 <footer class="colofon">
   <div class="mark-small">
     <svg width="44" height="44" viewBox="0 0 200 200">
-      <circle cx="100" cy="100" r="95" fill="none" stroke="#54613F" stroke-width="3" />
-      <g fill="#54613F"><g transform="translate(100,46) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g><g transform="translate(100,144) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g></g><text x="100" y="125" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="78" font-style="italic" font-weight="500" fill="#54613F">S</text><defs><path id="topArc10" d="M 30,100 A 70,70 0 0 1 170,100" fill="none"/><path id="botArc10" d="M 30,100 A 70,70 0 0 0 170,100" fill="none"/></defs><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#54613F"><textPath href="#topArc10" startOffset="50%" text-anchor="middle">FRESCHEZZA · CURATA</textPath></text><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#54613F"><textPath href="#botArc10" startOffset="50%" text-anchor="middle">SPIGA · DAL 2026</textPath></text>
+      <circle cx="100" cy="100" r="95" fill="none" stroke="#1b7a43" stroke-width="3" />
+      <g fill="#1b7a43"><g transform="translate(100,46) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g><g transform="translate(100,144) scale(0.55)"><polygon points="0,-10 3,-3 10,-3 4,2 6,10 0,5 -6,10 -4,2 -10,-3 -3,-3"/></g></g><text x="100" y="125" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="78" font-style="italic" font-weight="500" fill="#1b7a43">N</text><defs><path id="topArc10" d="M 30,100 A 70,70 0 0 1 170,100" fill="none"/><path id="botArc10" d="M 30,100 A 70,70 0 0 0 170,100" fill="none"/></defs><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#1b7a43"><textPath href="#topArc10" startOffset="50%" text-anchor="middle">FRESCO · LOCAL</textPath></text><text font-family="Cinzel, serif" font-size="11" font-weight="700" letter-spacing="4" fill="#1b7a43"><textPath href="#botArc10" startOffset="50%" text-anchor="middle">NATIVA · DESDE 2026</textPath></text>
     </svg>
   </div>
-  Spiga · Brandbook v1.0 · Mayo 2026<br/><br/>
+  Nativa · Brandbook v1.0 · Mayo 2026<br/><br/>
   <span style="text-transform: none; letter-spacing: 0; font-style: italic; font-family: 'Fraunces', serif; font-size: 16px; color: var(--verde-bosque);">La cosecha de la semana.</span>
 </footer>
 
