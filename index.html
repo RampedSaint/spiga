@@ -1610,6 +1610,30 @@
   .sticky-cta.is-visible { transform: translateY(0); }
   @media (max-width: 760px) { .sticky-cta { display: block; } }
 
+  /* ============ BUILDER · CAJÓN A MEDIDA ============ */
+  .modal-card.modal-card-wide { max-width: 760px; }
+  .bld-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; margin: 4px 0 8px; max-height: 46vh; overflow-y: auto; padding-right: 4px; }
+  .bld-item { display: flex; align-items: center; justify-content: space-between; gap: 10px; border: 1px solid var(--crema-soft); border-radius: 8px; padding: 9px 12px; background: #fff; }
+  .bld-item-info { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
+  .bld-item-name { font-family: "Inter", sans-serif; font-size: 13px; color: var(--tinta); font-weight: 500; }
+  .bld-item-price { font-family: "Inter", sans-serif; font-size: 11px; color: var(--verde-texto); }
+  .bld-stepper { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+  .bld-stepper button { width: 28px; height: 28px; border-radius: 6px; border: 1px solid var(--ambar-suave); background: var(--crema); color: var(--verde-profundo); cursor: pointer; font-size: 16px; line-height: 1; font-family: "Inter", sans-serif; }
+  .bld-stepper button:hover { border-color: var(--verde); }
+  .bld-qty { min-width: 32px; text-align: center; font-family: "Inter", sans-serif; font-size: 13px; color: var(--tinta); font-variant-numeric: tabular-nums; }
+  .bld-totals { border-top: 1px solid var(--crema-soft); padding-top: 14px; margin-top: 8px; display: flex; flex-direction: column; gap: 8px; }
+  .bld-row { display: flex; justify-content: space-between; gap: 16px; font-family: "Inter", sans-serif; font-size: 14px; color: var(--verde-texto); }
+  .bld-row span:last-child { font-variant-numeric: tabular-nums; }
+  .bld-row.bld-total { font-size: 19px; font-weight: 600; color: var(--verde-profundo); }
+  .bld-note { font-family: "Inter", sans-serif; font-size: 12.5px; color: var(--ambar); margin: 0; }
+  .bld-foot { margin-top: 18px; display: flex; justify-content: flex-end; }
+  .bld-foot .btn.is-disabled { opacity: .45; pointer-events: none; }
+  @media (max-width: 600px) {
+    .bld-list { grid-template-columns: 1fr; max-height: 50vh; }
+    .bld-foot { justify-content: stretch; }
+    .bld-foot .btn { width: 100%; text-align: center; }
+  }
+
 </style>
 </head>
 <body>
@@ -1952,7 +1976,7 @@
       <span class="label-wood">Sumale al cajón</span>
       <h3>Extras y productos sueltos.</h3>
     </div>
-    <p style="max-width: 58ch; margin: 4px auto 26px; text-align: center; color: var(--verde-texto); font-size: 17px; line-height: 1.6;">A cualquier cajón le sumás lo que quieras, no solo lo que trae de base. Se agregan al pedido con un 10% extra sobre el precio Nativa del producto.</p>
+    <p style="max-width: 58ch; margin: 4px auto 26px; text-align: center; color: var(--verde-texto); font-size: 17px; line-height: 1.6;">A cualquier cajón le sumás lo que quieras, no solo lo que trae de base. Elegís el extra y la cantidad, y se suma a tu pedido de la semana.</p>
     <div class="basics-pills">
       <span class="pill-wood">Palta</span>
       <span class="pill-wood">Huevos de campo</span>
@@ -2032,19 +2056,19 @@
   <div class="block-head">
     <span class="label">A medida</span>
     <h2>Armá tu propio cajón. <em>Vos elegís todo.</em></h2>
-    <p>Si preferís elegir producto por producto en vez de la curaduría de la semana, armás tu cajón a medida. Elegís qué entra y en qué cantidad. Tiene un 15% extra por producto sobre el cajón curado, con un mínimo equivalente al plan Duo y la misma entrega semanal.</p>
+    <p>Si preferís elegir producto por producto en vez de la curaduría de la semana, armás tu cajón a medida. Elegís qué entra y en qué cantidad, con un mínimo equivalente al plan Duo y la misma entrega semanal.</p>
   </div>
   <div class="basics">
     <div class="basics-pills">
       <span class="pill-wood">Elegís cada producto</span>
       <span class="pill-wood">Cantidades a tu medida</span>
-      <span class="pill-wood">+15% por producto</span>
+      <span class="pill-wood">Precio en vivo al elegir</span>
       <span class="pill-wood">Mínimo igual a Duo</span>
       <span class="pill-wood">Misma entrega semanal</span>
     </div>
   </div>
   <div class="section-cta">
-    <a href="https://wa.me/5491150562645?text=Hola%20Nativa%2C%20quiero%20armar%20mi%20caj%C3%B3n%20a%20medida.%20%C2%BFC%C3%B3mo%20elijo%20los%20productos%3F" class="btn" target="_blank" rel="noopener noreferrer" aria-label="Armar mi cajón a medida por WhatsApp">Armar mi cajón por WhatsApp</a>
+    <button type="button" class="btn large" id="open-builder">Armá tu cajón a medida →</button>
   </div>
 </section>
 
@@ -2136,7 +2160,7 @@
   <div class="faq-list">
     <details class="faq-item">
       <summary class="faq-q">¿Puedo elegir qué viene en el cajón?</summary>
-      <p class="faq-a">Sí, de tres formas. Podés quedarte con la curaduría de la semana, que es lo que hace a Nativa; sumarle productos sueltos a cualquier cajón con un 10% extra; o armar tu cajón a medida eligiendo producto por producto con un 15% extra. Y si tenés alguna alergia o algo que no comés, lo dejás anotado al suscribirte y lo respetamos.</p>
+      <p class="faq-a">Sí, de tres formas. Podés quedarte con la curaduría de la semana, que es lo que hace a Nativa; sumarle productos sueltos a cualquier cajón; o armar tu cajón a medida eligiendo producto por producto, con un mínimo equivalente al plan Duo. Y si tenés alguna alergia o algo que no comés, lo dejás anotado al suscribirte y lo respetamos.</p>
     </details>
     <details class="faq-item">
       <summary class="faq-q">¿Qué pasa si me voy de viaje una semana?</summary>
@@ -2307,6 +2331,28 @@
       <h3>¡Estás suscripto!</h3>
       <p>Te vamos a contactar antes del próximo lunes por <strong data-success-email>email</strong> para coordinar tu primer cajón.</p>
       <button type="button" class="btn" data-close>Cerrar</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ BUILDER MODAL · CAJÓN A MEDIDA ============ -->
+<div class="modal" id="modal-builder" hidden role="dialog" aria-modal="true" aria-labelledby="builder-title">
+  <div class="modal-backdrop" data-bld-close></div>
+  <div class="modal-card modal-card-wide">
+    <button class="modal-close" type="button" aria-label="Cerrar" data-bld-close>×</button>
+    <header class="modal-head">
+      <span class="modal-eyebrow">Cajón a medida</span>
+      <h2 id="builder-title">Armá <em>tu cajón.</em></h2>
+      <p class="modal-sub">Sumá los productos que quieras con + y −. El precio se arma solo a medida que elegís.</p>
+    </header>
+    <div class="bld-list" id="bld-list"></div>
+    <div class="bld-totals">
+      <div class="bld-row bld-min"><span>Mínimo del cajón</span><span id="bld-min">$ 0</span></div>
+      <div class="bld-row bld-total"><span>Tu cajón a medida</span><span id="bld-total">$ 0</span></div>
+      <p class="bld-note" id="bld-note" hidden></p>
+    </div>
+    <div class="bld-foot">
+      <a href="#" class="btn large is-disabled" id="bld-wa" target="_blank" rel="noopener noreferrer" aria-disabled="true">Pedir mi cajón por WhatsApp</a>
     </div>
   </div>
 </div>
@@ -2541,6 +2587,163 @@
     }, { threshold: 0.05 });
     io.observe(hero);
     io.observe(planes);
+  })();
+
+  // Builder "cajón a medida" → arma el cajón in-page con precio en vivo y manda el pedido por WhatsApp.
+  // El precio mostrado YA incluye el recargo del cajón a medida (no se muestra aparte).
+  // Catálogo y markup duplicados del deck interno (decks/aldana/index.html › DEFAULT_PRODUCTOS).
+  // Si cambian costos/markup allá, actualizar acá también.
+  (function () {
+    const PHONE = '5491150562645';
+    const MARKUP = 1.8;
+    const RECARGO = 0.15; // cajón a medida — horneado en el precio, nunca mostrado al cliente
+    const PRODUCTOS = {
+      lechuga_manteca: { nombre: 'Lechuga manteca', unidad: 'kg', d1: 2500 },
+      lechuga_capuchina: { nombre: 'Lechuga capuchina', unidad: 'kg', d1: 2500 },
+      lechuga_francesa: { nombre: 'Lechuga francesa', unidad: 'kg', d1: 3000 },
+      tomate_perita: { nombre: 'Tomate perita', unidad: 'kg', d1: 1833 },
+      tomate_redondo: { nombre: 'Tomate redondo', unidad: 'kg', d1: 1667 },
+      tomate_cherry: { nombre: 'Tomate cherry', unidad: 'kg', d1: 5600 },
+      cebolla: { nombre: 'Cebolla', unidad: 'kg', d1: 853 },
+      cebolla_morada: { nombre: 'Cebolla morada', unidad: 'kg', d1: 1176 },
+      papa_negra: { nombre: 'Papa negra', unidad: 'kg', d1: 611 },
+      papa_cepillada: { nombre: 'Papa cepillada', unidad: 'kg', d1: 833 },
+      papin: { nombre: 'Papín andino', unidad: 'kg', d1: 3000 },
+      zanahoria: { nombre: 'Zanahoria', unidad: 'kg', d1: 1250 },
+      anco: { nombre: 'Anco / calabaza', unidad: 'kg', d1: 833 },
+      batata: { nombre: 'Batata', unidad: 'kg', d1: 1500 },
+      ajo: { nombre: 'Ajo mediano', unidad: 'kg', d1: 6800 },
+      choclo: { nombre: 'Choclo', unidad: 'un', d1: 640 },
+      brocoli: { nombre: 'Brócoli', unidad: 'kg', d1: 2500 },
+      coliflor: { nombre: 'Coliflor', unidad: 'un', d1: 2000 },
+      zapallito: { nombre: 'Zapallito', unidad: 'kg', d1: 2222 },
+      berenjena: { nombre: 'Berenjena', unidad: 'kg', d1: 1500 },
+      pepino: { nombre: 'Pepino', unidad: 'kg', d1: 1667 },
+      morron_rojo: { nombre: 'Morrón rojo', unidad: 'kg', d1: 3750 },
+      morron_amarillo: { nombre: 'Morrón amarillo', unidad: 'kg', d1: 4375 },
+      morron_verde: { nombre: 'Morrón verde', unidad: 'kg', d1: 3750 },
+      espinaca: { nombre: 'Espinaca', unidad: 'atado', d1: 1000 },
+      acelga: { nombre: 'Acelga', unidad: 'atado', d1: 833 },
+      rucula: { nombre: 'Rúcula', unidad: 'atado', d1: 375 },
+      apio: { nombre: 'Apio', unidad: 'un', d1: 1500 },
+      perejil: { nombre: 'Perejil', unidad: 'atado', d1: 1000 },
+      albahaca: { nombre: 'Albahaca', unidad: 'un', d1: 900 },
+      banana: { nombre: 'Banana', unidad: 'kg', d1: 1778 },
+      manzana_roja: { nombre: 'Manzana roja', unidad: 'kg', d1: 3750 },
+      pera: { nombre: 'Pera', unidad: 'kg', d1: 1944 },
+      naranja_jugo: { nombre: 'Naranja jugo', unidad: 'kg', d1: 1667 },
+      mandarina: { nombre: 'Mandarina', unidad: 'kg', d1: 1111 },
+      limon: { nombre: 'Limón', unidad: 'kg', d1: 2250 },
+      uva: { nombre: 'Uva', unidad: 'kg', d1: 4750 },
+      frutillas: { nombre: 'Frutillas', unidad: 'kg', d1: 11000 },
+      palta: { nombre: 'Palta', unidad: 'kg', d1: 5500 },
+      kiwi: { nombre: 'Kiwi', unidad: 'kg', d1: 7500 },
+      huevos_n3: { nombre: 'Maple huevos N3', unidad: 'maple', d1: 4167 },
+    };
+    // Composición del plan Duo (cajón curado) → define el mínimo del cajón a medida.
+    const DUO_ITEMS = [
+      { id: 'lechuga_manteca', qty: 0.4 }, { id: 'tomate_perita', qty: 1 }, { id: 'cebolla', qty: 1 },
+      { id: 'papa_negra', qty: 1.5 }, { id: 'zanahoria', qty: 0.5 }, { id: 'anco', qty: 1 },
+      { id: 'banana', qty: 1 }, { id: 'manzana_roja', qty: 0.8 },
+    ];
+
+    const fmt = n => (!isFinite(n) || n <= 0) ? '$ 0' : '$ ' + Math.round(n).toLocaleString('es-AR');
+    const precio = p => Math.round(p.d1 * MARKUP * (1 + RECARGO) / 50) * 50;
+    const MINIMO = DUO_ITEMS.reduce((s, it) => { const p = PRODUCTOS[it.id]; return p ? s + it.qty * precio(p) : s; }, 0);
+
+    const modal = document.getElementById('modal-builder');
+    if (!modal) return;
+    const listEl = document.getElementById('bld-list');
+    const totalEl = document.getElementById('bld-total');
+    const minEl = document.getElementById('bld-min');
+    const noteEl = document.getElementById('bld-note');
+    const waBtn = document.getElementById('bld-wa');
+    const openBtn = document.getElementById('open-builder');
+    const qty = {};
+    let lastFocus = null;
+
+    const sortedIds = Object.keys(PRODUCTOS).sort((a, b) => PRODUCTOS[a].nombre.localeCompare(PRODUCTOS[b].nombre, 'es'));
+    const unitLabel = u => u === 'un' ? 'u' : u;
+
+    function render() {
+      listEl.innerHTML = '';
+      sortedIds.forEach(id => {
+        const p = PRODUCTOS[id];
+        const div = document.createElement('div');
+        div.className = 'bld-item';
+        div.innerHTML =
+          '<div class="bld-item-info"><span class="bld-item-name">' + p.nombre + '</span>' +
+          '<span class="bld-item-price">' + fmt(precio(p)) + ' / ' + p.unidad + '</span></div>' +
+          '<div class="bld-stepper">' +
+          '<button type="button" data-bm="' + id + '" aria-label="Quitar ' + p.nombre + '">−</button>' +
+          '<span class="bld-qty" id="bq-' + id + '">' + (qty[id] || 0) + '</span>' +
+          '<button type="button" data-bp="' + id + '" aria-label="Sumar ' + p.nombre + '">+</button></div>';
+        listEl.appendChild(div);
+      });
+      listEl.querySelectorAll('[data-bp]').forEach(b => b.addEventListener('click', e => step(e.currentTarget.dataset.bp, 1)));
+      listEl.querySelectorAll('[data-bm]').forEach(b => b.addEventListener('click', e => step(e.currentTarget.dataset.bm, -1)));
+      minEl.textContent = fmt(MINIMO);
+      refresh();
+    }
+
+    function step(id, dir) {
+      const inc = PRODUCTOS[id].unidad === 'kg' ? 0.5 : 1;
+      qty[id] = Math.max(0, Math.round(((qty[id] || 0) + dir * inc) * 10) / 10);
+      const q = document.getElementById('bq-' + id); if (q) q.textContent = qty[id];
+      refresh();
+    }
+
+    function selected() {
+      return Object.keys(qty).filter(id => qty[id] > 0).map(id => ({ p: PRODUCTOS[id], q: qty[id] }));
+    }
+
+    function refresh() {
+      const sel = selected();
+      const total = sel.reduce((s, x) => s + x.q * precio(x.p), 0);
+      totalEl.textContent = fmt(total);
+      const ok = total >= MINIMO && total > 0;
+      waBtn.classList.toggle('is-disabled', !ok);
+      waBtn.setAttribute('aria-disabled', ok ? 'false' : 'true');
+      if (total > 0 && total < MINIMO) {
+        noteEl.hidden = false;
+        noteEl.textContent = 'Sumá ' + fmt(MINIMO - total) + ' para llegar al mínimo del cajón a medida.';
+      } else {
+        noteEl.hidden = true;
+      }
+      waBtn.href = ok ? waLink(sel, total) : '#';
+    }
+
+    function waLink(sel, total) {
+      const activePill = document.querySelector('.zone-pill.active');
+      const zone = activePill ? activePill.dataset.zone : null;
+      let msg = 'Hola Nativa, armé mi cajón a medida:\n';
+      sel.forEach(x => { msg += '• ' + x.p.nombre + ' × ' + x.q + ' ' + unitLabel(x.p.unidad) + '\n'; });
+      msg += 'Total estimado: ' + fmt(total) + '.';
+      if (zone && zone !== 'otra') msg += ' Vivo en ' + zone + '.';
+      msg += ' ¿Me confirman y coordinamos la primera entrega?';
+      return 'https://wa.me/' + PHONE + '?text=' + encodeURIComponent(msg);
+    }
+
+    function open() {
+      lastFocus = document.activeElement;
+      modal.hidden = false;
+      requestAnimationFrame(() => modal.classList.add('is-open'));
+      document.body.style.overflow = 'hidden';
+      render();
+    }
+    function close() {
+      modal.classList.remove('is-open');
+      setTimeout(() => {
+        modal.hidden = true;
+        document.body.style.overflow = '';
+        if (lastFocus && lastFocus.focus) lastFocus.focus();
+      }, 220);
+    }
+
+    if (openBtn) openBtn.addEventListener('click', e => { e.preventDefault(); open(); });
+    modal.querySelectorAll('[data-bld-close]').forEach(el => el.addEventListener('click', close));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && !modal.hidden) close(); });
+    waBtn.addEventListener('click', e => { if (waBtn.classList.contains('is-disabled')) e.preventDefault(); });
   })();
 </script>
 

@@ -24,9 +24,9 @@ Todo lo que hoy en el prototipo es manual o "a pedido" tiene que quedar automati
 ### 3.2 Elegir el cajón
 - Planes base: **Duo** (1–2 personas), **Family** (3–4, el más elegido), **Full House** (5+), más versiones **Fruit** (solo fruta, para oficinas).
 - Mostrar el contenido del cajón (base fija + estacional que rota).
-- **Extras / productos sueltos (+10%):** a cualquier cajón se le suman productos sueltos (palta, huevos, frutas extra, berenjena, etc.) con un 10% sobre el precio Nativa del producto.
-- **Cajón a medida (+15%):** el cliente arma el cajón producto por producto; recargo del 15% por producto, mínimo equivalente a Duo.
-- Regla de precios horneada (ver §6).
+- **Extras / productos sueltos:** a cualquier cajón se le suman productos sueltos (palta, huevos, frutas extra, berenjena, etc.).
+- **Cajón a medida:** el cliente arma el cajón producto por producto, eligiendo qué entra y en qué cantidad; mínimo equivalente a Duo.
+- **El cliente NUNCA ve un recargo "+X%" ni un texto de "te sale más caro".** El precio que se muestra (por producto y total) ya tiene el recargo horneado. El recargo es una regla interna de precio, no un mensaje al cliente (ver §6).
 
 ### 3.3 Suscripción
 - La suscripción es **mensual** (4 entregas/mes), por adelantado, cancela cuando quiere.
@@ -75,8 +75,8 @@ Todo lo que hoy en el prototipo es manual o "a pedido" tiene que quedar automati
 
 ## 6. Reglas de negocio (precios)
 - Precio del cajón = costo unitario × markup, redondeado.
-- **Recargo cajón a medida: +15%** sobre el precio del cajón estándar.
-- **Recargo productos sueltos: +10%** sobre el precio Nativa del producto.
+- **Recargo cajón a medida: +15%** sobre el precio del cajón estándar — regla interna de cálculo, **horneada en el precio mostrado** (el cliente nunca ve el "+15%").
+- **Recargo productos sueltos: +10%** sobre el precio Nativa del producto — ídem, horneado en el precio (el cliente nunca ve el "+10%").
 - **Descuento** por transferencia/efectivo; **recargo** por tarjeta/Mercado Pago.
 - Mínimo del cajón a medida: equivalente a Duo.
 - Cupones de descuento por código, con atribución a influencer.

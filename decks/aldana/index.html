@@ -1459,7 +1459,7 @@
           <li><strong>Hoja</strong> · lechuga manteca 400 g</li>
           <li><strong>Para cocinar</strong> · tomate 1 kg, cebolla 1 kg, papa 1,5 kg, zanahoria 500 g, anco 1 kg</li>
           <li><strong>Frutas</strong> · banana 1 kg, manzana 800 g</li>
-          <li class="cajon-extra"><strong>Extras a pedido (+10%)</strong> · palta, huevos, frutas extra, berenjena</li>
+          <li class="cajon-extra"><strong>Extras a pedido</strong> · palta, huevos, frutas extra, berenjena</li>
         </ul>
       </div>
       <div class="cajon-card featured reveal">
@@ -1471,7 +1471,7 @@
           <li><strong>Hoja</strong> · lechuga manteca 400 g, lechuga capuchina 400 g, rúcula ×2 at., espinaca ×1 at.</li>
           <li><strong>Para cocinar</strong> · tomate 2 kg, cebolla 2 kg, papa 2,5 kg, zanahoria 1,5 kg, anco 1,5 kg, zapallito 1 kg, brócoli 500 g</li>
           <li><strong>Frutas</strong> · banana 2 kg, manzana 1,5 kg, naranja 2 kg, pera 1 kg</li>
-          <li class="cajon-extra"><strong>Extras a pedido (+10%)</strong> · palta, huevos, frutas extra, berenjena, champiñones</li>
+          <li class="cajon-extra"><strong>Extras a pedido</strong> · palta, huevos, frutas extra, berenjena, champiñones</li>
         </ul>
       </div>
       <div class="cajon-card reveal">
@@ -1483,7 +1483,7 @@
           <li><strong>Para cocinar</strong> · tomate perita 2 kg, cherry 500 g, cebolla 2 kg, cebolla morada 500 g, papa 3 kg, papín 500 g, zanahoria 1,5 kg, anco 1,5 kg, batata 1 kg, brócoli 500 g, coliflor ×1, zapallito 1 kg, morrón 500 g, pepino 500 g</li>
           <li><strong>Frutas</strong> · banana 2,5 kg, manzana 2 kg, naranja 2 kg, pera 1,5 kg, mandarina 1 kg, kiwi 500 g</li>
           <li><strong>Hierbas</strong> · perejil ×1 at., albahaca ×1</li>
-          <li class="cajon-extra"><strong>Extras a pedido (+10%)</strong> · palta, huevos, frutas extra, berenjena, champiñones</li>
+          <li class="cajon-extra"><strong>Extras a pedido</strong> · palta, huevos, frutas extra, berenjena, champiñones</li>
         </ul>
       </div>
     </div>
@@ -1494,7 +1494,7 @@
       </div>
       <div class="special-card custom reveal">
         <span class="special-tag">Armá tu propio cajón</span>
-        <span class="special-text">Elegís los productos que quieras y lo armamos a tu medida (+15%), o le sumás sueltos a un cajón estándar (+10%).</span>
+        <span class="special-text">Elegís los productos que quieras y lo armamos a tu medida, o le sumás sueltos a cualquier cajón estándar. El precio se arma solo a medida que elegís.</span>
         <button type="button" class="bld-cta" id="openBuilder">Probalo →</button>
       </div>
     </div>
@@ -1773,9 +1773,9 @@
     </div>
     <div class="editor-body">
       <p class="editor-hint">Sumá los productos que quieras con + y −. El precio se arma solo a medida que elegís.</p>
-      <div class="editor-tabs" id="bld-mode" role="group" aria-label="Tipo de recargo">
-        <button type="button" class="editor-tab active" data-bmode="medida">Cajón a medida · +15%</button>
-        <button type="button" class="editor-tab" data-bmode="suelto">Sumar sueltos · +10%</button>
+      <div class="editor-tabs" id="bld-mode" role="group" aria-label="Tipo de cajón">
+        <button type="button" class="editor-tab active" data-bmode="medida">Cajón a medida</button>
+        <button type="button" class="editor-tab" data-bmode="suelto">Sumar sueltos</button>
       </div>
       <div class="bld-list" id="bld-list"></div>
       <div class="bld-totals">
@@ -2355,7 +2355,7 @@
         const suelto = e.currentTarget.dataset.bmode === 'suelto';
         builderRecargo = suelto ? RECARGO_SUELTO : RECARGO_CUSTOM;
         bldMode.querySelectorAll('.editor-tab').forEach(x => x.classList.toggle('active', x === e.currentTarget));
-        const lbl = $('bld-total-label'); if (lbl) lbl.textContent = suelto ? 'Tus sueltos (+10%)' : 'Tu cajón a medida';
+        const lbl = $('bld-total-label'); if (lbl) lbl.textContent = suelto ? 'Tus sueltos' : 'Tu cajón a medida';
         renderBuilder();
       }));
     }
